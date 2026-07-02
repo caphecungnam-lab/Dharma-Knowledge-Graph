@@ -6,7 +6,6 @@ import tempfile
 import unittest
 from pathlib import Path
 
-
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
@@ -281,7 +280,9 @@ class ValidateSeedDataTest(unittest.TestCase):
             errors = validate_seed_files([seed])
 
             self.assertTrue(
-                any("does not allow target type 'Concept'" in error for error in errors),
+                any(
+                    "does not allow target type 'Concept'" in error for error in errors
+                ),
                 errors,
             )
 
@@ -342,7 +343,10 @@ class ValidateSeedDataTest(unittest.TestCase):
             errors = validate_seed_files([seed])
 
             self.assertTrue(
-                any("Evidence missing required field: evidence_text" in error for error in errors),
+                any(
+                    "Evidence missing required field: evidence_text" in error
+                    for error in errors
+                ),
                 errors,
             )
 
@@ -371,7 +375,10 @@ class ValidateSeedDataTest(unittest.TestCase):
             errors = validate_seed_files([seed])
 
             self.assertTrue(
-                any("Evidence missing required field: evidence_text" in error for error in errors),
+                any(
+                    "Evidence missing required field: evidence_text" in error
+                    for error in errors
+                ),
                 errors,
             )
 
@@ -469,7 +476,10 @@ class ValidateSeedDataTest(unittest.TestCase):
             errors = validate_seed_files([seed])
 
             self.assertTrue(
-                any("source_kind youtube requires source_url" in error for error in errors),
+                any(
+                    "source_kind youtube requires source_url" in error
+                    for error in errors
+                ),
                 errors,
             )
 

@@ -7,7 +7,6 @@ import json
 import re
 from pathlib import Path
 
-
 ROOT = Path(__file__).resolve().parents[1]
 SEED_DIR = ROOT / "data" / "seeds"
 REQUIRED_NODE_FIELDS = {"id", "type", "name"}
@@ -125,8 +124,7 @@ def validate_evidence_node(path: Path, index: int, node: dict) -> list[str]:
         node, "speaker"
     ):
         errors.append(
-            f"{path}: node {index} Evidence with transcript_excerpt "
-            "requires speaker"
+            f"{path}: node {index} Evidence with transcript_excerpt " "requires speaker"
         )
 
     if node.get("source_kind") == "youtube" and missing_or_empty_string(
