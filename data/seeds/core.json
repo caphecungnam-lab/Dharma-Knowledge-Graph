@@ -1,0 +1,63 @@
+{
+  "nodes": [
+    {
+      "id": "concept_dukkha",
+      "type": "Concept",
+      "name": "Dukkha",
+      "pali": "dukkha",
+      "sanskrit": "duhkha",
+      "description": "A central Dharma concept often translated as suffering, unsatisfactoriness, or stress."
+    },
+    {
+      "id": "concept_sunyata",
+      "type": "Concept",
+      "name": "Sunyata",
+      "sanskrit": "sunyata",
+      "description": "A Mahayana concept commonly translated as emptiness."
+    },
+    {
+      "id": "school_theravada",
+      "type": "School",
+      "name": "Theravada",
+      "description": "A Buddhist tradition preserving the Pali Canon."
+    },
+    {
+      "id": "school_madhyamaka",
+      "type": "School",
+      "name": "Madhyamaka",
+      "description": "A Mahayana philosophical school associated with analysis of emptiness."
+    },
+    {
+      "id": "person_nagarjuna",
+      "type": "Person",
+      "name": "Nagarjuna",
+      "tradition": "Mahayana",
+      "description": "A major Buddhist philosopher associated with Madhyamaka."
+    },
+    {
+      "id": "text_mulamadhyamakakarika",
+      "type": "Text",
+      "name": "Mulamadhyamakakarika",
+      "language": "Sanskrit",
+      "tradition": "Mahayana",
+      "description": "A foundational Madhyamaka text attributed to Nagarjuna."
+    }
+  ],
+  "relationships": [
+    {
+      "source": "person_nagarjuna",
+      "type": "BELONGS_TO_SCHOOL",
+      "target": "school_madhyamaka"
+    },
+    {
+      "source": "text_mulamadhyamakakarika",
+      "type": "AUTHORED_BY",
+      "target": "person_nagarjuna"
+    },
+    {
+      "source": "text_mulamadhyamakakarika",
+      "type": "MENTIONS",
+      "target": "concept_sunyata"
+    }
+  ]
+}
