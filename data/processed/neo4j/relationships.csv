@@ -1,7 +1,15 @@
 :START_ID,:TYPE,:END_ID,source_file
 text_mulamadhyamakakarika,AUTHORED_BY,person_nagarjuna,data/seeds/core.json
+concept_bodhicitta,BELONGS_TO_SCHOOL,school_mahayana,data/seeds/places_traditions.json
+concept_bodhisattva,BELONGS_TO_SCHOOL,school_mahayana,data/seeds/places_traditions.json
+concept_sunyata,BELONGS_TO_SCHOOL,school_mahayana,data/seeds/places_traditions.json
 person_nagarjuna,BELONGS_TO_SCHOOL,school_madhyamaka,data/seeds/core.json
+person_nagarjuna,BELONGS_TO_SCHOOL,school_mahayana,data/seeds/places_traditions.json
+school_madhyamaka,BELONGS_TO_SCHOOL,school_mahayana,data/seeds/places_traditions.json
+text_dhammapada,BELONGS_TO_SCHOOL,school_early_buddhism,data/seeds/places_traditions.json
+text_dhammapada,BELONGS_TO_SCHOOL,school_pali_canon,data/seeds/places_traditions.json
 text_dhammapada,BELONGS_TO_SCHOOL,school_theravada,data/seeds/dhammapada.json
+text_mulamadhyamakakarika,BELONGS_TO_SCHOOL,school_madhyamaka,data/seeds/places_traditions.json
 text_dhammapada,CITES,citation_dhammapada_1,data/seeds/dhammapada.json
 text_dhammapada,CITES,citation_dhammapada_129,data/seeds/dhammapada.json
 text_dhammapada,CITES,citation_dhammapada_183,data/seeds/dhammapada.json
@@ -34,6 +42,10 @@ term_nirvana_sanskrit,DEFINES,concept_nirvana,data/seeds/terms.json
 term_paticcasamuppada_pali,DEFINES,concept_pratityasamutpada,data/seeds/terms.json
 term_pratityasamutpada_sanskrit,DEFINES,concept_pratityasamutpada,data/seeds/terms.json
 term_sunyata_sanskrit,DEFINES,concept_sunyata,data/seeds/terms.json
+place_bodh_gaya,LOCATED_IN,place_magadha,data/seeds/places_traditions.json
+place_nalanda,LOCATED_IN,place_magadha,data/seeds/places_traditions.json
+school_pali_canon,LOCATED_IN,place_sri_lanka,data/seeds/places_traditions.json
+school_theravada,LOCATED_IN,place_sri_lanka,data/seeds/places_traditions.json
 citation_dhammapada_1,MENTIONS,concept_citta,data/seeds/dhammapada.json
 citation_dhammapada_1,MENTIONS,concept_dukkha,data/seeds/dhammapada.json
 citation_dhammapada_1,MENTIONS,concept_karma,data/seeds/dhammapada.json
@@ -64,9 +76,11 @@ text_dhammapada,MENTIONS,concept_sila,data/seeds/dhammapada.json
 text_mulamadhyamakakarika,MENTIONS,concept_sunyata,data/seeds/core.json
 concept_bodhisattva,RELATED_TO,concept_bodhicitta,data/seeds/concepts.json
 concept_bodhisattva,RELATED_TO,concept_paramita,data/seeds/concepts.json
+concept_four_noble_truths,RELATED_TO,place_sarnath,data/seeds/places_traditions.json
 concept_klesha,RELATED_TO,concept_avidya,data/seeds/concepts.json
 concept_klesha,RELATED_TO,concept_tanha,data/seeds/concepts.json
 concept_middle_way,RELATED_TO,concept_two_truths,data/seeds/concepts.json
+concept_nirvana,RELATED_TO,place_bodh_gaya,data/seeds/places_traditions.json
 concept_pratityasamutpada,RELATED_TO,concept_avidya,data/seeds/concepts.json
 concept_pratityasamutpada,RELATED_TO,concept_karma,data/seeds/concepts.json
 concept_pratityasamutpada,RELATED_TO,concept_tanha,data/seeds/concepts.json
@@ -75,6 +89,8 @@ concept_samsara,RELATED_TO,concept_karma,data/seeds/concepts.json
 concept_samsara,RELATED_TO,concept_nirvana,data/seeds/concepts.json
 concept_sunyata,RELATED_TO,concept_pratityasamutpada,data/seeds/concepts.json
 concept_sunyata,RELATED_TO,concept_two_truths,data/seeds/concepts.json
+school_mahayana,RELATED_TO,place_gandhara,data/seeds/places_traditions.json
+school_pali_canon,RELATED_TO,school_theravada,data/seeds/places_traditions.json
 term_anatta_pali,RELATED_TO,term_anatman_sanskrit,data/seeds/terms.json
 term_anicca_pali,RELATED_TO,term_anitya_sanskrit,data/seeds/terms.json
 term_dukkha_pali,RELATED_TO,term_duhkha_sanskrit,data/seeds/terms.json

@@ -73,6 +73,12 @@ The first language-level pilot is in `data/seeds/terms.json`. It adds Pali and
 Sanskrit `Term` nodes for selected concepts and links them back to the concept
 layer.
 
+## Places & Traditions Pilot
+
+The first place and tradition pilot is in `data/seeds/places_traditions.json`.
+It adds historical places, broad tradition nodes, and links between texts,
+concepts, schools, and places.
+
 ## Validate Seed Data
 
 Run:

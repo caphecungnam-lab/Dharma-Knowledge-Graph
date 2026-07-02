@@ -43,7 +43,16 @@ concept_three_marks,Concept,Three Marks of Existence,"The marks of impermanence,
 concept_two_truths,Concept,Two Truths,The distinction between conventional truth and ultimate truth.,mahayana,,satya-dvaya,,,data/seeds/concepts.json
 concept_upekkha,Concept,Upekkha,Equanimity; balanced presence toward changing experience.,practice,upekkha,upeksa,,,data/seeds/concepts.json
 person_nagarjuna,Person,Nagarjuna,A major Buddhist philosopher associated with Madhyamaka.,,,,Mahayana,,data/seeds/core.json
+place_bodh_gaya,Place,Bodh Gaya,A major Buddhist pilgrimage place associated with the Buddha's awakening.,,,,,,data/seeds/places_traditions.json
+place_gandhara,Place,Gandhara,A historical Buddhist region important for textual and artistic transmission.,,,,,,data/seeds/places_traditions.json
+place_magadha,Place,Magadha,An ancient region important in early Buddhist history.,,,,,,data/seeds/places_traditions.json
+place_nalanda,Place,Nalanda,A historic center of Buddhist monastic learning.,,,,,,data/seeds/places_traditions.json
+place_sarnath,Place,Sarnath,A major Buddhist pilgrimage place associated with the first teaching.,,,,,,data/seeds/places_traditions.json
+place_sri_lanka,Place,Sri Lanka,A major historical center for Theravada Buddhist transmission.,,,,,,data/seeds/places_traditions.json
+school_early_buddhism,School,Early Buddhism,A working category for early Buddhist teachings and textual layers.,,,,,,data/seeds/places_traditions.json
 school_madhyamaka,School,Madhyamaka,A Mahayana philosophical school associated with analysis of emptiness.,,,,,,data/seeds/core.json
+school_mahayana,School,Mahayana,A broad family of Buddhist traditions emphasizing the bodhisattva path.,,,,,,data/seeds/places_traditions.json
+school_pali_canon,School,Pali Canon,A textual tradition preserving canonical materials in Pali.,,,,,,data/seeds/places_traditions.json
 school_theravada,School,Theravada,A Buddhist tradition preserving the Pali Canon.,,,,,,data/seeds/core.json
 term_anatman_sanskrit,Term,anatman,,,,,,Sanskrit,data/seeds/terms.json
 term_anatta_pali,Term,anatta,,,,,,Pali,data/seeds/terms.json

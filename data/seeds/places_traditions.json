@@ -1,0 +1,152 @@
+{
+  "nodes": [
+    {
+      "id": "place_bodh_gaya",
+      "type": "Place",
+      "name": "Bodh Gaya",
+      "country": "India",
+      "region": "Bihar",
+      "description": "A major Buddhist pilgrimage place associated with the Buddha's awakening."
+    },
+    {
+      "id": "place_sarnath",
+      "type": "Place",
+      "name": "Sarnath",
+      "country": "India",
+      "region": "Uttar Pradesh",
+      "description": "A major Buddhist pilgrimage place associated with the first teaching."
+    },
+    {
+      "id": "place_nalanda",
+      "type": "Place",
+      "name": "Nalanda",
+      "country": "India",
+      "region": "Bihar",
+      "description": "A historic center of Buddhist monastic learning."
+    },
+    {
+      "id": "place_magadha",
+      "type": "Place",
+      "name": "Magadha",
+      "country": "India",
+      "region": "Eastern India",
+      "description": "An ancient region important in early Buddhist history."
+    },
+    {
+      "id": "place_sri_lanka",
+      "type": "Place",
+      "name": "Sri Lanka",
+      "country": "Sri Lanka",
+      "region": "South Asia",
+      "description": "A major historical center for Theravada Buddhist transmission."
+    },
+    {
+      "id": "place_gandhara",
+      "type": "Place",
+      "name": "Gandhara",
+      "country": "Historical region",
+      "region": "Northwest South Asia",
+      "description": "A historical Buddhist region important for textual and artistic transmission."
+    },
+    {
+      "id": "school_mahayana",
+      "type": "School",
+      "name": "Mahayana",
+      "description": "A broad family of Buddhist traditions emphasizing the bodhisattva path."
+    },
+    {
+      "id": "school_early_buddhism",
+      "type": "School",
+      "name": "Early Buddhism",
+      "description": "A working category for early Buddhist teachings and textual layers."
+    },
+    {
+      "id": "school_pali_canon",
+      "type": "School",
+      "name": "Pali Canon",
+      "description": "A textual tradition preserving canonical materials in Pali."
+    }
+  ],
+  "relationships": [
+    {
+      "source": "place_bodh_gaya",
+      "type": "LOCATED_IN",
+      "target": "place_magadha"
+    },
+    {
+      "source": "place_nalanda",
+      "type": "LOCATED_IN",
+      "target": "place_magadha"
+    },
+    {
+      "source": "school_theravada",
+      "type": "LOCATED_IN",
+      "target": "place_sri_lanka"
+    },
+    {
+      "source": "school_pali_canon",
+      "type": "RELATED_TO",
+      "target": "school_theravada"
+    },
+    {
+      "source": "school_pali_canon",
+      "type": "LOCATED_IN",
+      "target": "place_sri_lanka"
+    },
+    {
+      "source": "school_madhyamaka",
+      "type": "BELONGS_TO_SCHOOL",
+      "target": "school_mahayana"
+    },
+    {
+      "source": "school_mahayana",
+      "type": "RELATED_TO",
+      "target": "place_gandhara"
+    },
+    {
+      "source": "person_nagarjuna",
+      "type": "BELONGS_TO_SCHOOL",
+      "target": "school_mahayana"
+    },
+    {
+      "source": "text_mulamadhyamakakarika",
+      "type": "BELONGS_TO_SCHOOL",
+      "target": "school_madhyamaka"
+    },
+    {
+      "source": "text_dhammapada",
+      "type": "BELONGS_TO_SCHOOL",
+      "target": "school_pali_canon"
+    },
+    {
+      "source": "text_dhammapada",
+      "type": "BELONGS_TO_SCHOOL",
+      "target": "school_early_buddhism"
+    },
+    {
+      "source": "concept_four_noble_truths",
+      "type": "RELATED_TO",
+      "target": "place_sarnath"
+    },
+    {
+      "source": "concept_nirvana",
+      "type": "RELATED_TO",
+      "target": "place_bodh_gaya"
+    },
+    {
+      "source": "concept_bodhisattva",
+      "type": "BELONGS_TO_SCHOOL",
+      "target": "school_mahayana"
+    },
+    {
+      "source": "concept_bodhicitta",
+      "type": "BELONGS_TO_SCHOOL",
+      "target": "school_mahayana"
+    },
+    {
+      "source": "concept_sunyata",
+      "type": "BELONGS_TO_SCHOOL",
+      "target": "school_mahayana"
+    }
+  ]
+}

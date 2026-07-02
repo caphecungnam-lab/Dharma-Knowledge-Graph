@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import json
+import re
 from pathlib import Path
 
 
@@ -11,6 +12,16 @@ ROOT = Path(__file__).resolve().parents[1]
 SEED_DIR = ROOT / "data" / "seeds"
 REQUIRED_NODE_FIELDS = {"id", "type", "name"}
 REQUIRED_RELATIONSHIP_FIELDS = {"source", "type", "target"}
+ID_PATTERN = re.compile(r"^[a-z][a-z0-9_]*$")
+TYPE_PREFIXES = {
+    "Citation": "citation_",
+    "Concept": "concept_",
+    "Person": "person_",
+    "Place": "place_",
+    "School": "school_",
+    "Term": "term_",
+    "Text": "text_",
+}
 
 
 def load_seed_file(path: Path) -> tuple[dict, list[str]]:
@@ -56,7 +67,19 @@ def validate_seed_files(seed_files: list[Path]) -> list[str]:
                 errors.append(f"{path}: node {index} missing fields: {sorted(missing)}")
 
             node_id = node.get("id")
+            node_type = node.get("type")
             if isinstance(node_id, str):
+                if not ID_PATTERN.match(node_id):
+                    errors.append(
+                        f"{path}: node {index} has invalid id format: {node_id}"
+                    )
+                if isinstance(node_type, str) and node_type in TYPE_PREFIXES:
+                    expected_prefix = TYPE_PREFIXES[node_type]
+                    if not node_id.startswith(expected_prefix):
+                        errors.append(
+                            f"{path}: node {index} id should start with "
+                            f"'{expected_prefix}' for type '{node_type}': {node_id}"
+                        )
                 if node_id in node_locations:
                     errors.append(
                         f"{path}: duplicate node id: {node_id} "
@@ -65,6 +88,9 @@ def validate_seed_files(seed_files: list[Path]) -> list[str]:
                 node_locations[node_id] = path
             else:
                 errors.append(f"{path}: node {index} has non-string id")
+
+            if isinstance(node_type, str) and node_type not in TYPE_PREFIXES:
+                errors.append(f"{path}: node {index} has unknown type: {node_type}")
 
     for path, data in loaded_files:
         for index, relationship in enumerate(data.get("relationships", [])):

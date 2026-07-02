@@ -2,32 +2,35 @@ window.DHARMA_GRAPH = {
   "metadata": {
     "title": "Dharma Knowledge Graph",
     "version": "0.1",
-    "generated_at": "2026-07-02T09:15:26.058362+00:00",
+    "generated_at": "2026-07-02T09:18:34.833065+00:00",
     "source_files": [
       "data/seeds/concepts.json",
       "data/seeds/core.json",
       "data/seeds/dhammapada.json",
+      "data/seeds/places_traditions.json",
       "data/seeds/terms.json"
     ]
   },
   "summary": {
-    "node_count": 63,
-    "relationship_count": 81,
+    "node_count": 72,
+    "relationship_count": 97,
     "node_type_counts": {
       "Citation": 10,
       "Concept": 33,
       "Person": 1,
-      "School": 2,
+      "Place": 6,
+      "School": 5,
       "Term": 15,
       "Text": 2
     },
     "relationship_type_counts": {
       "AUTHORED_BY": 1,
-      "BELONGS_TO_SCHOOL": 2,
+      "BELONGS_TO_SCHOOL": 10,
       "CITES": 10,
       "DEFINES": 22,
+      "LOCATED_IN": 4,
       "MENTIONS": 28,
-      "RELATED_TO": 18
+      "RELATED_TO": 22
     }
   },
   "nodes": [
@@ -455,11 +458,86 @@ window.DHARMA_GRAPH = {
       "source_file": "data/seeds/core.json"
     },
     {
+      "id": "place_bodh_gaya",
+      "type": "Place",
+      "name": "Bodh Gaya",
+      "country": "India",
+      "region": "Bihar",
+      "description": "A major Buddhist pilgrimage place associated with the Buddha's awakening.",
+      "source_file": "data/seeds/places_traditions.json"
+    },
+    {
+      "id": "place_gandhara",
+      "type": "Place",
+      "name": "Gandhara",
+      "country": "Historical region",
+      "region": "Northwest South Asia",
+      "description": "A historical Buddhist region important for textual and artistic transmission.",
+      "source_file": "data/seeds/places_traditions.json"
+    },
+    {
+      "id": "place_magadha",
+      "type": "Place",
+      "name": "Magadha",
+      "country": "India",
+      "region": "Eastern India",
+      "description": "An ancient region important in early Buddhist history.",
+      "source_file": "data/seeds/places_traditions.json"
+    },
+    {
+      "id": "place_nalanda",
+      "type": "Place",
+      "name": "Nalanda",
+      "country": "India",
+      "region": "Bihar",
+      "description": "A historic center of Buddhist monastic learning.",
+      "source_file": "data/seeds/places_traditions.json"
+    },
+    {
+      "id": "place_sarnath",
+      "type": "Place",
+      "name": "Sarnath",
+      "country": "India",
+      "region": "Uttar Pradesh",
+      "description": "A major Buddhist pilgrimage place associated with the first teaching.",
+      "source_file": "data/seeds/places_traditions.json"
+    },
+    {
+      "id": "place_sri_lanka",
+      "type": "Place",
+      "name": "Sri Lanka",
+      "country": "Sri Lanka",
+      "region": "South Asia",
+      "description": "A major historical center for Theravada Buddhist transmission.",
+      "source_file": "data/seeds/places_traditions.json"
+    },
+    {
+      "id": "school_early_buddhism",
+      "type": "School",
+      "name": "Early Buddhism",
+      "description": "A working category for early Buddhist teachings and textual layers.",
+      "source_file": "data/seeds/places_traditions.json"
+    },
+    {
       "id": "school_madhyamaka",
       "type": "School",
       "name": "Madhyamaka",
       "description": "A Mahayana philosophical school associated with analysis of emptiness.",
       "source_file": "data/seeds/core.json"
+    },
+    {
+      "id": "school_mahayana",
+      "type": "School",
+      "name": "Mahayana",
+      "description": "A broad family of Buddhist traditions emphasizing the bodhisattva path.",
+      "source_file": "data/seeds/places_traditions.json"
+    },
+    {
+      "id": "school_pali_canon",
+      "type": "School",
+      "name": "Pali Canon",
+      "description": "A textual tradition preserving canonical materials in Pali.",
+      "source_file": "data/seeds/places_traditions.json"
     },
     {
       "id": "school_theravada",
@@ -660,16 +738,64 @@ window.DHARMA_GRAPH = {
       "source_file": "data/seeds/core.json"
     },
     {
+      "source": "concept_bodhicitta",
+      "type": "BELONGS_TO_SCHOOL",
+      "target": "school_mahayana",
+      "source_file": "data/seeds/places_traditions.json"
+    },
+    {
+      "source": "concept_bodhisattva",
+      "type": "BELONGS_TO_SCHOOL",
+      "target": "school_mahayana",
+      "source_file": "data/seeds/places_traditions.json"
+    },
+    {
+      "source": "concept_sunyata",
+      "type": "BELONGS_TO_SCHOOL",
+      "target": "school_mahayana",
+      "source_file": "data/seeds/places_traditions.json"
+    },
+    {
       "source": "person_nagarjuna",
       "type": "BELONGS_TO_SCHOOL",
       "target": "school_madhyamaka",
       "source_file": "data/seeds/core.json"
     },
     {
+      "source": "person_nagarjuna",
+      "type": "BELONGS_TO_SCHOOL",
+      "target": "school_mahayana",
+      "source_file": "data/seeds/places_traditions.json"
+    },
+    {
+      "source": "school_madhyamaka",
+      "type": "BELONGS_TO_SCHOOL",
+      "target": "school_mahayana",
+      "source_file": "data/seeds/places_traditions.json"
+    },
+    {
+      "source": "text_dhammapada",
+      "type": "BELONGS_TO_SCHOOL",
+      "target": "school_early_buddhism",
+      "source_file": "data/seeds/places_traditions.json"
+    },
+    {
+      "source": "text_dhammapada",
+      "type": "BELONGS_TO_SCHOOL",
+      "target": "school_pali_canon",
+      "source_file": "data/seeds/places_traditions.json"
+    },
+    {
       "source": "text_dhammapada",
       "type": "BELONGS_TO_SCHOOL",
       "target": "school_theravada",
       "source_file": "data/seeds/dhammapada.json"
+    },
+    {
+      "source": "text_mulamadhyamakakarika",
+      "type": "BELONGS_TO_SCHOOL",
+      "target": "school_madhyamaka",
+      "source_file": "data/seeds/places_traditions.json"
     },
     {
       "source": "text_dhammapada",
@@ -864,6 +990,30 @@ window.DHARMA_GRAPH = {
       "source_file": "data/seeds/terms.json"
     },
     {
+      "source": "place_bodh_gaya",
+      "type": "LOCATED_IN",
+      "target": "place_magadha",
+      "source_file": "data/seeds/places_traditions.json"
+    },
+    {
+      "source": "place_nalanda",
+      "type": "LOCATED_IN",
+      "target": "place_magadha",
+      "source_file": "data/seeds/places_traditions.json"
+    },
+    {
+      "source": "school_pali_canon",
+      "type": "LOCATED_IN",
+      "target": "place_sri_lanka",
+      "source_file": "data/seeds/places_traditions.json"
+    },
+    {
+      "source": "school_theravada",
+      "type": "LOCATED_IN",
+      "target": "place_sri_lanka",
+      "source_file": "data/seeds/places_traditions.json"
+    },
+    {
       "source": "citation_dhammapada_1",
       "type": "MENTIONS",
       "target": "concept_citta",
@@ -1044,6 +1194,12 @@ window.DHARMA_GRAPH = {
       "source_file": "data/seeds/concepts.json"
     },
     {
+      "source": "concept_four_noble_truths",
+      "type": "RELATED_TO",
+      "target": "place_sarnath",
+      "source_file": "data/seeds/places_traditions.json"
+    },
+    {
       "source": "concept_klesha",
       "type": "RELATED_TO",
       "target": "concept_avidya",
@@ -1060,6 +1216,12 @@ window.DHARMA_GRAPH = {
       "type": "RELATED_TO",
       "target": "concept_two_truths",
       "source_file": "data/seeds/concepts.json"
+    },
+    {
+      "source": "concept_nirvana",
+      "type": "RELATED_TO",
+      "target": "place_bodh_gaya",
+      "source_file": "data/seeds/places_traditions.json"
     },
     {
       "source": "concept_pratityasamutpada",
@@ -1108,6 +1270,18 @@ window.DHARMA_GRAPH = {
       "type": "RELATED_TO",
       "target": "concept_two_truths",
       "source_file": "data/seeds/concepts.json"
+    },
+    {
+      "source": "school_mahayana",
+      "type": "RELATED_TO",
+      "target": "place_gandhara",
+      "source_file": "data/seeds/places_traditions.json"
+    },
+    {
+      "source": "school_pali_canon",
+      "type": "RELATED_TO",
+      "target": "school_theravada",
+      "source_file": "data/seeds/places_traditions.json"
     },
     {
       "source": "term_anatta_pali",
