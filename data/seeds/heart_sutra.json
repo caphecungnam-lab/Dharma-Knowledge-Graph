@@ -1,0 +1,228 @@
+{
+  "nodes": [
+    {
+      "id": "text_heart_sutra",
+      "type": "Text",
+      "name": "Heart Sutra",
+      "alternate_names": [
+        "Prajnaparamita Hrdaya",
+        "Heart of the Perfection of Wisdom"
+      ],
+      "language": "Sanskrit",
+      "tradition": "Mahayana",
+      "description": "A short Mahayana sutra associated with the perfection of wisdom literature and the teaching of emptiness."
+    },
+    {
+      "id": "concept_prajnaparamita",
+      "type": "Concept",
+      "name": "Prajnaparamita",
+      "sanskrit": "prajnaparamita",
+      "category": "mahayana",
+      "description": "The perfection of wisdom; a central theme in Mahayana sutra literature."
+    },
+    {
+      "id": "concept_avalokitesvara",
+      "type": "Concept",
+      "name": "Avalokitesvara",
+      "sanskrit": "avalokitesvara",
+      "category": "mahayana",
+      "description": "A bodhisattva associated with compassion and prominent in the Heart Sutra setting."
+    },
+    {
+      "id": "concept_form",
+      "type": "Concept",
+      "name": "Form",
+      "pali": "rupa",
+      "sanskrit": "rupa",
+      "category": "analysis",
+      "description": "Material form; one of the five aggregates."
+    },
+    {
+      "id": "concept_mantra",
+      "type": "Concept",
+      "name": "Mantra",
+      "sanskrit": "mantra",
+      "category": "practice",
+      "description": "A sacred utterance or formula used in contemplative and ritual contexts."
+    },
+    {
+      "id": "citation_heart_sutra_opening",
+      "type": "Citation",
+      "name": "Heart Sutra Opening",
+      "source": "Heart Sutra",
+      "locator": "Opening scene",
+      "notes": "Pilot citation for Avalokitesvara, prajnaparamita, and the five aggregates."
+    },
+    {
+      "id": "citation_heart_sutra_skandhas",
+      "type": "Citation",
+      "name": "Heart Sutra Skandhas Passage",
+      "source": "Heart Sutra",
+      "locator": "Five aggregates passage",
+      "notes": "Pilot citation for the relationship between form, the aggregates, and emptiness."
+    },
+    {
+      "id": "citation_heart_sutra_dharmas",
+      "type": "Citation",
+      "name": "Heart Sutra Dharmas Passage",
+      "source": "Heart Sutra",
+      "locator": "Dharmas and categories passage",
+      "notes": "Pilot citation for sense bases, elements, dependent arising categories, and the four truths."
+    },
+    {
+      "id": "citation_heart_sutra_mantra",
+      "type": "Citation",
+      "name": "Heart Sutra Mantra Passage",
+      "source": "Heart Sutra",
+      "locator": "Mantra passage",
+      "notes": "Pilot citation for mantra and prajnaparamita as a practice expression."
+    }
+  ],
+  "relationships": [
+    {
+      "source": "text_heart_sutra",
+      "type": "BELONGS_TO_SCHOOL",
+      "target": "school_mahayana"
+    },
+    {
+      "source": "text_heart_sutra",
+      "type": "MENTIONS",
+      "target": "concept_sunyata"
+    },
+    {
+      "source": "text_heart_sutra",
+      "type": "MENTIONS",
+      "target": "concept_prajnaparamita"
+    },
+    {
+      "source": "text_heart_sutra",
+      "type": "MENTIONS",
+      "target": "concept_avalokitesvara"
+    },
+    {
+      "source": "text_heart_sutra",
+      "type": "MENTIONS",
+      "target": "concept_skandhas"
+    },
+    {
+      "source": "text_heart_sutra",
+      "type": "MENTIONS",
+      "target": "concept_ayatana"
+    },
+    {
+      "source": "text_heart_sutra",
+      "type": "MENTIONS",
+      "target": "concept_dhatu"
+    },
+    {
+      "source": "text_heart_sutra",
+      "type": "CITES",
+      "target": "citation_heart_sutra_opening"
+    },
+    {
+      "source": "text_heart_sutra",
+      "type": "CITES",
+      "target": "citation_heart_sutra_skandhas"
+    },
+    {
+      "source": "text_heart_sutra",
+      "type": "CITES",
+      "target": "citation_heart_sutra_dharmas"
+    },
+    {
+      "source": "text_heart_sutra",
+      "type": "CITES",
+      "target": "citation_heart_sutra_mantra"
+    },
+    {
+      "source": "concept_prajnaparamita",
+      "type": "BELONGS_TO_SCHOOL",
+      "target": "school_mahayana"
+    },
+    {
+      "source": "concept_prajnaparamita",
+      "type": "RELATED_TO",
+      "target": "concept_prajna"
+    },
+    {
+      "source": "concept_prajnaparamita",
+      "type": "RELATED_TO",
+      "target": "concept_paramita"
+    },
+    {
+      "source": "concept_avalokitesvara",
+      "type": "BELONGS_TO_SCHOOL",
+      "target": "school_mahayana"
+    },
+    {
+      "source": "concept_avalokitesvara",
+      "type": "RELATED_TO",
+      "target": "concept_karuna"
+    },
+    {
+      "source": "concept_form",
+      "type": "RELATED_TO",
+      "target": "concept_skandhas"
+    },
+    {
+      "source": "citation_heart_sutra_opening",
+      "type": "MENTIONS",
+      "target": "concept_avalokitesvara"
+    },
+    {
+      "source": "citation_heart_sutra_opening",
+      "type": "MENTIONS",
+      "target": "concept_prajnaparamita"
+    },
+    {
+      "source": "citation_heart_sutra_opening",
+      "type": "MENTIONS",
+      "target": "concept_skandhas"
+    },
+    {
+      "source": "citation_heart_sutra_skandhas",
+      "type": "MENTIONS",
+      "target": "concept_form"
+    },
+    {
+      "source": "citation_heart_sutra_skandhas",
+      "type": "MENTIONS",
+      "target": "concept_skandhas"
+    },
+    {
+      "source": "citation_heart_sutra_skandhas",
+      "type": "MENTIONS",
+      "target": "concept_sunyata"
+    },
+    {
+      "source": "citation_heart_sutra_dharmas",
+      "type": "MENTIONS",
+      "target": "concept_ayatana"
+    },
+    {
+      "source": "citation_heart_sutra_dharmas",
+      "type": "MENTIONS",
+      "target": "concept_dhatu"
+    },
+    {
+      "source": "citation_heart_sutra_dharmas",
+      "type": "MENTIONS",
+      "target": "concept_pratityasamutpada"
+    },
+    {
+      "source": "citation_heart_sutra_dharmas",
+      "type": "MENTIONS",
+      "target": "concept_four_noble_truths"
+    },
+    {
+      "source": "citation_heart_sutra_mantra",
+      "type": "MENTIONS",
+      "target": "concept_mantra"
+    },
+    {
+      "source": "citation_heart_sutra_mantra",
+      "type": "MENTIONS",
+      "target": "concept_prajnaparamita"
+    }
+  ]
+}

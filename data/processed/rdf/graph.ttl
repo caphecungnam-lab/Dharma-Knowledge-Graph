@@ -81,6 +81,38 @@ dkge:citation_dhammapada_50
     dkg:notes "Pilot citation for self-examination in ethical practice." ;
     dkg:sourceFile "data/seeds/dhammapada.json" .
 
+dkge:citation_heart_sutra_dharmas
+    a dkg:Citation ;
+    dkg:name "Heart Sutra Dharmas Passage" ;
+    dkg:source "Heart Sutra" ;
+    dkg:locator "Dharmas and categories passage" ;
+    dkg:notes "Pilot citation for sense bases, elements, dependent arising categories, and the four truths." ;
+    dkg:sourceFile "data/seeds/heart_sutra.json" .
+
+dkge:citation_heart_sutra_mantra
+    a dkg:Citation ;
+    dkg:name "Heart Sutra Mantra Passage" ;
+    dkg:source "Heart Sutra" ;
+    dkg:locator "Mantra passage" ;
+    dkg:notes "Pilot citation for mantra and prajnaparamita as a practice expression." ;
+    dkg:sourceFile "data/seeds/heart_sutra.json" .
+
+dkge:citation_heart_sutra_opening
+    a dkg:Citation ;
+    dkg:name "Heart Sutra Opening" ;
+    dkg:source "Heart Sutra" ;
+    dkg:locator "Opening scene" ;
+    dkg:notes "Pilot citation for Avalokitesvara, prajnaparamita, and the five aggregates." ;
+    dkg:sourceFile "data/seeds/heart_sutra.json" .
+
+dkge:citation_heart_sutra_skandhas
+    a dkg:Citation ;
+    dkg:name "Heart Sutra Skandhas Passage" ;
+    dkg:source "Heart Sutra" ;
+    dkg:locator "Five aggregates passage" ;
+    dkg:notes "Pilot citation for the relationship between form, the aggregates, and emptiness." ;
+    dkg:sourceFile "data/seeds/heart_sutra.json" .
+
 dkge:concept_ahimsa
     a dkg:Concept ;
     dkg:name "Ahimsa" ;
@@ -116,6 +148,14 @@ dkge:concept_appamada
     dkg:pali "appamada" ;
     dkg:sanskrit "apramada" ;
     dkg:sourceFile "data/seeds/dhammapada.json" .
+
+dkge:concept_avalokitesvara
+    a dkg:Concept ;
+    dkg:name "Avalokitesvara" ;
+    dkg:description "A bodhisattva associated with compassion and prominent in the Heart Sutra setting." ;
+    dkg:category "mahayana" ;
+    dkg:sanskrit "avalokitesvara" ;
+    dkg:sourceFile "data/seeds/heart_sutra.json" .
 
 dkge:concept_avidya
     a dkg:Concept ;
@@ -187,6 +227,15 @@ dkge:concept_skandhas
     dkg:sanskrit "skandha" ;
     dkg:sourceFile "data/seeds/concepts.json" .
 
+dkge:concept_form
+    a dkg:Concept ;
+    dkg:name "Form" ;
+    dkg:description "Material form; one of the five aggregates." ;
+    dkg:category "analysis" ;
+    dkg:pali "rupa" ;
+    dkg:sanskrit "rupa" ;
+    dkg:sourceFile "data/seeds/heart_sutra.json" .
+
 dkge:concept_four_noble_truths
     a dkg:Concept ;
     dkg:name "Four Noble Truths" ;
@@ -222,6 +271,14 @@ dkge:concept_klesha
     dkg:pali "kilesa" ;
     dkg:sanskrit "klesa" ;
     dkg:sourceFile "data/seeds/concepts.json" .
+
+dkge:concept_mantra
+    a dkg:Concept ;
+    dkg:name "Mantra" ;
+    dkg:description "A sacred utterance or formula used in contemplative and ritual contexts." ;
+    dkg:category "practice" ;
+    dkg:sanskrit "mantra" ;
+    dkg:sourceFile "data/seeds/heart_sutra.json" .
 
 dkge:concept_metta
     a dkg:Concept ;
@@ -285,6 +342,14 @@ dkge:concept_prajna
     dkg:pali "panna" ;
     dkg:sanskrit "prajna" ;
     dkg:sourceFile "data/seeds/concepts.json" .
+
+dkge:concept_prajnaparamita
+    a dkg:Concept ;
+    dkg:name "Prajnaparamita" ;
+    dkg:description "The perfection of wisdom; a central theme in Mahayana sutra literature." ;
+    dkg:category "mahayana" ;
+    dkg:sanskrit "prajnaparamita" ;
+    dkg:sourceFile "data/seeds/heart_sutra.json" .
 
 dkge:concept_pratityasamutpada
     a dkg:Concept ;
@@ -616,6 +681,14 @@ dkge:text_dhammapada
     dkg:language "Pali" ;
     dkg:sourceFile "data/seeds/dhammapada.json" .
 
+dkge:text_heart_sutra
+    a dkg:Text ;
+    dkg:name "Heart Sutra" ;
+    dkg:description "A short Mahayana sutra associated with the perfection of wisdom literature and the teaching of emptiness." ;
+    dkg:tradition "Mahayana" ;
+    dkg:language "Sanskrit" ;
+    dkg:sourceFile "data/seeds/heart_sutra.json" .
+
 dkge:text_mulamadhyamakakarika
     a dkg:Text ;
     dkg:name "Mulamadhyamakakarika" ;
@@ -659,6 +732,30 @@ dkge:citation_dhammapada_5
 dkge:citation_dhammapada_50
     dkg:mentions dkge:concept_sila .
 
+dkge:citation_heart_sutra_dharmas
+    dkg:mentions dkge:concept_ayatana ;
+    dkg:mentions dkge:concept_dhatu ;
+    dkg:mentions dkge:concept_four_noble_truths ;
+    dkg:mentions dkge:concept_pratityasamutpada .
+
+dkge:citation_heart_sutra_mantra
+    dkg:mentions dkge:concept_mantra ;
+    dkg:mentions dkge:concept_prajnaparamita .
+
+dkge:citation_heart_sutra_opening
+    dkg:mentions dkge:concept_avalokitesvara ;
+    dkg:mentions dkge:concept_prajnaparamita ;
+    dkg:mentions dkge:concept_skandhas .
+
+dkge:citation_heart_sutra_skandhas
+    dkg:mentions dkge:concept_form ;
+    dkg:mentions dkge:concept_skandhas ;
+    dkg:mentions dkge:concept_sunyata .
+
+dkge:concept_avalokitesvara
+    dkg:belongsToSchool dkge:school_mahayana ;
+    dkg:relatedTo dkge:concept_karuna .
+
 dkge:concept_bodhicitta
     dkg:belongsToSchool dkge:school_mahayana .
 
@@ -672,6 +769,9 @@ dkge:concept_brahmaviharas
     dkg:defines dkge:concept_metta ;
     dkg:defines dkge:concept_mudita ;
     dkg:defines dkge:concept_upekkha .
+
+dkge:concept_form
+    dkg:relatedTo dkge:concept_skandhas .
 
 dkge:concept_four_noble_truths
     dkg:mentions dkge:concept_dukkha ;
@@ -694,6 +794,11 @@ dkge:concept_noble_eightfold_path
     dkg:mentions dkge:concept_prajna ;
     dkg:mentions dkge:concept_samadhi ;
     dkg:mentions dkge:concept_sila .
+
+dkge:concept_prajnaparamita
+    dkg:belongsToSchool dkge:school_mahayana ;
+    dkg:relatedTo dkge:concept_paramita ;
+    dkg:relatedTo dkge:concept_prajna .
 
 dkge:concept_pratityasamutpada
     dkg:relatedTo dkge:concept_avidya ;
@@ -807,6 +912,19 @@ dkge:text_dhammapada
     dkg:mentions dkge:concept_appamada ;
     dkg:mentions dkge:concept_citta ;
     dkg:mentions dkge:concept_sila .
+
+dkge:text_heart_sutra
+    dkg:belongsToSchool dkge:school_mahayana ;
+    dkg:cites dkge:citation_heart_sutra_dharmas ;
+    dkg:cites dkge:citation_heart_sutra_mantra ;
+    dkg:cites dkge:citation_heart_sutra_opening ;
+    dkg:cites dkge:citation_heart_sutra_skandhas ;
+    dkg:mentions dkge:concept_avalokitesvara ;
+    dkg:mentions dkge:concept_ayatana ;
+    dkg:mentions dkge:concept_dhatu ;
+    dkg:mentions dkge:concept_prajnaparamita ;
+    dkg:mentions dkge:concept_skandhas ;
+    dkg:mentions dkge:concept_sunyata .
 
 dkge:text_mulamadhyamakakarika
     dkg:authoredBy dkge:person_nagarjuna ;
