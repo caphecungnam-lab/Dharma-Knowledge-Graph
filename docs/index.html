@@ -182,10 +182,10 @@
             traditions, people, and places.
           </p>
         </div>
-        <section class="stats" aria-label="Graph statistics">
-          <div class="stat"><strong>81</strong><span>Nodes</span></div>
-          <div class="stat"><strong>126</strong><span>Relationships</span></div>
-          <div class="stat"><strong>6</strong><span>Seed files</span></div>
+        <section class="stats" id="stats" aria-label="Graph statistics">
+          <div class="stat"><strong>122</strong><span>Nodes</span></div>
+          <div class="stat"><strong>188</strong><span>Relationships</span></div>
+          <div class="stat"><strong>8</strong><span>Seed files</span></div>
           <div class="stat"><strong>0</strong><span>Isolated nodes</span></div>
         </section>
       </header>
@@ -263,5 +263,40 @@
         </aside>
       </section>
     </main>
+    <script src="graph-explorer/graph-data.js"></script>
+    <script>
+      (function () {
+        var graph = window.DHARMA_GRAPH;
+        var stats = document.getElementById("stats");
+
+        if (!graph || !stats) {
+          return;
+        }
+
+        var degree = new Map();
+        graph.nodes.forEach(function (node) {
+          degree.set(node.id, 0);
+        });
+        graph.relationships.forEach(function (relationship) {
+          degree.set(relationship.source, (degree.get(relationship.source) || 0) + 1);
+          degree.set(relationship.target, (degree.get(relationship.target) || 0) + 1);
+        });
+
+        var isolatedNodes = graph.nodes.filter(function (node) {
+          return degree.get(node.id) === 0;
+        }).length;
+
+        var items = [
+          ["Nodes", graph.summary.node_count],
+          ["Relationships", graph.summary.relationship_count],
+          ["Seed files", graph.metadata.source_files.length],
+          ["Isolated nodes", isolatedNodes],
+        ];
+
+        stats.innerHTML = items.map(function (item) {
+          return '<div class="stat"><strong>' + item[1] + '</strong><span>' + item[0] + '</span></div>';
+        }).join("");
+      })();
+    </script>
   </body>
 </html>
