@@ -6,11 +6,11 @@ Generated from `data/processed/graph.json`.
 
 | Metric | Value |
 | --- | --- |
-| Nodes | 48 |
-| Relationships | 61 |
-| Source files | 3 |
+| Nodes | 63 |
+| Relationships | 81 |
+| Source files | 4 |
 | Graph version | 0.1 |
-| Generated at | 2026-07-02T09:13:10.244781+00:00 |
+| Generated at | 2026-07-02T09:15:26.058362+00:00 |
 
 ## Node Types
 
@@ -20,6 +20,7 @@ Generated from `data/processed/graph.json`.
 | Concept | 33 |
 | Person | 1 |
 | School | 2 |
+| Term | 15 |
 | Text | 2 |
 
 ## Relationship Types
@@ -29,24 +30,24 @@ Generated from `data/processed/graph.json`.
 | AUTHORED_BY | 1 |
 | BELONGS_TO_SCHOOL | 2 |
 | CITES | 10 |
-| DEFINES | 7 |
+| DEFINES | 22 |
 | MENTIONS | 28 |
-| RELATED_TO | 13 |
+| RELATED_TO | 18 |
 
 ## Most Connected Nodes
 
 | Node | Type | Degree |
 | --- | --- | --- |
 | Dhammapada | Text | 16 |
-| Citta | Concept | 5 |
+| Citta | Concept | 6 |
+| Pratityasamutpada | Concept | 6 |
+| Anatta | Concept | 5 |
+| Anicca | Concept | 5 |
+| Dukkha | Concept | 5 |
 | Dhammapada 1 | Citation | 4 |
 | Brahmaviharas | Concept | 4 |
-| Karma | Concept | 4 |
-| Sila | Concept | 4 |
-| Four Noble Truths | Concept | 4 |
-| Noble Eightfold Path | Concept | 4 |
-| Pratityasamutpada | Concept | 4 |
-| Dhammapada 129 | Citation | 3 |
+| Nirvana | Concept | 4 |
+| Sunyata | Concept | 4 |
 
 ## Isolated Nodes
 
@@ -61,3 +62,4 @@ Generated from `data/processed/graph.json`.
 - `data/seeds/concepts.json`
 - `data/seeds/core.json`
 - `data/seeds/dhammapada.json`
+- `data/seeds/terms.json`

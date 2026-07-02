@@ -67,6 +67,12 @@ The first text-level pilot is in `data/seeds/dhammapada.json`. It adds a
 `Text` node for the Dhammapada, citation nodes for selected verses, and concept
 links for themes such as mind, heedfulness, ethics, impermanence, and not-self.
 
+## Terms Pilot
+
+The first language-level pilot is in `data/seeds/terms.json`. It adds Pali and
+Sanskrit `Term` nodes for selected concepts and links them back to the concept
+layer.
+
 ## Validate Seed Data
 
 Run:

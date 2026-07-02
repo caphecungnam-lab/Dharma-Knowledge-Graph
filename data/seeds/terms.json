@@ -1,0 +1,256 @@
+{
+  "nodes": [
+    {
+      "id": "term_dukkha_pali",
+      "type": "Term",
+      "name": "dukkha",
+      "language": "Pali",
+      "script": "Latin",
+      "transliteration": "dukkha",
+      "translation": "suffering; unsatisfactoriness; stress",
+      "notes": "A core Pali term in the analysis of conditioned experience."
+    },
+    {
+      "id": "term_duhkha_sanskrit",
+      "type": "Term",
+      "name": "duhkha",
+      "language": "Sanskrit",
+      "script": "Latin",
+      "transliteration": "duhkha",
+      "translation": "suffering; unsatisfactoriness",
+      "notes": "Sanskrit cognate of Pali dukkha."
+    },
+    {
+      "id": "term_anicca_pali",
+      "type": "Term",
+      "name": "anicca",
+      "language": "Pali",
+      "script": "Latin",
+      "transliteration": "anicca",
+      "translation": "impermanent",
+      "notes": "Pali form used for impermanence."
+    },
+    {
+      "id": "term_anitya_sanskrit",
+      "type": "Term",
+      "name": "anitya",
+      "language": "Sanskrit",
+      "script": "Latin",
+      "transliteration": "anitya",
+      "translation": "impermanent",
+      "notes": "Sanskrit form used for impermanence."
+    },
+    {
+      "id": "term_anatta_pali",
+      "type": "Term",
+      "name": "anatta",
+      "language": "Pali",
+      "script": "Latin",
+      "transliteration": "anatta",
+      "translation": "not-self",
+      "notes": "Pali form used for the doctrine of not-self."
+    },
+    {
+      "id": "term_anatman_sanskrit",
+      "type": "Term",
+      "name": "anatman",
+      "language": "Sanskrit",
+      "script": "Latin",
+      "transliteration": "anatman",
+      "translation": "not-self; no self",
+      "notes": "Sanskrit form corresponding to Pali anatta."
+    },
+    {
+      "id": "term_paticcasamuppada_pali",
+      "type": "Term",
+      "name": "paticcasamuppada",
+      "language": "Pali",
+      "script": "Latin",
+      "transliteration": "paticcasamuppada",
+      "translation": "dependent arising",
+      "notes": "Pali term for dependent arising."
+    },
+    {
+      "id": "term_pratityasamutpada_sanskrit",
+      "type": "Term",
+      "name": "pratityasamutpada",
+      "language": "Sanskrit",
+      "script": "Latin",
+      "transliteration": "pratityasamutpada",
+      "translation": "dependent arising",
+      "notes": "Sanskrit term for dependent arising."
+    },
+    {
+      "id": "term_nibbana_pali",
+      "type": "Term",
+      "name": "nibbana",
+      "language": "Pali",
+      "script": "Latin",
+      "transliteration": "nibbana",
+      "translation": "liberation; extinguishing",
+      "notes": "Pali term commonly rendered as nirvana."
+    },
+    {
+      "id": "term_nirvana_sanskrit",
+      "type": "Term",
+      "name": "nirvana",
+      "language": "Sanskrit",
+      "script": "Latin",
+      "transliteration": "nirvana",
+      "translation": "liberation; extinguishing",
+      "notes": "Sanskrit form corresponding to Pali nibbana."
+    },
+    {
+      "id": "term_sunyata_sanskrit",
+      "type": "Term",
+      "name": "sunyata",
+      "language": "Sanskrit",
+      "script": "Latin",
+      "transliteration": "sunyata",
+      "translation": "emptiness",
+      "notes": "A key Mahayana term, especially important in Madhyamaka contexts."
+    },
+    {
+      "id": "term_citta_pali",
+      "type": "Term",
+      "name": "citta",
+      "language": "Pali",
+      "script": "Latin",
+      "transliteration": "citta",
+      "translation": "mind; heart",
+      "notes": "A term for mind, heart, or mental orientation."
+    },
+    {
+      "id": "term_appamada_pali",
+      "type": "Term",
+      "name": "appamada",
+      "language": "Pali",
+      "script": "Latin",
+      "transliteration": "appamada",
+      "translation": "heedfulness; diligence",
+      "notes": "A central practice quality highlighted in the Dhammapada."
+    },
+    {
+      "id": "term_metta_pali",
+      "type": "Term",
+      "name": "metta",
+      "language": "Pali",
+      "script": "Latin",
+      "transliteration": "metta",
+      "translation": "loving-kindness",
+      "notes": "Pali term for loving-kindness."
+    },
+    {
+      "id": "term_karuna_pali",
+      "type": "Term",
+      "name": "karuna",
+      "language": "Pali",
+      "script": "Latin",
+      "transliteration": "karuna",
+      "translation": "compassion",
+      "notes": "Pali and Sanskrit term for compassion."
+    }
+  ],
+  "relationships": [
+    {
+      "source": "term_dukkha_pali",
+      "type": "DEFINES",
+      "target": "concept_dukkha"
+    },
+    {
+      "source": "term_duhkha_sanskrit",
+      "type": "DEFINES",
+      "target": "concept_dukkha"
+    },
+    {
+      "source": "term_anicca_pali",
+      "type": "DEFINES",
+      "target": "concept_anicca"
+    },
+    {
+      "source": "term_anitya_sanskrit",
+      "type": "DEFINES",
+      "target": "concept_anicca"
+    },
+    {
+      "source": "term_anatta_pali",
+      "type": "DEFINES",
+      "target": "concept_anatta"
+    },
+    {
+      "source": "term_anatman_sanskrit",
+      "type": "DEFINES",
+      "target": "concept_anatta"
+    },
+    {
+      "source": "term_paticcasamuppada_pali",
+      "type": "DEFINES",
+      "target": "concept_pratityasamutpada"
+    },
+    {
+      "source": "term_pratityasamutpada_sanskrit",
+      "type": "DEFINES",
+      "target": "concept_pratityasamutpada"
+    },
+    {
+      "source": "term_nibbana_pali",
+      "type": "DEFINES",
+      "target": "concept_nirvana"
+    },
+    {
+      "source": "term_nirvana_sanskrit",
+      "type": "DEFINES",
+      "target": "concept_nirvana"
+    },
+    {
+      "source": "term_sunyata_sanskrit",
+      "type": "DEFINES",
+      "target": "concept_sunyata"
+    },
+    {
+      "source": "term_citta_pali",
+      "type": "DEFINES",
+      "target": "concept_citta"
+    },
+    {
+      "source": "term_appamada_pali",
+      "type": "DEFINES",
+      "target": "concept_appamada"
+    },
+    {
+      "source": "term_metta_pali",
+      "type": "DEFINES",
+      "target": "concept_metta"
+    },
+    {
+      "source": "term_karuna_pali",
+      "type": "DEFINES",
+      "target": "concept_karuna"
+    },
+    {
+      "source": "term_dukkha_pali",
+      "type": "RELATED_TO",
+      "target": "term_duhkha_sanskrit"
+    },
+    {
+      "source": "term_anicca_pali",
+      "type": "RELATED_TO",
+      "target": "term_anitya_sanskrit"
+    },
+    {
+      "source": "term_anatta_pali",
+      "type": "RELATED_TO",
+      "target": "term_anatman_sanskrit"
+    },
+    {
+      "source": "term_paticcasamuppada_pali",
+      "type": "RELATED_TO",
+      "target": "term_pratityasamutpada_sanskrit"
+    },
+    {
+      "source": "term_nibbana_pali",
+      "type": "RELATED_TO",
+      "target": "term_nirvana_sanskrit"
+    }
+  ]
+}

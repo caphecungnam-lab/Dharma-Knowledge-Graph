@@ -2,30 +2,32 @@ window.DHARMA_GRAPH = {
   "metadata": {
     "title": "Dharma Knowledge Graph",
     "version": "0.1",
-    "generated_at": "2026-07-02T09:13:10.244781+00:00",
+    "generated_at": "2026-07-02T09:15:26.058362+00:00",
     "source_files": [
       "data/seeds/concepts.json",
       "data/seeds/core.json",
-      "data/seeds/dhammapada.json"
+      "data/seeds/dhammapada.json",
+      "data/seeds/terms.json"
     ]
   },
   "summary": {
-    "node_count": 48,
-    "relationship_count": 61,
+    "node_count": 63,
+    "relationship_count": 81,
     "node_type_counts": {
       "Citation": 10,
       "Concept": 33,
       "Person": 1,
       "School": 2,
+      "Term": 15,
       "Text": 2
     },
     "relationship_type_counts": {
       "AUTHORED_BY": 1,
       "BELONGS_TO_SCHOOL": 2,
       "CITES": 10,
-      "DEFINES": 7,
+      "DEFINES": 22,
       "MENTIONS": 28,
-      "RELATED_TO": 13
+      "RELATED_TO": 18
     }
   },
   "nodes": [
@@ -467,6 +469,171 @@ window.DHARMA_GRAPH = {
       "source_file": "data/seeds/core.json"
     },
     {
+      "id": "term_anatman_sanskrit",
+      "type": "Term",
+      "name": "anatman",
+      "language": "Sanskrit",
+      "script": "Latin",
+      "transliteration": "anatman",
+      "translation": "not-self; no self",
+      "notes": "Sanskrit form corresponding to Pali anatta.",
+      "source_file": "data/seeds/terms.json"
+    },
+    {
+      "id": "term_anatta_pali",
+      "type": "Term",
+      "name": "anatta",
+      "language": "Pali",
+      "script": "Latin",
+      "transliteration": "anatta",
+      "translation": "not-self",
+      "notes": "Pali form used for the doctrine of not-self.",
+      "source_file": "data/seeds/terms.json"
+    },
+    {
+      "id": "term_anicca_pali",
+      "type": "Term",
+      "name": "anicca",
+      "language": "Pali",
+      "script": "Latin",
+      "transliteration": "anicca",
+      "translation": "impermanent",
+      "notes": "Pali form used for impermanence.",
+      "source_file": "data/seeds/terms.json"
+    },
+    {
+      "id": "term_anitya_sanskrit",
+      "type": "Term",
+      "name": "anitya",
+      "language": "Sanskrit",
+      "script": "Latin",
+      "transliteration": "anitya",
+      "translation": "impermanent",
+      "notes": "Sanskrit form used for impermanence.",
+      "source_file": "data/seeds/terms.json"
+    },
+    {
+      "id": "term_appamada_pali",
+      "type": "Term",
+      "name": "appamada",
+      "language": "Pali",
+      "script": "Latin",
+      "transliteration": "appamada",
+      "translation": "heedfulness; diligence",
+      "notes": "A central practice quality highlighted in the Dhammapada.",
+      "source_file": "data/seeds/terms.json"
+    },
+    {
+      "id": "term_citta_pali",
+      "type": "Term",
+      "name": "citta",
+      "language": "Pali",
+      "script": "Latin",
+      "transliteration": "citta",
+      "translation": "mind; heart",
+      "notes": "A term for mind, heart, or mental orientation.",
+      "source_file": "data/seeds/terms.json"
+    },
+    {
+      "id": "term_duhkha_sanskrit",
+      "type": "Term",
+      "name": "duhkha",
+      "language": "Sanskrit",
+      "script": "Latin",
+      "transliteration": "duhkha",
+      "translation": "suffering; unsatisfactoriness",
+      "notes": "Sanskrit cognate of Pali dukkha.",
+      "source_file": "data/seeds/terms.json"
+    },
+    {
+      "id": "term_dukkha_pali",
+      "type": "Term",
+      "name": "dukkha",
+      "language": "Pali",
+      "script": "Latin",
+      "transliteration": "dukkha",
+      "translation": "suffering; unsatisfactoriness; stress",
+      "notes": "A core Pali term in the analysis of conditioned experience.",
+      "source_file": "data/seeds/terms.json"
+    },
+    {
+      "id": "term_karuna_pali",
+      "type": "Term",
+      "name": "karuna",
+      "language": "Pali",
+      "script": "Latin",
+      "transliteration": "karuna",
+      "translation": "compassion",
+      "notes": "Pali and Sanskrit term for compassion.",
+      "source_file": "data/seeds/terms.json"
+    },
+    {
+      "id": "term_metta_pali",
+      "type": "Term",
+      "name": "metta",
+      "language": "Pali",
+      "script": "Latin",
+      "transliteration": "metta",
+      "translation": "loving-kindness",
+      "notes": "Pali term for loving-kindness.",
+      "source_file": "data/seeds/terms.json"
+    },
+    {
+      "id": "term_nibbana_pali",
+      "type": "Term",
+      "name": "nibbana",
+      "language": "Pali",
+      "script": "Latin",
+      "transliteration": "nibbana",
+      "translation": "liberation; extinguishing",
+      "notes": "Pali term commonly rendered as nirvana.",
+      "source_file": "data/seeds/terms.json"
+    },
+    {
+      "id": "term_nirvana_sanskrit",
+      "type": "Term",
+      "name": "nirvana",
+      "language": "Sanskrit",
+      "script": "Latin",
+      "transliteration": "nirvana",
+      "translation": "liberation; extinguishing",
+      "notes": "Sanskrit form corresponding to Pali nibbana.",
+      "source_file": "data/seeds/terms.json"
+    },
+    {
+      "id": "term_paticcasamuppada_pali",
+      "type": "Term",
+      "name": "paticcasamuppada",
+      "language": "Pali",
+      "script": "Latin",
+      "transliteration": "paticcasamuppada",
+      "translation": "dependent arising",
+      "notes": "Pali term for dependent arising.",
+      "source_file": "data/seeds/terms.json"
+    },
+    {
+      "id": "term_pratityasamutpada_sanskrit",
+      "type": "Term",
+      "name": "pratityasamutpada",
+      "language": "Sanskrit",
+      "script": "Latin",
+      "transliteration": "pratityasamutpada",
+      "translation": "dependent arising",
+      "notes": "Sanskrit term for dependent arising.",
+      "source_file": "data/seeds/terms.json"
+    },
+    {
+      "id": "term_sunyata_sanskrit",
+      "type": "Term",
+      "name": "sunyata",
+      "language": "Sanskrit",
+      "script": "Latin",
+      "transliteration": "sunyata",
+      "translation": "emptiness",
+      "notes": "A key Mahayana term, especially important in Madhyamaka contexts.",
+      "source_file": "data/seeds/terms.json"
+    },
+    {
       "id": "text_dhammapada",
       "type": "Text",
       "name": "Dhammapada",
@@ -605,6 +772,96 @@ window.DHARMA_GRAPH = {
       "type": "DEFINES",
       "target": "concept_dukkha",
       "source_file": "data/seeds/concepts.json"
+    },
+    {
+      "source": "term_anatman_sanskrit",
+      "type": "DEFINES",
+      "target": "concept_anatta",
+      "source_file": "data/seeds/terms.json"
+    },
+    {
+      "source": "term_anatta_pali",
+      "type": "DEFINES",
+      "target": "concept_anatta",
+      "source_file": "data/seeds/terms.json"
+    },
+    {
+      "source": "term_anicca_pali",
+      "type": "DEFINES",
+      "target": "concept_anicca",
+      "source_file": "data/seeds/terms.json"
+    },
+    {
+      "source": "term_anitya_sanskrit",
+      "type": "DEFINES",
+      "target": "concept_anicca",
+      "source_file": "data/seeds/terms.json"
+    },
+    {
+      "source": "term_appamada_pali",
+      "type": "DEFINES",
+      "target": "concept_appamada",
+      "source_file": "data/seeds/terms.json"
+    },
+    {
+      "source": "term_citta_pali",
+      "type": "DEFINES",
+      "target": "concept_citta",
+      "source_file": "data/seeds/terms.json"
+    },
+    {
+      "source": "term_duhkha_sanskrit",
+      "type": "DEFINES",
+      "target": "concept_dukkha",
+      "source_file": "data/seeds/terms.json"
+    },
+    {
+      "source": "term_dukkha_pali",
+      "type": "DEFINES",
+      "target": "concept_dukkha",
+      "source_file": "data/seeds/terms.json"
+    },
+    {
+      "source": "term_karuna_pali",
+      "type": "DEFINES",
+      "target": "concept_karuna",
+      "source_file": "data/seeds/terms.json"
+    },
+    {
+      "source": "term_metta_pali",
+      "type": "DEFINES",
+      "target": "concept_metta",
+      "source_file": "data/seeds/terms.json"
+    },
+    {
+      "source": "term_nibbana_pali",
+      "type": "DEFINES",
+      "target": "concept_nirvana",
+      "source_file": "data/seeds/terms.json"
+    },
+    {
+      "source": "term_nirvana_sanskrit",
+      "type": "DEFINES",
+      "target": "concept_nirvana",
+      "source_file": "data/seeds/terms.json"
+    },
+    {
+      "source": "term_paticcasamuppada_pali",
+      "type": "DEFINES",
+      "target": "concept_pratityasamutpada",
+      "source_file": "data/seeds/terms.json"
+    },
+    {
+      "source": "term_pratityasamutpada_sanskrit",
+      "type": "DEFINES",
+      "target": "concept_pratityasamutpada",
+      "source_file": "data/seeds/terms.json"
+    },
+    {
+      "source": "term_sunyata_sanskrit",
+      "type": "DEFINES",
+      "target": "concept_sunyata",
+      "source_file": "data/seeds/terms.json"
     },
     {
       "source": "citation_dhammapada_1",
@@ -851,6 +1108,36 @@ window.DHARMA_GRAPH = {
       "type": "RELATED_TO",
       "target": "concept_two_truths",
       "source_file": "data/seeds/concepts.json"
+    },
+    {
+      "source": "term_anatta_pali",
+      "type": "RELATED_TO",
+      "target": "term_anatman_sanskrit",
+      "source_file": "data/seeds/terms.json"
+    },
+    {
+      "source": "term_anicca_pali",
+      "type": "RELATED_TO",
+      "target": "term_anitya_sanskrit",
+      "source_file": "data/seeds/terms.json"
+    },
+    {
+      "source": "term_dukkha_pali",
+      "type": "RELATED_TO",
+      "target": "term_duhkha_sanskrit",
+      "source_file": "data/seeds/terms.json"
+    },
+    {
+      "source": "term_nibbana_pali",
+      "type": "RELATED_TO",
+      "target": "term_nirvana_sanskrit",
+      "source_file": "data/seeds/terms.json"
+    },
+    {
+      "source": "term_paticcasamuppada_pali",
+      "type": "RELATED_TO",
+      "target": "term_pratityasamutpada_sanskrit",
+      "source_file": "data/seeds/terms.json"
     }
   ]
 };

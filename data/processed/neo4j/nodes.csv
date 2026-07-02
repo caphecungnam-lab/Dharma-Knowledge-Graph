@@ -45,5 +45,20 @@ concept_upekkha,Concept,Upekkha,Equanimity; balanced presence toward changing ex
 person_nagarjuna,Person,Nagarjuna,A major Buddhist philosopher associated with Madhyamaka.,,,,Mahayana,,data/seeds/core.json
 school_madhyamaka,School,Madhyamaka,A Mahayana philosophical school associated with analysis of emptiness.,,,,,,data/seeds/core.json
 school_theravada,School,Theravada,A Buddhist tradition preserving the Pali Canon.,,,,,,data/seeds/core.json
+term_anatman_sanskrit,Term,anatman,,,,,,Sanskrit,data/seeds/terms.json
+term_anatta_pali,Term,anatta,,,,,,Pali,data/seeds/terms.json
+term_anicca_pali,Term,anicca,,,,,,Pali,data/seeds/terms.json
+term_anitya_sanskrit,Term,anitya,,,,,,Sanskrit,data/seeds/terms.json
+term_appamada_pali,Term,appamada,,,,,,Pali,data/seeds/terms.json
+term_citta_pali,Term,citta,,,,,,Pali,data/seeds/terms.json
+term_duhkha_sanskrit,Term,duhkha,,,,,,Sanskrit,data/seeds/terms.json
+term_dukkha_pali,Term,dukkha,,,,,,Pali,data/seeds/terms.json
+term_karuna_pali,Term,karuna,,,,,,Pali,data/seeds/terms.json
+term_metta_pali,Term,metta,,,,,,Pali,data/seeds/terms.json
+term_nibbana_pali,Term,nibbana,,,,,,Pali,data/seeds/terms.json
+term_nirvana_sanskrit,Term,nirvana,,,,,,Sanskrit,data/seeds/terms.json
+term_paticcasamuppada_pali,Term,paticcasamuppada,,,,,,Pali,data/seeds/terms.json
+term_pratityasamutpada_sanskrit,Term,pratityasamutpada,,,,,,Sanskrit,data/seeds/terms.json
+term_sunyata_sanskrit,Term,sunyata,,,,,,Sanskrit,data/seeds/terms.json
 text_dhammapada,Text,Dhammapada,"A collection of verses from the Pali Canon, traditionally arranged into 26 chapters.",,,,Theravada,Pali,data/seeds/dhammapada.json
 text_mulamadhyamakakarika,Text,Mulamadhyamakakarika,A foundational Madhyamaka text attributed to Nagarjuna.,,,,Mahayana,Sanskrit,data/seeds/core.json
