@@ -85,7 +85,7 @@ def build_report(graph: dict) -> str:
                 ["Relationships", str(graph["summary"]["relationship_count"])],
                 ["Source files", str(len(graph["metadata"]["source_files"]))],
                 ["Graph version", graph["metadata"]["version"]],
-                ["Generated at", graph["metadata"]["generated_at"]],
+                ["Content hash", graph["metadata"]["content_hash"]],
             ],
         ),
         "",

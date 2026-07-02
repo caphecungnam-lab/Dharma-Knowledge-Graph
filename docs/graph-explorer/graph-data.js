@@ -2,7 +2,7 @@ window.DHARMA_GRAPH = {
   "metadata": {
     "title": "Dharma Knowledge Graph",
     "version": "0.1",
-    "generated_at": "2026-07-02T10:02:24.101577+00:00",
+    "content_hash": "894684fd8a7fb1e9b57850490dbe53e6c55ff9d4a7534755a989960d8ae76e12",
     "source_files": [
       "data/seeds/concepts.json",
       "data/seeds/core.json",

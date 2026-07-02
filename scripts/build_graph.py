@@ -4,8 +4,8 @@
 from __future__ import annotations
 
 import json
+import hashlib
 from collections import Counter
-from datetime import datetime, timezone
 from pathlib import Path
 
 
@@ -22,6 +22,20 @@ def read_seed_files() -> list[tuple[Path, dict]]:
         (path, json.loads(path.read_text(encoding="utf-8")))
         for path in seed_files
     ]
+
+
+def source_content_hash(seed_files: list[tuple[Path, dict]]) -> str:
+    digest = hashlib.sha256()
+
+    for path, data in seed_files:
+        digest.update(str(path.relative_to(ROOT)).encode("utf-8"))
+        digest.update(b"\0")
+        digest.update(
+            json.dumps(data, sort_keys=True, ensure_ascii=False).encode("utf-8")
+        )
+        digest.update(b"\0")
+
+    return digest.hexdigest()
 
 
 def build_graph() -> dict:
@@ -51,17 +65,12 @@ def build_graph() -> dict:
 
     node_type_counts = Counter(node["type"] for node in node_list)
     relationship_type_counts = Counter(rel["type"] for rel in relationship_list)
-    latest_source_mtime = max(path.stat().st_mtime for path, _data in seed_files)
-    generated_at = datetime.fromtimestamp(
-        latest_source_mtime,
-        timezone.utc,
-    ).isoformat()
 
     return {
         "metadata": {
             "title": "Dharma Knowledge Graph",
             "version": "0.1",
-            "generated_at": generated_at,
+            "content_hash": source_content_hash(seed_files),
             "source_files": source_files,
         },
         "summary": {
