@@ -86,3 +86,14 @@ This writes:
 - `docs/graph-explorer/graph-data.js`
 
 Open `docs/graph-explorer/index.html` in a browser to inspect the graph.
+
+## Write Graph Report
+
+Run:
+
+```bash
+python3 scripts/write_graph_report.py
+```
+
+This writes `docs/reports/graph-summary.md`, a readable summary of graph size,
+node types, relationship types, highly connected nodes, and isolated nodes.

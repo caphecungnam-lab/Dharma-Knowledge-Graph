@@ -27,8 +27,9 @@ def build_graph() -> dict:
     nodes: dict[str, dict] = {}
     relationships: list[dict] = []
     source_files: list[str] = []
+    seed_files = read_seed_files()
 
-    for path, data in read_seed_files():
+    for path, data in seed_files:
         source_files.append(str(path.relative_to(ROOT)))
 
         for node in data["nodes"]:
@@ -49,12 +50,17 @@ def build_graph() -> dict:
 
     node_type_counts = Counter(node["type"] for node in node_list)
     relationship_type_counts = Counter(rel["type"] for rel in relationship_list)
+    latest_source_mtime = max(path.stat().st_mtime for path, _data in seed_files)
+    generated_at = datetime.fromtimestamp(
+        latest_source_mtime,
+        timezone.utc,
+    ).isoformat()
 
     return {
         "metadata": {
             "title": "Dharma Knowledge Graph",
             "version": "0.1",
-            "generated_at": datetime.now(timezone.utc).isoformat(),
+            "generated_at": generated_at,
             "source_files": source_files,
         },
         "summary": {
