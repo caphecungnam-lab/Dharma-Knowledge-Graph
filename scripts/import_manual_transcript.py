@@ -9,6 +9,7 @@ import re
 from pathlib import Path
 from typing import Any
 
+
 SOURCE_ID = "source_youtube_fisp_arohzy8"
 DOCUMENT_ID = "document_transcript_fisp_arohzy8"
 CITATION_ID = "citation_youtube_fisp_arohzy8"
@@ -98,8 +99,10 @@ def validate_transcript_data(data: dict[str, Any]) -> None:
 
 def evidence_id_prefix(video_id: str) -> str:
     normalized = re.sub(r"[^a-z0-9]+", "_", video_id.lower()).strip("_")
+
     if len(normalized) > 4 and "_" not in normalized:
         return f"{normalized[:4]}_{normalized[4:]}"
+
     return normalized
 
 
@@ -188,7 +191,11 @@ def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
         description="Convert manual transcript JSON into Evidence seed JSON."
     )
-    parser.add_argument("input", type=Path, help="Manual transcript JSON file")
+    parser.add_argument(
+        "input",
+        type=Path,
+        help="Manual transcript JSON file",
+    )
     parser.add_argument(
         "-o",
         "--output",
@@ -208,6 +215,7 @@ def main() -> int:
         return 1
 
     output = json.dumps(converted, indent=2, ensure_ascii=False) + "\n"
+
     if args.output:
         args.output.parent.mkdir(parents=True, exist_ok=True)
         args.output.write_text(output, encoding="utf-8")

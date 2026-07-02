@@ -6,6 +6,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
+
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
@@ -48,6 +49,7 @@ def write_transcript_file(directory: Path, data: dict) -> Path:
 def assert_import_fails(data: dict, message: str) -> None:
     with tempfile.TemporaryDirectory() as tmp:
         path = write_transcript_file(Path(tmp), data)
+
         try:
             import_transcript_file(path)
         except ManualTranscriptError as exc:
@@ -58,12 +60,15 @@ def assert_import_fails(data: dict, message: str) -> None:
 
 def test_valid_transcript_creates_evidence_node() -> None:
     with tempfile.TemporaryDirectory() as tmp:
-        path = write_transcript_file(Path(tmp), valid_transcript(valid_segment()))
+        path = write_transcript_file(
+            Path(tmp),
+            valid_transcript(valid_segment()),
+        )
         converted = import_transcript_file(path)
 
     assert len(converted["nodes"]) == 1
-    node = converted["nodes"][0]
 
+    node = converted["nodes"][0]
     assert node["id"] == "evidence_fisp_arohzy8_0001"
     assert node["type"] == "Evidence"
     assert node["name"] == "Transcript excerpt 0001 from FISpARohzy8"
@@ -104,35 +109,47 @@ def test_valid_transcript_creates_evidence_node() -> None:
 
 def test_empty_text_is_rejected() -> None:
     segment = valid_segment(text="")
-    assert_import_fails(valid_transcript(segment), "empty text")
+    transcript = valid_transcript(segment)
+
+    assert_import_fails(transcript, "empty text")
 
 
 def test_missing_start_time_is_rejected() -> None:
     segment = valid_segment()
     del segment["start_time"]
-    assert_import_fails(valid_transcript(segment), "missing start_time")
+    transcript = valid_transcript(segment)
+
+    assert_import_fails(transcript, "missing start_time")
 
 
 def test_missing_end_time_is_rejected() -> None:
     segment = valid_segment()
     del segment["end_time"]
-    assert_import_fails(valid_transcript(segment), "missing end_time")
+    transcript = valid_transcript(segment)
+
+    assert_import_fails(transcript, "missing end_time")
 
 
 def test_missing_review_status_is_rejected() -> None:
     segment = valid_segment()
     del segment["review_status"]
-    assert_import_fails(valid_transcript(segment), "missing review_status")
+    transcript = valid_transcript(segment)
+
+    assert_import_fails(transcript, "missing review_status")
 
 
 def test_multiple_segments_generate_stable_sequential_ids() -> None:
     first = valid_segment(text="First non-empty test fixture.")
+
     second = valid_segment(text="Second non-empty test fixture.")
     second["start_time"] = "00:00:31"
     second["end_time"] = "00:01:00"
 
     with tempfile.TemporaryDirectory() as tmp:
-        path = write_transcript_file(Path(tmp), valid_transcript(first, second))
+        path = write_transcript_file(
+            Path(tmp),
+            valid_transcript(first, second),
+        )
         converted = import_transcript_file(path)
 
     assert [node["id"] for node in converted["nodes"]] == [
@@ -149,7 +166,9 @@ def load_tests(
     del loader, tests, pattern
 
     suite = unittest.TestSuite()
+
     for name, value in sorted(globals().items()):
         if name.startswith("test_") and callable(value):
             suite.addTest(unittest.FunctionTestCase(value))
+
     return suite
