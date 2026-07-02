@@ -103,6 +103,8 @@ You can also run the main project checks with:
 make check
 ```
 
+The check target includes unit tests for the seed validator.
+
 ## Build Graph Explorer
 
 Run:
