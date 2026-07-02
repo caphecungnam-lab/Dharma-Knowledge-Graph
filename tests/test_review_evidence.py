@@ -12,6 +12,19 @@ sys.path.insert(0, str(ROOT / "scripts"))
 from review_evidence import build_review_queue, create_review_queue  # noqa: E402
 
 
+def reject_duplicate_keys(pairs: list[tuple[str, object]]) -> dict:
+    seen: set[str] = set()
+    output = {}
+
+    for key, value in pairs:
+        if key in seen:
+            raise ValueError(f"Duplicate JSON key: {key}")
+        seen.add(key)
+        output[key] = value
+
+    return output
+
+
 def sample_payload() -> dict:
     return {
         "nodes": [
@@ -66,11 +79,19 @@ class ReviewEvidenceTest(unittest.TestCase):
         queue = build_review_queue(sample_payload())
         node = queue["nodes"][0]
 
+        self.assertEqual(node["original_review_status"], "unreviewed")
         self.assertEqual(node["reviewed_evidence_text"], node["evidence_text"])
         self.assertEqual(node["reviewer"], "")
         self.assertEqual(node["reviewed_at"], "")
         self.assertEqual(node["review_notes"], "")
         self.assertEqual(node["review_status"], "unreviewed")
+
+    def test_review_status_can_be_human_reviewed(self) -> None:
+        queue = build_review_queue(sample_payload(), review_status="human_reviewed")
+        node = queue["nodes"][0]
+
+        self.assertEqual(node["original_review_status"], "unreviewed")
+        self.assertEqual(node["review_status"], "human_reviewed")
 
     def test_does_not_mutate_source_evidence_file(self) -> None:
         payload = sample_payload()
@@ -133,6 +154,29 @@ class ReviewEvidenceTest(unittest.TestCase):
                 written["nodes"][0]["reviewed_evidence_text"],
                 "Tiếp tục bài kinh 66",
             )
+
+    def test_written_review_queue_has_no_duplicate_review_status_keys(self) -> None:
+        payload = sample_payload()
+
+        with tempfile.TemporaryDirectory() as tmpdir:
+            input_path = Path(tmpdir) / "source.json"
+            output_path = Path(tmpdir) / "review_queue.json"
+            input_path.write_text(
+                json.dumps(payload, indent=2, ensure_ascii=False) + "\n",
+                encoding="utf-8",
+            )
+
+            create_review_queue(
+                input_path,
+                output_path,
+                review_status="human_reviewed",
+            )
+
+            raw_output = output_path.read_text(encoding="utf-8")
+            parsed = json.loads(raw_output, object_pairs_hook=reject_duplicate_keys)
+
+            self.assertEqual(parsed["nodes"][0]["original_review_status"], "unreviewed")
+            self.assertEqual(parsed["nodes"][0]["review_status"], "human_reviewed")
 
 
 if __name__ == "__main__":

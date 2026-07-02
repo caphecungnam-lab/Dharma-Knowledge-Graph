@@ -30,26 +30,33 @@ def write_json(path: Path, payload: dict[str, Any]) -> None:
     )
 
 
-def build_review_node(node: dict[str, Any]) -> dict[str, Any]:
+def build_review_node(
+    node: dict[str, Any],
+    review_status: str = "unreviewed",
+) -> dict[str, Any]:
     review_node = deepcopy(node)
     evidence_text = str(node.get("evidence_text", ""))
+    original_review_status = str(node.get("review_status", ""))
 
+    review_node.pop("review_status", None)
+    review_node["original_review_status"] = original_review_status
     review_node["original_evidence_text"] = evidence_text
     review_node["reviewed_evidence_text"] = evidence_text
     review_node["reviewer"] = ""
     review_node["reviewed_at"] = ""
     review_node["review_notes"] = ""
-    review_node["review_status"] = "unreviewed"
+    review_node["review_status"] = review_status
 
     return review_node
 
 
 def build_review_queue(
     source_payload: dict[str, Any],
+    review_status: str = "unreviewed",
 ) -> dict[str, list[dict[str, Any]]]:
     nodes = source_payload.get("nodes", [])
     evidence_nodes = [
-        build_review_node(node)
+        build_review_node(node, review_status=review_status)
         for node in nodes
         if isinstance(node, dict) and node.get("type") == "Evidence"
     ]
@@ -60,9 +67,10 @@ def build_review_queue(
 def create_review_queue(
     input_path: Path = DEFAULT_INPUT_PATH,
     output_path: Path = DEFAULT_OUTPUT_PATH,
+    review_status: str = "unreviewed",
 ) -> dict[str, list[dict[str, Any]]]:
     source_payload = load_json(input_path)
-    review_queue = build_review_queue(source_payload)
+    review_queue = build_review_queue(source_payload, review_status=review_status)
     write_json(output_path, review_queue)
     return review_queue
 
@@ -84,12 +92,21 @@ def parse_args() -> argparse.Namespace:
         default=DEFAULT_OUTPUT_PATH,
         help="Output review queue JSON file.",
     )
+    parser.add_argument(
+        "--review-status",
+        default="unreviewed",
+        help="Review workflow status to set on queued Evidence.",
+    )
     return parser.parse_args()
 
 
 def main() -> int:
     args = parse_args()
-    review_queue = create_review_queue(args.input, args.output)
+    review_queue = create_review_queue(
+        args.input,
+        args.output,
+        review_status=args.review_status,
+    )
     print(f"Wrote {args.output} with {len(review_queue['nodes'])} Evidence node(s).")
     return 0
 
