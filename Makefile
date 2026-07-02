@@ -1,4 +1,4 @@
-.PHONY: all validate build report export-neo4j export-rdf test check clean
+.PHONY: all validate build report quality export-neo4j export-rdf test check clean
 
 all: check
 
@@ -11,6 +11,9 @@ build:
 report: build
 	python3 scripts/write_graph_report.py
 
+quality: build
+	python3 scripts/write_quality_report.py
+
 export-neo4j: build
 	python3 scripts/export_neo4j_csv.py
 
@@ -20,8 +23,8 @@ export-rdf: build
 test:
 	python3 -m unittest discover -s tests
 
-check: validate report export-neo4j export-rdf test
-	python3 -m py_compile scripts/build_graph.py scripts/validate_seed_data.py scripts/write_graph_report.py scripts/export_neo4j_csv.py scripts/export_rdf_turtle.py
+check: validate report quality export-neo4j export-rdf test
+	python3 -m py_compile scripts/build_graph.py scripts/validate_seed_data.py scripts/write_graph_report.py scripts/write_quality_report.py scripts/export_neo4j_csv.py scripts/export_rdf_turtle.py
 
 clean:
 	rm -rf scripts/__pycache__ tests/__pycache__
