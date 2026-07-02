@@ -33,6 +33,9 @@ This keeps early editing easy while leaving room to export later to:
 The initial ontology is documented in
 `docs/ontology/ontology-v0.1.md`.
 
+The seed data contract is documented in
+`docs/ontology/data-contract-v0.1.md`.
+
 Core node types:
 
 - `Text`

@@ -22,6 +22,21 @@ TYPE_PREFIXES = {
     "Term": "term_",
     "Text": "text_",
 }
+KNOWN_NODE_TYPES = set(TYPE_PREFIXES)
+RELATIONSHIP_TYPE_RULES = {
+    "AUTHORED_BY": ({"Text"}, {"Person"}),
+    "BELONGS_TO_SCHOOL": ({"Concept", "Person", "School", "Text"}, {"School"}),
+    "CITES": ({"Citation", "Text"}, {"Citation"}),
+    "COMMENTS_ON": ({"Citation", "Text"}, {"Concept", "Text"}),
+    "DEFINES": ({"Citation", "Concept", "Term", "Text"}, {"Concept", "Term"}),
+    "LOCATED_IN": ({"Person", "Place", "School", "Text"}, {"Place"}),
+    "MENTIONS": (
+        {"Citation", "Concept", "Text"},
+        {"Concept", "Person", "Place", "School", "Term"},
+    ),
+    "RELATED_TO": (KNOWN_NODE_TYPES, KNOWN_NODE_TYPES),
+    "TRANSLATED_BY": ({"Text"}, {"Person"}),
+}
 
 
 def load_seed_file(path: Path) -> tuple[dict, list[str]]:
@@ -49,6 +64,8 @@ def validate_seed_files(seed_files: list[Path]) -> list[str]:
     errors: list[str] = []
     loaded_files: list[tuple[Path, dict]] = []
     node_locations: dict[str, Path] = {}
+    node_types: dict[str, str] = {}
+    relationship_locations: dict[tuple[str, str, str], Path] = {}
 
     for path in seed_files:
         data, load_errors = load_seed_file(path)
@@ -86,10 +103,14 @@ def validate_seed_files(seed_files: list[Path]) -> list[str]:
                         f"(already in {node_locations[node_id]})"
                     )
                 node_locations[node_id] = path
+                if isinstance(node_type, str):
+                    node_types[node_id] = node_type
             else:
                 errors.append(f"{path}: node {index} has non-string id")
 
-            if isinstance(node_type, str) and node_type not in TYPE_PREFIXES:
+            if not isinstance(node_type, str):
+                errors.append(f"{path}: node {index} has non-string type")
+            elif node_type not in TYPE_PREFIXES:
                 errors.append(f"{path}: node {index} has unknown type: {node_type}")
 
     for path, data in loaded_files:
@@ -106,11 +127,50 @@ def validate_seed_files(seed_files: list[Path]) -> list[str]:
                 continue
 
             source = relationship["source"]
+            relationship_type = relationship["type"]
             target = relationship["target"]
             if source not in node_locations:
                 errors.append(f"{path}: relationship {index} has unknown source: {source}")
             if target not in node_locations:
                 errors.append(f"{path}: relationship {index} has unknown target: {target}")
+
+            if not isinstance(relationship_type, str):
+                errors.append(f"{path}: relationship {index} has non-string type")
+                continue
+
+            if relationship_type not in RELATIONSHIP_TYPE_RULES:
+                errors.append(
+                    f"{path}: relationship {index} has unknown type: "
+                    f"{relationship_type}"
+                )
+                continue
+
+            relationship_key = (source, relationship_type, target)
+            if relationship_key in relationship_locations:
+                errors.append(
+                    f"{path}: duplicate relationship {relationship_key} "
+                    f"(already in {relationship_locations[relationship_key]})"
+                )
+            relationship_locations[relationship_key] = path
+
+            if source not in node_types or target not in node_types:
+                continue
+
+            allowed_source_types, allowed_target_types = RELATIONSHIP_TYPE_RULES[
+                relationship_type
+            ]
+            source_type = node_types[source]
+            target_type = node_types[target]
+            if source_type not in allowed_source_types:
+                errors.append(
+                    f"{path}: relationship {index} type '{relationship_type}' "
+                    f"does not allow source type '{source_type}'"
+                )
+            if target_type not in allowed_target_types:
+                errors.append(
+                    f"{path}: relationship {index} type '{relationship_type}' "
+                    f"does not allow target type '{target_type}'"
+                )
 
     return errors
 
