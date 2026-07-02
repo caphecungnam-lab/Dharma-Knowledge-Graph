@@ -6,17 +6,17 @@ Generated from `data/processed/graph.json`.
 
 | Metric | Value |
 | --- | --- |
-| Nodes | 81 |
-| Relationships | 126 |
+| Nodes | 84 |
+| Relationships | 139 |
 | Source files | 6 |
 | Graph version | 0.1 |
-| Generated at | 2026-07-02T09:28:10.039890+00:00 |
+| Generated at | 2026-07-02T09:49:05.692166+00:00 |
 
 ## Node Types
 
 | Type | Count |
 | --- | --- |
-| Citation | 14 |
+| Citation | 17 |
 | Concept | 37 |
 | Person | 1 |
 | Place | 6 |
@@ -30,10 +30,10 @@ Generated from `data/processed/graph.json`.
 | --- | --- |
 | AUTHORED_BY | 1 |
 | BELONGS_TO_SCHOOL | 13 |
-| CITES | 14 |
+| CITES | 17 |
 | DEFINES | 22 |
 | LOCATED_IN | 4 |
-| MENTIONS | 46 |
+| MENTIONS | 56 |
 | RELATED_TO | 26 |
 
 ## Most Connected Nodes
@@ -42,14 +42,14 @@ Generated from `data/processed/graph.json`.
 | --- | --- | --- |
 | Dhammapada | Text | 18 |
 | Heart Sutra | Text | 11 |
+| Pratityasamutpada | Concept | 10 |
 | Mahayana | School | 9 |
-| Sunyata | Concept | 7 |
-| Pratityasamutpada | Concept | 7 |
+| Sunyata | Concept | 9 |
+| Mulamadhyamakakarika | Text | 8 |
 | Prajnaparamita | Concept | 6 |
 | Citta | Concept | 6 |
+| Nirvana | Concept | 6 |
 | Four Noble Truths | Concept | 6 |
-| Heart Sutra Dharmas Passage | Citation | 5 |
-| Anatta | Concept | 5 |
 
 ## Isolated Nodes
 

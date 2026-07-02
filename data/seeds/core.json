@@ -41,6 +41,30 @@
       "language": "Sanskrit",
       "tradition": "Mahayana",
       "description": "A foundational Madhyamaka text attributed to Nagarjuna."
+    },
+    {
+      "id": "citation_mmkv_24_18",
+      "type": "Citation",
+      "name": "Mulamadhyamakakarika 24.18",
+      "source": "Mulamadhyamakakarika",
+      "locator": "Chapter 24, verse 18",
+      "notes": "Pilot citation for dependent designation, emptiness, and the middle way."
+    },
+    {
+      "id": "citation_mmkv_24_19",
+      "type": "Citation",
+      "name": "Mulamadhyamakakarika 24.19",
+      "source": "Mulamadhyamakakarika",
+      "locator": "Chapter 24, verse 19",
+      "notes": "Pilot citation for the relation between dependent arising and emptiness."
+    },
+    {
+      "id": "citation_mmkv_25_19",
+      "type": "Citation",
+      "name": "Mulamadhyamakakarika 25.19",
+      "source": "Mulamadhyamakakarika",
+      "locator": "Chapter 25, verse 19",
+      "notes": "Pilot citation for the relation between samsara and nirvana in Madhyamaka analysis."
     }
   ],
   "relationships": [
@@ -58,6 +82,71 @@
       "source": "text_mulamadhyamakakarika",
       "type": "MENTIONS",
       "target": "concept_sunyata"
+    },
+    {
+      "source": "text_mulamadhyamakakarika",
+      "type": "MENTIONS",
+      "target": "concept_two_truths"
+    },
+    {
+      "source": "text_mulamadhyamakakarika",
+      "type": "MENTIONS",
+      "target": "concept_pratityasamutpada"
+    },
+    {
+      "source": "text_mulamadhyamakakarika",
+      "type": "CITES",
+      "target": "citation_mmkv_24_18"
+    },
+    {
+      "source": "text_mulamadhyamakakarika",
+      "type": "CITES",
+      "target": "citation_mmkv_24_19"
+    },
+    {
+      "source": "text_mulamadhyamakakarika",
+      "type": "CITES",
+      "target": "citation_mmkv_25_19"
+    },
+    {
+      "source": "citation_mmkv_24_18",
+      "type": "MENTIONS",
+      "target": "concept_pratityasamutpada"
+    },
+    {
+      "source": "citation_mmkv_24_18",
+      "type": "MENTIONS",
+      "target": "concept_sunyata"
+    },
+    {
+      "source": "citation_mmkv_24_18",
+      "type": "MENTIONS",
+      "target": "concept_middle_way"
+    },
+    {
+      "source": "citation_mmkv_24_19",
+      "type": "MENTIONS",
+      "target": "concept_pratityasamutpada"
+    },
+    {
+      "source": "citation_mmkv_24_19",
+      "type": "MENTIONS",
+      "target": "concept_sunyata"
+    },
+    {
+      "source": "citation_mmkv_24_19",
+      "type": "MENTIONS",
+      "target": "concept_two_truths"
+    },
+    {
+      "source": "citation_mmkv_25_19",
+      "type": "MENTIONS",
+      "target": "concept_samsara"
+    },
+    {
+      "source": "citation_mmkv_25_19",
+      "type": "MENTIONS",
+      "target": "concept_nirvana"
     }
   ]
 }

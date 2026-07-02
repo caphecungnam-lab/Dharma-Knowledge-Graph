@@ -13,6 +13,9 @@ citation_heart_sutra_dharmas,Citation,Heart Sutra Dharmas Passage,,,,,,,data/see
 citation_heart_sutra_mantra,Citation,Heart Sutra Mantra Passage,,,,,,,data/seeds/heart_sutra.json
 citation_heart_sutra_opening,Citation,Heart Sutra Opening,,,,,,,data/seeds/heart_sutra.json
 citation_heart_sutra_skandhas,Citation,Heart Sutra Skandhas Passage,,,,,,,data/seeds/heart_sutra.json
+citation_mmkv_24_18,Citation,Mulamadhyamakakarika 24.18,,,,,,,data/seeds/core.json
+citation_mmkv_24_19,Citation,Mulamadhyamakakarika 24.19,,,,,,,data/seeds/core.json
+citation_mmkv_25_19,Citation,Mulamadhyamakakarika 25.19,,,,,,,data/seeds/core.json
 concept_ahimsa,Concept,Ahimsa,Non-harming; an ethical orientation of restraint from violence and injury.,ethics,avihimsa,ahimsa,,,data/seeds/dhammapada.json
 concept_anatta,Concept,Anatta,"Not-self; the absence of a permanent, independent self in conditioned phenomena.",doctrine,anatta,anatman,,,data/seeds/concepts.json
 concept_anicca,Concept,Anicca,Impermanence; the conditioned nature of phenomena as changing and unstable.,doctrine,anicca,anitya,,,data/seeds/concepts.json

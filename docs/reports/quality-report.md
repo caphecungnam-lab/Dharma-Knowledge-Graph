@@ -6,15 +6,15 @@ Generated from `data/processed/graph.json`.
 
 | Metric | Value |
 | --- | --- |
-| Nodes | 81 |
-| Relationships | 126 |
+| Nodes | 84 |
+| Relationships | 139 |
 | Concepts | 37 |
 | Terms | 15 |
 | Concepts with term definitions | 10 |
 | Concepts without term definitions | 27 |
 | Texts | 3 |
-| Texts without citations | 1 |
-| Citations | 14 |
+| Texts without citations | 0 |
+| Citations | 17 |
 | Citations without concept mentions | 0 |
 | Isolated nodes | 0 |
 
@@ -52,9 +52,7 @@ Generated from `data/processed/graph.json`.
 
 ## Texts Without Citations
 
-| Text | ID |
-| --- | --- |
-| Mulamadhyamakakarika | text_mulamadhyamakakarika |
+Every text has at least one citation.
 
 ## Citations Without Concept Mentions
 

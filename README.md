@@ -74,6 +74,10 @@ The Mahayana text pilot is in `data/seeds/heart_sutra.json`. It adds the Heart
 Sutra, selected citation nodes, and links to emptiness, prajnaparamita, the five
 aggregates, sense bases, elements, and mantra.
 
+`data/seeds/core.json` also includes a small Mulamadhyamakakarika citation
+pilot for Madhyamaka themes such as emptiness, dependent arising, two truths,
+and the middle way.
+
 ## Terms Pilot
 
 The first language-level pilot is in `data/seeds/terms.json`. It adds Pali and

@@ -27,6 +27,9 @@ text_heart_sutra,CITES,citation_heart_sutra_dharmas,data/seeds/heart_sutra.json
 text_heart_sutra,CITES,citation_heart_sutra_mantra,data/seeds/heart_sutra.json
 text_heart_sutra,CITES,citation_heart_sutra_opening,data/seeds/heart_sutra.json
 text_heart_sutra,CITES,citation_heart_sutra_skandhas,data/seeds/heart_sutra.json
+text_mulamadhyamakakarika,CITES,citation_mmkv_24_18,data/seeds/core.json
+text_mulamadhyamakakarika,CITES,citation_mmkv_24_19,data/seeds/core.json
+text_mulamadhyamakakarika,CITES,citation_mmkv_25_19,data/seeds/core.json
 concept_brahmaviharas,DEFINES,concept_karuna,data/seeds/concepts.json
 concept_brahmaviharas,DEFINES,concept_metta,data/seeds/concepts.json
 concept_brahmaviharas,DEFINES,concept_mudita,data/seeds/concepts.json
@@ -80,6 +83,14 @@ citation_heart_sutra_opening,MENTIONS,concept_skandhas,data/seeds/heart_sutra.js
 citation_heart_sutra_skandhas,MENTIONS,concept_form,data/seeds/heart_sutra.json
 citation_heart_sutra_skandhas,MENTIONS,concept_skandhas,data/seeds/heart_sutra.json
 citation_heart_sutra_skandhas,MENTIONS,concept_sunyata,data/seeds/heart_sutra.json
+citation_mmkv_24_18,MENTIONS,concept_middle_way,data/seeds/core.json
+citation_mmkv_24_18,MENTIONS,concept_pratityasamutpada,data/seeds/core.json
+citation_mmkv_24_18,MENTIONS,concept_sunyata,data/seeds/core.json
+citation_mmkv_24_19,MENTIONS,concept_pratityasamutpada,data/seeds/core.json
+citation_mmkv_24_19,MENTIONS,concept_sunyata,data/seeds/core.json
+citation_mmkv_24_19,MENTIONS,concept_two_truths,data/seeds/core.json
+citation_mmkv_25_19,MENTIONS,concept_nirvana,data/seeds/core.json
+citation_mmkv_25_19,MENTIONS,concept_samsara,data/seeds/core.json
 concept_four_noble_truths,MENTIONS,concept_dukkha,data/seeds/concepts.json
 concept_four_noble_truths,MENTIONS,concept_nirvana,data/seeds/concepts.json
 concept_four_noble_truths,MENTIONS,concept_noble_eightfold_path,data/seeds/concepts.json
@@ -98,7 +109,9 @@ text_heart_sutra,MENTIONS,concept_dhatu,data/seeds/heart_sutra.json
 text_heart_sutra,MENTIONS,concept_prajnaparamita,data/seeds/heart_sutra.json
 text_heart_sutra,MENTIONS,concept_skandhas,data/seeds/heart_sutra.json
 text_heart_sutra,MENTIONS,concept_sunyata,data/seeds/heart_sutra.json
+text_mulamadhyamakakarika,MENTIONS,concept_pratityasamutpada,data/seeds/core.json
 text_mulamadhyamakakarika,MENTIONS,concept_sunyata,data/seeds/core.json
+text_mulamadhyamakakarika,MENTIONS,concept_two_truths,data/seeds/core.json
 concept_avalokitesvara,RELATED_TO,concept_karuna,data/seeds/heart_sutra.json
 concept_bodhisattva,RELATED_TO,concept_bodhicitta,data/seeds/concepts.json
 concept_bodhisattva,RELATED_TO,concept_paramita,data/seeds/concepts.json

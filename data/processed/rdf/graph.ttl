@@ -113,6 +113,30 @@ dkge:citation_heart_sutra_skandhas
     dkg:notes "Pilot citation for the relationship between form, the aggregates, and emptiness." ;
     dkg:sourceFile "data/seeds/heart_sutra.json" .
 
+dkge:citation_mmkv_24_18
+    a dkg:Citation ;
+    dkg:name "Mulamadhyamakakarika 24.18" ;
+    dkg:source "Mulamadhyamakakarika" ;
+    dkg:locator "Chapter 24, verse 18" ;
+    dkg:notes "Pilot citation for dependent designation, emptiness, and the middle way." ;
+    dkg:sourceFile "data/seeds/core.json" .
+
+dkge:citation_mmkv_24_19
+    a dkg:Citation ;
+    dkg:name "Mulamadhyamakakarika 24.19" ;
+    dkg:source "Mulamadhyamakakarika" ;
+    dkg:locator "Chapter 24, verse 19" ;
+    dkg:notes "Pilot citation for the relation between dependent arising and emptiness." ;
+    dkg:sourceFile "data/seeds/core.json" .
+
+dkge:citation_mmkv_25_19
+    a dkg:Citation ;
+    dkg:name "Mulamadhyamakakarika 25.19" ;
+    dkg:source "Mulamadhyamakakarika" ;
+    dkg:locator "Chapter 25, verse 19" ;
+    dkg:notes "Pilot citation for the relation between samsara and nirvana in Madhyamaka analysis." ;
+    dkg:sourceFile "data/seeds/core.json" .
+
 dkge:concept_ahimsa
     a dkg:Concept ;
     dkg:name "Ahimsa" ;
@@ -752,6 +776,20 @@ dkge:citation_heart_sutra_skandhas
     dkg:mentions dkge:concept_skandhas ;
     dkg:mentions dkge:concept_sunyata .
 
+dkge:citation_mmkv_24_18
+    dkg:mentions dkge:concept_middle_way ;
+    dkg:mentions dkge:concept_pratityasamutpada ;
+    dkg:mentions dkge:concept_sunyata .
+
+dkge:citation_mmkv_24_19
+    dkg:mentions dkge:concept_pratityasamutpada ;
+    dkg:mentions dkge:concept_sunyata ;
+    dkg:mentions dkge:concept_two_truths .
+
+dkge:citation_mmkv_25_19
+    dkg:mentions dkge:concept_nirvana ;
+    dkg:mentions dkge:concept_samsara .
+
 dkge:concept_avalokitesvara
     dkg:belongsToSchool dkge:school_mahayana ;
     dkg:relatedTo dkge:concept_karuna .
@@ -929,4 +967,9 @@ dkge:text_heart_sutra
 dkge:text_mulamadhyamakakarika
     dkg:authoredBy dkge:person_nagarjuna ;
     dkg:belongsToSchool dkge:school_madhyamaka ;
-    dkg:mentions dkge:concept_sunyata .
+    dkg:cites dkge:citation_mmkv_24_18 ;
+    dkg:cites dkge:citation_mmkv_24_19 ;
+    dkg:cites dkge:citation_mmkv_25_19 ;
+    dkg:mentions dkge:concept_pratityasamutpada ;
+    dkg:mentions dkge:concept_sunyata ;
+    dkg:mentions dkge:concept_two_truths .

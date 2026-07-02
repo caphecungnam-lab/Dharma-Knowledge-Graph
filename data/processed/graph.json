@@ -2,7 +2,7 @@
   "metadata": {
     "title": "Dharma Knowledge Graph",
     "version": "0.1",
-    "generated_at": "2026-07-02T09:28:10.039890+00:00",
+    "generated_at": "2026-07-02T09:49:05.692166+00:00",
     "source_files": [
       "data/seeds/concepts.json",
       "data/seeds/core.json",
@@ -13,10 +13,10 @@
     ]
   },
   "summary": {
-    "node_count": 81,
-    "relationship_count": 126,
+    "node_count": 84,
+    "relationship_count": 139,
     "node_type_counts": {
-      "Citation": 14,
+      "Citation": 17,
       "Concept": 37,
       "Person": 1,
       "Place": 6,
@@ -27,10 +27,10 @@
     "relationship_type_counts": {
       "AUTHORED_BY": 1,
       "BELONGS_TO_SCHOOL": 13,
-      "CITES": 14,
+      "CITES": 17,
       "DEFINES": 22,
       "LOCATED_IN": 4,
-      "MENTIONS": 46,
+      "MENTIONS": 56,
       "RELATED_TO": 26
     }
   },
@@ -160,6 +160,33 @@
       "locator": "Five aggregates passage",
       "notes": "Pilot citation for the relationship between form, the aggregates, and emptiness.",
       "source_file": "data/seeds/heart_sutra.json"
+    },
+    {
+      "id": "citation_mmkv_24_18",
+      "type": "Citation",
+      "name": "Mulamadhyamakakarika 24.18",
+      "source": "Mulamadhyamakakarika",
+      "locator": "Chapter 24, verse 18",
+      "notes": "Pilot citation for dependent designation, emptiness, and the middle way.",
+      "source_file": "data/seeds/core.json"
+    },
+    {
+      "id": "citation_mmkv_24_19",
+      "type": "Citation",
+      "name": "Mulamadhyamakakarika 24.19",
+      "source": "Mulamadhyamakakarika",
+      "locator": "Chapter 24, verse 19",
+      "notes": "Pilot citation for the relation between dependent arising and emptiness.",
+      "source_file": "data/seeds/core.json"
+    },
+    {
+      "id": "citation_mmkv_25_19",
+      "type": "Citation",
+      "name": "Mulamadhyamakakarika 25.19",
+      "source": "Mulamadhyamakakarika",
+      "locator": "Chapter 25, verse 19",
+      "notes": "Pilot citation for the relation between samsara and nirvana in Madhyamaka analysis.",
+      "source_file": "data/seeds/core.json"
     },
     {
       "id": "concept_ahimsa",
@@ -987,6 +1014,24 @@
       "source_file": "data/seeds/heart_sutra.json"
     },
     {
+      "source": "text_mulamadhyamakakarika",
+      "type": "CITES",
+      "target": "citation_mmkv_24_18",
+      "source_file": "data/seeds/core.json"
+    },
+    {
+      "source": "text_mulamadhyamakakarika",
+      "type": "CITES",
+      "target": "citation_mmkv_24_19",
+      "source_file": "data/seeds/core.json"
+    },
+    {
+      "source": "text_mulamadhyamakakarika",
+      "type": "CITES",
+      "target": "citation_mmkv_25_19",
+      "source_file": "data/seeds/core.json"
+    },
+    {
       "source": "concept_brahmaviharas",
       "type": "DEFINES",
       "target": "concept_karuna",
@@ -1305,6 +1350,54 @@
       "source_file": "data/seeds/heart_sutra.json"
     },
     {
+      "source": "citation_mmkv_24_18",
+      "type": "MENTIONS",
+      "target": "concept_middle_way",
+      "source_file": "data/seeds/core.json"
+    },
+    {
+      "source": "citation_mmkv_24_18",
+      "type": "MENTIONS",
+      "target": "concept_pratityasamutpada",
+      "source_file": "data/seeds/core.json"
+    },
+    {
+      "source": "citation_mmkv_24_18",
+      "type": "MENTIONS",
+      "target": "concept_sunyata",
+      "source_file": "data/seeds/core.json"
+    },
+    {
+      "source": "citation_mmkv_24_19",
+      "type": "MENTIONS",
+      "target": "concept_pratityasamutpada",
+      "source_file": "data/seeds/core.json"
+    },
+    {
+      "source": "citation_mmkv_24_19",
+      "type": "MENTIONS",
+      "target": "concept_sunyata",
+      "source_file": "data/seeds/core.json"
+    },
+    {
+      "source": "citation_mmkv_24_19",
+      "type": "MENTIONS",
+      "target": "concept_two_truths",
+      "source_file": "data/seeds/core.json"
+    },
+    {
+      "source": "citation_mmkv_25_19",
+      "type": "MENTIONS",
+      "target": "concept_nirvana",
+      "source_file": "data/seeds/core.json"
+    },
+    {
+      "source": "citation_mmkv_25_19",
+      "type": "MENTIONS",
+      "target": "concept_samsara",
+      "source_file": "data/seeds/core.json"
+    },
+    {
       "source": "concept_four_noble_truths",
       "type": "MENTIONS",
       "target": "concept_dukkha",
@@ -1415,7 +1508,19 @@
     {
       "source": "text_mulamadhyamakakarika",
       "type": "MENTIONS",
+      "target": "concept_pratityasamutpada",
+      "source_file": "data/seeds/core.json"
+    },
+    {
+      "source": "text_mulamadhyamakakarika",
+      "type": "MENTIONS",
       "target": "concept_sunyata",
+      "source_file": "data/seeds/core.json"
+    },
+    {
+      "source": "text_mulamadhyamakakarika",
+      "type": "MENTIONS",
+      "target": "concept_two_truths",
       "source_file": "data/seeds/core.json"
     },
     {
