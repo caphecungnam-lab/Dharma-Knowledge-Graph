@@ -9,7 +9,6 @@ import re
 from pathlib import Path
 from typing import Any
 
-
 SOURCE_ID = "source_youtube_fisp_arohzy8"
 DOCUMENT_ID = "document_transcript_fisp_arohzy8"
 CITATION_ID = "citation_youtube_fisp_arohzy8"

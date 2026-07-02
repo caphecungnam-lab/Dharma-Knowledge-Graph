@@ -1,0 +1,141 @@
+{
+  "nodes": [
+    {
+      "id": "evidence_fisp_arohzy8_0001",
+      "type": "Evidence",
+      "name": "VTT caption excerpt 0001 from FISpARohzy8",
+      "evidence_text": "Tiếp tục bài kinh 66",
+      "evidence_type": "transcript_excerpt",
+      "language": "vi",
+      "confidence": "low",
+      "source_kind": "youtube",
+      "source_url": "https://www.youtube.com/watch?v=FISpARohzy8",
+      "document_id": "document_transcript_fisp_arohzy8",
+      "start_time": "00:01:18.720",
+      "end_time": "00:01:21.590",
+      "speaker": "HT. Thích Giác Khang",
+      "review_status": "unreviewed",
+      "notes": "Imported from YouTube VTT caption. Needs human review for Buddhist terminology."
+    },
+    {
+      "id": "evidence_fisp_arohzy8_0002",
+      "type": "Evidence",
+      "name": "VTT caption excerpt 0002 from FISpARohzy8",
+      "evidence_text": "Tiếp tục bài kinh 66",
+      "evidence_type": "transcript_excerpt",
+      "language": "vi",
+      "confidence": "low",
+      "source_kind": "youtube",
+      "source_url": "https://www.youtube.com/watch?v=FISpARohzy8",
+      "document_id": "document_transcript_fisp_arohzy8",
+      "start_time": "00:01:21.590",
+      "end_time": "00:01:21.600",
+      "speaker": "HT. Thích Giác Khang",
+      "review_status": "unreviewed",
+      "notes": "Imported from YouTube VTT caption. Needs human review for Buddhist terminology."
+    },
+    {
+      "id": "evidence_fisp_arohzy8_0003",
+      "type": "Evidence",
+      "name": "VTT caption excerpt 0003 from FISpARohzy8",
+      "evidence_text": "Tiếp tục bài kinh 66 thì trước tiên tôi xin tóm trước rồi hai",
+      "evidence_type": "transcript_excerpt",
+      "language": "vi",
+      "confidence": "low",
+      "source_kind": "youtube",
+      "source_url": "https://www.youtube.com/watch?v=FISpARohzy8",
+      "document_id": "document_transcript_fisp_arohzy8",
+      "start_time": "00:01:21.600",
+      "end_time": "00:01:24.190",
+      "speaker": "HT. Thích Giác Khang",
+      "review_status": "unreviewed",
+      "notes": "Imported from YouTube VTT caption. Needs human review for Buddhist terminology."
+    },
+    {
+      "id": "evidence_fisp_arohzy8_0004",
+      "type": "Evidence",
+      "name": "VTT caption excerpt 0004 from FISpARohzy8",
+      "evidence_text": "thì trước tiên tôi xin tóm trước rồi hai",
+      "evidence_type": "transcript_excerpt",
+      "language": "vi",
+      "confidence": "low",
+      "source_kind": "youtube",
+      "source_url": "https://www.youtube.com/watch?v=FISpARohzy8",
+      "document_id": "document_transcript_fisp_arohzy8",
+      "start_time": "00:01:24.190",
+      "end_time": "00:01:24.200",
+      "speaker": "HT. Thích Giác Khang",
+      "review_status": "unreviewed",
+      "notes": "Imported from YouTube VTT caption. Needs human review for Buddhist terminology."
+    },
+    {
+      "id": "evidence_fisp_arohzy8_0005",
+      "type": "Evidence",
+      "name": "VTT caption excerpt 0005 from FISpARohzy8",
+      "evidence_text": "thì trước tiên tôi xin tóm trước rồi hai vị Phật tử sẽ nhắc lại rồi chúng ta sẽ",
+      "evidence_type": "transcript_excerpt",
+      "language": "vi",
+      "confidence": "low",
+      "source_kind": "youtube",
+      "source_url": "https://www.youtube.com/watch?v=FISpARohzy8",
+      "document_id": "document_transcript_fisp_arohzy8",
+      "start_time": "00:01:24.200",
+      "end_time": "00:01:27.069",
+      "speaker": "HT. Thích Giác Khang",
+      "review_status": "unreviewed",
+      "notes": "Imported from YouTube VTT caption. Needs human review for Buddhist terminology."
+    }
+  ],
+  "relationships": [
+    {
+      "source": "evidence_fisp_arohzy8_0001",
+      "type": "HAS_CITATION",
+      "target": "citation_youtube_fisp_arohzy8"
+    },
+    {
+      "source": "evidence_fisp_arohzy8_0001",
+      "type": "DERIVED_FROM",
+      "target": "document_transcript_fisp_arohzy8"
+    },
+    {
+      "source": "evidence_fisp_arohzy8_0002",
+      "type": "HAS_CITATION",
+      "target": "citation_youtube_fisp_arohzy8"
+    },
+    {
+      "source": "evidence_fisp_arohzy8_0002",
+      "type": "DERIVED_FROM",
+      "target": "document_transcript_fisp_arohzy8"
+    },
+    {
+      "source": "evidence_fisp_arohzy8_0003",
+      "type": "HAS_CITATION",
+      "target": "citation_youtube_fisp_arohzy8"
+    },
+    {
+      "source": "evidence_fisp_arohzy8_0003",
+      "type": "DERIVED_FROM",
+      "target": "document_transcript_fisp_arohzy8"
+    },
+    {
+      "source": "evidence_fisp_arohzy8_0004",
+      "type": "HAS_CITATION",
+      "target": "citation_youtube_fisp_arohzy8"
+    },
+    {
+      "source": "evidence_fisp_arohzy8_0004",
+      "type": "DERIVED_FROM",
+      "target": "document_transcript_fisp_arohzy8"
+    },
+    {
+      "source": "evidence_fisp_arohzy8_0005",
+      "type": "HAS_CITATION",
+      "target": "citation_youtube_fisp_arohzy8"
+    },
+    {
+      "source": "evidence_fisp_arohzy8_0005",
+      "type": "DERIVED_FROM",
+      "target": "document_transcript_fisp_arohzy8"
+    }
+  ]
+}
