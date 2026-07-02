@@ -333,8 +333,8 @@
   function tick(visibleIds, relationships) {
     const visibleNodes = layoutNodes.filter((node) => visibleIds.has(node.id));
     const centerStrength = 0.006;
-    const linkStrength = 0.018;
-    const repelStrength = 880;
+    const linkStrength = 0.015;
+    const repelStrength = visibleNodes.length > 40 ? 1450 : 1120;
 
     visibleNodes.forEach((node) => {
       node.vx += (0 - node.x) * centerStrength;
@@ -349,7 +349,7 @@
       const dx = target.x - source.x;
       const dy = target.y - source.y;
       const distance = Math.max(1, Math.hypot(dx, dy));
-      const desired = 110;
+      const desired = visibleNodes.length > 40 ? 132 : 122;
       const force = (distance - desired) * linkStrength;
       const fx = (dx / distance) * force;
       const fy = (dy / distance) * force;
@@ -428,7 +428,7 @@
     return node.source_badge || (node.type === "Corpus" ? "corpus" : "seed");
   }
 
-  function truncateLabel(value, maxLength = 40) {
+  function truncateLabel(value, maxLength = 32) {
     const normalized = String(value || "").trim();
     if (normalized.length <= maxLength) {
       return normalized;
@@ -436,20 +436,24 @@
     return `${normalized.slice(0, maxLength - 1)}…`;
   }
 
-  function nodeDisplayName(node) {
+  function nodeFullLabel(node) {
     if (node.type === "Evidence" && node.evidence_text) {
       return truncateLabel(node.evidence_text, 40);
     }
     return node.name || node.id;
   }
 
+  function nodeCanvasLabel(node) {
+    return truncateLabel(nodeFullLabel(node), 32);
+  }
+
   function drawNodeBadge(point, node) {
     const badge = badgeLabel(node);
     const label = badgeDisplayLabels[badge] || badge.slice(0, 3).toUpperCase();
-    const width = Math.max(24, ctx.measureText(label).width + 8);
-    const height = 14;
-    const x = point.x + node.radius - 2;
-    const y = point.y - node.radius - 8;
+    const width = Math.max(20, ctx.measureText(label).width + 6);
+    const height = 12;
+    const x = point.x + node.radius - 1;
+    const y = point.y - node.radius - 6;
 
     ctx.fillStyle = badgeColors[badge] || "#6b6258";
     ctx.beginPath();
@@ -463,12 +467,13 @@
 
   function draw() {
     const visibleIds = filteredNodeIds();
+    const labelFontSize = visibleIds.size > 40 ? 10 : visibleIds.size > 24 ? 11 : 12;
     const relationships = visibleRelationships(visibleIds);
     tick(visibleIds, relationships);
 
     ctx.clearRect(0, 0, state.width, state.height);
     ctx.lineWidth = 1.2;
-    ctx.font = "12px Inter, system-ui, sans-serif";
+    ctx.font = `${labelFontSize}px Inter, system-ui, sans-serif`;
 
     relationships.forEach((relationship) => {
       const source = layoutById.get(relationship.source);
@@ -525,7 +530,7 @@
         ctx.fillStyle = "#17201b";
         ctx.textAlign = "center";
         ctx.textBaseline = "top";
-        ctx.fillText(nodeDisplayName(node), point.x, point.y + node.radius + 8, 140);
+        ctx.fillText(nodeCanvasLabel(node), point.x, point.y + node.radius + 8, 132);
       }
     });
 
@@ -568,7 +573,7 @@
       return;
     }
 
-    detailTitle.textContent = nodeDisplayName(node);
+    detailTitle.textContent = nodeFullLabel(node);
     detailType.innerHTML = `${escapeHtml(node.type)} <span class="badge-pill">${escapeHtml(badgeLabel(node))}</span>`;
     detailDescription.textContent = node.description || t("noDescription");
 
@@ -594,7 +599,7 @@
             const otherId = relationship.direction === "out" ? relationship.target : relationship.source;
             const other = nodeById.get(otherId);
             const direction = relationship.direction === "out" ? t("to") : t("from");
-            return `<li><span class="relationship-type">${escapeHtml(relationship.type)}</span>${direction} ${escapeHtml(other ? nodeDisplayName(other) : otherId)}</li>`;
+            return `<li><span class="relationship-type">${escapeHtml(relationship.type)}</span>${direction} ${escapeHtml(other ? nodeFullLabel(other) : otherId)}</li>`;
           })
           .join("")
       : `<li>${t("noRelationshipsYet")}</li>`;

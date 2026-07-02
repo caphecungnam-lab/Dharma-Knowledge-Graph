@@ -8,69 +8,69 @@
   </head>
   <body>
     <main class="app-shell">
-      <section class="workspace" aria-label="Graph workspace">
-        <header class="topbar">
-          <div>
-            <p class="eyebrow" data-i18n="brand">Dharma Knowledge Graph</p>
-            <h1 data-i18n="explorerTitle">Graph Explorer v0.1</h1>
-          </div>
-          <div class="topbar-actions">
-            <button class="language-toggle" id="languageToggle" type="button" aria-label="Switch language">VI</button>
-            <div class="stats" id="stats" aria-label="Graph statistics"></div>
-          </div>
-        </header>
-
-        <div class="controls" aria-label="Graph controls">
-          <div class="scope-toggle" aria-label="Data scope">
-            <span data-i18n="dataScope">Data</span>
-            <div class="scope-buttons" id="dataModeToggle">
-              <button type="button" data-mode="giac_khang" data-i18n="giacKhang">Giác Khang</button>
-              <button type="button" data-mode="seeds_only" data-i18n="seeds">Seeds</button>
-              <button type="button" data-mode="all_data" data-i18n="allData">All</button>
-            </div>
-          </div>
-          <label class="search-box">
-            <span data-i18n="search">Search</span>
-            <input id="searchInput" type="search" placeholder="Concept, text, school..." data-i18n-placeholder="searchPlaceholder">
-          </label>
-          <label class="select-box">
-            <span data-i18n="languageFilter">Language</span>
-            <select id="languageFilter"></select>
-          </label>
-          <label class="select-box">
-            <span data-i18n="type">Type</span>
-            <select id="typeFilter"></select>
-          </label>
-          <label class="select-box">
-            <span data-i18n="relationship">Relationship</span>
-            <select id="relationshipFilter"></select>
-          </label>
-          <button id="resetButton" type="button" data-i18n="reset">Reset</button>
+      <header class="app-header">
+        <div class="title-block">
+          <p class="eyebrow" data-i18n="brand">Dharma Knowledge Graph</p>
+          <h1 data-i18n="explorerTitle">Graph Explorer v0.1</h1>
         </div>
+        <div class="header-actions">
+          <button class="language-toggle" id="languageToggle" type="button" aria-label="Switch language">VI</button>
+          <div class="stats" id="stats" aria-label="Graph statistics"></div>
+        </div>
+      </header>
 
+      <div class="toolbar" aria-label="Graph controls">
+        <div class="scope-toggle" aria-label="Data scope">
+          <span data-i18n="dataScope">Data</span>
+          <div class="scope-buttons" id="dataModeToggle">
+            <button type="button" data-mode="giac_khang" data-i18n="giacKhang">Giác Khang</button>
+            <button type="button" data-mode="seeds_only" data-i18n="seeds">Seeds</button>
+            <button type="button" data-mode="all_data" data-i18n="allData">All</button>
+          </div>
+        </div>
+        <label class="search-box">
+          <span data-i18n="search">Search</span>
+          <input id="searchInput" type="search" placeholder="Concept, text, school..." data-i18n-placeholder="searchPlaceholder">
+        </label>
+        <label class="select-box compact">
+          <span data-i18n="languageFilter">Language</span>
+          <select id="languageFilter"></select>
+        </label>
+        <label class="select-box">
+          <span data-i18n="type">Type</span>
+          <select id="typeFilter"></select>
+        </label>
+        <label class="select-box">
+          <span data-i18n="relationship">Relationship</span>
+          <select id="relationshipFilter"></select>
+        </label>
+        <button id="resetButton" type="button" data-i18n="reset">Reset</button>
+      </div>
+
+      <section class="main-area" aria-label="Graph workspace">
         <div class="graph-stage">
           <canvas id="graphCanvas" width="1200" height="760" aria-label="Knowledge graph visualization"></canvas>
         </div>
+
+        <aside class="detail-panel" aria-label="Selected node details">
+          <div class="panel-section">
+            <p class="eyebrow" data-i18n="selectedNode">Selected Node</p>
+            <h2 id="detailTitle">Select a node</h2>
+            <p id="detailType" class="type-pill">No selection</p>
+            <p id="detailDescription" class="description">Click a node in the graph to inspect its metadata and relationships.</p>
+          </div>
+
+          <div class="panel-section">
+            <h3 data-i18n="properties">Properties</h3>
+            <dl id="propertyList" class="property-list"></dl>
+          </div>
+
+          <div class="panel-section">
+            <h3 data-i18n="relationshipsHeader">Relationships</h3>
+            <ul id="relationshipList" class="relationship-list"></ul>
+          </div>
+        </aside>
       </section>
-
-      <aside class="detail-panel" aria-label="Selected node details">
-        <div class="panel-section">
-          <p class="eyebrow" data-i18n="selectedNode">Selected Node</p>
-          <h2 id="detailTitle">Select a node</h2>
-          <p id="detailType" class="type-pill">No selection</p>
-          <p id="detailDescription" class="description">Click a node in the graph to inspect its metadata and relationships.</p>
-        </div>
-
-        <div class="panel-section">
-          <h3 data-i18n="properties">Properties</h3>
-          <dl id="propertyList" class="property-list"></dl>
-        </div>
-
-        <div class="panel-section">
-          <h3 data-i18n="relationshipsHeader">Relationships</h3>
-          <ul id="relationshipList" class="relationship-list"></ul>
-        </div>
-      </aside>
     </main>
 
     <script src="graph-data.js"></script>
