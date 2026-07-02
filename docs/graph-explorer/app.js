@@ -44,10 +44,20 @@
 
   const badgeColors = {
     corpus: "#174f3c",
+    pilot: "#6d5b9a",
     seed: "#6b6258",
     processed: "#2f6f9f",
     reviewed: "#b45b2d",
     curated: "#1f6f52",
+  };
+
+  const badgeDisplayLabels = {
+    corpus: "COR",
+    pilot: "PILOT",
+    seed: "SEED",
+    processed: "PRO",
+    reviewed: "REV",
+    curated: "CUR",
   };
 
   const modeTranslationKeys = {
@@ -260,6 +270,9 @@
         node.id,
         node.name,
         node.description,
+        node.evidence_text,
+        node.reviewed_evidence_text,
+        node.original_evidence_text,
         node.pali,
         node.sanskrit,
         node.category,
@@ -415,9 +428,24 @@
     return node.source_badge || (node.type === "Corpus" ? "corpus" : "seed");
   }
 
+  function truncateLabel(value, maxLength = 40) {
+    const normalized = String(value || "").trim();
+    if (normalized.length <= maxLength) {
+      return normalized;
+    }
+    return `${normalized.slice(0, maxLength - 1)}…`;
+  }
+
+  function nodeDisplayName(node) {
+    if (node.type === "Evidence" && node.evidence_text) {
+      return truncateLabel(node.evidence_text, 40);
+    }
+    return node.name || node.id;
+  }
+
   function drawNodeBadge(point, node) {
     const badge = badgeLabel(node);
-    const label = badge.slice(0, 3).toUpperCase();
+    const label = badgeDisplayLabels[badge] || badge.slice(0, 3).toUpperCase();
     const width = Math.max(24, ctx.measureText(label).width + 8);
     const height = 14;
     const x = point.x + node.radius - 2;
@@ -497,7 +525,7 @@
         ctx.fillStyle = "#17201b";
         ctx.textAlign = "center";
         ctx.textBaseline = "top";
-        ctx.fillText(node.name, point.x, point.y + node.radius + 8, 140);
+        ctx.fillText(nodeDisplayName(node), point.x, point.y + node.radius + 8, 140);
       }
     });
 
@@ -540,7 +568,7 @@
       return;
     }
 
-    detailTitle.textContent = node.name;
+    detailTitle.textContent = nodeDisplayName(node);
     detailType.innerHTML = `${escapeHtml(node.type)} <span class="badge-pill">${escapeHtml(badgeLabel(node))}</span>`;
     detailDescription.textContent = node.description || t("noDescription");
 
@@ -566,7 +594,7 @@
             const otherId = relationship.direction === "out" ? relationship.target : relationship.source;
             const other = nodeById.get(otherId);
             const direction = relationship.direction === "out" ? t("to") : t("from");
-            return `<li><span class="relationship-type">${escapeHtml(relationship.type)}</span>${direction} ${escapeHtml(other ? other.name : otherId)}</li>`;
+            return `<li><span class="relationship-type">${escapeHtml(relationship.type)}</span>${direction} ${escapeHtml(other ? nodeDisplayName(other) : otherId)}</li>`;
           })
           .join("")
       : `<li>${t("noRelationshipsYet")}</li>`;

@@ -34,7 +34,9 @@ class BuildGraphScopeTest(unittest.TestCase):
         self.assertNotIn("data/seeds/concepts.json", source_files)
         self.assertNotIn("data/seeds/places_traditions.json", source_files)
 
-    def test_giac_khang_mode_loads_processed_and_reviewed_evidence(self) -> None:
+    def test_giac_khang_mode_loads_processed_reviewed_and_curated_evidence(
+        self,
+    ) -> None:
         graph = build_graph("giac_khang")
         source_files = set(graph["metadata"]["source_files"])
         node_by_id = {node["id"]: node for node in graph["nodes"]}
@@ -47,13 +49,25 @@ class BuildGraphScopeTest(unittest.TestCase):
             "data/reviewed/giac_khang/FISpARohzy8/evidence_review_queue.json",
             source_files,
         )
+        self.assertIn(
+            "data/curated/giac_khang/FISpARohzy8/evidence_curated.json",
+            source_files,
+        )
         self.assertEqual(
             node_by_id["evidence_fisp_arohzy8_0001"]["source_badge"],
-            "reviewed",
+            "curated",
         )
         self.assertEqual(
             node_by_id["corpus_giac_khang"]["source_badge"],
             "corpus",
+        )
+        self.assertEqual(
+            node_by_id["source_youtube_fisp_arohzy8"]["source_badge"],
+            "pilot",
+        )
+        self.assertEqual(
+            node_by_id["citation_youtube_fisp_arohzy8"]["source_badge"],
+            "pilot",
         )
 
     def test_seeds_only_mode_loads_only_seed_files(self) -> None:
@@ -77,6 +91,10 @@ class BuildGraphScopeTest(unittest.TestCase):
         )
         self.assertIn(
             "data/reviewed/giac_khang/FISpARohzy8/evidence_review_queue.json",
+            source_files,
+        )
+        self.assertIn(
+            "data/curated/giac_khang/FISpARohzy8/evidence_curated.json",
             source_files,
         )
 

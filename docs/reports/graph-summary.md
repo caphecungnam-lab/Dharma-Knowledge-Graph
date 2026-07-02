@@ -8,9 +8,9 @@ Generated from `data/processed/graph.json`.
 | --- | --- |
 | Nodes | 153 |
 | Relationships | 238 |
-| Source files | 13 |
+| Source files | 14 |
 | Graph version | 0.1 |
-| Content hash | a71739ba126b977a3507406f899d3d2696e43a8d63467094990ad23fba75f31b |
+| Content hash | 7ac20d2d194448f32d3de85239b528e620f7a1a60b4a993155ff0453757ec230 |
 
 ## Node Types
 
@@ -84,3 +84,4 @@ Generated from `data/processed/graph.json`.
 - `data/seeds/terms_remaining.json`
 - `data/processed/giac_khang/FISpARohzy8/evidence_first_pass.json`
 - `data/reviewed/giac_khang/FISpARohzy8/evidence_review_queue.json`
+- `data/curated/giac_khang/FISpARohzy8/evidence_curated.json`

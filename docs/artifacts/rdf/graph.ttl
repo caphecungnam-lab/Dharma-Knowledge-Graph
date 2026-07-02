@@ -639,7 +639,7 @@ dkge:evidence_fisp_arohzy8_0001
     dkg:evidenceType "transcript_excerpt" ;
     dkg:evidenceText "Tiếp tục bài kinh 66 thì trước tiên tôi xin tóm trước rồi hai vị Phật tử sẽ nhắc lại rồi chúng ta sẽ đi vào trả lời bài câu hỏi số 1 thì ở đây bài kinh 66 gồm tất cả là sáu phần. Phần nhập đề tức" ;
     dkg:confidence "low" ;
-    dkg:sourceFile "data/reviewed/giac_khang/FISpARohzy8/evidence_review_queue.json" .
+    dkg:sourceFile "data/curated/giac_khang/FISpARohzy8/evidence_curated.json" .
 
 dkge:evidence_fisp_arohzy8_0002
     a dkg:Evidence ;
@@ -656,7 +656,7 @@ dkge:evidence_fisp_arohzy8_0002
     dkg:evidenceType "transcript_excerpt" ;
     dkg:evidenceText "là phần dẫn nhập, phần kết luận là hai còn phần thân bài là bốn. Thì ở đây chúng ta thường thấy kinh Phật nói chung đó là có sáu cái ấn chứng, sáu cái chứng để đi vào bài giảng." ;
     dkg:confidence "low" ;
-    dkg:sourceFile "data/reviewed/giac_khang/FISpARohzy8/evidence_review_queue.json" .
+    dkg:sourceFile "data/curated/giac_khang/FISpARohzy8/evidence_curated.json" .
 
 dkge:evidence_fisp_arohzy8_0003
     a dkg:Evidence ;
@@ -673,7 +673,7 @@ dkge:evidence_fisp_arohzy8_0003
     dkg:evidenceType "transcript_excerpt" ;
     dkg:evidenceText "Vì chúng ta thấy đây là cái ấn chứng thứ nhất là không gian, thứ nhì là thời gian và cái thứ ba là ai giảng, cái thứ tư là giảng cho ai nghe và cái thứ năm là giảng về kinh gì và cái thứ sáu là nội dung của bài kinh đó. Thì chúng ta thấy đây không gian thời gian là tại thành Xá Vệ cái giường của ông thái tử Kiều Đà và" ;
     dkg:confidence "low" ;
-    dkg:sourceFile "data/reviewed/giac_khang/FISpARohzy8/evidence_review_queue.json" .
+    dkg:sourceFile "data/curated/giac_khang/FISpARohzy8/evidence_curated.json" .
 
 dkge:evidence_fisp_arohzy8_0004
     a dkg:Evidence ;
@@ -690,7 +690,7 @@ dkge:evidence_fisp_arohzy8_0004
     dkg:evidenceType "transcript_excerpt" ;
     dkg:evidenceText "Tịnh xá của cấp cô độc. Đó là phần không gian thời gian hai phần. Phần thứ ba là Đức Phật Thích Ca Mâu Ni tức là đức Thế Tôn của chúng ta giảng và giảng cho các vị tỳ kheo nghe. Đó là bốn phần. Và phần thứ năm là giảng về bài kinh 66 và nội dung đó là sơ thiện, trung thiện, hậu thiện có văn có nghĩa" ;
     dkg:confidence "low" ;
-    dkg:sourceFile "data/reviewed/giac_khang/FISpARohzy8/evidence_review_queue.json" .
+    dkg:sourceFile "data/curated/giac_khang/FISpARohzy8/evidence_curated.json" .
 
 dkge:evidence_fisp_arohzy8_0005
     a dkg:Evidence ;
@@ -707,7 +707,7 @@ dkge:evidence_fisp_arohzy8_0005
     dkg:evidenceType "transcript_excerpt" ;
     dkg:evidenceText "phạm hạnh thanh tịnh rồi đưa đến giải thoát. Đó là hình. Còn sau đây là bốn phần là thân bài. Tức là phần thứ nhất là trình bày về bài kinh 66 tức là 36 pháp toàn thể vũ trụ." ;
     dkg:confidence "low" ;
-    dkg:sourceFile "data/reviewed/giac_khang/FISpARohzy8/evidence_review_queue.json" .
+    dkg:sourceFile "data/curated/giac_khang/FISpARohzy8/evidence_curated.json" .
 
 dkge:person_nagarjuna
     a dkg:Person ;

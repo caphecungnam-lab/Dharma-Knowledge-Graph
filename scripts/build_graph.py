@@ -63,6 +63,9 @@ def source_badge_for_path(path: Path, node: dict | None = None) -> str:
     if node and node.get("type") == "Corpus":
         return "corpus"
 
+    if path in GIAC_KHANG_SEED_FILES:
+        return "pilot"
+
     relative_parts = path.relative_to(ROOT).parts
     if len(relative_parts) < 2:
         return "seed"
@@ -94,7 +97,7 @@ def build_graph_from_files(
     title: str = "Dharma Knowledge Graph",
 ) -> dict:
     nodes: dict[str, dict] = {}
-    relationships: list[dict] = []
+    relationships: dict[tuple[str, str, str], dict] = {}
     source_files: list[str] = []
 
     for path, data in graph_files:
@@ -110,11 +113,16 @@ def build_graph_from_files(
             enriched_relationship = dict(relationship)
             enriched_relationship["source_file"] = str(path.relative_to(ROOT))
             enriched_relationship["source_badge"] = source_badge_for_path(path)
-            relationships.append(enriched_relationship)
+            relationship_key = (
+                str(enriched_relationship.get("source", "")),
+                str(enriched_relationship.get("type", "")),
+                str(enriched_relationship.get("target", "")),
+            )
+            relationships[relationship_key] = enriched_relationship
 
     node_list = sorted(nodes.values(), key=lambda node: (node["type"], node["name"]))
     relationship_list = sorted(
-        relationships,
+        relationships.values(),
         key=lambda rel: (rel["type"], rel["source"], rel["target"]),
     )
 

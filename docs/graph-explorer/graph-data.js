@@ -6,11 +6,12 @@ window.DHARMA_GRAPH_SCOPES = {
         "title": "Dharma Knowledge Graph: Giác Khang Corpus",
         "version": "0.1",
         "mode": "giac_khang",
-        "content_hash": "5c453319f08e887b114988a043ff59e6c7e1b969bd1ebc4d1bc5af8e08fca431",
+        "content_hash": "d81d6c20da636d32fc301ff67286934ef8adbc1d7fe45a63b35baa0478eefae9",
         "source_files": [
           "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json",
           "data/processed/giac_khang/FISpARohzy8/evidence_first_pass.json",
-          "data/reviewed/giac_khang/FISpARohzy8/evidence_review_queue.json"
+          "data/reviewed/giac_khang/FISpARohzy8/evidence_review_queue.json",
+          "data/curated/giac_khang/FISpARohzy8/evidence_curated.json"
         ]
       },
       "summary": {
@@ -35,8 +36,8 @@ window.DHARMA_GRAPH_SCOPES = {
         },
         "source_badge_counts": {
           "corpus": 1,
-          "reviewed": 5,
-          "seed": 14
+          "curated": 5,
+          "pilot": 14
         }
       },
       "nodes": [
@@ -48,7 +49,7 @@ window.DHARMA_GRAPH_SCOPES = {
           "locator": "video root",
           "review_status": "unreviewed",
           "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json",
-          "source_badge": "seed"
+          "source_badge": "pilot"
         },
         {
           "id": "concept_kinh_sau_sau",
@@ -58,7 +59,7 @@ window.DHARMA_GRAPH_SCOPES = {
           "category": "text_topic",
           "description": "Pilot topic concept for Giác Khang teachings on Kinh Sáu Sáu.",
           "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json",
-          "source_badge": "seed"
+          "source_badge": "pilot"
         },
         {
           "id": "concept_luc_can_luc_tran_luc_thuc",
@@ -68,7 +69,7 @@ window.DHARMA_GRAPH_SCOPES = {
           "category": "doctrine",
           "description": "Grouping concept for six faculties, six objects, and six consciousnesses.",
           "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json",
-          "source_badge": "seed"
+          "source_badge": "pilot"
         },
         {
           "id": "concept_sau_can",
@@ -78,7 +79,7 @@ window.DHARMA_GRAPH_SCOPES = {
           "category": "doctrine",
           "description": "Vietnamese concept placeholder for the six sense faculties in the Kinh Sáu Sáu pilot.",
           "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json",
-          "source_badge": "seed"
+          "source_badge": "pilot"
         },
         {
           "id": "concept_sau_thuc",
@@ -88,7 +89,7 @@ window.DHARMA_GRAPH_SCOPES = {
           "category": "doctrine",
           "description": "Vietnamese concept placeholder for the six consciousnesses in the Kinh Sáu Sáu pilot.",
           "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json",
-          "source_badge": "seed"
+          "source_badge": "pilot"
         },
         {
           "id": "concept_sau_tran",
@@ -98,7 +99,7 @@ window.DHARMA_GRAPH_SCOPES = {
           "category": "doctrine",
           "description": "Vietnamese concept placeholder for the six sense objects in the Kinh Sáu Sáu pilot.",
           "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json",
-          "source_badge": "seed"
+          "source_badge": "pilot"
         },
         {
           "id": "corpus_giac_khang",
@@ -118,7 +119,7 @@ window.DHARMA_GRAPH_SCOPES = {
           "review_status": "unreviewed",
           "notes": "Transcript not yet imported. Evidence must not be created without real excerpt text and timestamp.",
           "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json",
-          "source_badge": "seed"
+          "source_badge": "pilot"
         },
         {
           "id": "evidence_fisp_arohzy8_0001",
@@ -137,13 +138,15 @@ window.DHARMA_GRAPH_SCOPES = {
           "notes": "Imported from YouTube VTT caption. Needs human review for Buddhist terminology.",
           "original_review_status": "unreviewed",
           "original_evidence_text": "Tiếp tục bài kinh 66 thì trước tiên tôi xin tóm trước rồi hai vị Phật tử sẽ nhắc lại rồi chúng ta sẽ đi vào trả lời bài câu hỏi số 1 thì ở đây bài kinh 66 gồm tất cả là sáu phần. Phần nhập đề tức",
-          "reviewed_evidence_text": "Tiếp tục bài kinh 66 thì trước tiên tôi xin tóm trước rồi hai vị Phật tử sẽ nhắc lại rồi chúng ta sẽ đi vào trả lời bài câu hỏi số 1 thì ở đây bài kinh 66 gồm tất cả là sáu phần. Phần nhập đề tức",
           "reviewer": "",
           "reviewed_at": "",
           "review_notes": "",
           "review_status": "human_reviewed",
-          "source_file": "data/reviewed/giac_khang/FISpARohzy8/evidence_review_queue.json",
-          "source_badge": "reviewed"
+          "curated_status": "curated",
+          "curated_at": "2026-07-03",
+          "curator": "Minh",
+          "source_file": "data/curated/giac_khang/FISpARohzy8/evidence_curated.json",
+          "source_badge": "curated"
         },
         {
           "id": "evidence_fisp_arohzy8_0002",
@@ -162,13 +165,15 @@ window.DHARMA_GRAPH_SCOPES = {
           "notes": "Imported from YouTube VTT caption. Needs human review for Buddhist terminology.",
           "original_review_status": "unreviewed",
           "original_evidence_text": "là phần dẫn nhập, phần kết luận là hai còn phần thân bài là bốn. Thì ở đây chúng ta thường thấy kinh Phật nói chung đó là có sáu cái ấn chứng, sáu cái chứng để đi vào bài giảng.",
-          "reviewed_evidence_text": "là phần dẫn nhập, phần kết luận là hai còn phần thân bài là bốn. Thì ở đây chúng ta thường thấy kinh Phật nói chung đó là có sáu cái ấn chứng, sáu cái chứng để đi vào bài giảng.",
           "reviewer": "",
           "reviewed_at": "",
           "review_notes": "",
           "review_status": "human_reviewed",
-          "source_file": "data/reviewed/giac_khang/FISpARohzy8/evidence_review_queue.json",
-          "source_badge": "reviewed"
+          "curated_status": "curated",
+          "curated_at": "2026-07-03",
+          "curator": "Minh",
+          "source_file": "data/curated/giac_khang/FISpARohzy8/evidence_curated.json",
+          "source_badge": "curated"
         },
         {
           "id": "evidence_fisp_arohzy8_0003",
@@ -187,13 +192,15 @@ window.DHARMA_GRAPH_SCOPES = {
           "notes": "Imported from YouTube VTT caption. Needs human review for Buddhist terminology.",
           "original_review_status": "unreviewed",
           "original_evidence_text": "Vì chúng ta thấy đây là cái ấn chứng thứ nhất là không gian, thứ nhì là thời gian và cái thứ ba là ai giảng, cái thứ tư là giảng cho ai nghe và cái thứ năm là giảng về kinh gì và cái thứ sáu là nội dung của bài kinh đó. Thì chúng ta thấy đây không gian thời gian là tại thành Xá Vệ cái giường của ông thái tử Kiều Đà và",
-          "reviewed_evidence_text": "Vì chúng ta thấy đây là cái ấn chứng thứ nhất là không gian, thứ nhì là thời gian và cái thứ ba là ai giảng, cái thứ tư là giảng cho ai nghe và cái thứ năm là giảng về kinh gì và cái thứ sáu là nội dung của bài kinh đó. Thì chúng ta thấy đây không gian thời gian là tại thành Xá Vệ cái giường của ông thái tử Kiều Đà và",
           "reviewer": "",
           "reviewed_at": "",
           "review_notes": "",
           "review_status": "human_reviewed",
-          "source_file": "data/reviewed/giac_khang/FISpARohzy8/evidence_review_queue.json",
-          "source_badge": "reviewed"
+          "curated_status": "curated",
+          "curated_at": "2026-07-03",
+          "curator": "Minh",
+          "source_file": "data/curated/giac_khang/FISpARohzy8/evidence_curated.json",
+          "source_badge": "curated"
         },
         {
           "id": "evidence_fisp_arohzy8_0004",
@@ -212,13 +219,15 @@ window.DHARMA_GRAPH_SCOPES = {
           "notes": "Imported from YouTube VTT caption. Needs human review for Buddhist terminology.",
           "original_review_status": "unreviewed",
           "original_evidence_text": "Tịnh xá của cấp cô độc. Đó là phần không gian thời gian hai phần. Phần thứ ba là Đức Phật Thích Ca Mâu Ni tức là đức Thế Tôn của chúng ta giảng và giảng cho các vị tỳ kheo nghe. Đó là bốn phần. Và phần thứ năm là giảng về bài kinh 66 và nội dung đó là sơ thiện, trung thiện, hậu thiện có văn có nghĩa",
-          "reviewed_evidence_text": "Tịnh xá của cấp cô độc. Đó là phần không gian thời gian hai phần. Phần thứ ba là Đức Phật Thích Ca Mâu Ni tức là đức Thế Tôn của chúng ta giảng và giảng cho các vị tỳ kheo nghe. Đó là bốn phần. Và phần thứ năm là giảng về bài kinh 66 và nội dung đó là sơ thiện, trung thiện, hậu thiện có văn có nghĩa",
           "reviewer": "",
           "reviewed_at": "",
           "review_notes": "",
           "review_status": "human_reviewed",
-          "source_file": "data/reviewed/giac_khang/FISpARohzy8/evidence_review_queue.json",
-          "source_badge": "reviewed"
+          "curated_status": "curated",
+          "curated_at": "2026-07-03",
+          "curator": "Minh",
+          "source_file": "data/curated/giac_khang/FISpARohzy8/evidence_curated.json",
+          "source_badge": "curated"
         },
         {
           "id": "evidence_fisp_arohzy8_0005",
@@ -237,13 +246,15 @@ window.DHARMA_GRAPH_SCOPES = {
           "notes": "Imported from YouTube VTT caption. Needs human review for Buddhist terminology.",
           "original_review_status": "unreviewed",
           "original_evidence_text": "phạm hạnh thanh tịnh rồi đưa đến giải thoát. Đó là hình. Còn sau đây là bốn phần là thân bài. Tức là phần thứ nhất là trình bày về bài kinh 66 tức là 36 pháp toàn thể vũ trụ.",
-          "reviewed_evidence_text": "phạm hạnh thanh tịnh rồi đưa đến giải thoát. Đó là hình. Còn sau đây là bốn phần là thân bài. Tức là phần thứ nhất là trình bày về bài kinh 66 tức là 36 pháp toàn thể vũ trụ.",
           "reviewer": "",
           "reviewed_at": "",
           "review_notes": "",
           "review_status": "human_reviewed",
-          "source_file": "data/reviewed/giac_khang/FISpARohzy8/evidence_review_queue.json",
-          "source_badge": "reviewed"
+          "curated_status": "curated",
+          "curated_at": "2026-07-03",
+          "curator": "Minh",
+          "source_file": "data/curated/giac_khang/FISpARohzy8/evidence_curated.json",
+          "source_badge": "curated"
         },
         {
           "id": "source_youtube_fisp_arohzy8",
@@ -257,7 +268,7 @@ window.DHARMA_GRAPH_SCOPES = {
           "topic": "Kinh Sáu Sáu",
           "review_status": "unreviewed",
           "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json",
-          "source_badge": "seed"
+          "source_badge": "pilot"
         },
         {
           "id": "term_luc_can_hv",
@@ -267,7 +278,7 @@ window.DHARMA_GRAPH_SCOPES = {
           "script": "Hán-Việt",
           "translation": "six sense faculties",
           "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json",
-          "source_badge": "seed"
+          "source_badge": "pilot"
         },
         {
           "id": "term_luc_thuc_hv",
@@ -277,7 +288,7 @@ window.DHARMA_GRAPH_SCOPES = {
           "script": "Hán-Việt",
           "translation": "six consciousnesses",
           "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json",
-          "source_badge": "seed"
+          "source_badge": "pilot"
         },
         {
           "id": "term_luc_tran_hv",
@@ -287,7 +298,7 @@ window.DHARMA_GRAPH_SCOPES = {
           "script": "Hán-Việt",
           "translation": "six sense objects",
           "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json",
-          "source_badge": "seed"
+          "source_badge": "pilot"
         },
         {
           "id": "term_sau_can_vi",
@@ -296,7 +307,7 @@ window.DHARMA_GRAPH_SCOPES = {
           "language": "vi",
           "translation": "six sense faculties",
           "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json",
-          "source_badge": "seed"
+          "source_badge": "pilot"
         },
         {
           "id": "term_sau_thuc_vi",
@@ -305,7 +316,7 @@ window.DHARMA_GRAPH_SCOPES = {
           "language": "vi",
           "translation": "six consciousnesses",
           "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json",
-          "source_badge": "seed"
+          "source_badge": "pilot"
         },
         {
           "id": "term_sau_tran_vi",
@@ -314,7 +325,7 @@ window.DHARMA_GRAPH_SCOPES = {
           "language": "vi",
           "translation": "six sense objects",
           "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json",
-          "source_badge": "seed"
+          "source_badge": "pilot"
         }
       ],
       "relationships": [
@@ -323,175 +334,175 @@ window.DHARMA_GRAPH_SCOPES = {
           "type": "BELONGS_TO_CORPUS",
           "target": "corpus_giac_khang",
           "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json",
-          "source_badge": "seed"
+          "source_badge": "pilot"
         },
         {
           "source": "source_youtube_fisp_arohzy8",
           "type": "BELONGS_TO_CORPUS",
           "target": "corpus_giac_khang",
           "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json",
-          "source_badge": "seed"
+          "source_badge": "pilot"
         },
         {
           "source": "term_luc_can_hv",
           "type": "DENOTES",
           "target": "concept_sau_can",
           "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json",
-          "source_badge": "seed"
+          "source_badge": "pilot"
         },
         {
           "source": "term_luc_thuc_hv",
           "type": "DENOTES",
           "target": "concept_sau_thuc",
           "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json",
-          "source_badge": "seed"
+          "source_badge": "pilot"
         },
         {
           "source": "term_luc_tran_hv",
           "type": "DENOTES",
           "target": "concept_sau_tran",
           "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json",
-          "source_badge": "seed"
+          "source_badge": "pilot"
         },
         {
           "source": "term_sau_can_vi",
           "type": "DENOTES",
           "target": "concept_sau_can",
           "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json",
-          "source_badge": "seed"
+          "source_badge": "pilot"
         },
         {
           "source": "term_sau_thuc_vi",
           "type": "DENOTES",
           "target": "concept_sau_thuc",
           "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json",
-          "source_badge": "seed"
+          "source_badge": "pilot"
         },
         {
           "source": "term_sau_tran_vi",
           "type": "DENOTES",
           "target": "concept_sau_tran",
           "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json",
-          "source_badge": "seed"
+          "source_badge": "pilot"
         },
         {
           "source": "citation_youtube_fisp_arohzy8",
           "type": "DERIVED_FROM",
           "target": "source_youtube_fisp_arohzy8",
           "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json",
-          "source_badge": "seed"
+          "source_badge": "pilot"
         },
         {
           "source": "document_transcript_fisp_arohzy8",
           "type": "DERIVED_FROM",
           "target": "source_youtube_fisp_arohzy8",
           "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json",
-          "source_badge": "seed"
+          "source_badge": "pilot"
         },
         {
           "source": "evidence_fisp_arohzy8_0001",
           "type": "DERIVED_FROM",
           "target": "document_transcript_fisp_arohzy8",
-          "source_file": "data/processed/giac_khang/FISpARohzy8/evidence_first_pass.json",
-          "source_badge": "processed"
+          "source_file": "data/curated/giac_khang/FISpARohzy8/evidence_curated.json",
+          "source_badge": "curated"
         },
         {
           "source": "evidence_fisp_arohzy8_0002",
           "type": "DERIVED_FROM",
           "target": "document_transcript_fisp_arohzy8",
-          "source_file": "data/processed/giac_khang/FISpARohzy8/evidence_first_pass.json",
-          "source_badge": "processed"
+          "source_file": "data/curated/giac_khang/FISpARohzy8/evidence_curated.json",
+          "source_badge": "curated"
         },
         {
           "source": "evidence_fisp_arohzy8_0003",
           "type": "DERIVED_FROM",
           "target": "document_transcript_fisp_arohzy8",
-          "source_file": "data/processed/giac_khang/FISpARohzy8/evidence_first_pass.json",
-          "source_badge": "processed"
+          "source_file": "data/curated/giac_khang/FISpARohzy8/evidence_curated.json",
+          "source_badge": "curated"
         },
         {
           "source": "evidence_fisp_arohzy8_0004",
           "type": "DERIVED_FROM",
           "target": "document_transcript_fisp_arohzy8",
-          "source_file": "data/processed/giac_khang/FISpARohzy8/evidence_first_pass.json",
-          "source_badge": "processed"
+          "source_file": "data/curated/giac_khang/FISpARohzy8/evidence_curated.json",
+          "source_badge": "curated"
         },
         {
           "source": "evidence_fisp_arohzy8_0005",
           "type": "DERIVED_FROM",
           "target": "document_transcript_fisp_arohzy8",
-          "source_file": "data/processed/giac_khang/FISpARohzy8/evidence_first_pass.json",
-          "source_badge": "processed"
+          "source_file": "data/curated/giac_khang/FISpARohzy8/evidence_curated.json",
+          "source_badge": "curated"
         },
         {
           "source": "evidence_fisp_arohzy8_0001",
           "type": "HAS_CITATION",
           "target": "citation_youtube_fisp_arohzy8",
-          "source_file": "data/processed/giac_khang/FISpARohzy8/evidence_first_pass.json",
-          "source_badge": "processed"
+          "source_file": "data/curated/giac_khang/FISpARohzy8/evidence_curated.json",
+          "source_badge": "curated"
         },
         {
           "source": "evidence_fisp_arohzy8_0002",
           "type": "HAS_CITATION",
           "target": "citation_youtube_fisp_arohzy8",
-          "source_file": "data/processed/giac_khang/FISpARohzy8/evidence_first_pass.json",
-          "source_badge": "processed"
+          "source_file": "data/curated/giac_khang/FISpARohzy8/evidence_curated.json",
+          "source_badge": "curated"
         },
         {
           "source": "evidence_fisp_arohzy8_0003",
           "type": "HAS_CITATION",
           "target": "citation_youtube_fisp_arohzy8",
-          "source_file": "data/processed/giac_khang/FISpARohzy8/evidence_first_pass.json",
-          "source_badge": "processed"
+          "source_file": "data/curated/giac_khang/FISpARohzy8/evidence_curated.json",
+          "source_badge": "curated"
         },
         {
           "source": "evidence_fisp_arohzy8_0004",
           "type": "HAS_CITATION",
           "target": "citation_youtube_fisp_arohzy8",
-          "source_file": "data/processed/giac_khang/FISpARohzy8/evidence_first_pass.json",
-          "source_badge": "processed"
+          "source_file": "data/curated/giac_khang/FISpARohzy8/evidence_curated.json",
+          "source_badge": "curated"
         },
         {
           "source": "evidence_fisp_arohzy8_0005",
           "type": "HAS_CITATION",
           "target": "citation_youtube_fisp_arohzy8",
-          "source_file": "data/processed/giac_khang/FISpARohzy8/evidence_first_pass.json",
-          "source_badge": "processed"
+          "source_file": "data/curated/giac_khang/FISpARohzy8/evidence_curated.json",
+          "source_badge": "curated"
         },
         {
           "source": "source_youtube_fisp_arohzy8",
           "type": "HAS_DOCUMENT",
           "target": "document_transcript_fisp_arohzy8",
           "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json",
-          "source_badge": "seed"
+          "source_badge": "pilot"
         },
         {
           "source": "concept_luc_can_luc_tran_luc_thuc",
           "type": "RELATED_TO",
           "target": "concept_kinh_sau_sau",
           "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json",
-          "source_badge": "seed"
+          "source_badge": "pilot"
         },
         {
           "source": "concept_sau_can",
           "type": "RELATED_TO",
           "target": "concept_kinh_sau_sau",
           "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json",
-          "source_badge": "seed"
+          "source_badge": "pilot"
         },
         {
           "source": "concept_sau_thuc",
           "type": "RELATED_TO",
           "target": "concept_kinh_sau_sau",
           "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json",
-          "source_badge": "seed"
+          "source_badge": "pilot"
         },
         {
           "source": "concept_sau_tran",
           "type": "RELATED_TO",
           "target": "concept_kinh_sau_sau",
           "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json",
-          "source_badge": "seed"
+          "source_badge": "pilot"
         }
       ]
     },
@@ -550,7 +561,8 @@ window.DHARMA_GRAPH_SCOPES = {
         },
         "source_badge_counts": {
           "corpus": 2,
-          "seed": 146
+          "pilot": 14,
+          "seed": 132
         }
       },
       "nodes": [
@@ -762,7 +774,7 @@ window.DHARMA_GRAPH_SCOPES = {
           "locator": "video root",
           "review_status": "unreviewed",
           "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json",
-          "source_badge": "seed"
+          "source_badge": "pilot"
         },
         {
           "id": "concept_ahimsa",
@@ -956,7 +968,7 @@ window.DHARMA_GRAPH_SCOPES = {
           "category": "text_topic",
           "description": "Pilot topic concept for Giác Khang teachings on Kinh Sáu Sáu.",
           "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json",
-          "source_badge": "seed"
+          "source_badge": "pilot"
         },
         {
           "id": "concept_klesha",
@@ -977,7 +989,7 @@ window.DHARMA_GRAPH_SCOPES = {
           "category": "doctrine",
           "description": "Grouping concept for six faculties, six objects, and six consciousnesses.",
           "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json",
-          "source_badge": "seed"
+          "source_badge": "pilot"
         },
         {
           "id": "concept_mantra",
@@ -1148,7 +1160,7 @@ window.DHARMA_GRAPH_SCOPES = {
           "category": "doctrine",
           "description": "Vietnamese concept placeholder for the six sense faculties in the Kinh Sáu Sáu pilot.",
           "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json",
-          "source_badge": "seed"
+          "source_badge": "pilot"
         },
         {
           "id": "concept_sau_thuc",
@@ -1158,7 +1170,7 @@ window.DHARMA_GRAPH_SCOPES = {
           "category": "doctrine",
           "description": "Vietnamese concept placeholder for the six consciousnesses in the Kinh Sáu Sáu pilot.",
           "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json",
-          "source_badge": "seed"
+          "source_badge": "pilot"
         },
         {
           "id": "concept_sau_tran",
@@ -1168,7 +1180,7 @@ window.DHARMA_GRAPH_SCOPES = {
           "category": "doctrine",
           "description": "Vietnamese concept placeholder for the six sense objects in the Kinh Sáu Sáu pilot.",
           "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json",
-          "source_badge": "seed"
+          "source_badge": "pilot"
         },
         {
           "id": "concept_tanha",
@@ -1252,7 +1264,7 @@ window.DHARMA_GRAPH_SCOPES = {
           "review_status": "unreviewed",
           "notes": "Transcript not yet imported. Evidence must not be created without real excerpt text and timestamp.",
           "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json",
-          "source_badge": "seed"
+          "source_badge": "pilot"
         },
         {
           "id": "evidence_giac_khang_pratityasamutpada_001",
@@ -1450,7 +1462,7 @@ window.DHARMA_GRAPH_SCOPES = {
           "topic": "Kinh Sáu Sáu",
           "review_status": "unreviewed",
           "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json",
-          "source_badge": "seed"
+          "source_badge": "pilot"
         },
         {
           "id": "term_ahimsa_sanskrit",
@@ -1784,7 +1796,7 @@ window.DHARMA_GRAPH_SCOPES = {
           "script": "Hán-Việt",
           "translation": "six sense faculties",
           "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json",
-          "source_badge": "seed"
+          "source_badge": "pilot"
         },
         {
           "id": "term_luc_thuc_hv",
@@ -1794,7 +1806,7 @@ window.DHARMA_GRAPH_SCOPES = {
           "script": "Hán-Việt",
           "translation": "six consciousnesses",
           "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json",
-          "source_badge": "seed"
+          "source_badge": "pilot"
         },
         {
           "id": "term_luc_tran_hv",
@@ -1804,7 +1816,7 @@ window.DHARMA_GRAPH_SCOPES = {
           "script": "Hán-Việt",
           "translation": "six sense objects",
           "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json",
-          "source_badge": "seed"
+          "source_badge": "pilot"
         },
         {
           "id": "term_madhyama_pratipad_sanskrit",
@@ -2053,7 +2065,7 @@ window.DHARMA_GRAPH_SCOPES = {
           "language": "vi",
           "translation": "six sense faculties",
           "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json",
-          "source_badge": "seed"
+          "source_badge": "pilot"
         },
         {
           "id": "term_sau_thuc_vi",
@@ -2062,7 +2074,7 @@ window.DHARMA_GRAPH_SCOPES = {
           "language": "vi",
           "translation": "six consciousnesses",
           "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json",
-          "source_badge": "seed"
+          "source_badge": "pilot"
         },
         {
           "id": "term_sau_tran_vi",
@@ -2071,7 +2083,7 @@ window.DHARMA_GRAPH_SCOPES = {
           "language": "vi",
           "translation": "six sense objects",
           "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json",
-          "source_badge": "seed"
+          "source_badge": "pilot"
         },
         {
           "id": "term_tanha_pali",
@@ -2230,7 +2242,7 @@ window.DHARMA_GRAPH_SCOPES = {
           "type": "BELONGS_TO_CORPUS",
           "target": "corpus_giac_khang",
           "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json",
-          "source_badge": "seed"
+          "source_badge": "pilot"
         },
         {
           "source": "source_giac_khang_notes",
@@ -2244,7 +2256,7 @@ window.DHARMA_GRAPH_SCOPES = {
           "type": "BELONGS_TO_CORPUS",
           "target": "corpus_giac_khang",
           "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json",
-          "source_badge": "seed"
+          "source_badge": "pilot"
         },
         {
           "source": "work_giac_khang_pilot_teachings",
@@ -2888,49 +2900,49 @@ window.DHARMA_GRAPH_SCOPES = {
           "type": "DENOTES",
           "target": "concept_sau_can",
           "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json",
-          "source_badge": "seed"
+          "source_badge": "pilot"
         },
         {
           "source": "term_luc_thuc_hv",
           "type": "DENOTES",
           "target": "concept_sau_thuc",
           "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json",
-          "source_badge": "seed"
+          "source_badge": "pilot"
         },
         {
           "source": "term_luc_tran_hv",
           "type": "DENOTES",
           "target": "concept_sau_tran",
           "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json",
-          "source_badge": "seed"
+          "source_badge": "pilot"
         },
         {
           "source": "term_sau_can_vi",
           "type": "DENOTES",
           "target": "concept_sau_can",
           "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json",
-          "source_badge": "seed"
+          "source_badge": "pilot"
         },
         {
           "source": "term_sau_thuc_vi",
           "type": "DENOTES",
           "target": "concept_sau_thuc",
           "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json",
-          "source_badge": "seed"
+          "source_badge": "pilot"
         },
         {
           "source": "term_sau_tran_vi",
           "type": "DENOTES",
           "target": "concept_sau_tran",
           "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json",
-          "source_badge": "seed"
+          "source_badge": "pilot"
         },
         {
           "source": "citation_youtube_fisp_arohzy8",
           "type": "DERIVED_FROM",
           "target": "source_youtube_fisp_arohzy8",
           "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json",
-          "source_badge": "seed"
+          "source_badge": "pilot"
         },
         {
           "source": "document_giac_khang_mvp_notes",
@@ -2944,7 +2956,7 @@ window.DHARMA_GRAPH_SCOPES = {
           "type": "DERIVED_FROM",
           "target": "source_youtube_fisp_arohzy8",
           "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json",
-          "source_badge": "seed"
+          "source_badge": "pilot"
         },
         {
           "source": "evidence_giac_khang_middle_way_001",
@@ -3028,7 +3040,7 @@ window.DHARMA_GRAPH_SCOPES = {
           "type": "HAS_DOCUMENT",
           "target": "document_transcript_fisp_arohzy8",
           "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json",
-          "source_badge": "seed"
+          "source_badge": "pilot"
         },
         {
           "source": "work_giac_khang_pilot_teachings",
@@ -3553,7 +3565,7 @@ window.DHARMA_GRAPH_SCOPES = {
           "type": "RELATED_TO",
           "target": "concept_kinh_sau_sau",
           "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json",
-          "source_badge": "seed"
+          "source_badge": "pilot"
         },
         {
           "source": "concept_middle_way",
@@ -3630,21 +3642,21 @@ window.DHARMA_GRAPH_SCOPES = {
           "type": "RELATED_TO",
           "target": "concept_kinh_sau_sau",
           "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json",
-          "source_badge": "seed"
+          "source_badge": "pilot"
         },
         {
           "source": "concept_sau_thuc",
           "type": "RELATED_TO",
           "target": "concept_kinh_sau_sau",
           "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json",
-          "source_badge": "seed"
+          "source_badge": "pilot"
         },
         {
           "source": "concept_sau_tran",
           "type": "RELATED_TO",
           "target": "concept_kinh_sau_sau",
           "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json",
-          "source_badge": "seed"
+          "source_badge": "pilot"
         },
         {
           "source": "concept_sunyata",
@@ -3793,7 +3805,7 @@ window.DHARMA_GRAPH_SCOPES = {
         "title": "Dharma Knowledge Graph: All Data",
         "version": "0.1",
         "mode": "all_data",
-        "content_hash": "a71739ba126b977a3507406f899d3d2696e43a8d63467094990ad23fba75f31b",
+        "content_hash": "7ac20d2d194448f32d3de85239b528e620f7a1a60b4a993155ff0453757ec230",
         "source_files": [
           "data/seeds/concepts.json",
           "data/seeds/core.json",
@@ -3807,7 +3819,8 @@ window.DHARMA_GRAPH_SCOPES = {
           "data/seeds/terms_extended.json",
           "data/seeds/terms_remaining.json",
           "data/processed/giac_khang/FISpARohzy8/evidence_first_pass.json",
-          "data/reviewed/giac_khang/FISpARohzy8/evidence_review_queue.json"
+          "data/reviewed/giac_khang/FISpARohzy8/evidence_review_queue.json",
+          "data/curated/giac_khang/FISpARohzy8/evidence_curated.json"
         ]
       },
       "summary": {
@@ -3845,8 +3858,9 @@ window.DHARMA_GRAPH_SCOPES = {
         },
         "source_badge_counts": {
           "corpus": 2,
-          "reviewed": 5,
-          "seed": 146
+          "curated": 5,
+          "pilot": 14,
+          "seed": 132
         }
       },
       "nodes": [
@@ -4058,7 +4072,7 @@ window.DHARMA_GRAPH_SCOPES = {
           "locator": "video root",
           "review_status": "unreviewed",
           "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json",
-          "source_badge": "seed"
+          "source_badge": "pilot"
         },
         {
           "id": "concept_ahimsa",
@@ -4252,7 +4266,7 @@ window.DHARMA_GRAPH_SCOPES = {
           "category": "text_topic",
           "description": "Pilot topic concept for Giác Khang teachings on Kinh Sáu Sáu.",
           "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json",
-          "source_badge": "seed"
+          "source_badge": "pilot"
         },
         {
           "id": "concept_klesha",
@@ -4273,7 +4287,7 @@ window.DHARMA_GRAPH_SCOPES = {
           "category": "doctrine",
           "description": "Grouping concept for six faculties, six objects, and six consciousnesses.",
           "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json",
-          "source_badge": "seed"
+          "source_badge": "pilot"
         },
         {
           "id": "concept_mantra",
@@ -4444,7 +4458,7 @@ window.DHARMA_GRAPH_SCOPES = {
           "category": "doctrine",
           "description": "Vietnamese concept placeholder for the six sense faculties in the Kinh Sáu Sáu pilot.",
           "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json",
-          "source_badge": "seed"
+          "source_badge": "pilot"
         },
         {
           "id": "concept_sau_thuc",
@@ -4454,7 +4468,7 @@ window.DHARMA_GRAPH_SCOPES = {
           "category": "doctrine",
           "description": "Vietnamese concept placeholder for the six consciousnesses in the Kinh Sáu Sáu pilot.",
           "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json",
-          "source_badge": "seed"
+          "source_badge": "pilot"
         },
         {
           "id": "concept_sau_tran",
@@ -4464,7 +4478,7 @@ window.DHARMA_GRAPH_SCOPES = {
           "category": "doctrine",
           "description": "Vietnamese concept placeholder for the six sense objects in the Kinh Sáu Sáu pilot.",
           "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json",
-          "source_badge": "seed"
+          "source_badge": "pilot"
         },
         {
           "id": "concept_tanha",
@@ -4548,7 +4562,7 @@ window.DHARMA_GRAPH_SCOPES = {
           "review_status": "unreviewed",
           "notes": "Transcript not yet imported. Evidence must not be created without real excerpt text and timestamp.",
           "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json",
-          "source_badge": "seed"
+          "source_badge": "pilot"
         },
         {
           "id": "evidence_giac_khang_pratityasamutpada_001",
@@ -4632,13 +4646,15 @@ window.DHARMA_GRAPH_SCOPES = {
           "notes": "Imported from YouTube VTT caption. Needs human review for Buddhist terminology.",
           "original_review_status": "unreviewed",
           "original_evidence_text": "Tiếp tục bài kinh 66 thì trước tiên tôi xin tóm trước rồi hai vị Phật tử sẽ nhắc lại rồi chúng ta sẽ đi vào trả lời bài câu hỏi số 1 thì ở đây bài kinh 66 gồm tất cả là sáu phần. Phần nhập đề tức",
-          "reviewed_evidence_text": "Tiếp tục bài kinh 66 thì trước tiên tôi xin tóm trước rồi hai vị Phật tử sẽ nhắc lại rồi chúng ta sẽ đi vào trả lời bài câu hỏi số 1 thì ở đây bài kinh 66 gồm tất cả là sáu phần. Phần nhập đề tức",
           "reviewer": "",
           "reviewed_at": "",
           "review_notes": "",
           "review_status": "human_reviewed",
-          "source_file": "data/reviewed/giac_khang/FISpARohzy8/evidence_review_queue.json",
-          "source_badge": "reviewed"
+          "curated_status": "curated",
+          "curated_at": "2026-07-03",
+          "curator": "Minh",
+          "source_file": "data/curated/giac_khang/FISpARohzy8/evidence_curated.json",
+          "source_badge": "curated"
         },
         {
           "id": "evidence_fisp_arohzy8_0002",
@@ -4657,13 +4673,15 @@ window.DHARMA_GRAPH_SCOPES = {
           "notes": "Imported from YouTube VTT caption. Needs human review for Buddhist terminology.",
           "original_review_status": "unreviewed",
           "original_evidence_text": "là phần dẫn nhập, phần kết luận là hai còn phần thân bài là bốn. Thì ở đây chúng ta thường thấy kinh Phật nói chung đó là có sáu cái ấn chứng, sáu cái chứng để đi vào bài giảng.",
-          "reviewed_evidence_text": "là phần dẫn nhập, phần kết luận là hai còn phần thân bài là bốn. Thì ở đây chúng ta thường thấy kinh Phật nói chung đó là có sáu cái ấn chứng, sáu cái chứng để đi vào bài giảng.",
           "reviewer": "",
           "reviewed_at": "",
           "review_notes": "",
           "review_status": "human_reviewed",
-          "source_file": "data/reviewed/giac_khang/FISpARohzy8/evidence_review_queue.json",
-          "source_badge": "reviewed"
+          "curated_status": "curated",
+          "curated_at": "2026-07-03",
+          "curator": "Minh",
+          "source_file": "data/curated/giac_khang/FISpARohzy8/evidence_curated.json",
+          "source_badge": "curated"
         },
         {
           "id": "evidence_fisp_arohzy8_0003",
@@ -4682,13 +4700,15 @@ window.DHARMA_GRAPH_SCOPES = {
           "notes": "Imported from YouTube VTT caption. Needs human review for Buddhist terminology.",
           "original_review_status": "unreviewed",
           "original_evidence_text": "Vì chúng ta thấy đây là cái ấn chứng thứ nhất là không gian, thứ nhì là thời gian và cái thứ ba là ai giảng, cái thứ tư là giảng cho ai nghe và cái thứ năm là giảng về kinh gì và cái thứ sáu là nội dung của bài kinh đó. Thì chúng ta thấy đây không gian thời gian là tại thành Xá Vệ cái giường của ông thái tử Kiều Đà và",
-          "reviewed_evidence_text": "Vì chúng ta thấy đây là cái ấn chứng thứ nhất là không gian, thứ nhì là thời gian và cái thứ ba là ai giảng, cái thứ tư là giảng cho ai nghe và cái thứ năm là giảng về kinh gì và cái thứ sáu là nội dung của bài kinh đó. Thì chúng ta thấy đây không gian thời gian là tại thành Xá Vệ cái giường của ông thái tử Kiều Đà và",
           "reviewer": "",
           "reviewed_at": "",
           "review_notes": "",
           "review_status": "human_reviewed",
-          "source_file": "data/reviewed/giac_khang/FISpARohzy8/evidence_review_queue.json",
-          "source_badge": "reviewed"
+          "curated_status": "curated",
+          "curated_at": "2026-07-03",
+          "curator": "Minh",
+          "source_file": "data/curated/giac_khang/FISpARohzy8/evidence_curated.json",
+          "source_badge": "curated"
         },
         {
           "id": "evidence_fisp_arohzy8_0004",
@@ -4707,13 +4727,15 @@ window.DHARMA_GRAPH_SCOPES = {
           "notes": "Imported from YouTube VTT caption. Needs human review for Buddhist terminology.",
           "original_review_status": "unreviewed",
           "original_evidence_text": "Tịnh xá của cấp cô độc. Đó là phần không gian thời gian hai phần. Phần thứ ba là Đức Phật Thích Ca Mâu Ni tức là đức Thế Tôn của chúng ta giảng và giảng cho các vị tỳ kheo nghe. Đó là bốn phần. Và phần thứ năm là giảng về bài kinh 66 và nội dung đó là sơ thiện, trung thiện, hậu thiện có văn có nghĩa",
-          "reviewed_evidence_text": "Tịnh xá của cấp cô độc. Đó là phần không gian thời gian hai phần. Phần thứ ba là Đức Phật Thích Ca Mâu Ni tức là đức Thế Tôn của chúng ta giảng và giảng cho các vị tỳ kheo nghe. Đó là bốn phần. Và phần thứ năm là giảng về bài kinh 66 và nội dung đó là sơ thiện, trung thiện, hậu thiện có văn có nghĩa",
           "reviewer": "",
           "reviewed_at": "",
           "review_notes": "",
           "review_status": "human_reviewed",
-          "source_file": "data/reviewed/giac_khang/FISpARohzy8/evidence_review_queue.json",
-          "source_badge": "reviewed"
+          "curated_status": "curated",
+          "curated_at": "2026-07-03",
+          "curator": "Minh",
+          "source_file": "data/curated/giac_khang/FISpARohzy8/evidence_curated.json",
+          "source_badge": "curated"
         },
         {
           "id": "evidence_fisp_arohzy8_0005",
@@ -4732,13 +4754,15 @@ window.DHARMA_GRAPH_SCOPES = {
           "notes": "Imported from YouTube VTT caption. Needs human review for Buddhist terminology.",
           "original_review_status": "unreviewed",
           "original_evidence_text": "phạm hạnh thanh tịnh rồi đưa đến giải thoát. Đó là hình. Còn sau đây là bốn phần là thân bài. Tức là phần thứ nhất là trình bày về bài kinh 66 tức là 36 pháp toàn thể vũ trụ.",
-          "reviewed_evidence_text": "phạm hạnh thanh tịnh rồi đưa đến giải thoát. Đó là hình. Còn sau đây là bốn phần là thân bài. Tức là phần thứ nhất là trình bày về bài kinh 66 tức là 36 pháp toàn thể vũ trụ.",
           "reviewer": "",
           "reviewed_at": "",
           "review_notes": "",
           "review_status": "human_reviewed",
-          "source_file": "data/reviewed/giac_khang/FISpARohzy8/evidence_review_queue.json",
-          "source_badge": "reviewed"
+          "curated_status": "curated",
+          "curated_at": "2026-07-03",
+          "curator": "Minh",
+          "source_file": "data/curated/giac_khang/FISpARohzy8/evidence_curated.json",
+          "source_badge": "curated"
         },
         {
           "id": "person_nagarjuna",
@@ -4871,7 +4895,7 @@ window.DHARMA_GRAPH_SCOPES = {
           "topic": "Kinh Sáu Sáu",
           "review_status": "unreviewed",
           "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json",
-          "source_badge": "seed"
+          "source_badge": "pilot"
         },
         {
           "id": "term_ahimsa_sanskrit",
@@ -5205,7 +5229,7 @@ window.DHARMA_GRAPH_SCOPES = {
           "script": "Hán-Việt",
           "translation": "six sense faculties",
           "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json",
-          "source_badge": "seed"
+          "source_badge": "pilot"
         },
         {
           "id": "term_luc_thuc_hv",
@@ -5215,7 +5239,7 @@ window.DHARMA_GRAPH_SCOPES = {
           "script": "Hán-Việt",
           "translation": "six consciousnesses",
           "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json",
-          "source_badge": "seed"
+          "source_badge": "pilot"
         },
         {
           "id": "term_luc_tran_hv",
@@ -5225,7 +5249,7 @@ window.DHARMA_GRAPH_SCOPES = {
           "script": "Hán-Việt",
           "translation": "six sense objects",
           "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json",
-          "source_badge": "seed"
+          "source_badge": "pilot"
         },
         {
           "id": "term_madhyama_pratipad_sanskrit",
@@ -5474,7 +5498,7 @@ window.DHARMA_GRAPH_SCOPES = {
           "language": "vi",
           "translation": "six sense faculties",
           "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json",
-          "source_badge": "seed"
+          "source_badge": "pilot"
         },
         {
           "id": "term_sau_thuc_vi",
@@ -5483,7 +5507,7 @@ window.DHARMA_GRAPH_SCOPES = {
           "language": "vi",
           "translation": "six consciousnesses",
           "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json",
-          "source_badge": "seed"
+          "source_badge": "pilot"
         },
         {
           "id": "term_sau_tran_vi",
@@ -5492,7 +5516,7 @@ window.DHARMA_GRAPH_SCOPES = {
           "language": "vi",
           "translation": "six sense objects",
           "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json",
-          "source_badge": "seed"
+          "source_badge": "pilot"
         },
         {
           "id": "term_tanha_pali",
@@ -5651,7 +5675,7 @@ window.DHARMA_GRAPH_SCOPES = {
           "type": "BELONGS_TO_CORPUS",
           "target": "corpus_giac_khang",
           "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json",
-          "source_badge": "seed"
+          "source_badge": "pilot"
         },
         {
           "source": "source_giac_khang_notes",
@@ -5665,7 +5689,7 @@ window.DHARMA_GRAPH_SCOPES = {
           "type": "BELONGS_TO_CORPUS",
           "target": "corpus_giac_khang",
           "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json",
-          "source_badge": "seed"
+          "source_badge": "pilot"
         },
         {
           "source": "work_giac_khang_pilot_teachings",
@@ -6309,49 +6333,49 @@ window.DHARMA_GRAPH_SCOPES = {
           "type": "DENOTES",
           "target": "concept_sau_can",
           "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json",
-          "source_badge": "seed"
+          "source_badge": "pilot"
         },
         {
           "source": "term_luc_thuc_hv",
           "type": "DENOTES",
           "target": "concept_sau_thuc",
           "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json",
-          "source_badge": "seed"
+          "source_badge": "pilot"
         },
         {
           "source": "term_luc_tran_hv",
           "type": "DENOTES",
           "target": "concept_sau_tran",
           "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json",
-          "source_badge": "seed"
+          "source_badge": "pilot"
         },
         {
           "source": "term_sau_can_vi",
           "type": "DENOTES",
           "target": "concept_sau_can",
           "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json",
-          "source_badge": "seed"
+          "source_badge": "pilot"
         },
         {
           "source": "term_sau_thuc_vi",
           "type": "DENOTES",
           "target": "concept_sau_thuc",
           "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json",
-          "source_badge": "seed"
+          "source_badge": "pilot"
         },
         {
           "source": "term_sau_tran_vi",
           "type": "DENOTES",
           "target": "concept_sau_tran",
           "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json",
-          "source_badge": "seed"
+          "source_badge": "pilot"
         },
         {
           "source": "citation_youtube_fisp_arohzy8",
           "type": "DERIVED_FROM",
           "target": "source_youtube_fisp_arohzy8",
           "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json",
-          "source_badge": "seed"
+          "source_badge": "pilot"
         },
         {
           "source": "document_giac_khang_mvp_notes",
@@ -6365,42 +6389,42 @@ window.DHARMA_GRAPH_SCOPES = {
           "type": "DERIVED_FROM",
           "target": "source_youtube_fisp_arohzy8",
           "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json",
-          "source_badge": "seed"
+          "source_badge": "pilot"
         },
         {
           "source": "evidence_fisp_arohzy8_0001",
           "type": "DERIVED_FROM",
           "target": "document_transcript_fisp_arohzy8",
-          "source_file": "data/processed/giac_khang/FISpARohzy8/evidence_first_pass.json",
-          "source_badge": "processed"
+          "source_file": "data/curated/giac_khang/FISpARohzy8/evidence_curated.json",
+          "source_badge": "curated"
         },
         {
           "source": "evidence_fisp_arohzy8_0002",
           "type": "DERIVED_FROM",
           "target": "document_transcript_fisp_arohzy8",
-          "source_file": "data/processed/giac_khang/FISpARohzy8/evidence_first_pass.json",
-          "source_badge": "processed"
+          "source_file": "data/curated/giac_khang/FISpARohzy8/evidence_curated.json",
+          "source_badge": "curated"
         },
         {
           "source": "evidence_fisp_arohzy8_0003",
           "type": "DERIVED_FROM",
           "target": "document_transcript_fisp_arohzy8",
-          "source_file": "data/processed/giac_khang/FISpARohzy8/evidence_first_pass.json",
-          "source_badge": "processed"
+          "source_file": "data/curated/giac_khang/FISpARohzy8/evidence_curated.json",
+          "source_badge": "curated"
         },
         {
           "source": "evidence_fisp_arohzy8_0004",
           "type": "DERIVED_FROM",
           "target": "document_transcript_fisp_arohzy8",
-          "source_file": "data/processed/giac_khang/FISpARohzy8/evidence_first_pass.json",
-          "source_badge": "processed"
+          "source_file": "data/curated/giac_khang/FISpARohzy8/evidence_curated.json",
+          "source_badge": "curated"
         },
         {
           "source": "evidence_fisp_arohzy8_0005",
           "type": "DERIVED_FROM",
           "target": "document_transcript_fisp_arohzy8",
-          "source_file": "data/processed/giac_khang/FISpARohzy8/evidence_first_pass.json",
-          "source_badge": "processed"
+          "source_file": "data/curated/giac_khang/FISpARohzy8/evidence_curated.json",
+          "source_badge": "curated"
         },
         {
           "source": "evidence_giac_khang_middle_way_001",
@@ -6455,36 +6479,36 @@ window.DHARMA_GRAPH_SCOPES = {
           "source": "evidence_fisp_arohzy8_0001",
           "type": "HAS_CITATION",
           "target": "citation_youtube_fisp_arohzy8",
-          "source_file": "data/processed/giac_khang/FISpARohzy8/evidence_first_pass.json",
-          "source_badge": "processed"
+          "source_file": "data/curated/giac_khang/FISpARohzy8/evidence_curated.json",
+          "source_badge": "curated"
         },
         {
           "source": "evidence_fisp_arohzy8_0002",
           "type": "HAS_CITATION",
           "target": "citation_youtube_fisp_arohzy8",
-          "source_file": "data/processed/giac_khang/FISpARohzy8/evidence_first_pass.json",
-          "source_badge": "processed"
+          "source_file": "data/curated/giac_khang/FISpARohzy8/evidence_curated.json",
+          "source_badge": "curated"
         },
         {
           "source": "evidence_fisp_arohzy8_0003",
           "type": "HAS_CITATION",
           "target": "citation_youtube_fisp_arohzy8",
-          "source_file": "data/processed/giac_khang/FISpARohzy8/evidence_first_pass.json",
-          "source_badge": "processed"
+          "source_file": "data/curated/giac_khang/FISpARohzy8/evidence_curated.json",
+          "source_badge": "curated"
         },
         {
           "source": "evidence_fisp_arohzy8_0004",
           "type": "HAS_CITATION",
           "target": "citation_youtube_fisp_arohzy8",
-          "source_file": "data/processed/giac_khang/FISpARohzy8/evidence_first_pass.json",
-          "source_badge": "processed"
+          "source_file": "data/curated/giac_khang/FISpARohzy8/evidence_curated.json",
+          "source_badge": "curated"
         },
         {
           "source": "evidence_fisp_arohzy8_0005",
           "type": "HAS_CITATION",
           "target": "citation_youtube_fisp_arohzy8",
-          "source_file": "data/processed/giac_khang/FISpARohzy8/evidence_first_pass.json",
-          "source_badge": "processed"
+          "source_file": "data/curated/giac_khang/FISpARohzy8/evidence_curated.json",
+          "source_badge": "curated"
         },
         {
           "source": "evidence_giac_khang_middle_way_001",
@@ -6519,7 +6543,7 @@ window.DHARMA_GRAPH_SCOPES = {
           "type": "HAS_DOCUMENT",
           "target": "document_transcript_fisp_arohzy8",
           "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json",
-          "source_badge": "seed"
+          "source_badge": "pilot"
         },
         {
           "source": "work_giac_khang_pilot_teachings",
@@ -7044,7 +7068,7 @@ window.DHARMA_GRAPH_SCOPES = {
           "type": "RELATED_TO",
           "target": "concept_kinh_sau_sau",
           "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json",
-          "source_badge": "seed"
+          "source_badge": "pilot"
         },
         {
           "source": "concept_middle_way",
@@ -7121,21 +7145,21 @@ window.DHARMA_GRAPH_SCOPES = {
           "type": "RELATED_TO",
           "target": "concept_kinh_sau_sau",
           "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json",
-          "source_badge": "seed"
+          "source_badge": "pilot"
         },
         {
           "source": "concept_sau_thuc",
           "type": "RELATED_TO",
           "target": "concept_kinh_sau_sau",
           "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json",
-          "source_badge": "seed"
+          "source_badge": "pilot"
         },
         {
           "source": "concept_sau_tran",
           "type": "RELATED_TO",
           "target": "concept_kinh_sau_sau",
           "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json",
-          "source_badge": "seed"
+          "source_badge": "pilot"
         },
         {
           "source": "concept_sunyata",
@@ -7286,11 +7310,12 @@ window.DHARMA_GRAPH = {
     "title": "Dharma Knowledge Graph: Giác Khang Corpus",
     "version": "0.1",
     "mode": "giac_khang",
-    "content_hash": "5c453319f08e887b114988a043ff59e6c7e1b969bd1ebc4d1bc5af8e08fca431",
+    "content_hash": "d81d6c20da636d32fc301ff67286934ef8adbc1d7fe45a63b35baa0478eefae9",
     "source_files": [
       "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json",
       "data/processed/giac_khang/FISpARohzy8/evidence_first_pass.json",
-      "data/reviewed/giac_khang/FISpARohzy8/evidence_review_queue.json"
+      "data/reviewed/giac_khang/FISpARohzy8/evidence_review_queue.json",
+      "data/curated/giac_khang/FISpARohzy8/evidence_curated.json"
     ]
   },
   "summary": {
@@ -7315,8 +7340,8 @@ window.DHARMA_GRAPH = {
     },
     "source_badge_counts": {
       "corpus": 1,
-      "reviewed": 5,
-      "seed": 14
+      "curated": 5,
+      "pilot": 14
     }
   },
   "nodes": [
@@ -7328,7 +7353,7 @@ window.DHARMA_GRAPH = {
       "locator": "video root",
       "review_status": "unreviewed",
       "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json",
-      "source_badge": "seed"
+      "source_badge": "pilot"
     },
     {
       "id": "concept_kinh_sau_sau",
@@ -7338,7 +7363,7 @@ window.DHARMA_GRAPH = {
       "category": "text_topic",
       "description": "Pilot topic concept for Giác Khang teachings on Kinh Sáu Sáu.",
       "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json",
-      "source_badge": "seed"
+      "source_badge": "pilot"
     },
     {
       "id": "concept_luc_can_luc_tran_luc_thuc",
@@ -7348,7 +7373,7 @@ window.DHARMA_GRAPH = {
       "category": "doctrine",
       "description": "Grouping concept for six faculties, six objects, and six consciousnesses.",
       "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json",
-      "source_badge": "seed"
+      "source_badge": "pilot"
     },
     {
       "id": "concept_sau_can",
@@ -7358,7 +7383,7 @@ window.DHARMA_GRAPH = {
       "category": "doctrine",
       "description": "Vietnamese concept placeholder for the six sense faculties in the Kinh Sáu Sáu pilot.",
       "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json",
-      "source_badge": "seed"
+      "source_badge": "pilot"
     },
     {
       "id": "concept_sau_thuc",
@@ -7368,7 +7393,7 @@ window.DHARMA_GRAPH = {
       "category": "doctrine",
       "description": "Vietnamese concept placeholder for the six consciousnesses in the Kinh Sáu Sáu pilot.",
       "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json",
-      "source_badge": "seed"
+      "source_badge": "pilot"
     },
     {
       "id": "concept_sau_tran",
@@ -7378,7 +7403,7 @@ window.DHARMA_GRAPH = {
       "category": "doctrine",
       "description": "Vietnamese concept placeholder for the six sense objects in the Kinh Sáu Sáu pilot.",
       "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json",
-      "source_badge": "seed"
+      "source_badge": "pilot"
     },
     {
       "id": "corpus_giac_khang",
@@ -7398,7 +7423,7 @@ window.DHARMA_GRAPH = {
       "review_status": "unreviewed",
       "notes": "Transcript not yet imported. Evidence must not be created without real excerpt text and timestamp.",
       "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json",
-      "source_badge": "seed"
+      "source_badge": "pilot"
     },
     {
       "id": "evidence_fisp_arohzy8_0001",
@@ -7417,13 +7442,15 @@ window.DHARMA_GRAPH = {
       "notes": "Imported from YouTube VTT caption. Needs human review for Buddhist terminology.",
       "original_review_status": "unreviewed",
       "original_evidence_text": "Tiếp tục bài kinh 66 thì trước tiên tôi xin tóm trước rồi hai vị Phật tử sẽ nhắc lại rồi chúng ta sẽ đi vào trả lời bài câu hỏi số 1 thì ở đây bài kinh 66 gồm tất cả là sáu phần. Phần nhập đề tức",
-      "reviewed_evidence_text": "Tiếp tục bài kinh 66 thì trước tiên tôi xin tóm trước rồi hai vị Phật tử sẽ nhắc lại rồi chúng ta sẽ đi vào trả lời bài câu hỏi số 1 thì ở đây bài kinh 66 gồm tất cả là sáu phần. Phần nhập đề tức",
       "reviewer": "",
       "reviewed_at": "",
       "review_notes": "",
       "review_status": "human_reviewed",
-      "source_file": "data/reviewed/giac_khang/FISpARohzy8/evidence_review_queue.json",
-      "source_badge": "reviewed"
+      "curated_status": "curated",
+      "curated_at": "2026-07-03",
+      "curator": "Minh",
+      "source_file": "data/curated/giac_khang/FISpARohzy8/evidence_curated.json",
+      "source_badge": "curated"
     },
     {
       "id": "evidence_fisp_arohzy8_0002",
@@ -7442,13 +7469,15 @@ window.DHARMA_GRAPH = {
       "notes": "Imported from YouTube VTT caption. Needs human review for Buddhist terminology.",
       "original_review_status": "unreviewed",
       "original_evidence_text": "là phần dẫn nhập, phần kết luận là hai còn phần thân bài là bốn. Thì ở đây chúng ta thường thấy kinh Phật nói chung đó là có sáu cái ấn chứng, sáu cái chứng để đi vào bài giảng.",
-      "reviewed_evidence_text": "là phần dẫn nhập, phần kết luận là hai còn phần thân bài là bốn. Thì ở đây chúng ta thường thấy kinh Phật nói chung đó là có sáu cái ấn chứng, sáu cái chứng để đi vào bài giảng.",
       "reviewer": "",
       "reviewed_at": "",
       "review_notes": "",
       "review_status": "human_reviewed",
-      "source_file": "data/reviewed/giac_khang/FISpARohzy8/evidence_review_queue.json",
-      "source_badge": "reviewed"
+      "curated_status": "curated",
+      "curated_at": "2026-07-03",
+      "curator": "Minh",
+      "source_file": "data/curated/giac_khang/FISpARohzy8/evidence_curated.json",
+      "source_badge": "curated"
     },
     {
       "id": "evidence_fisp_arohzy8_0003",
@@ -7467,13 +7496,15 @@ window.DHARMA_GRAPH = {
       "notes": "Imported from YouTube VTT caption. Needs human review for Buddhist terminology.",
       "original_review_status": "unreviewed",
       "original_evidence_text": "Vì chúng ta thấy đây là cái ấn chứng thứ nhất là không gian, thứ nhì là thời gian và cái thứ ba là ai giảng, cái thứ tư là giảng cho ai nghe và cái thứ năm là giảng về kinh gì và cái thứ sáu là nội dung của bài kinh đó. Thì chúng ta thấy đây không gian thời gian là tại thành Xá Vệ cái giường của ông thái tử Kiều Đà và",
-      "reviewed_evidence_text": "Vì chúng ta thấy đây là cái ấn chứng thứ nhất là không gian, thứ nhì là thời gian và cái thứ ba là ai giảng, cái thứ tư là giảng cho ai nghe và cái thứ năm là giảng về kinh gì và cái thứ sáu là nội dung của bài kinh đó. Thì chúng ta thấy đây không gian thời gian là tại thành Xá Vệ cái giường của ông thái tử Kiều Đà và",
       "reviewer": "",
       "reviewed_at": "",
       "review_notes": "",
       "review_status": "human_reviewed",
-      "source_file": "data/reviewed/giac_khang/FISpARohzy8/evidence_review_queue.json",
-      "source_badge": "reviewed"
+      "curated_status": "curated",
+      "curated_at": "2026-07-03",
+      "curator": "Minh",
+      "source_file": "data/curated/giac_khang/FISpARohzy8/evidence_curated.json",
+      "source_badge": "curated"
     },
     {
       "id": "evidence_fisp_arohzy8_0004",
@@ -7492,13 +7523,15 @@ window.DHARMA_GRAPH = {
       "notes": "Imported from YouTube VTT caption. Needs human review for Buddhist terminology.",
       "original_review_status": "unreviewed",
       "original_evidence_text": "Tịnh xá của cấp cô độc. Đó là phần không gian thời gian hai phần. Phần thứ ba là Đức Phật Thích Ca Mâu Ni tức là đức Thế Tôn của chúng ta giảng và giảng cho các vị tỳ kheo nghe. Đó là bốn phần. Và phần thứ năm là giảng về bài kinh 66 và nội dung đó là sơ thiện, trung thiện, hậu thiện có văn có nghĩa",
-      "reviewed_evidence_text": "Tịnh xá của cấp cô độc. Đó là phần không gian thời gian hai phần. Phần thứ ba là Đức Phật Thích Ca Mâu Ni tức là đức Thế Tôn của chúng ta giảng và giảng cho các vị tỳ kheo nghe. Đó là bốn phần. Và phần thứ năm là giảng về bài kinh 66 và nội dung đó là sơ thiện, trung thiện, hậu thiện có văn có nghĩa",
       "reviewer": "",
       "reviewed_at": "",
       "review_notes": "",
       "review_status": "human_reviewed",
-      "source_file": "data/reviewed/giac_khang/FISpARohzy8/evidence_review_queue.json",
-      "source_badge": "reviewed"
+      "curated_status": "curated",
+      "curated_at": "2026-07-03",
+      "curator": "Minh",
+      "source_file": "data/curated/giac_khang/FISpARohzy8/evidence_curated.json",
+      "source_badge": "curated"
     },
     {
       "id": "evidence_fisp_arohzy8_0005",
@@ -7517,13 +7550,15 @@ window.DHARMA_GRAPH = {
       "notes": "Imported from YouTube VTT caption. Needs human review for Buddhist terminology.",
       "original_review_status": "unreviewed",
       "original_evidence_text": "phạm hạnh thanh tịnh rồi đưa đến giải thoát. Đó là hình. Còn sau đây là bốn phần là thân bài. Tức là phần thứ nhất là trình bày về bài kinh 66 tức là 36 pháp toàn thể vũ trụ.",
-      "reviewed_evidence_text": "phạm hạnh thanh tịnh rồi đưa đến giải thoát. Đó là hình. Còn sau đây là bốn phần là thân bài. Tức là phần thứ nhất là trình bày về bài kinh 66 tức là 36 pháp toàn thể vũ trụ.",
       "reviewer": "",
       "reviewed_at": "",
       "review_notes": "",
       "review_status": "human_reviewed",
-      "source_file": "data/reviewed/giac_khang/FISpARohzy8/evidence_review_queue.json",
-      "source_badge": "reviewed"
+      "curated_status": "curated",
+      "curated_at": "2026-07-03",
+      "curator": "Minh",
+      "source_file": "data/curated/giac_khang/FISpARohzy8/evidence_curated.json",
+      "source_badge": "curated"
     },
     {
       "id": "source_youtube_fisp_arohzy8",
@@ -7537,7 +7572,7 @@ window.DHARMA_GRAPH = {
       "topic": "Kinh Sáu Sáu",
       "review_status": "unreviewed",
       "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json",
-      "source_badge": "seed"
+      "source_badge": "pilot"
     },
     {
       "id": "term_luc_can_hv",
@@ -7547,7 +7582,7 @@ window.DHARMA_GRAPH = {
       "script": "Hán-Việt",
       "translation": "six sense faculties",
       "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json",
-      "source_badge": "seed"
+      "source_badge": "pilot"
     },
     {
       "id": "term_luc_thuc_hv",
@@ -7557,7 +7592,7 @@ window.DHARMA_GRAPH = {
       "script": "Hán-Việt",
       "translation": "six consciousnesses",
       "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json",
-      "source_badge": "seed"
+      "source_badge": "pilot"
     },
     {
       "id": "term_luc_tran_hv",
@@ -7567,7 +7602,7 @@ window.DHARMA_GRAPH = {
       "script": "Hán-Việt",
       "translation": "six sense objects",
       "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json",
-      "source_badge": "seed"
+      "source_badge": "pilot"
     },
     {
       "id": "term_sau_can_vi",
@@ -7576,7 +7611,7 @@ window.DHARMA_GRAPH = {
       "language": "vi",
       "translation": "six sense faculties",
       "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json",
-      "source_badge": "seed"
+      "source_badge": "pilot"
     },
     {
       "id": "term_sau_thuc_vi",
@@ -7585,7 +7620,7 @@ window.DHARMA_GRAPH = {
       "language": "vi",
       "translation": "six consciousnesses",
       "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json",
-      "source_badge": "seed"
+      "source_badge": "pilot"
     },
     {
       "id": "term_sau_tran_vi",
@@ -7594,7 +7629,7 @@ window.DHARMA_GRAPH = {
       "language": "vi",
       "translation": "six sense objects",
       "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json",
-      "source_badge": "seed"
+      "source_badge": "pilot"
     }
   ],
   "relationships": [
@@ -7603,175 +7638,175 @@ window.DHARMA_GRAPH = {
       "type": "BELONGS_TO_CORPUS",
       "target": "corpus_giac_khang",
       "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json",
-      "source_badge": "seed"
+      "source_badge": "pilot"
     },
     {
       "source": "source_youtube_fisp_arohzy8",
       "type": "BELONGS_TO_CORPUS",
       "target": "corpus_giac_khang",
       "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json",
-      "source_badge": "seed"
+      "source_badge": "pilot"
     },
     {
       "source": "term_luc_can_hv",
       "type": "DENOTES",
       "target": "concept_sau_can",
       "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json",
-      "source_badge": "seed"
+      "source_badge": "pilot"
     },
     {
       "source": "term_luc_thuc_hv",
       "type": "DENOTES",
       "target": "concept_sau_thuc",
       "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json",
-      "source_badge": "seed"
+      "source_badge": "pilot"
     },
     {
       "source": "term_luc_tran_hv",
       "type": "DENOTES",
       "target": "concept_sau_tran",
       "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json",
-      "source_badge": "seed"
+      "source_badge": "pilot"
     },
     {
       "source": "term_sau_can_vi",
       "type": "DENOTES",
       "target": "concept_sau_can",
       "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json",
-      "source_badge": "seed"
+      "source_badge": "pilot"
     },
     {
       "source": "term_sau_thuc_vi",
       "type": "DENOTES",
       "target": "concept_sau_thuc",
       "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json",
-      "source_badge": "seed"
+      "source_badge": "pilot"
     },
     {
       "source": "term_sau_tran_vi",
       "type": "DENOTES",
       "target": "concept_sau_tran",
       "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json",
-      "source_badge": "seed"
+      "source_badge": "pilot"
     },
     {
       "source": "citation_youtube_fisp_arohzy8",
       "type": "DERIVED_FROM",
       "target": "source_youtube_fisp_arohzy8",
       "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json",
-      "source_badge": "seed"
+      "source_badge": "pilot"
     },
     {
       "source": "document_transcript_fisp_arohzy8",
       "type": "DERIVED_FROM",
       "target": "source_youtube_fisp_arohzy8",
       "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json",
-      "source_badge": "seed"
+      "source_badge": "pilot"
     },
     {
       "source": "evidence_fisp_arohzy8_0001",
       "type": "DERIVED_FROM",
       "target": "document_transcript_fisp_arohzy8",
-      "source_file": "data/processed/giac_khang/FISpARohzy8/evidence_first_pass.json",
-      "source_badge": "processed"
+      "source_file": "data/curated/giac_khang/FISpARohzy8/evidence_curated.json",
+      "source_badge": "curated"
     },
     {
       "source": "evidence_fisp_arohzy8_0002",
       "type": "DERIVED_FROM",
       "target": "document_transcript_fisp_arohzy8",
-      "source_file": "data/processed/giac_khang/FISpARohzy8/evidence_first_pass.json",
-      "source_badge": "processed"
+      "source_file": "data/curated/giac_khang/FISpARohzy8/evidence_curated.json",
+      "source_badge": "curated"
     },
     {
       "source": "evidence_fisp_arohzy8_0003",
       "type": "DERIVED_FROM",
       "target": "document_transcript_fisp_arohzy8",
-      "source_file": "data/processed/giac_khang/FISpARohzy8/evidence_first_pass.json",
-      "source_badge": "processed"
+      "source_file": "data/curated/giac_khang/FISpARohzy8/evidence_curated.json",
+      "source_badge": "curated"
     },
     {
       "source": "evidence_fisp_arohzy8_0004",
       "type": "DERIVED_FROM",
       "target": "document_transcript_fisp_arohzy8",
-      "source_file": "data/processed/giac_khang/FISpARohzy8/evidence_first_pass.json",
-      "source_badge": "processed"
+      "source_file": "data/curated/giac_khang/FISpARohzy8/evidence_curated.json",
+      "source_badge": "curated"
     },
     {
       "source": "evidence_fisp_arohzy8_0005",
       "type": "DERIVED_FROM",
       "target": "document_transcript_fisp_arohzy8",
-      "source_file": "data/processed/giac_khang/FISpARohzy8/evidence_first_pass.json",
-      "source_badge": "processed"
+      "source_file": "data/curated/giac_khang/FISpARohzy8/evidence_curated.json",
+      "source_badge": "curated"
     },
     {
       "source": "evidence_fisp_arohzy8_0001",
       "type": "HAS_CITATION",
       "target": "citation_youtube_fisp_arohzy8",
-      "source_file": "data/processed/giac_khang/FISpARohzy8/evidence_first_pass.json",
-      "source_badge": "processed"
+      "source_file": "data/curated/giac_khang/FISpARohzy8/evidence_curated.json",
+      "source_badge": "curated"
     },
     {
       "source": "evidence_fisp_arohzy8_0002",
       "type": "HAS_CITATION",
       "target": "citation_youtube_fisp_arohzy8",
-      "source_file": "data/processed/giac_khang/FISpARohzy8/evidence_first_pass.json",
-      "source_badge": "processed"
+      "source_file": "data/curated/giac_khang/FISpARohzy8/evidence_curated.json",
+      "source_badge": "curated"
     },
     {
       "source": "evidence_fisp_arohzy8_0003",
       "type": "HAS_CITATION",
       "target": "citation_youtube_fisp_arohzy8",
-      "source_file": "data/processed/giac_khang/FISpARohzy8/evidence_first_pass.json",
-      "source_badge": "processed"
+      "source_file": "data/curated/giac_khang/FISpARohzy8/evidence_curated.json",
+      "source_badge": "curated"
     },
     {
       "source": "evidence_fisp_arohzy8_0004",
       "type": "HAS_CITATION",
       "target": "citation_youtube_fisp_arohzy8",
-      "source_file": "data/processed/giac_khang/FISpARohzy8/evidence_first_pass.json",
-      "source_badge": "processed"
+      "source_file": "data/curated/giac_khang/FISpARohzy8/evidence_curated.json",
+      "source_badge": "curated"
     },
     {
       "source": "evidence_fisp_arohzy8_0005",
       "type": "HAS_CITATION",
       "target": "citation_youtube_fisp_arohzy8",
-      "source_file": "data/processed/giac_khang/FISpARohzy8/evidence_first_pass.json",
-      "source_badge": "processed"
+      "source_file": "data/curated/giac_khang/FISpARohzy8/evidence_curated.json",
+      "source_badge": "curated"
     },
     {
       "source": "source_youtube_fisp_arohzy8",
       "type": "HAS_DOCUMENT",
       "target": "document_transcript_fisp_arohzy8",
       "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json",
-      "source_badge": "seed"
+      "source_badge": "pilot"
     },
     {
       "source": "concept_luc_can_luc_tran_luc_thuc",
       "type": "RELATED_TO",
       "target": "concept_kinh_sau_sau",
       "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json",
-      "source_badge": "seed"
+      "source_badge": "pilot"
     },
     {
       "source": "concept_sau_can",
       "type": "RELATED_TO",
       "target": "concept_kinh_sau_sau",
       "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json",
-      "source_badge": "seed"
+      "source_badge": "pilot"
     },
     {
       "source": "concept_sau_thuc",
       "type": "RELATED_TO",
       "target": "concept_kinh_sau_sau",
       "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json",
-      "source_badge": "seed"
+      "source_badge": "pilot"
     },
     {
       "source": "concept_sau_tran",
       "type": "RELATED_TO",
       "target": "concept_kinh_sau_sau",
       "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json",
-      "source_badge": "seed"
+      "source_badge": "pilot"
     }
   ]
 };
