@@ -60,15 +60,15 @@ REQUIRED_EVIDENCE_FIELDS = {
     "confidence",
     "review_status",
 }
-EVIDENCE_TYPE_VALUES = {
+ALLOWED_EVIDENCE_TYPES = {
     "transcript_excerpt",
     "citation_excerpt",
     "paraphrase",
     "ai_summary",
     "human_note",
 }
-CONFIDENCE_VALUES = {"low", "medium", "high"}
-REVIEW_STATUS_VALUES = {
+ALLOWED_CONFIDENCE = {"low", "medium", "high"}
+ALLOWED_REVIEW_STATUS = {
     "unreviewed",
     "ai_processed",
     "human_reviewed",
@@ -76,47 +76,51 @@ REVIEW_STATUS_VALUES = {
 }
 
 
-def missing_or_empty(node: dict, field: str) -> bool:
+def is_non_empty_string(value: object) -> bool:
+    return isinstance(value, str) and value.strip() != ""
+
+
+def missing_or_empty_string(node: dict, field: str) -> bool:
     value = node.get(field)
-    return value is None or value == ""
+    return not is_non_empty_string(value)
 
 
 def validate_evidence_node(path: Path, index: int, node: dict) -> list[str]:
     errors: list[str] = []
 
     for field in sorted(REQUIRED_EVIDENCE_FIELDS):
-        if missing_or_empty(node, field):
+        if missing_or_empty_string(node, field):
             errors.append(
                 f"{path}: node {index} Evidence missing required field: {field}"
             )
 
     evidence_type = node.get("evidence_type")
-    if evidence_type and evidence_type not in EVIDENCE_TYPE_VALUES:
+    if is_non_empty_string(evidence_type) and evidence_type not in ALLOWED_EVIDENCE_TYPES:
         errors.append(
             f"{path}: node {index} Evidence has invalid evidence_type: "
             f"{evidence_type}"
         )
 
     confidence = node.get("confidence")
-    if confidence and confidence not in CONFIDENCE_VALUES:
+    if is_non_empty_string(confidence) and confidence not in ALLOWED_CONFIDENCE:
         errors.append(
             f"{path}: node {index} Evidence has invalid confidence: {confidence}"
         )
 
     review_status = node.get("review_status")
-    if review_status and review_status not in REVIEW_STATUS_VALUES:
+    if is_non_empty_string(review_status) and review_status not in ALLOWED_REVIEW_STATUS:
         errors.append(
             f"{path}: node {index} Evidence has invalid review_status: "
             f"{review_status}"
         )
 
-    if evidence_type == "transcript_excerpt" and missing_or_empty(node, "speaker"):
+    if evidence_type == "transcript_excerpt" and missing_or_empty_string(node, "speaker"):
         errors.append(
             f"{path}: node {index} Evidence with transcript_excerpt "
             "requires speaker"
         )
 
-    if node.get("source_kind") == "youtube" and missing_or_empty(node, "source_url"):
+    if node.get("source_kind") == "youtube" and missing_or_empty_string(node, "source_url"):
         errors.append(
             f"{path}: node {index} Evidence with source_kind youtube "
             "requires source_url"

@@ -346,6 +346,35 @@ class ValidateSeedDataTest(unittest.TestCase):
                 errors,
             )
 
+    def test_evidence_text_must_be_non_empty_string(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            directory = Path(tmp)
+            seed = self.write_seed(
+                directory,
+                "blank_evidence_text.json",
+                {
+                    "nodes": [
+                        {
+                            "id": "evidence_blank_text",
+                            "type": "Evidence",
+                            "name": "Blank Text",
+                            "evidence_text": "   ",
+                            "evidence_type": "human_note",
+                            "confidence": "medium",
+                            "review_status": "unreviewed",
+                        }
+                    ],
+                    "relationships": [],
+                },
+            )
+
+            errors = validate_seed_files([seed])
+
+            self.assertTrue(
+                any("Evidence missing required field: evidence_text" in error for error in errors),
+                errors,
+            )
+
     def test_evidence_allowed_values_are_enforced(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             directory = Path(tmp)
@@ -399,6 +428,7 @@ class ValidateSeedDataTest(unittest.TestCase):
                             "evidence_type": "transcript_excerpt",
                             "confidence": "medium",
                             "review_status": "unreviewed",
+                            "speaker": "   ",
                         }
                     ],
                     "relationships": [],
@@ -429,6 +459,7 @@ class ValidateSeedDataTest(unittest.TestCase):
                             "confidence": "medium",
                             "review_status": "unreviewed",
                             "source_kind": "youtube",
+                            "source_url": "   ",
                         }
                     ],
                     "relationships": [],
