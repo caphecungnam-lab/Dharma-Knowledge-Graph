@@ -30,10 +30,34 @@ This keeps early editing easy while leaving room to export later to:
 
 ## Evidence-first MVP
 
-The current MVP direction is evidence-first: concept links should become
-traceable to source material before API, frontend, embedding, or LLM work is
-added. The Evidence-first architecture notes are in `docs/architecture/`, and
-the seed-data rules are captured in `docs/ontology/data-contract-v0.1.md`.
+The current MVP direction is evidence-first.
+
+That means concept links should be traceable to source material before API,
+frontend, embedding, or LLM work is added. The graph should be able to show
+where a claim came from, which document produced it, and what review state the
+Evidence is currently in.
+
+The Evidence-first architecture notes are in `docs/architecture/`.
+
+The seed-data rules are captured in
+`docs/ontology/data-contract-v0.1.md`.
+
+The current Evidence-first layer adds these provenance-oriented node types:
+
+- `Corpus`
+- `Source`
+- `Document`
+- `Evidence`
+- `Work`
+
+The basic chain is:
+
+```text
+Corpus -> Source -> Document -> Evidence -> Concept
+```
+
+For the DKG-003 scaffold, the chain stops at `Document` and `Citation` because
+real transcript excerpts have not been added yet.
 
 ## Giác Khang Pilot Source
 
@@ -46,14 +70,27 @@ The first real transcript scaffold is for the Giác Khang Corpus:
 - Topic: `Kinh Sáu Sáu`
 
 The scaffold is in
-`data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json`. It includes source,
-document, citation, concept, and term nodes only. Evidence nodes should be added
+`data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json`.
+
+It includes:
+
+- a `Corpus` node for the Giác Khang Corpus;
+- a `Source` node for the YouTube video;
+- a `Document` placeholder for the future transcript;
+- a `Citation` placeholder for the video root;
+- concept nodes for `sáu căn`, `sáu trần`, `sáu thức`, and `Kinh Sáu Sáu`;
+- Vietnamese and Hán-Việt term nodes;
+- provenance and terminology relationships.
+
+It does not include transcript Evidence nodes. Evidence nodes should be added
 later only after real transcript excerpts and timestamps are available.
 
 ## Transcript Evidence Requirements
 
-Transcript Evidence must not be fabricated. Transcript Evidence must include
-`source_url`, timestamp or `locator`, `evidence_text`, and `review_status`.
+Transcript Evidence must not be fabricated.
+
+Transcript Evidence must include `source_url`, timestamp or `locator`,
+`evidence_text`, and `review_status`.
 
 Required fields before adding transcript Evidence:
 
@@ -61,6 +98,13 @@ Required fields before adding transcript Evidence:
 - timestamp or `locator`
 - `evidence_text`
 - `review_status`
+
+Transcript Evidence should also include `speaker`.
+
+When the source is YouTube, `source_url` must point to the source video.
+
+New transcript Evidence should start with `review_status: unreviewed` until a
+human review has been completed.
 
 ## First Data Model
 
