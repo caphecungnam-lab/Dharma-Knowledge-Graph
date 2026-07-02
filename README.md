@@ -35,14 +35,6 @@ traceable to source material before API, frontend, embedding, or LLM work is
 added. The Evidence-first architecture notes are in `docs/architecture/`, and
 the seed-data rules are captured in `docs/ontology/data-contract-v0.1.md`.
 
-Transcript Evidence must not be fabricated. It can only be added when these
-fields are present:
-
-- `source_url`
-- timestamp or `locator`
-- `evidence_text`
-- `review_status`
-
 ## Giác Khang Pilot Source
 
 The first real transcript scaffold is for the Giác Khang Corpus:
@@ -57,6 +49,18 @@ The scaffold is in
 `data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json`. It includes source,
 document, citation, concept, and term nodes only. Evidence nodes should be added
 later only after real transcript excerpts and timestamps are available.
+
+## Transcript Evidence Requirements
+
+Transcript Evidence must not be fabricated. Transcript Evidence must include
+`source_url`, timestamp or `locator`, `evidence_text`, and `review_status`.
+
+Required fields before adding transcript Evidence:
+
+- `source_url`
+- timestamp or `locator`
+- `evidence_text`
+- `review_status`
 
 ## First Data Model
 

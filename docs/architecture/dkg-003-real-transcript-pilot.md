@@ -1,4 +1,4 @@
-# DKG-003: Real Transcript Pilot for Giac Khang Corpus
+# DKG-003: Real Transcript Pilot
 
 This note defines the first real-source transcript scaffold for the Giac Khang
 Corpus. It creates source, document, citation, concept, and term structure for a
@@ -20,7 +20,7 @@ Evidence nodes are added.
 - Topic: `Kinh Sáu Sáu`
 - Focus concepts: `sáu căn`, `sáu trần`, `sáu thức`
 
-## Why this video
+## Why This Video
 
 This video is selected as the first real transcript pilot because it has a
 stable public source URL, a clear speaker, a clear channel, and a focused topic
