@@ -12,6 +12,7 @@
   const typeFilter = document.getElementById("typeFilter");
   const relationshipFilter = document.getElementById("relationshipFilter");
   const resetButton = document.getElementById("resetButton");
+  const languageToggle = document.getElementById("languageToggle");
   const detailTitle = document.getElementById("detailTitle");
   const detailType = document.getElementById("detailType");
   const detailDescription = document.getElementById("detailDescription");
@@ -27,6 +28,61 @@
     Term: "#5d6b2f",
     Citation: "#6b6258",
   };
+
+  const languageKey = "dkg_language";
+  const translations = {
+    en: {
+      brand: "Dharma Knowledge Graph",
+      explorerTitle: "Graph Explorer v0.1",
+      search: "Search",
+      searchPlaceholder: "Concept, text, school...",
+      type: "Type",
+      relationship: "Relationship",
+      reset: "Reset",
+      selectedNode: "Selected Node",
+      selectNode: "Select a node",
+      noSelection: "No selection",
+      noSelectionDescription: "Click a node in the graph to inspect its metadata and relationships.",
+      noDescription: "No description yet.",
+      properties: "Properties",
+      relationshipsHeader: "Relationships",
+      nodes: "Nodes",
+      relationshipsStat: "Relationships",
+      concepts: "Concepts",
+      seedFiles: "Seed files",
+      all: "All",
+      switchLanguage: "Switch language",
+      to: "to",
+      from: "from",
+      noRelationshipsYet: "No relationships yet.",
+    },
+    vi: {
+      brand: "Dharma Knowledge Graph",
+      explorerTitle: "Graph Explorer v0.1",
+      search: "Tìm kiếm",
+      searchPlaceholder: "Khái niệm, văn bản, trường phái...",
+      type: "Loại",
+      relationship: "Quan hệ",
+      reset: "Đặt lại",
+      selectedNode: "Nút đang chọn",
+      selectNode: "Chọn một nút",
+      noSelection: "Chưa chọn",
+      noSelectionDescription: "Bấm vào một nút trong đồ thị để xem metadata và các quan hệ.",
+      noDescription: "Chưa có mô tả.",
+      properties: "Thuộc tính",
+      relationshipsHeader: "Quan hệ",
+      nodes: "Nút",
+      relationshipsStat: "Quan hệ",
+      concepts: "Khái niệm",
+      seedFiles: "Tệp nguồn",
+      all: "Tất cả",
+      switchLanguage: "Đổi ngôn ngữ",
+      to: "đến",
+      from: "từ",
+      noRelationshipsYet: "Chưa có quan hệ.",
+    },
+  };
+  let language = localStorage.getItem(languageKey) === "vi" ? "vi" : "en";
 
   const state = {
     selectedId: graph.nodes[0] ? graph.nodes[0].id : null,
@@ -47,6 +103,29 @@
     adjacency.get(relationship.target)?.push({ direction: "in", ...relationship });
   });
 
+  function t(key) {
+    return translations[language][key] || translations.en[key] || key;
+  }
+
+  function applyLanguage() {
+    document.documentElement.lang = language;
+    document.querySelectorAll("[data-i18n]").forEach((element) => {
+      element.textContent = t(element.dataset.i18n);
+    });
+    document.querySelectorAll("[data-i18n-placeholder]").forEach((element) => {
+      element.setAttribute("placeholder", t(element.dataset.i18nPlaceholder));
+    });
+
+    if (languageToggle) {
+      languageToggle.textContent = language === "vi" ? "EN" : "VI";
+      languageToggle.setAttribute("aria-label", t("switchLanguage"));
+    }
+
+    populateStats();
+    populateFilters();
+    renderDetails();
+  }
+
   const layoutNodes = graph.nodes.map((node, index) => {
     const angle = (index / Math.max(graph.nodes.length, 1)) * Math.PI * 2;
     const ring = 170 + (index % 4) * 36;
@@ -63,10 +142,10 @@
 
   function populateStats() {
     statsEl.innerHTML = [
-      ["Nodes", graph.summary.node_count],
-      ["Relationships", graph.summary.relationship_count],
-      ["Concepts", graph.summary.node_type_counts.Concept || 0],
-      ["Seed files", graph.metadata.source_files.length],
+      [t("nodes"), graph.summary.node_count],
+      [t("relationshipsStat"), graph.summary.relationship_count],
+      [t("concepts"), graph.summary.node_type_counts.Concept || 0],
+      [t("seedFiles"), graph.metadata.source_files.length],
     ]
       .map(([label, value]) => `<div class="stat"><strong>${value}</strong><span>${label}</span></div>`)
       .join("");
@@ -77,11 +156,13 @@
     const relationshipTypes = ["All", ...Object.keys(graph.summary.relationship_type_counts).sort()];
 
     typeFilter.innerHTML = nodeTypes
-      .map((type) => `<option value="${type}">${type}</option>`)
+      .map((type) => `<option value="${type}">${type === "All" ? t("all") : type}</option>`)
       .join("");
     relationshipFilter.innerHTML = relationshipTypes
-      .map((type) => `<option value="${type}">${type}</option>`)
+      .map((type) => `<option value="${type}">${type === "All" ? t("all") : type}</option>`)
       .join("");
+    typeFilter.value = state.type;
+    relationshipFilter.value = state.relationship;
   }
 
   function filteredNodeIds() {
@@ -343,9 +424,9 @@
     const node = nodeById.get(state.selectedId);
 
     if (!node) {
-      detailTitle.textContent = "Select a node";
-      detailType.textContent = "No selection";
-      detailDescription.textContent = "Click a node in the graph to inspect its metadata and relationships.";
+      detailTitle.textContent = t("selectNode");
+      detailType.textContent = t("noSelection");
+      detailDescription.textContent = t("noSelectionDescription");
       propertyList.innerHTML = "";
       relationshipList.innerHTML = "";
       return;
@@ -353,7 +434,7 @@
 
     detailTitle.textContent = node.name;
     detailType.textContent = node.type;
-    detailDescription.textContent = node.description || "No description yet.";
+    detailDescription.textContent = node.description || t("noDescription");
 
     const hiddenProperties = new Set(["id", "name", "type", "description"]);
     const properties = Object.entries(node).filter(([key, value]) => {
@@ -376,11 +457,11 @@
           .map((relationship) => {
             const otherId = relationship.direction === "out" ? relationship.target : relationship.source;
             const other = nodeById.get(otherId);
-            const direction = relationship.direction === "out" ? "to" : "from";
+            const direction = relationship.direction === "out" ? t("to") : t("from");
             return `<li><span class="relationship-type">${escapeHtml(relationship.type)}</span>${direction} ${escapeHtml(other ? other.name : otherId)}</li>`;
           })
           .join("")
-      : "<li>No relationships yet.</li>";
+      : `<li>${t("noRelationshipsYet")}</li>`;
   }
 
   function escapeHtml(value) {
@@ -448,11 +529,17 @@
     relationshipFilter.value = "All";
   });
 
+  if (languageToggle) {
+    languageToggle.addEventListener("click", () => {
+      language = language === "vi" ? "en" : "vi";
+      localStorage.setItem(languageKey, language);
+      applyLanguage();
+    });
+  }
+
   window.addEventListener("resize", resizeCanvas);
 
-  populateStats();
-  populateFilters();
+  applyLanguage();
   resizeCanvas();
-  renderDetails();
   requestAnimationFrame(draw);
 })();

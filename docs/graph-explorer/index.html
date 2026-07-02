@@ -11,26 +11,29 @@
       <section class="workspace" aria-label="Graph workspace">
         <header class="topbar">
           <div>
-            <p class="eyebrow">Dharma Knowledge Graph</p>
-            <h1>Graph Explorer v0.1</h1>
+            <p class="eyebrow" data-i18n="brand">Dharma Knowledge Graph</p>
+            <h1 data-i18n="explorerTitle">Graph Explorer v0.1</h1>
           </div>
-          <div class="stats" id="stats" aria-label="Graph statistics"></div>
+          <div class="topbar-actions">
+            <button class="language-toggle" id="languageToggle" type="button" aria-label="Switch language">VI</button>
+            <div class="stats" id="stats" aria-label="Graph statistics"></div>
+          </div>
         </header>
 
         <div class="controls" aria-label="Graph controls">
           <label class="search-box">
-            <span>Search</span>
-            <input id="searchInput" type="search" placeholder="Concept, text, school...">
+            <span data-i18n="search">Search</span>
+            <input id="searchInput" type="search" placeholder="Concept, text, school..." data-i18n-placeholder="searchPlaceholder">
           </label>
           <label class="select-box">
-            <span>Type</span>
+            <span data-i18n="type">Type</span>
             <select id="typeFilter"></select>
           </label>
           <label class="select-box">
-            <span>Relationship</span>
+            <span data-i18n="relationship">Relationship</span>
             <select id="relationshipFilter"></select>
           </label>
-          <button id="resetButton" type="button">Reset</button>
+          <button id="resetButton" type="button" data-i18n="reset">Reset</button>
         </div>
 
         <div class="graph-stage">
@@ -40,19 +43,19 @@
 
       <aside class="detail-panel" aria-label="Selected node details">
         <div class="panel-section">
-          <p class="eyebrow">Selected Node</p>
+          <p class="eyebrow" data-i18n="selectedNode">Selected Node</p>
           <h2 id="detailTitle">Select a node</h2>
           <p id="detailType" class="type-pill">No selection</p>
           <p id="detailDescription" class="description">Click a node in the graph to inspect its metadata and relationships.</p>
         </div>
 
         <div class="panel-section">
-          <h3>Properties</h3>
+          <h3 data-i18n="properties">Properties</h3>
           <dl id="propertyList" class="property-list"></dl>
         </div>
 
         <div class="panel-section">
-          <h3>Relationships</h3>
+          <h3 data-i18n="relationshipsHeader">Relationships</h3>
           <ul id="relationshipList" class="relationship-list"></ul>
         </div>
       </aside>

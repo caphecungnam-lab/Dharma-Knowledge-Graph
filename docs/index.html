@@ -77,6 +77,27 @@
         text-transform: uppercase;
       }
 
+      .language-row {
+        display: flex;
+        margin-bottom: 14px;
+      }
+
+      .language-toggle {
+        min-height: 36px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--surface);
+        color: var(--forest);
+        cursor: pointer;
+        font: inherit;
+        font-weight: 800;
+        padding: 0 14px;
+      }
+
+      .language-toggle:hover {
+        border-color: var(--forest);
+      }
+
       .stats {
         display: grid;
         grid-template-columns: repeat(2, 132px);
@@ -175,9 +196,12 @@
     <main>
       <header>
         <div>
-          <div class="eyebrow">Dharma Knowledge Graph</div>
-          <h1>Structured Dharma data for graph exploration</h1>
-          <p>
+          <div class="language-row">
+            <button class="language-toggle" id="languageToggle" type="button" aria-label="Switch language">VI</button>
+          </div>
+          <div class="eyebrow" data-i18n="brand">Dharma Knowledge Graph</div>
+          <h1 data-i18n="heroTitle">Structured Dharma data for graph exploration</h1>
+          <p data-i18n="heroBody">
             A curated seed graph connecting texts, citations, concepts, terms,
             traditions, people, and places.
           </p>
@@ -192,72 +216,72 @@
 
       <section class="grid">
         <article class="panel">
-          <h2>Explore</h2>
-          <p>
+          <h2 data-i18n="exploreTitle">Explore</h2>
+          <p data-i18n="exploreBody">
             Open the graph explorer to browse nodes, filter by type, search
             concepts and texts, and inspect relationships.
           </p>
           <div class="resource-list">
             <a class="resource" href="graph-explorer/index.html">
-              <strong>Graph Explorer</strong>
-              <span>interactive HTML</span>
+              <strong data-i18n="graphExplorer">Graph Explorer</strong>
+              <span data-i18n="interactiveHtml">interactive HTML</span>
             </a>
             <a class="resource" href="reports/graph-summary.md">
-              <strong>Graph Summary</strong>
-              <span>Markdown report</span>
+              <strong data-i18n="graphSummary">Graph Summary</strong>
+              <span data-i18n="markdownReport">Markdown report</span>
             </a>
             <a class="resource" href="reports/quality-report.md">
-              <strong>Quality Report</strong>
-              <span>coverage gaps</span>
+              <strong data-i18n="qualityReport">Quality Report</strong>
+              <span data-i18n="coverageGaps">coverage gaps</span>
             </a>
           </div>
         </article>
 
         <aside class="panel">
-          <h2>Workflow</h2>
-          <p>Run the full local check before committing data changes.</p>
+          <h2 data-i18n="workflowTitle">Workflow</h2>
+          <p data-i18n="workflowBody">Run the full local check before committing data changes.</p>
           <ul class="workflow">
             <li><code>make check</code></li>
-            <li>Validate seed data</li>
-            <li>Rebuild graph artifacts</li>
-            <li>Export Neo4j CSV and RDF/Turtle</li>
+            <li data-i18n="validateSeed">Validate seed data</li>
+            <li data-i18n="rebuildArtifacts">Rebuild graph artifacts</li>
+            <li data-i18n="exportArtifacts">Export Neo4j CSV and RDF/Turtle</li>
           </ul>
         </aside>
       </section>
 
       <section class="grid">
         <article class="panel">
-          <h2>Data Artifacts</h2>
+          <h2 data-i18n="artifactsTitle">Data Artifacts</h2>
           <div class="resource-list">
             <a class="resource" href="artifacts/graph.json">
-              <strong>Graph JSON</strong>
-              <span>processed graph</span>
+              <strong data-i18n="graphJson">Graph JSON</strong>
+              <span data-i18n="processedGraph">processed graph</span>
             </a>
             <a class="resource" href="artifacts/neo4j/nodes.csv">
-              <strong>Neo4j Nodes CSV</strong>
-              <span>node import</span>
+              <strong data-i18n="neo4jNodes">Neo4j Nodes CSV</strong>
+              <span data-i18n="nodeImport">node import</span>
             </a>
             <a class="resource" href="artifacts/neo4j/relationships.csv">
-              <strong>Neo4j Relationships CSV</strong>
-              <span>edge import</span>
+              <strong data-i18n="neo4jRelationships">Neo4j Relationships CSV</strong>
+              <span data-i18n="edgeImport">edge import</span>
             </a>
             <a class="resource" href="artifacts/rdf/graph.ttl">
               <strong>RDF/Turtle</strong>
-              <span>semantic export</span>
+              <span data-i18n="semanticExport">semantic export</span>
             </a>
           </div>
         </article>
 
         <aside class="panel">
-          <h2>Contracts</h2>
+          <h2 data-i18n="contractsTitle">Contracts</h2>
           <div class="resource-list">
             <a class="resource" href="ontology/ontology-v0.1.md">
               <strong>Ontology v0.1</strong>
-              <span>model notes</span>
+              <span data-i18n="modelNotes">model notes</span>
             </a>
             <a class="resource" href="ontology/data-contract-v0.1.md">
               <strong>Data Contract v0.1</strong>
-              <span>seed rules</span>
+              <span data-i18n="seedRules">seed rules</span>
             </a>
           </div>
         </aside>
@@ -266,36 +290,142 @@
     <script src="graph-explorer/graph-data.js"></script>
     <script>
       (function () {
+        var languageKey = "dkg_language";
+        var translations = {
+          en: {
+            brand: "Dharma Knowledge Graph",
+            heroTitle: "Structured Dharma data for graph exploration",
+            heroBody: "A curated seed graph connecting texts, citations, concepts, terms, traditions, people, and places.",
+            nodes: "Nodes",
+            relationships: "Relationships",
+            seedFiles: "Seed files",
+            isolatedNodes: "Isolated nodes",
+            exploreTitle: "Explore",
+            exploreBody: "Open the graph explorer to browse nodes, filter by type, search concepts and texts, and inspect relationships.",
+            graphExplorer: "Graph Explorer",
+            interactiveHtml: "interactive HTML",
+            graphSummary: "Graph Summary",
+            markdownReport: "Markdown report",
+            qualityReport: "Quality Report",
+            coverageGaps: "coverage gaps",
+            workflowTitle: "Workflow",
+            workflowBody: "Run the full local check before committing data changes.",
+            validateSeed: "Validate seed data",
+            rebuildArtifacts: "Rebuild graph artifacts",
+            exportArtifacts: "Export Neo4j CSV and RDF/Turtle",
+            artifactsTitle: "Data Artifacts",
+            graphJson: "Graph JSON",
+            processedGraph: "processed graph",
+            neo4jNodes: "Neo4j Nodes CSV",
+            nodeImport: "node import",
+            neo4jRelationships: "Neo4j Relationships CSV",
+            edgeImport: "edge import",
+            semanticExport: "semantic export",
+            contractsTitle: "Contracts",
+            modelNotes: "model notes",
+            seedRules: "seed rules",
+            switchLanguage: "Switch language",
+          },
+          vi: {
+            brand: "Dharma Knowledge Graph",
+            heroTitle: "Dữ liệu Dharma có cấu trúc để khám phá bằng đồ thị",
+            heroBody: "Một đồ thị hạt giống được tuyển chọn, kết nối kinh văn, trích dẫn, khái niệm, thuật ngữ, truyền thống, nhân vật và địa danh.",
+            nodes: "Nút",
+            relationships: "Quan hệ",
+            seedFiles: "Tệp nguồn",
+            isolatedNodes: "Nút cô lập",
+            exploreTitle: "Khám phá",
+            exploreBody: "Mở Graph Explorer để duyệt các nút, lọc theo loại, tìm khái niệm và văn bản, rồi xem các quan hệ.",
+            graphExplorer: "Graph Explorer",
+            interactiveHtml: "HTML tương tác",
+            graphSummary: "Tóm tắt đồ thị",
+            markdownReport: "Báo cáo Markdown",
+            qualityReport: "Báo cáo chất lượng",
+            coverageGaps: "khoảng trống bao phủ",
+            workflowTitle: "Quy trình",
+            workflowBody: "Chạy kiểm tra đầy đủ trên máy trước khi lưu thay đổi dữ liệu.",
+            validateSeed: "Kiểm tra dữ liệu nguồn",
+            rebuildArtifacts: "Tạo lại các artifact đồ thị",
+            exportArtifacts: "Xuất Neo4j CSV và RDF/Turtle",
+            artifactsTitle: "Artifact dữ liệu",
+            graphJson: "Graph JSON",
+            processedGraph: "đồ thị đã xử lý",
+            neo4jNodes: "Neo4j Nodes CSV",
+            nodeImport: "nhập nút",
+            neo4jRelationships: "Neo4j Relationships CSV",
+            edgeImport: "nhập cạnh",
+            semanticExport: "xuất semantic",
+            contractsTitle: "Hợp đồng dữ liệu",
+            modelNotes: "ghi chú mô hình",
+            seedRules: "quy tắc dữ liệu nguồn",
+            switchLanguage: "Đổi ngôn ngữ",
+          },
+        };
+        var language = localStorage.getItem(languageKey) === "vi" ? "vi" : "en";
         var graph = window.DHARMA_GRAPH;
         var stats = document.getElementById("stats");
+        var languageToggle = document.getElementById("languageToggle");
 
-        if (!graph || !stats) {
-          return;
+        function t(key) {
+          return translations[language][key] || translations.en[key] || key;
         }
 
-        var degree = new Map();
-        graph.nodes.forEach(function (node) {
-          degree.set(node.id, 0);
-        });
-        graph.relationships.forEach(function (relationship) {
-          degree.set(relationship.source, (degree.get(relationship.source) || 0) + 1);
-          degree.set(relationship.target, (degree.get(relationship.target) || 0) + 1);
-        });
+        function renderStaticText() {
+          document.documentElement.lang = language;
+          document.querySelectorAll("[data-i18n]").forEach(function (element) {
+            element.textContent = t(element.getAttribute("data-i18n"));
+          });
 
-        var isolatedNodes = graph.nodes.filter(function (node) {
-          return degree.get(node.id) === 0;
-        }).length;
+          if (languageToggle) {
+            languageToggle.textContent = language === "vi" ? "EN" : "VI";
+            languageToggle.setAttribute("aria-label", t("switchLanguage"));
+          }
+        }
 
-        var items = [
-          ["Nodes", graph.summary.node_count],
-          ["Relationships", graph.summary.relationship_count],
-          ["Seed files", graph.metadata.source_files.length],
-          ["Isolated nodes", isolatedNodes],
-        ];
+        function renderStats() {
+          if (!graph || !stats) {
+            return;
+          }
 
-        stats.innerHTML = items.map(function (item) {
-          return '<div class="stat"><strong>' + item[1] + '</strong><span>' + item[0] + '</span></div>';
-        }).join("");
+          var degree = new Map();
+          graph.nodes.forEach(function (node) {
+            degree.set(node.id, 0);
+          });
+          graph.relationships.forEach(function (relationship) {
+            degree.set(relationship.source, (degree.get(relationship.source) || 0) + 1);
+            degree.set(relationship.target, (degree.get(relationship.target) || 0) + 1);
+          });
+
+          var isolatedNodes = graph.nodes.filter(function (node) {
+            return degree.get(node.id) === 0;
+          }).length;
+
+          var items = [
+            [t("nodes"), graph.summary.node_count],
+            [t("relationships"), graph.summary.relationship_count],
+            [t("seedFiles"), graph.metadata.source_files.length],
+            [t("isolatedNodes"), isolatedNodes],
+          ];
+
+          stats.innerHTML = items.map(function (item) {
+            return '<div class="stat"><strong>' + item[1] + '</strong><span>' + item[0] + '</span></div>';
+          }).join("");
+        }
+
+        function renderLanguage() {
+          renderStaticText();
+          renderStats();
+        }
+
+        if (languageToggle) {
+          languageToggle.addEventListener("click", function () {
+            language = language === "vi" ? "en" : "vi";
+            localStorage.setItem(languageKey, language);
+            renderLanguage();
+          });
+        }
+
+        renderLanguage();
       })();
     </script>
   </body>
