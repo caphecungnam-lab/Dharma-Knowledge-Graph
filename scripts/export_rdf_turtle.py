@@ -12,6 +12,8 @@ ROOT = Path(__file__).resolve().parents[1]
 GRAPH_PATH = ROOT / "data" / "processed" / "graph.json"
 RDF_DIR = ROOT / "data" / "processed" / "rdf"
 TTL_PATH = RDF_DIR / "graph.ttl"
+DOCS_RDF_DIR = ROOT / "docs" / "artifacts" / "rdf"
+DOCS_TTL_PATH = DOCS_RDF_DIR / "graph.ttl"
 
 BASE_IRI = "https://caphecungnam-lab.github.io/Dharma-Knowledge-Graph/"
 ENTITY_PREFIX = "dkge"
@@ -150,8 +152,12 @@ def build_turtle(graph: dict) -> str:
 def main() -> int:
     graph = load_graph()
     RDF_DIR.mkdir(parents=True, exist_ok=True)
-    TTL_PATH.write_text(build_turtle(graph), encoding="utf-8")
+    DOCS_RDF_DIR.mkdir(parents=True, exist_ok=True)
+    turtle = build_turtle(graph)
+    TTL_PATH.write_text(turtle, encoding="utf-8")
+    DOCS_TTL_PATH.write_text(turtle, encoding="utf-8")
     print(f"Wrote {TTL_PATH.relative_to(ROOT)}")
+    print(f"Wrote {DOCS_TTL_PATH.relative_to(ROOT)}")
     return 0
 
 

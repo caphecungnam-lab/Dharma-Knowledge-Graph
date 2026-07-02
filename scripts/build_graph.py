@@ -13,6 +13,7 @@ ROOT = Path(__file__).resolve().parents[1]
 SEED_DIR = ROOT / "data" / "seeds"
 PROCESSED_DIR = ROOT / "data" / "processed"
 EXPLORER_DIR = ROOT / "docs" / "graph-explorer"
+DOCS_ARTIFACTS_DIR = ROOT / "docs" / "artifacts"
 
 
 def read_seed_files() -> list[tuple[Path, dict]]:
@@ -91,12 +92,15 @@ def write_explorer_data(path: Path, data: dict) -> None:
 def main() -> int:
     graph = build_graph()
     graph_json_path = PROCESSED_DIR / "graph.json"
+    docs_graph_json_path = DOCS_ARTIFACTS_DIR / "graph.json"
     graph_data_path = EXPLORER_DIR / "graph-data.js"
 
     write_json(graph_json_path, graph)
+    write_json(docs_graph_json_path, graph)
     write_explorer_data(graph_data_path, graph)
 
     print(f"Wrote {graph_json_path.relative_to(ROOT)}")
+    print(f"Wrote {docs_graph_json_path.relative_to(ROOT)}")
     print(f"Wrote {graph_data_path.relative_to(ROOT)}")
     print(
         f"Graph has {graph['summary']['node_count']} nodes and "

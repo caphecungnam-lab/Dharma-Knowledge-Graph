@@ -11,6 +11,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 GRAPH_PATH = ROOT / "data" / "processed" / "graph.json"
 NEO4J_DIR = ROOT / "data" / "processed" / "neo4j"
+DOCS_NEO4J_DIR = ROOT / "docs" / "artifacts" / "neo4j"
 
 
 NODE_FIELDS = [
@@ -42,8 +43,7 @@ def load_graph() -> dict:
     return json.loads(GRAPH_PATH.read_text(encoding="utf-8"))
 
 
-def write_nodes(nodes: list[dict]) -> None:
-    path = NEO4J_DIR / "nodes.csv"
+def write_nodes(nodes: list[dict], path: Path) -> None:
     with path.open("w", newline="", encoding="utf-8") as file:
         writer = csv.DictWriter(file, fieldnames=NODE_FIELDS)
         writer.writeheader()
@@ -65,8 +65,7 @@ def write_nodes(nodes: list[dict]) -> None:
             )
 
 
-def write_relationships(relationships: list[dict]) -> None:
-    path = NEO4J_DIR / "relationships.csv"
+def write_relationships(relationships: list[dict], path: Path) -> None:
     with path.open("w", newline="", encoding="utf-8") as file:
         writer = csv.DictWriter(file, fieldnames=RELATIONSHIP_FIELDS)
         writer.writeheader()
@@ -85,10 +84,14 @@ def write_relationships(relationships: list[dict]) -> None:
 def main() -> int:
     graph = load_graph()
     NEO4J_DIR.mkdir(parents=True, exist_ok=True)
-    write_nodes(graph["nodes"])
-    write_relationships(graph["relationships"])
-    print(f"Wrote {NEO4J_DIR.relative_to(ROOT)}/nodes.csv")
-    print(f"Wrote {NEO4J_DIR.relative_to(ROOT)}/relationships.csv")
+    DOCS_NEO4J_DIR.mkdir(parents=True, exist_ok=True)
+
+    output_dirs = [NEO4J_DIR, DOCS_NEO4J_DIR]
+    for output_dir in output_dirs:
+        write_nodes(graph["nodes"], output_dir / "nodes.csv")
+        write_relationships(graph["relationships"], output_dir / "relationships.csv")
+        print(f"Wrote {output_dir.relative_to(ROOT)}/nodes.csv")
+        print(f"Wrote {output_dir.relative_to(ROOT)}/relationships.csv")
     return 0
 
 

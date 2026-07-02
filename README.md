@@ -123,6 +123,7 @@ python3 scripts/build_graph.py
 This writes:
 
 - `data/processed/graph.json`
+- `docs/artifacts/graph.json`
 - `docs/graph-explorer/graph-data.js`
 
 Open `docs/graph-explorer/index.html` in a browser to inspect the graph.
@@ -154,6 +155,8 @@ This writes:
 
 - `data/processed/neo4j/nodes.csv`
 - `data/processed/neo4j/relationships.csv`
+- `docs/artifacts/neo4j/nodes.csv`
+- `docs/artifacts/neo4j/relationships.csv`
 
 These CSV files are shaped for Neo4j-style graph imports.
 
@@ -165,8 +168,9 @@ Run:
 python3 scripts/export_rdf_turtle.py
 ```
 
-This writes `data/processed/rdf/graph.ttl`, a simple Turtle export for RDF and
-semantic web tooling.
+This writes `data/processed/rdf/graph.ttl` and
+`docs/artifacts/rdf/graph.ttl`, a simple Turtle export for RDF and semantic web
+tooling.
 
 ## Continuous Checks
 
