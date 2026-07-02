@@ -1,0 +1,538 @@
+window.DHARMA_GRAPH = {
+  "metadata": {
+    "title": "Dharma Knowledge Graph",
+    "version": "0.1",
+    "generated_at": "2026-07-02T08:41:18.893873+00:00",
+    "source_files": [
+      "data/seeds/concepts.json",
+      "data/seeds/core.json"
+    ]
+  },
+  "summary": {
+    "node_count": 34,
+    "relationship_count": 30,
+    "node_type_counts": {
+      "Concept": 30,
+      "Person": 1,
+      "School": 2,
+      "Text": 1
+    },
+    "relationship_type_counts": {
+      "AUTHORED_BY": 1,
+      "BELONGS_TO_SCHOOL": 1,
+      "DEFINES": 7,
+      "MENTIONS": 8,
+      "RELATED_TO": 13
+    }
+  },
+  "nodes": [
+    {
+      "id": "concept_anatta",
+      "type": "Concept",
+      "name": "Anatta",
+      "pali": "anatta",
+      "sanskrit": "anatman",
+      "category": "doctrine",
+      "description": "Not-self; the absence of a permanent, independent self in conditioned phenomena.",
+      "source_file": "data/seeds/concepts.json"
+    },
+    {
+      "id": "concept_anicca",
+      "type": "Concept",
+      "name": "Anicca",
+      "pali": "anicca",
+      "sanskrit": "anitya",
+      "category": "doctrine",
+      "description": "Impermanence; the conditioned nature of phenomena as changing and unstable.",
+      "source_file": "data/seeds/concepts.json"
+    },
+    {
+      "id": "concept_avidya",
+      "type": "Concept",
+      "name": "Avidya",
+      "pali": "avijja",
+      "sanskrit": "avidya",
+      "category": "psychology",
+      "description": "Ignorance or misknowing, especially regarding the nature of reality and the path.",
+      "source_file": "data/seeds/concepts.json"
+    },
+    {
+      "id": "concept_bodhicitta",
+      "type": "Concept",
+      "name": "Bodhicitta",
+      "sanskrit": "bodhicitta",
+      "category": "mahayana",
+      "description": "The awakened mind or aspiration to attain awakening for the benefit of all beings.",
+      "source_file": "data/seeds/concepts.json"
+    },
+    {
+      "id": "concept_bodhisattva",
+      "type": "Concept",
+      "name": "Bodhisattva",
+      "pali": "bodhisatta",
+      "sanskrit": "bodhisattva",
+      "category": "mahayana",
+      "description": "A being oriented toward awakening, especially for the liberation of all beings in Mahayana contexts.",
+      "source_file": "data/seeds/concepts.json"
+    },
+    {
+      "id": "concept_brahmaviharas",
+      "type": "Concept",
+      "name": "Brahmaviharas",
+      "pali": "brahmavihara",
+      "sanskrit": "brahmavihara",
+      "category": "practice",
+      "description": "The four divine abodes: loving-kindness, compassion, sympathetic joy, and equanimity.",
+      "source_file": "data/seeds/concepts.json"
+    },
+    {
+      "id": "concept_dukkha",
+      "type": "Concept",
+      "name": "Dukkha",
+      "pali": "dukkha",
+      "sanskrit": "duhkha",
+      "description": "A central Dharma concept often translated as suffering, unsatisfactoriness, or stress.",
+      "source_file": "data/seeds/core.json"
+    },
+    {
+      "id": "concept_dhatu",
+      "type": "Concept",
+      "name": "Elements",
+      "pali": "dhatu",
+      "sanskrit": "dhatu",
+      "category": "analysis",
+      "description": "Elements or domains used to analyze experience and phenomena.",
+      "source_file": "data/seeds/concepts.json"
+    },
+    {
+      "id": "concept_skandhas",
+      "type": "Concept",
+      "name": "Five Aggregates",
+      "pali": "khandha",
+      "sanskrit": "skandha",
+      "category": "analysis",
+      "description": "Form, feeling, perception, formations, and consciousness as a framework for analyzing experience.",
+      "source_file": "data/seeds/concepts.json"
+    },
+    {
+      "id": "concept_four_noble_truths",
+      "type": "Concept",
+      "name": "Four Noble Truths",
+      "pali": "cattari ariyasaccani",
+      "sanskrit": "catvari aryasatyani",
+      "category": "doctrine",
+      "description": "The teaching of suffering, its origin, its cessation, and the path leading to cessation.",
+      "source_file": "data/seeds/concepts.json"
+    },
+    {
+      "id": "concept_karma",
+      "type": "Concept",
+      "name": "Karma",
+      "pali": "kamma",
+      "sanskrit": "karma",
+      "category": "ethics",
+      "description": "Intentional action and its ethical consequences.",
+      "source_file": "data/seeds/concepts.json"
+    },
+    {
+      "id": "concept_karuna",
+      "type": "Concept",
+      "name": "Karuna",
+      "pali": "karuna",
+      "sanskrit": "karuna",
+      "category": "practice",
+      "description": "Compassion; the wish for beings to be free from suffering.",
+      "source_file": "data/seeds/concepts.json"
+    },
+    {
+      "id": "concept_klesha",
+      "type": "Concept",
+      "name": "Klesha",
+      "pali": "kilesa",
+      "sanskrit": "klesa",
+      "category": "psychology",
+      "description": "Afflictive mental states that disturb the mind and condition suffering.",
+      "source_file": "data/seeds/concepts.json"
+    },
+    {
+      "id": "concept_metta",
+      "type": "Concept",
+      "name": "Metta",
+      "pali": "metta",
+      "sanskrit": "maitri",
+      "category": "practice",
+      "description": "Loving-kindness; the cultivation of goodwill and friendliness.",
+      "source_file": "data/seeds/concepts.json"
+    },
+    {
+      "id": "concept_middle_way",
+      "type": "Concept",
+      "name": "Middle Way",
+      "pali": "majjhima patipada",
+      "sanskrit": "madhyama pratipad",
+      "category": "practice",
+      "description": "A path avoiding extremes, often framed as avoiding indulgence and self-mortification or eternalism and nihilism.",
+      "source_file": "data/seeds/concepts.json"
+    },
+    {
+      "id": "concept_mudita",
+      "type": "Concept",
+      "name": "Mudita",
+      "pali": "mudita",
+      "sanskrit": "mudita",
+      "category": "practice",
+      "description": "Sympathetic joy; delight in the welfare and happiness of others.",
+      "source_file": "data/seeds/concepts.json"
+    },
+    {
+      "id": "concept_nirvana",
+      "type": "Concept",
+      "name": "Nirvana",
+      "pali": "nibbana",
+      "sanskrit": "nirvana",
+      "category": "liberation",
+      "description": "Liberation; the extinguishing of greed, hatred, and delusion.",
+      "source_file": "data/seeds/concepts.json"
+    },
+    {
+      "id": "concept_noble_eightfold_path",
+      "type": "Concept",
+      "name": "Noble Eightfold Path",
+      "pali": "ariya atthangika magga",
+      "sanskrit": "arya astangika marga",
+      "category": "practice",
+      "description": "The path of right view, intention, speech, action, livelihood, effort, mindfulness, and concentration.",
+      "source_file": "data/seeds/concepts.json"
+    },
+    {
+      "id": "concept_paramita",
+      "type": "Concept",
+      "name": "Paramita",
+      "pali": "parami",
+      "sanskrit": "paramita",
+      "category": "mahayana",
+      "description": "Perfection or transcendent virtue cultivated on the bodhisattva path.",
+      "source_file": "data/seeds/concepts.json"
+    },
+    {
+      "id": "concept_prajna",
+      "type": "Concept",
+      "name": "Prajna",
+      "pali": "panna",
+      "sanskrit": "prajna",
+      "category": "wisdom",
+      "description": "Wisdom or liberating insight into the nature of phenomena.",
+      "source_file": "data/seeds/concepts.json"
+    },
+    {
+      "id": "concept_pratityasamutpada",
+      "type": "Concept",
+      "name": "Pratityasamutpada",
+      "pali": "paticcasamuppada",
+      "sanskrit": "pratityasamutpada",
+      "category": "doctrine",
+      "description": "Dependent arising; the principle that phenomena arise in dependence on causes and conditions.",
+      "source_file": "data/seeds/concepts.json"
+    },
+    {
+      "id": "concept_samadhi",
+      "type": "Concept",
+      "name": "Samadhi",
+      "pali": "samadhi",
+      "sanskrit": "samadhi",
+      "category": "practice",
+      "description": "Collectedness, concentration, or meditative absorption.",
+      "source_file": "data/seeds/concepts.json"
+    },
+    {
+      "id": "concept_samsara",
+      "type": "Concept",
+      "name": "Samsara",
+      "pali": "samsara",
+      "sanskrit": "samsara",
+      "category": "cosmology",
+      "description": "The cycle of birth, death, and rebirth conditioned by ignorance and craving.",
+      "source_file": "data/seeds/concepts.json"
+    },
+    {
+      "id": "concept_sila",
+      "type": "Concept",
+      "name": "Sila",
+      "pali": "sila",
+      "sanskrit": "sila",
+      "category": "ethics",
+      "description": "Ethical conduct or moral discipline.",
+      "source_file": "data/seeds/concepts.json"
+    },
+    {
+      "id": "concept_ayatana",
+      "type": "Concept",
+      "name": "Six Sense Bases",
+      "pali": "ayatana",
+      "sanskrit": "ayatana",
+      "category": "analysis",
+      "description": "The internal and external sense bases involved in perceptual experience.",
+      "source_file": "data/seeds/concepts.json"
+    },
+    {
+      "id": "concept_sunyata",
+      "type": "Concept",
+      "name": "Sunyata",
+      "sanskrit": "sunyata",
+      "description": "A Mahayana concept commonly translated as emptiness.",
+      "source_file": "data/seeds/core.json"
+    },
+    {
+      "id": "concept_tanha",
+      "type": "Concept",
+      "name": "Tanha",
+      "pali": "tanha",
+      "sanskrit": "trsna",
+      "category": "psychology",
+      "description": "Craving or thirst; a central condition in the arising of suffering.",
+      "source_file": "data/seeds/concepts.json"
+    },
+    {
+      "id": "concept_three_marks",
+      "type": "Concept",
+      "name": "Three Marks of Existence",
+      "pali": "tilakkhana",
+      "sanskrit": "trilaksana",
+      "category": "doctrine",
+      "description": "The marks of impermanence, suffering or unsatisfactoriness, and not-self.",
+      "source_file": "data/seeds/concepts.json"
+    },
+    {
+      "id": "concept_two_truths",
+      "type": "Concept",
+      "name": "Two Truths",
+      "sanskrit": "satya-dvaya",
+      "category": "mahayana",
+      "description": "The distinction between conventional truth and ultimate truth.",
+      "source_file": "data/seeds/concepts.json"
+    },
+    {
+      "id": "concept_upekkha",
+      "type": "Concept",
+      "name": "Upekkha",
+      "pali": "upekkha",
+      "sanskrit": "upeksa",
+      "category": "practice",
+      "description": "Equanimity; balanced presence toward changing experience.",
+      "source_file": "data/seeds/concepts.json"
+    },
+    {
+      "id": "person_nagarjuna",
+      "type": "Person",
+      "name": "Nagarjuna",
+      "tradition": "Mahayana",
+      "description": "A major Buddhist philosopher associated with Madhyamaka.",
+      "source_file": "data/seeds/core.json"
+    },
+    {
+      "id": "school_madhyamaka",
+      "type": "School",
+      "name": "Madhyamaka",
+      "description": "A Mahayana philosophical school associated with analysis of emptiness.",
+      "source_file": "data/seeds/core.json"
+    },
+    {
+      "id": "school_theravada",
+      "type": "School",
+      "name": "Theravada",
+      "description": "A Buddhist tradition preserving the Pali Canon.",
+      "source_file": "data/seeds/core.json"
+    },
+    {
+      "id": "text_mulamadhyamakakarika",
+      "type": "Text",
+      "name": "Mulamadhyamakakarika",
+      "language": "Sanskrit",
+      "tradition": "Mahayana",
+      "description": "A foundational Madhyamaka text attributed to Nagarjuna.",
+      "source_file": "data/seeds/core.json"
+    }
+  ],
+  "relationships": [
+    {
+      "source": "text_mulamadhyamakakarika",
+      "type": "AUTHORED_BY",
+      "target": "person_nagarjuna",
+      "source_file": "data/seeds/core.json"
+    },
+    {
+      "source": "person_nagarjuna",
+      "type": "BELONGS_TO_SCHOOL",
+      "target": "school_madhyamaka",
+      "source_file": "data/seeds/core.json"
+    },
+    {
+      "source": "concept_brahmaviharas",
+      "type": "DEFINES",
+      "target": "concept_karuna",
+      "source_file": "data/seeds/concepts.json"
+    },
+    {
+      "source": "concept_brahmaviharas",
+      "type": "DEFINES",
+      "target": "concept_metta",
+      "source_file": "data/seeds/concepts.json"
+    },
+    {
+      "source": "concept_brahmaviharas",
+      "type": "DEFINES",
+      "target": "concept_mudita",
+      "source_file": "data/seeds/concepts.json"
+    },
+    {
+      "source": "concept_brahmaviharas",
+      "type": "DEFINES",
+      "target": "concept_upekkha",
+      "source_file": "data/seeds/concepts.json"
+    },
+    {
+      "source": "concept_three_marks",
+      "type": "DEFINES",
+      "target": "concept_anatta",
+      "source_file": "data/seeds/concepts.json"
+    },
+    {
+      "source": "concept_three_marks",
+      "type": "DEFINES",
+      "target": "concept_anicca",
+      "source_file": "data/seeds/concepts.json"
+    },
+    {
+      "source": "concept_three_marks",
+      "type": "DEFINES",
+      "target": "concept_dukkha",
+      "source_file": "data/seeds/concepts.json"
+    },
+    {
+      "source": "concept_four_noble_truths",
+      "type": "MENTIONS",
+      "target": "concept_dukkha",
+      "source_file": "data/seeds/concepts.json"
+    },
+    {
+      "source": "concept_four_noble_truths",
+      "type": "MENTIONS",
+      "target": "concept_nirvana",
+      "source_file": "data/seeds/concepts.json"
+    },
+    {
+      "source": "concept_four_noble_truths",
+      "type": "MENTIONS",
+      "target": "concept_noble_eightfold_path",
+      "source_file": "data/seeds/concepts.json"
+    },
+    {
+      "source": "concept_four_noble_truths",
+      "type": "MENTIONS",
+      "target": "concept_tanha",
+      "source_file": "data/seeds/concepts.json"
+    },
+    {
+      "source": "concept_noble_eightfold_path",
+      "type": "MENTIONS",
+      "target": "concept_prajna",
+      "source_file": "data/seeds/concepts.json"
+    },
+    {
+      "source": "concept_noble_eightfold_path",
+      "type": "MENTIONS",
+      "target": "concept_samadhi",
+      "source_file": "data/seeds/concepts.json"
+    },
+    {
+      "source": "concept_noble_eightfold_path",
+      "type": "MENTIONS",
+      "target": "concept_sila",
+      "source_file": "data/seeds/concepts.json"
+    },
+    {
+      "source": "text_mulamadhyamakakarika",
+      "type": "MENTIONS",
+      "target": "concept_sunyata",
+      "source_file": "data/seeds/core.json"
+    },
+    {
+      "source": "concept_bodhisattva",
+      "type": "RELATED_TO",
+      "target": "concept_bodhicitta",
+      "source_file": "data/seeds/concepts.json"
+    },
+    {
+      "source": "concept_bodhisattva",
+      "type": "RELATED_TO",
+      "target": "concept_paramita",
+      "source_file": "data/seeds/concepts.json"
+    },
+    {
+      "source": "concept_klesha",
+      "type": "RELATED_TO",
+      "target": "concept_avidya",
+      "source_file": "data/seeds/concepts.json"
+    },
+    {
+      "source": "concept_klesha",
+      "type": "RELATED_TO",
+      "target": "concept_tanha",
+      "source_file": "data/seeds/concepts.json"
+    },
+    {
+      "source": "concept_middle_way",
+      "type": "RELATED_TO",
+      "target": "concept_two_truths",
+      "source_file": "data/seeds/concepts.json"
+    },
+    {
+      "source": "concept_pratityasamutpada",
+      "type": "RELATED_TO",
+      "target": "concept_avidya",
+      "source_file": "data/seeds/concepts.json"
+    },
+    {
+      "source": "concept_pratityasamutpada",
+      "type": "RELATED_TO",
+      "target": "concept_karma",
+      "source_file": "data/seeds/concepts.json"
+    },
+    {
+      "source": "concept_pratityasamutpada",
+      "type": "RELATED_TO",
+      "target": "concept_tanha",
+      "source_file": "data/seeds/concepts.json"
+    },
+    {
+      "source": "concept_samsara",
+      "type": "RELATED_TO",
+      "target": "concept_avidya",
+      "source_file": "data/seeds/concepts.json"
+    },
+    {
+      "source": "concept_samsara",
+      "type": "RELATED_TO",
+      "target": "concept_karma",
+      "source_file": "data/seeds/concepts.json"
+    },
+    {
+      "source": "concept_samsara",
+      "type": "RELATED_TO",
+      "target": "concept_nirvana",
+      "source_file": "data/seeds/concepts.json"
+    },
+    {
+      "source": "concept_sunyata",
+      "type": "RELATED_TO",
+      "target": "concept_pratityasamutpada",
+      "source_file": "data/seeds/concepts.json"
+    },
+    {
+      "source": "concept_sunyata",
+      "type": "RELATED_TO",
+      "target": "concept_two_truths",
+      "source_file": "data/seeds/concepts.json"
+    }
+  ]
+};

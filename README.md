@@ -71,3 +71,18 @@ python3 scripts/validate_seed_data.py
 
 The validator checks that seed files are valid JSON and that every node has the
 required fields: `id`, `type`, and `name`.
+
+## Build Graph Explorer
+
+Run:
+
+```bash
+python3 scripts/build_graph.py
+```
+
+This writes:
+
+- `data/processed/graph.json`
+- `docs/graph-explorer/graph-data.js`
+
+Open `docs/graph-explorer/index.html` in a browser to inspect the graph.

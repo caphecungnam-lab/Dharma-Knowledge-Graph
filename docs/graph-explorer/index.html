@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dharma Knowledge Graph Explorer</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="workspace" aria-label="Graph workspace">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">Dharma Knowledge Graph</p>
+            <h1>Graph Explorer v0.1</h1>
+          </div>
+          <div class="stats" id="stats" aria-label="Graph statistics"></div>
+        </header>
+
+        <div class="controls" aria-label="Graph controls">
+          <label class="search-box">
+            <span>Search</span>
+            <input id="searchInput" type="search" placeholder="Concept, text, school...">
+          </label>
+          <label class="select-box">
+            <span>Type</span>
+            <select id="typeFilter"></select>
+          </label>
+          <label class="select-box">
+            <span>Relationship</span>
+            <select id="relationshipFilter"></select>
+          </label>
+          <button id="resetButton" type="button">Reset</button>
+        </div>
+
+        <div class="graph-stage">
+          <canvas id="graphCanvas" width="1200" height="760" aria-label="Knowledge graph visualization"></canvas>
+        </div>
+      </section>
+
+      <aside class="detail-panel" aria-label="Selected node details">
+        <div class="panel-section">
+          <p class="eyebrow">Selected Node</p>
+          <h2 id="detailTitle">Select a node</h2>
+          <p id="detailType" class="type-pill">No selection</p>
+          <p id="detailDescription" class="description">Click a node in the graph to inspect its metadata and relationships.</p>
+        </div>
+
+        <div class="panel-section">
+          <h3>Properties</h3>
+          <dl id="propertyList" class="property-list"></dl>
+        </div>
+
+        <div class="panel-section">
+          <h3>Relationships</h3>
+          <ul id="relationshipList" class="relationship-list"></ul>
+        </div>
+      </aside>
+    </main>
+
+    <script src="graph-data.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
