@@ -70,17 +70,17 @@ Allowed relationship types and type pairs:
 | --- | --- | --- |
 | `AUTHORED_BY` | `Text` | `Person` |
 | `BELONGS_TO_SCHOOL` | `Concept`, `Person`, `School`, `Text` | `School` |
-| `BELONGS_TO_CORPUS` | `Citation`, `Document`, `Evidence`, `Source`, `Text`, `Work` | `Corpus` |
+| `BELONGS_TO_CORPUS` | `Citation`, `Document`, `Evidence`, `Source`, `Work` | `Corpus` |
 | `CITES` | `Citation`, `Text` | `Citation` |
 | `COMMENTS_ON` | `Citation`, `Text` | `Concept`, `Text` |
 | `DEFINES` | `Citation`, `Concept`, `Term`, `Text` | `Concept`, `Term` |
-| `DERIVED_FROM` | `Document`, `Evidence`, `Text`, `Work` | `Document`, `Source`, `Text`, `Work` |
+| `DERIVED_FROM` | `Citation`, `Document`, `Evidence`, `Work` | `Citation`, `Document`, `Source`, `Work` |
 | `EVIDENCES` | `Evidence` | `Concept`, `Term`, `Text`, `Work` |
 | `HAS_CITATION` | `Document`, `Evidence`, `Text`, `Work` | `Citation` |
 | `HAS_DOCUMENT` | `Corpus`, `Source`, `Work` | `Document` |
-| `HAS_EVIDENCE` | `Citation`, `Document`, `Text`, `Work` | `Evidence` |
+| `HAS_EVIDENCE` | `Citation`, `Document`, `Work` | `Evidence` |
 | `LOCATED_IN` | `Person`, `Place`, `School`, `Text` | `Place` |
-| `MENTIONS` | `Citation`, `Concept`, `Document`, `Evidence`, `Text`, `Work` | `Concept`, `Person`, `Place`, `School`, `Term`, `Work` |
+| `MENTIONS` | `Citation`, `Concept`, `Document`, `Evidence`, `Text`, `Work` | `Concept`, `Person`, `Place`, `School`, `Term`, `Text`, `Work` |
 | `RELATED_TO` | any known node type | any known node type |
 | `TRANSLATED_BY` | `Text` | `Person` |
 

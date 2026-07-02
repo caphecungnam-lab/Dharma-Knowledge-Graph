@@ -148,6 +148,12 @@ Examples:
 
 A bounded collection of material selected for ingestion, review, or analysis.
 
+Required fields:
+
+- `id`
+- `type`
+- `name`
+
 Suggested fields:
 
 - `language`
@@ -159,10 +165,21 @@ Examples:
 
 - `corpus_giac_khang_pilot`
 
+Purpose in the Evidence-first MVP:
+
+- Defines the boundary of a pilot ingestion set so sources, documents,
+  evidence, works, and citations can be reviewed as one collection.
+
 ### Source
 
 A provider, edition, repository, notebook, dataset, or other upstream origin
 from which documents are derived.
+
+Required fields:
+
+- `id`
+- `type`
+- `name`
 
 Suggested fields:
 
@@ -177,10 +194,21 @@ Examples:
 
 - `source_giac_khang_notes`
 
+Purpose in the Evidence-first MVP:
+
+- Records where pilot documents came from before any extraction, enrichment, or
+  interpretation happens.
+
 ### Document
 
 An ingestible unit derived from a source, such as a note, page, chapter,
 article, transcript, file, or extracted passage.
+
+Required fields:
+
+- `id`
+- `type`
+- `name`
 
 Suggested fields:
 
@@ -195,10 +223,21 @@ Examples:
 
 - `document_giac_khang_mvp_notes`
 
+Purpose in the Evidence-first MVP:
+
+- Represents the concrete unit that can be reviewed, cited, and used to derive
+  evidence nodes.
+
 ### Evidence
 
 A claim-supporting excerpt, observation, annotation, or structured assertion
 derived from a document.
+
+Required fields:
+
+- `id`
+- `type`
+- `name`
 
 Suggested fields:
 
@@ -213,10 +252,21 @@ Examples:
 
 - `evidence_giac_khang_sunyata_001`
 
+Purpose in the Evidence-first MVP:
+
+- Provides the inspectable support for concept links so graph claims can be
+  traced back to source material.
+
 ### Work
 
 An abstract intellectual work that can group documents, translations, editions,
 or extracted passages.
+
+Required fields:
+
+- `id`
+- `type`
+- `name`
 
 Suggested fields:
 
@@ -230,6 +280,12 @@ Suggested fields:
 Examples:
 
 - `work_mulamadhyamakakarika`
+
+Purpose in the Evidence-first MVP:
+
+- Groups documents or citations that represent the same intellectual work
+  without forcing every edition or extracted document to become a canonical
+  `Text`.
 
 ## Relationship Types
 
