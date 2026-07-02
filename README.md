@@ -55,6 +55,12 @@ Core relationship types:
 - `LOCATED_IN`
 - `CITES`
 
+## Core Concepts Pilot
+
+The first pilot dataset is in `data/seeds/concepts.json`. Together with the
+starter concepts in `data/seeds/core.json`, it contains 30 foundational Dharma
+concepts and a small set of relationships between them.
+
 ## Validate Seed Data
 
 Run:

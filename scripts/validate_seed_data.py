@@ -13,13 +13,13 @@ REQUIRED_NODE_FIELDS = {"id", "type", "name"}
 REQUIRED_RELATIONSHIP_FIELDS = {"source", "type", "target"}
 
 
-def validate_seed_file(path: Path) -> list[str]:
+def load_seed_file(path: Path) -> tuple[dict, list[str]]:
     errors: list[str] = []
 
     try:
         data = json.loads(path.read_text(encoding="utf-8"))
     except json.JSONDecodeError as exc:
-        return [f"{path}: invalid JSON: {exc}"]
+        return {}, [f"{path}: invalid JSON: {exc}"]
 
     nodes = data.get("nodes")
     relationships = data.get("relationships")
@@ -30,43 +30,61 @@ def validate_seed_file(path: Path) -> list[str]:
 
     if not isinstance(relationships, list):
         errors.append(f"{path}: 'relationships' must be a list")
-        relationships = []
 
-    node_ids: set[str] = set()
+    return data, errors
 
-    for index, node in enumerate(nodes):
-        if not isinstance(node, dict):
-            errors.append(f"{path}: node {index} must be an object")
-            continue
 
-        missing = REQUIRED_NODE_FIELDS - node.keys()
-        if missing:
-            errors.append(f"{path}: node {index} missing fields: {sorted(missing)}")
+def validate_seed_files(seed_files: list[Path]) -> list[str]:
+    errors: list[str] = []
+    loaded_files: list[tuple[Path, dict]] = []
+    node_locations: dict[str, Path] = {}
 
-        node_id = node.get("id")
-        if isinstance(node_id, str):
-            if node_id in node_ids:
-                errors.append(f"{path}: duplicate node id: {node_id}")
-            node_ids.add(node_id)
+    for path in seed_files:
+        data, load_errors = load_seed_file(path)
+        errors.extend(load_errors)
+        if data:
+            loaded_files.append((path, data))
 
-    for index, relationship in enumerate(relationships):
-        if not isinstance(relationship, dict):
-            errors.append(f"{path}: relationship {index} must be an object")
-            continue
+    for path, data in loaded_files:
+        for index, node in enumerate(data.get("nodes", [])):
+            if not isinstance(node, dict):
+                errors.append(f"{path}: node {index} must be an object")
+                continue
 
-        missing = REQUIRED_RELATIONSHIP_FIELDS - relationship.keys()
-        if missing:
-            errors.append(
-                f"{path}: relationship {index} missing fields: {sorted(missing)}"
-            )
-            continue
+            missing = REQUIRED_NODE_FIELDS - node.keys()
+            if missing:
+                errors.append(f"{path}: node {index} missing fields: {sorted(missing)}")
 
-        source = relationship["source"]
-        target = relationship["target"]
-        if source not in node_ids:
-            errors.append(f"{path}: relationship {index} has unknown source: {source}")
-        if target not in node_ids:
-            errors.append(f"{path}: relationship {index} has unknown target: {target}")
+            node_id = node.get("id")
+            if isinstance(node_id, str):
+                if node_id in node_locations:
+                    errors.append(
+                        f"{path}: duplicate node id: {node_id} "
+                        f"(already in {node_locations[node_id]})"
+                    )
+                node_locations[node_id] = path
+            else:
+                errors.append(f"{path}: node {index} has non-string id")
+
+    for path, data in loaded_files:
+        for index, relationship in enumerate(data.get("relationships", [])):
+            if not isinstance(relationship, dict):
+                errors.append(f"{path}: relationship {index} must be an object")
+                continue
+
+            missing = REQUIRED_RELATIONSHIP_FIELDS - relationship.keys()
+            if missing:
+                errors.append(
+                    f"{path}: relationship {index} missing fields: {sorted(missing)}"
+                )
+                continue
+
+            source = relationship["source"]
+            target = relationship["target"]
+            if source not in node_locations:
+                errors.append(f"{path}: relationship {index} has unknown source: {source}")
+            if target not in node_locations:
+                errors.append(f"{path}: relationship {index} has unknown target: {target}")
 
     return errors
 
@@ -77,9 +95,7 @@ def main() -> int:
         print("No seed files found.")
         return 1
 
-    errors = []
-    for path in seed_files:
-        errors.extend(validate_seed_file(path))
+    errors = validate_seed_files(seed_files)
 
     if errors:
         print("Seed data validation failed:")

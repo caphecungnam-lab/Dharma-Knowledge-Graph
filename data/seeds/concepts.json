@@ -1,0 +1,391 @@
+{
+  "nodes": [
+    {
+      "id": "concept_anicca",
+      "type": "Concept",
+      "name": "Anicca",
+      "pali": "anicca",
+      "sanskrit": "anitya",
+      "category": "doctrine",
+      "description": "Impermanence; the conditioned nature of phenomena as changing and unstable."
+    },
+    {
+      "id": "concept_anatta",
+      "type": "Concept",
+      "name": "Anatta",
+      "pali": "anatta",
+      "sanskrit": "anatman",
+      "category": "doctrine",
+      "description": "Not-self; the absence of a permanent, independent self in conditioned phenomena."
+    },
+    {
+      "id": "concept_pratityasamutpada",
+      "type": "Concept",
+      "name": "Pratityasamutpada",
+      "pali": "paticcasamuppada",
+      "sanskrit": "pratityasamutpada",
+      "category": "doctrine",
+      "description": "Dependent arising; the principle that phenomena arise in dependence on causes and conditions."
+    },
+    {
+      "id": "concept_karma",
+      "type": "Concept",
+      "name": "Karma",
+      "pali": "kamma",
+      "sanskrit": "karma",
+      "category": "ethics",
+      "description": "Intentional action and its ethical consequences."
+    },
+    {
+      "id": "concept_samsara",
+      "type": "Concept",
+      "name": "Samsara",
+      "pali": "samsara",
+      "sanskrit": "samsara",
+      "category": "cosmology",
+      "description": "The cycle of birth, death, and rebirth conditioned by ignorance and craving."
+    },
+    {
+      "id": "concept_nirvana",
+      "type": "Concept",
+      "name": "Nirvana",
+      "pali": "nibbana",
+      "sanskrit": "nirvana",
+      "category": "liberation",
+      "description": "Liberation; the extinguishing of greed, hatred, and delusion."
+    },
+    {
+      "id": "concept_four_noble_truths",
+      "type": "Concept",
+      "name": "Four Noble Truths",
+      "pali": "cattari ariyasaccani",
+      "sanskrit": "catvari aryasatyani",
+      "category": "doctrine",
+      "description": "The teaching of suffering, its origin, its cessation, and the path leading to cessation."
+    },
+    {
+      "id": "concept_noble_eightfold_path",
+      "type": "Concept",
+      "name": "Noble Eightfold Path",
+      "pali": "ariya atthangika magga",
+      "sanskrit": "arya astangika marga",
+      "category": "practice",
+      "description": "The path of right view, intention, speech, action, livelihood, effort, mindfulness, and concentration."
+    },
+    {
+      "id": "concept_middle_way",
+      "type": "Concept",
+      "name": "Middle Way",
+      "pali": "majjhima patipada",
+      "sanskrit": "madhyama pratipad",
+      "category": "practice",
+      "description": "A path avoiding extremes, often framed as avoiding indulgence and self-mortification or eternalism and nihilism."
+    },
+    {
+      "id": "concept_three_marks",
+      "type": "Concept",
+      "name": "Three Marks of Existence",
+      "pali": "tilakkhana",
+      "sanskrit": "trilaksana",
+      "category": "doctrine",
+      "description": "The marks of impermanence, suffering or unsatisfactoriness, and not-self."
+    },
+    {
+      "id": "concept_skandhas",
+      "type": "Concept",
+      "name": "Five Aggregates",
+      "pali": "khandha",
+      "sanskrit": "skandha",
+      "category": "analysis",
+      "description": "Form, feeling, perception, formations, and consciousness as a framework for analyzing experience."
+    },
+    {
+      "id": "concept_ayatana",
+      "type": "Concept",
+      "name": "Six Sense Bases",
+      "pali": "ayatana",
+      "sanskrit": "ayatana",
+      "category": "analysis",
+      "description": "The internal and external sense bases involved in perceptual experience."
+    },
+    {
+      "id": "concept_dhatu",
+      "type": "Concept",
+      "name": "Elements",
+      "pali": "dhatu",
+      "sanskrit": "dhatu",
+      "category": "analysis",
+      "description": "Elements or domains used to analyze experience and phenomena."
+    },
+    {
+      "id": "concept_tanha",
+      "type": "Concept",
+      "name": "Tanha",
+      "pali": "tanha",
+      "sanskrit": "trsna",
+      "category": "psychology",
+      "description": "Craving or thirst; a central condition in the arising of suffering."
+    },
+    {
+      "id": "concept_avidya",
+      "type": "Concept",
+      "name": "Avidya",
+      "pali": "avijja",
+      "sanskrit": "avidya",
+      "category": "psychology",
+      "description": "Ignorance or misknowing, especially regarding the nature of reality and the path."
+    },
+    {
+      "id": "concept_klesha",
+      "type": "Concept",
+      "name": "Klesha",
+      "pali": "kilesa",
+      "sanskrit": "klesa",
+      "category": "psychology",
+      "description": "Afflictive mental states that disturb the mind and condition suffering."
+    },
+    {
+      "id": "concept_metta",
+      "type": "Concept",
+      "name": "Metta",
+      "pali": "metta",
+      "sanskrit": "maitri",
+      "category": "practice",
+      "description": "Loving-kindness; the cultivation of goodwill and friendliness."
+    },
+    {
+      "id": "concept_karuna",
+      "type": "Concept",
+      "name": "Karuna",
+      "pali": "karuna",
+      "sanskrit": "karuna",
+      "category": "practice",
+      "description": "Compassion; the wish for beings to be free from suffering."
+    },
+    {
+      "id": "concept_mudita",
+      "type": "Concept",
+      "name": "Mudita",
+      "pali": "mudita",
+      "sanskrit": "mudita",
+      "category": "practice",
+      "description": "Sympathetic joy; delight in the welfare and happiness of others."
+    },
+    {
+      "id": "concept_upekkha",
+      "type": "Concept",
+      "name": "Upekkha",
+      "pali": "upekkha",
+      "sanskrit": "upeksa",
+      "category": "practice",
+      "description": "Equanimity; balanced presence toward changing experience."
+    },
+    {
+      "id": "concept_brahmaviharas",
+      "type": "Concept",
+      "name": "Brahmaviharas",
+      "pali": "brahmavihara",
+      "sanskrit": "brahmavihara",
+      "category": "practice",
+      "description": "The four divine abodes: loving-kindness, compassion, sympathetic joy, and equanimity."
+    },
+    {
+      "id": "concept_sila",
+      "type": "Concept",
+      "name": "Sila",
+      "pali": "sila",
+      "sanskrit": "sila",
+      "category": "ethics",
+      "description": "Ethical conduct or moral discipline."
+    },
+    {
+      "id": "concept_samadhi",
+      "type": "Concept",
+      "name": "Samadhi",
+      "pali": "samadhi",
+      "sanskrit": "samadhi",
+      "category": "practice",
+      "description": "Collectedness, concentration, or meditative absorption."
+    },
+    {
+      "id": "concept_prajna",
+      "type": "Concept",
+      "name": "Prajna",
+      "pali": "panna",
+      "sanskrit": "prajna",
+      "category": "wisdom",
+      "description": "Wisdom or liberating insight into the nature of phenomena."
+    },
+    {
+      "id": "concept_bodhicitta",
+      "type": "Concept",
+      "name": "Bodhicitta",
+      "sanskrit": "bodhicitta",
+      "category": "mahayana",
+      "description": "The awakened mind or aspiration to attain awakening for the benefit of all beings."
+    },
+    {
+      "id": "concept_bodhisattva",
+      "type": "Concept",
+      "name": "Bodhisattva",
+      "pali": "bodhisatta",
+      "sanskrit": "bodhisattva",
+      "category": "mahayana",
+      "description": "A being oriented toward awakening, especially for the liberation of all beings in Mahayana contexts."
+    },
+    {
+      "id": "concept_paramita",
+      "type": "Concept",
+      "name": "Paramita",
+      "pali": "parami",
+      "sanskrit": "paramita",
+      "category": "mahayana",
+      "description": "Perfection or transcendent virtue cultivated on the bodhisattva path."
+    },
+    {
+      "id": "concept_two_truths",
+      "type": "Concept",
+      "name": "Two Truths",
+      "sanskrit": "satya-dvaya",
+      "category": "mahayana",
+      "description": "The distinction between conventional truth and ultimate truth."
+    }
+  ],
+  "relationships": [
+    {
+      "source": "concept_three_marks",
+      "type": "DEFINES",
+      "target": "concept_anicca"
+    },
+    {
+      "source": "concept_three_marks",
+      "type": "DEFINES",
+      "target": "concept_dukkha"
+    },
+    {
+      "source": "concept_three_marks",
+      "type": "DEFINES",
+      "target": "concept_anatta"
+    },
+    {
+      "source": "concept_four_noble_truths",
+      "type": "MENTIONS",
+      "target": "concept_dukkha"
+    },
+    {
+      "source": "concept_four_noble_truths",
+      "type": "MENTIONS",
+      "target": "concept_tanha"
+    },
+    {
+      "source": "concept_four_noble_truths",
+      "type": "MENTIONS",
+      "target": "concept_nirvana"
+    },
+    {
+      "source": "concept_four_noble_truths",
+      "type": "MENTIONS",
+      "target": "concept_noble_eightfold_path"
+    },
+    {
+      "source": "concept_noble_eightfold_path",
+      "type": "MENTIONS",
+      "target": "concept_sila"
+    },
+    {
+      "source": "concept_noble_eightfold_path",
+      "type": "MENTIONS",
+      "target": "concept_samadhi"
+    },
+    {
+      "source": "concept_noble_eightfold_path",
+      "type": "MENTIONS",
+      "target": "concept_prajna"
+    },
+    {
+      "source": "concept_pratityasamutpada",
+      "type": "RELATED_TO",
+      "target": "concept_karma"
+    },
+    {
+      "source": "concept_pratityasamutpada",
+      "type": "RELATED_TO",
+      "target": "concept_avidya"
+    },
+    {
+      "source": "concept_pratityasamutpada",
+      "type": "RELATED_TO",
+      "target": "concept_tanha"
+    },
+    {
+      "source": "concept_samsara",
+      "type": "RELATED_TO",
+      "target": "concept_karma"
+    },
+    {
+      "source": "concept_samsara",
+      "type": "RELATED_TO",
+      "target": "concept_avidya"
+    },
+    {
+      "source": "concept_samsara",
+      "type": "RELATED_TO",
+      "target": "concept_nirvana"
+    },
+    {
+      "source": "concept_klesha",
+      "type": "RELATED_TO",
+      "target": "concept_avidya"
+    },
+    {
+      "source": "concept_klesha",
+      "type": "RELATED_TO",
+      "target": "concept_tanha"
+    },
+    {
+      "source": "concept_brahmaviharas",
+      "type": "DEFINES",
+      "target": "concept_metta"
+    },
+    {
+      "source": "concept_brahmaviharas",
+      "type": "DEFINES",
+      "target": "concept_karuna"
+    },
+    {
+      "source": "concept_brahmaviharas",
+      "type": "DEFINES",
+      "target": "concept_mudita"
+    },
+    {
+      "source": "concept_brahmaviharas",
+      "type": "DEFINES",
+      "target": "concept_upekkha"
+    },
+    {
+      "source": "concept_bodhisattva",
+      "type": "RELATED_TO",
+      "target": "concept_bodhicitta"
+    },
+    {
+      "source": "concept_bodhisattva",
+      "type": "RELATED_TO",
+      "target": "concept_paramita"
+    },
+    {
+      "source": "concept_sunyata",
+      "type": "RELATED_TO",
+      "target": "concept_two_truths"
+    },
+    {
+      "source": "concept_sunyata",
+      "type": "RELATED_TO",
+      "target": "concept_pratityasamutpada"
+    },
+    {
+      "source": "concept_middle_way",
+      "type": "RELATED_TO",
+      "target": "concept_two_truths"
+    }
+  ]
+}
