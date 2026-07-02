@@ -81,6 +81,30 @@ dkge:citation_dhammapada_50
     dkg:notes "Pilot citation for self-examination in ethical practice." ;
     dkg:sourceFile "data/seeds/dhammapada.json" .
 
+dkge:citation_giac_khang_notes_pratityasamutpada
+    a dkg:Citation ;
+    dkg:name "Giac Khang notes, Dependent arising excerpt" ;
+    dkg:source "Giac Khang MVP Notes" ;
+    dkg:locator "pilot-note-001#dependent-arising" ;
+    dkg:notes "Pilot citation for evidence about dependent arising." ;
+    dkg:sourceFile "data/seeds/giac_khang_pilot.json" .
+
+dkge:citation_giac_khang_notes_middle_way
+    a dkg:Citation ;
+    dkg:name "Giac Khang notes, Middle Way excerpt" ;
+    dkg:source "Giac Khang MVP Notes" ;
+    dkg:locator "pilot-note-001#middle-way" ;
+    dkg:notes "Pilot citation for evidence about the middle way." ;
+    dkg:sourceFile "data/seeds/giac_khang_pilot.json" .
+
+dkge:citation_giac_khang_notes_sunyata
+    a dkg:Citation ;
+    dkg:name "Giac Khang notes, Sunyata excerpt" ;
+    dkg:source "Giac Khang MVP Notes" ;
+    dkg:locator "pilot-note-001#sunyata" ;
+    dkg:notes "Pilot citation for evidence about emptiness." ;
+    dkg:sourceFile "data/seeds/giac_khang_pilot.json" .
+
 dkge:citation_heart_sutra_dharmas
     a dkg:Citation ;
     dkg:name "Heart Sutra Dharmas Passage" ;
@@ -462,6 +486,53 @@ dkge:concept_upekkha
     dkg:sanskrit "upeksa" ;
     dkg:sourceFile "data/seeds/concepts.json" .
 
+dkge:corpus_giac_khang_pilot
+    a dkg:Corpus ;
+    dkg:name "Giac Khang Pilot Corpus" ;
+    dkg:description "A bounded pilot corpus for testing evidence-first Dharma Knowledge Graph ingestion." ;
+    dkg:language "Vietnamese" ;
+    dkg:scope "21-day MVP evidence-first pilot" ;
+    dkg:sourceFile "data/seeds/giac_khang_pilot.json" .
+
+dkge:document_giac_khang_mvp_notes
+    a dkg:Document ;
+    dkg:name "Giac Khang MVP Notes" ;
+    dkg:description "A single pilot document used to test document-to-evidence modeling." ;
+    dkg:language "Vietnamese" ;
+    dkg:locator "pilot-note-001" ;
+    dkg:documentType "study_note" ;
+    dkg:sourceFile "data/seeds/giac_khang_pilot.json" .
+
+dkge:evidence_giac_khang_pratityasamutpada_001
+    a dkg:Evidence ;
+    dkg:name "Evidence: Dependent arising as relational explanation" ;
+    dkg:language "Vietnamese" ;
+    dkg:locator "pilot-note-001#dependent-arising" ;
+    dkg:evidenceType "excerpt" ;
+    dkg:evidenceText "Dependent arising is represented as the principle that phenomena appear through conditions and relationships." ;
+    dkg:confidence "medium" ;
+    dkg:sourceFile "data/seeds/giac_khang_pilot.json" .
+
+dkge:evidence_giac_khang_middle_way_001
+    a dkg:Evidence ;
+    dkg:name "Evidence: Middle Way avoids extremes" ;
+    dkg:language "Vietnamese" ;
+    dkg:locator "pilot-note-001#middle-way" ;
+    dkg:evidenceType "excerpt" ;
+    dkg:evidenceText "The middle way is represented as avoiding fixed extremes while preserving practical conventional meaning." ;
+    dkg:confidence "medium" ;
+    dkg:sourceFile "data/seeds/giac_khang_pilot.json" .
+
+dkge:evidence_giac_khang_sunyata_001
+    a dkg:Evidence ;
+    dkg:name "Evidence: Sunyata as non-independent existence" ;
+    dkg:language "Vietnamese" ;
+    dkg:locator "pilot-note-001#sunyata" ;
+    dkg:evidenceType "excerpt" ;
+    dkg:evidenceText "Emptiness is represented as the absence of independent, self-existing nature rather than simple nothingness." ;
+    dkg:confidence "medium" ;
+    dkg:sourceFile "data/seeds/giac_khang_pilot.json" .
+
 dkge:person_nagarjuna
     a dkg:Person ;
     dkg:name "Nagarjuna" ;
@@ -546,6 +617,14 @@ dkge:school_theravada
     dkg:name "Theravada" ;
     dkg:description "A Buddhist tradition preserving the Pali Canon." ;
     dkg:sourceFile "data/seeds/core.json" .
+
+dkge:source_giac_khang_notes
+    a dkg:Source ;
+    dkg:name "Giac Khang Study Notes" ;
+    dkg:description "Pilot source material used to model evidence before API, embeddings, or LLM extraction." ;
+    dkg:language "Vietnamese" ;
+    dkg:sourceType "local_notes" ;
+    dkg:sourceFile "data/seeds/giac_khang_pilot.json" .
 
 dkge:term_ahimsa_sanskrit
     a dkg:Term ;
@@ -1101,6 +1180,13 @@ dkge:text_mulamadhyamakakarika
     dkg:language "Sanskrit" ;
     dkg:sourceFile "data/seeds/core.json" .
 
+dkge:work_giac_khang_pilot_teachings
+    a dkg:Work ;
+    dkg:name "Giac Khang Pilot Teachings" ;
+    dkg:description "A pilot work grouping selected notes for the evidence-first MVP." ;
+    dkg:language "Vietnamese" ;
+    dkg:sourceFile "data/seeds/giac_khang_pilot.json" .
+
 dkge:citation_dhammapada_1
     dkg:mentions dkge:concept_citta ;
     dkg:mentions dkge:concept_dukkha ;
@@ -1135,6 +1221,18 @@ dkge:citation_dhammapada_5
 
 dkge:citation_dhammapada_50
     dkg:mentions dkge:concept_sila .
+
+dkge:citation_giac_khang_notes_middle_way
+    dkg:belongsToCorpus dkge:corpus_giac_khang_pilot ;
+    dkg:mentions dkge:concept_middle_way .
+
+dkge:citation_giac_khang_notes_pratityasamutpada
+    dkg:belongsToCorpus dkge:corpus_giac_khang_pilot ;
+    dkg:mentions dkge:concept_pratityasamutpada .
+
+dkge:citation_giac_khang_notes_sunyata
+    dkg:belongsToCorpus dkge:corpus_giac_khang_pilot ;
+    dkg:mentions dkge:concept_sunyata .
 
 dkge:citation_heart_sutra_dharmas
     dkg:mentions dkge:concept_ayatana ;
@@ -1238,6 +1336,28 @@ dkge:concept_three_marks
     dkg:defines dkge:concept_anicca ;
     dkg:defines dkge:concept_dukkha .
 
+dkge:document_giac_khang_mvp_notes
+    dkg:belongsToCorpus dkge:corpus_giac_khang_pilot ;
+    dkg:derivedFrom dkge:source_giac_khang_notes ;
+    dkg:hasEvidence dkge:evidence_giac_khang_middle_way_001 ;
+    dkg:hasEvidence dkge:evidence_giac_khang_pratityasamutpada_001 ;
+    dkg:hasEvidence dkge:evidence_giac_khang_sunyata_001 .
+
+dkge:evidence_giac_khang_middle_way_001
+    dkg:derivedFrom dkge:document_giac_khang_mvp_notes ;
+    dkg:evidences dkge:concept_middle_way ;
+    dkg:hasCitation dkge:citation_giac_khang_notes_middle_way .
+
+dkge:evidence_giac_khang_pratityasamutpada_001
+    dkg:derivedFrom dkge:document_giac_khang_mvp_notes ;
+    dkg:evidences dkge:concept_pratityasamutpada ;
+    dkg:hasCitation dkge:citation_giac_khang_notes_pratityasamutpada .
+
+dkge:evidence_giac_khang_sunyata_001
+    dkg:derivedFrom dkge:document_giac_khang_mvp_notes ;
+    dkg:evidences dkge:concept_sunyata ;
+    dkg:hasCitation dkge:citation_giac_khang_notes_sunyata .
+
 dkge:person_nagarjuna
     dkg:belongsToSchool dkge:school_madhyamaka ;
     dkg:belongsToSchool dkge:school_mahayana .
@@ -1260,6 +1380,10 @@ dkge:school_pali_canon
 
 dkge:school_theravada
     dkg:locatedIn dkge:place_sri_lanka .
+
+dkge:source_giac_khang_notes
+    dkg:belongsToCorpus dkge:corpus_giac_khang_pilot ;
+    dkg:hasDocument dkge:document_giac_khang_mvp_notes .
 
 dkge:term_ahimsa_sanskrit
     dkg:defines dkge:concept_ahimsa .
@@ -1478,3 +1602,8 @@ dkge:text_mulamadhyamakakarika
     dkg:mentions dkge:concept_pratityasamutpada ;
     dkg:mentions dkge:concept_sunyata ;
     dkg:mentions dkge:concept_two_truths .
+
+dkge:work_giac_khang_pilot_teachings
+    dkg:belongsToCorpus dkge:corpus_giac_khang_pilot ;
+    dkg:derivedFrom dkge:source_giac_khang_notes ;
+    dkg:hasDocument dkge:document_giac_khang_mvp_notes .

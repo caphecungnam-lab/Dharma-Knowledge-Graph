@@ -1,0 +1,217 @@
+{
+  "nodes": [
+    {
+      "id": "corpus_giac_khang_pilot",
+      "type": "Corpus",
+      "name": "Giac Khang Pilot Corpus",
+      "language": "Vietnamese",
+      "scope": "21-day MVP evidence-first pilot",
+      "description": "A bounded pilot corpus for testing evidence-first Dharma Knowledge Graph ingestion."
+    },
+    {
+      "id": "source_giac_khang_notes",
+      "type": "Source",
+      "name": "Giac Khang Study Notes",
+      "source_type": "local_notes",
+      "language": "Vietnamese",
+      "description": "Pilot source material used to model evidence before API, embeddings, or LLM extraction."
+    },
+    {
+      "id": "work_giac_khang_pilot_teachings",
+      "type": "Work",
+      "name": "Giac Khang Pilot Teachings",
+      "language": "Vietnamese",
+      "description": "A pilot work grouping selected notes for the evidence-first MVP."
+    },
+    {
+      "id": "document_giac_khang_mvp_notes",
+      "type": "Document",
+      "name": "Giac Khang MVP Notes",
+      "document_type": "study_note",
+      "language": "Vietnamese",
+      "locator": "pilot-note-001",
+      "description": "A single pilot document used to test document-to-evidence modeling."
+    },
+    {
+      "id": "evidence_giac_khang_sunyata_001",
+      "type": "Evidence",
+      "name": "Evidence: Sunyata as non-independent existence",
+      "evidence_type": "excerpt",
+      "language": "Vietnamese",
+      "confidence": "medium",
+      "locator": "pilot-note-001#sunyata",
+      "evidence_text": "Emptiness is represented as the absence of independent, self-existing nature rather than simple nothingness."
+    },
+    {
+      "id": "evidence_giac_khang_pratityasamutpada_001",
+      "type": "Evidence",
+      "name": "Evidence: Dependent arising as relational explanation",
+      "evidence_type": "excerpt",
+      "language": "Vietnamese",
+      "confidence": "medium",
+      "locator": "pilot-note-001#dependent-arising",
+      "evidence_text": "Dependent arising is represented as the principle that phenomena appear through conditions and relationships."
+    },
+    {
+      "id": "evidence_giac_khang_middle_way_001",
+      "type": "Evidence",
+      "name": "Evidence: Middle Way avoids extremes",
+      "evidence_type": "excerpt",
+      "language": "Vietnamese",
+      "confidence": "medium",
+      "locator": "pilot-note-001#middle-way",
+      "evidence_text": "The middle way is represented as avoiding fixed extremes while preserving practical conventional meaning."
+    },
+    {
+      "id": "citation_giac_khang_notes_sunyata",
+      "type": "Citation",
+      "name": "Giac Khang notes, Sunyata excerpt",
+      "source": "Giac Khang MVP Notes",
+      "locator": "pilot-note-001#sunyata",
+      "notes": "Pilot citation for evidence about emptiness."
+    },
+    {
+      "id": "citation_giac_khang_notes_pratityasamutpada",
+      "type": "Citation",
+      "name": "Giac Khang notes, Dependent arising excerpt",
+      "source": "Giac Khang MVP Notes",
+      "locator": "pilot-note-001#dependent-arising",
+      "notes": "Pilot citation for evidence about dependent arising."
+    },
+    {
+      "id": "citation_giac_khang_notes_middle_way",
+      "type": "Citation",
+      "name": "Giac Khang notes, Middle Way excerpt",
+      "source": "Giac Khang MVP Notes",
+      "locator": "pilot-note-001#middle-way",
+      "notes": "Pilot citation for evidence about the middle way."
+    }
+  ],
+  "relationships": [
+    {
+      "source": "source_giac_khang_notes",
+      "type": "BELONGS_TO_CORPUS",
+      "target": "corpus_giac_khang_pilot"
+    },
+    {
+      "source": "document_giac_khang_mvp_notes",
+      "type": "BELONGS_TO_CORPUS",
+      "target": "corpus_giac_khang_pilot"
+    },
+    {
+      "source": "work_giac_khang_pilot_teachings",
+      "type": "BELONGS_TO_CORPUS",
+      "target": "corpus_giac_khang_pilot"
+    },
+    {
+      "source": "citation_giac_khang_notes_sunyata",
+      "type": "BELONGS_TO_CORPUS",
+      "target": "corpus_giac_khang_pilot"
+    },
+    {
+      "source": "citation_giac_khang_notes_pratityasamutpada",
+      "type": "BELONGS_TO_CORPUS",
+      "target": "corpus_giac_khang_pilot"
+    },
+    {
+      "source": "citation_giac_khang_notes_middle_way",
+      "type": "BELONGS_TO_CORPUS",
+      "target": "corpus_giac_khang_pilot"
+    },
+    {
+      "source": "source_giac_khang_notes",
+      "type": "HAS_DOCUMENT",
+      "target": "document_giac_khang_mvp_notes"
+    },
+    {
+      "source": "work_giac_khang_pilot_teachings",
+      "type": "HAS_DOCUMENT",
+      "target": "document_giac_khang_mvp_notes"
+    },
+    {
+      "source": "document_giac_khang_mvp_notes",
+      "type": "DERIVED_FROM",
+      "target": "source_giac_khang_notes"
+    },
+    {
+      "source": "work_giac_khang_pilot_teachings",
+      "type": "DERIVED_FROM",
+      "target": "source_giac_khang_notes"
+    },
+    {
+      "source": "document_giac_khang_mvp_notes",
+      "type": "HAS_EVIDENCE",
+      "target": "evidence_giac_khang_sunyata_001"
+    },
+    {
+      "source": "document_giac_khang_mvp_notes",
+      "type": "HAS_EVIDENCE",
+      "target": "evidence_giac_khang_pratityasamutpada_001"
+    },
+    {
+      "source": "document_giac_khang_mvp_notes",
+      "type": "HAS_EVIDENCE",
+      "target": "evidence_giac_khang_middle_way_001"
+    },
+    {
+      "source": "evidence_giac_khang_sunyata_001",
+      "type": "DERIVED_FROM",
+      "target": "document_giac_khang_mvp_notes"
+    },
+    {
+      "source": "evidence_giac_khang_pratityasamutpada_001",
+      "type": "DERIVED_FROM",
+      "target": "document_giac_khang_mvp_notes"
+    },
+    {
+      "source": "evidence_giac_khang_middle_way_001",
+      "type": "DERIVED_FROM",
+      "target": "document_giac_khang_mvp_notes"
+    },
+    {
+      "source": "evidence_giac_khang_sunyata_001",
+      "type": "EVIDENCES",
+      "target": "concept_sunyata"
+    },
+    {
+      "source": "evidence_giac_khang_pratityasamutpada_001",
+      "type": "EVIDENCES",
+      "target": "concept_pratityasamutpada"
+    },
+    {
+      "source": "evidence_giac_khang_middle_way_001",
+      "type": "EVIDENCES",
+      "target": "concept_middle_way"
+    },
+    {
+      "source": "evidence_giac_khang_sunyata_001",
+      "type": "HAS_CITATION",
+      "target": "citation_giac_khang_notes_sunyata"
+    },
+    {
+      "source": "evidence_giac_khang_pratityasamutpada_001",
+      "type": "HAS_CITATION",
+      "target": "citation_giac_khang_notes_pratityasamutpada"
+    },
+    {
+      "source": "evidence_giac_khang_middle_way_001",
+      "type": "HAS_CITATION",
+      "target": "citation_giac_khang_notes_middle_way"
+    },
+    {
+      "source": "citation_giac_khang_notes_sunyata",
+      "type": "MENTIONS",
+      "target": "concept_sunyata"
+    },
+    {
+      "source": "citation_giac_khang_notes_pratityasamutpada",
+      "type": "MENTIONS",
+      "target": "concept_pratityasamutpada"
+    },
+    {
+      "source": "citation_giac_khang_notes_middle_way",
+      "type": "MENTIONS",
+      "target": "concept_middle_way"
+    }
+  ]
+}

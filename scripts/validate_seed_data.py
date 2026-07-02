@@ -16,23 +16,40 @@ ID_PATTERN = re.compile(r"^[a-z][a-z0-9_]*$")
 TYPE_PREFIXES = {
     "Citation": "citation_",
     "Concept": "concept_",
+    "Corpus": "corpus_",
+    "Document": "document_",
+    "Evidence": "evidence_",
     "Person": "person_",
     "Place": "place_",
     "School": "school_",
+    "Source": "source_",
     "Term": "term_",
     "Text": "text_",
+    "Work": "work_",
 }
 KNOWN_NODE_TYPES = set(TYPE_PREFIXES)
 RELATIONSHIP_TYPE_RULES = {
     "AUTHORED_BY": ({"Text"}, {"Person"}),
     "BELONGS_TO_SCHOOL": ({"Concept", "Person", "School", "Text"}, {"School"}),
+    "BELONGS_TO_CORPUS": (
+        {"Citation", "Document", "Evidence", "Source", "Text", "Work"},
+        {"Corpus"},
+    ),
     "CITES": ({"Citation", "Text"}, {"Citation"}),
     "COMMENTS_ON": ({"Citation", "Text"}, {"Concept", "Text"}),
     "DEFINES": ({"Citation", "Concept", "Term", "Text"}, {"Concept", "Term"}),
+    "DERIVED_FROM": (
+        {"Document", "Evidence", "Text", "Work"},
+        {"Document", "Source", "Text", "Work"},
+    ),
+    "EVIDENCES": ({"Evidence"}, {"Concept", "Term", "Text", "Work"}),
+    "HAS_CITATION": ({"Document", "Evidence", "Text", "Work"}, {"Citation"}),
+    "HAS_DOCUMENT": ({"Corpus", "Source", "Work"}, {"Document"}),
+    "HAS_EVIDENCE": ({"Citation", "Document", "Text", "Work"}, {"Evidence"}),
     "LOCATED_IN": ({"Person", "Place", "School", "Text"}, {"Place"}),
     "MENTIONS": (
-        {"Citation", "Concept", "Text"},
-        {"Concept", "Person", "Place", "School", "Term"},
+        {"Citation", "Concept", "Document", "Evidence", "Text", "Work"},
+        {"Concept", "Person", "Place", "School", "Term", "Work"},
     ),
     "RELATED_TO": (KNOWN_NODE_TYPES, KNOWN_NODE_TYPES),
     "TRANSLATED_BY": ({"Text"}, {"Person"}),

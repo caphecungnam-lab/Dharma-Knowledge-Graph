@@ -6,15 +6,15 @@ Generated from `data/processed/graph.json`.
 
 | Metric | Value |
 | --- | --- |
-| Nodes | 122 |
-| Relationships | 188 |
+| Nodes | 132 |
+| Relationships | 213 |
 | Concepts | 37 |
 | Terms | 53 |
 | Concepts with term definitions | 37 |
 | Concepts without term definitions | 0 |
 | Texts | 3 |
 | Texts without citations | 0 |
-| Citations | 17 |
+| Citations | 20 |
 | Citations without concept mentions | 0 |
 | Isolated nodes | 0 |
 

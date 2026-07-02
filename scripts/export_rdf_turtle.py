@@ -22,10 +22,16 @@ ONTOLOGY_PREFIX = "dkg"
 
 PROPERTY_MAP = {
     "AUTHORED_BY": "authoredBy",
+    "BELONGS_TO_CORPUS": "belongsToCorpus",
     "BELONGS_TO_SCHOOL": "belongsToSchool",
     "CITES": "cites",
     "COMMENTS_ON": "commentsOn",
     "DEFINES": "defines",
+    "DERIVED_FROM": "derivedFrom",
+    "EVIDENCES": "evidences",
+    "HAS_CITATION": "hasCitation",
+    "HAS_DOCUMENT": "hasDocument",
+    "HAS_EVIDENCE": "hasEvidence",
     "LOCATED_IN": "locatedIn",
     "MENTIONS": "mentions",
     "RELATED_TO": "relatedTo",
@@ -52,6 +58,12 @@ LITERAL_FIELDS = [
     "url",
     "accessed_at",
     "notes",
+    "scope",
+    "source_type",
+    "document_type",
+    "evidence_type",
+    "evidence_text",
+    "confidence",
     "source_file",
 ]
 

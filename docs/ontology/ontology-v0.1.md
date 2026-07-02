@@ -144,6 +144,93 @@ Examples:
 - `citation_dhammapada_1_1`
 - `citation_mmkv_24_18`
 
+### Corpus
+
+A bounded collection of material selected for ingestion, review, or analysis.
+
+Suggested fields:
+
+- `language`
+- `scope`
+- `description`
+- `notes`
+
+Examples:
+
+- `corpus_giac_khang_pilot`
+
+### Source
+
+A provider, edition, repository, notebook, dataset, or other upstream origin
+from which documents are derived.
+
+Suggested fields:
+
+- `source_type`
+- `language`
+- `url`
+- `accessed_at`
+- `description`
+- `notes`
+
+Examples:
+
+- `source_giac_khang_notes`
+
+### Document
+
+An ingestible unit derived from a source, such as a note, page, chapter,
+article, transcript, file, or extracted passage.
+
+Suggested fields:
+
+- `document_type`
+- `language`
+- `locator`
+- `url`
+- `description`
+- `notes`
+
+Examples:
+
+- `document_giac_khang_mvp_notes`
+
+### Evidence
+
+A claim-supporting excerpt, observation, annotation, or structured assertion
+derived from a document.
+
+Suggested fields:
+
+- `evidence_text`
+- `evidence_type`
+- `confidence`
+- `locator`
+- `language`
+- `notes`
+
+Examples:
+
+- `evidence_giac_khang_sunyata_001`
+
+### Work
+
+An abstract intellectual work that can group documents, translations, editions,
+or extracted passages.
+
+Suggested fields:
+
+- `alternate_names`
+- `language`
+- `tradition`
+- `date_range`
+- `description`
+- `notes`
+
+Examples:
+
+- `work_mulamadhyamakakarika`
+
 ## Relationship Types
 
 ### `AUTHORED_BY`
@@ -188,6 +275,40 @@ Connects a place, institution, event, or source tradition to a location.
 
 Connects a text, note, or claim to a citation.
 
+### `BELONGS_TO_CORPUS`
+
+Connects a source, document, work, citation, text, or evidence node to the
+bounded corpus that contains it.
+
+### `DERIVED_FROM`
+
+Records provenance from a derived entity to its upstream source entity.
+
+Examples:
+
+- `document_giac_khang_mvp_notes` `DERIVED_FROM` `source_giac_khang_notes`
+- `evidence_giac_khang_sunyata_001` `DERIVED_FROM` `document_giac_khang_mvp_notes`
+
+### `HAS_DOCUMENT`
+
+Connects a corpus, source, or work to an ingestible document.
+
+### `HAS_EVIDENCE`
+
+Connects a document, work, citation, or text to evidence extracted from it.
+
+### `EVIDENCES`
+
+Connects an evidence node to the concept, term, text, or work that it supports.
+
+Example:
+
+- `evidence_giac_khang_sunyata_001` `EVIDENCES` `concept_sunyata`
+
+### `HAS_CITATION`
+
+Connects evidence, documents, works, or texts to a citation node.
+
 ## ID Conventions
 
 Use lowercase snake case:
@@ -207,10 +328,16 @@ Prefixes should match node types:
 - `place_`
 - `term_`
 - `citation_`
+- `corpus_`
+- `source_`
+- `document_`
+- `evidence_`
+- `work_`
 
 ## Open Questions
 
-- Should passages be modeled as `Text` nodes or as a separate `Passage` type?
+- Should passages be modeled as `Text`, `Document`, or a separate `Passage`
+  type?
 - How should variant translations be grouped under one canonical work?
 - Should canonical citations be tradition-specific?
 - How should confidence and disputed attribution be represented?

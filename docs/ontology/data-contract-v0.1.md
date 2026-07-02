@@ -25,11 +25,16 @@ Allowed node types:
 
 - `Citation`
 - `Concept`
+- `Corpus`
+- `Document`
+- `Evidence`
 - `Person`
 - `Place`
 - `School`
+- `Source`
 - `Term`
 - `Text`
+- `Work`
 
 Node IDs must use lowercase snake case and match the type prefix:
 
@@ -37,11 +42,16 @@ Node IDs must use lowercase snake case and match the type prefix:
 | --- | --- |
 | Citation | `citation_` |
 | Concept | `concept_` |
+| Corpus | `corpus_` |
+| Document | `document_` |
+| Evidence | `evidence_` |
 | Person | `person_` |
 | Place | `place_` |
 | School | `school_` |
+| Source | `source_` |
 | Term | `term_` |
 | Text | `text_` |
+| Work | `work_` |
 
 ## Relationships
 
@@ -60,13 +70,41 @@ Allowed relationship types and type pairs:
 | --- | --- | --- |
 | `AUTHORED_BY` | `Text` | `Person` |
 | `BELONGS_TO_SCHOOL` | `Concept`, `Person`, `School`, `Text` | `School` |
+| `BELONGS_TO_CORPUS` | `Citation`, `Document`, `Evidence`, `Source`, `Text`, `Work` | `Corpus` |
 | `CITES` | `Citation`, `Text` | `Citation` |
 | `COMMENTS_ON` | `Citation`, `Text` | `Concept`, `Text` |
 | `DEFINES` | `Citation`, `Concept`, `Term`, `Text` | `Concept`, `Term` |
+| `DERIVED_FROM` | `Document`, `Evidence`, `Text`, `Work` | `Document`, `Source`, `Text`, `Work` |
+| `EVIDENCES` | `Evidence` | `Concept`, `Term`, `Text`, `Work` |
+| `HAS_CITATION` | `Document`, `Evidence`, `Text`, `Work` | `Citation` |
+| `HAS_DOCUMENT` | `Corpus`, `Source`, `Work` | `Document` |
+| `HAS_EVIDENCE` | `Citation`, `Document`, `Text`, `Work` | `Evidence` |
 | `LOCATED_IN` | `Person`, `Place`, `School`, `Text` | `Place` |
-| `MENTIONS` | `Citation`, `Concept`, `Text` | `Concept`, `Person`, `Place`, `School`, `Term` |
+| `MENTIONS` | `Citation`, `Concept`, `Document`, `Evidence`, `Text`, `Work` | `Concept`, `Person`, `Place`, `School`, `Term`, `Work` |
 | `RELATED_TO` | any known node type | any known node type |
 | `TRANSLATED_BY` | `Text` | `Person` |
+
+## Evidence-First MVP Nodes
+
+The 21-day MVP adds provenance-oriented node types while keeping existing
+ontology work intact:
+
+- `Corpus`: a bounded collection selected for ingestion.
+- `Source`: an upstream provider, edition, dataset, notebook, or repository.
+- `Document`: an ingestible unit derived from a source.
+- `Evidence`: an excerpt, annotation, or structured assertion derived from a
+  document.
+- `Work`: an abstract intellectual work grouping documents, editions,
+  translations, or extracted passages.
+
+Evidence-first pilot data should preserve this trace:
+
+```text
+Corpus -> Source -> Document -> Evidence -> Concept
+```
+
+When a locator is available, evidence should also connect to a `Citation` via
+`HAS_CITATION`.
 
 ## Validation
 

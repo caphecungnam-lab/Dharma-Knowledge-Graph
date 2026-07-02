@@ -6,34 +6,45 @@ Generated from `data/processed/graph.json`.
 
 | Metric | Value |
 | --- | --- |
-| Nodes | 122 |
-| Relationships | 188 |
-| Source files | 8 |
+| Nodes | 132 |
+| Relationships | 213 |
+| Source files | 9 |
 | Graph version | 0.1 |
-| Content hash | 894684fd8a7fb1e9b57850490dbe53e6c55ff9d4a7534755a989960d8ae76e12 |
+| Content hash | d43fcbe67d675efcf6643d90d201ad7dabee654870e05d45fb9f61e279d94857 |
 
 ## Node Types
 
 | Type | Count |
 | --- | --- |
-| Citation | 17 |
+| Citation | 20 |
 | Concept | 37 |
+| Corpus | 1 |
+| Document | 1 |
+| Evidence | 3 |
 | Person | 1 |
 | Place | 6 |
 | School | 5 |
+| Source | 1 |
 | Term | 53 |
 | Text | 3 |
+| Work | 1 |
 
 ## Relationship Types
 
 | Type | Count |
 | --- | --- |
 | AUTHORED_BY | 1 |
+| BELONGS_TO_CORPUS | 6 |
 | BELONGS_TO_SCHOOL | 13 |
 | CITES | 17 |
 | DEFINES | 60 |
+| DERIVED_FROM | 5 |
+| EVIDENCES | 3 |
+| HAS_CITATION | 3 |
+| HAS_DOCUMENT | 2 |
+| HAS_EVIDENCE | 3 |
 | LOCATED_IN | 4 |
-| MENTIONS | 56 |
+| MENTIONS | 59 |
 | RELATED_TO | 37 |
 
 ## Most Connected Nodes
@@ -41,15 +52,15 @@ Generated from `data/processed/graph.json`.
 | Node | Type | Degree |
 | --- | --- | --- |
 | Dhammapada | Text | 18 |
+| Pratityasamutpada | Concept | 12 |
+| Sunyata | Concept | 11 |
 | Heart Sutra | Text | 11 |
-| Pratityasamutpada | Concept | 10 |
+| Giac Khang MVP Notes | Document | 10 |
 | Mahayana | School | 9 |
-| Sunyata | Concept | 9 |
 | Mulamadhyamakakarika | Text | 8 |
 | Four Noble Truths | Concept | 8 |
 | Prajnaparamita | Concept | 7 |
-| Noble Eightfold Path | Concept | 6 |
-| Citta | Concept | 6 |
+| Giac Khang Pilot Corpus | Corpus | 6 |
 
 ## Isolated Nodes
 
@@ -60,6 +71,7 @@ No isolated nodes.
 - `data/seeds/concepts.json`
 - `data/seeds/core.json`
 - `data/seeds/dhammapada.json`
+- `data/seeds/giac_khang_pilot.json`
 - `data/seeds/heart_sutra.json`
 - `data/seeds/places_traditions.json`
 - `data/seeds/terms.json`

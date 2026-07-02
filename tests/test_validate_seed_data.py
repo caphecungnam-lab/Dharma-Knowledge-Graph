@@ -130,5 +130,158 @@ class ValidateSeedDataTest(unittest.TestCase):
             )
 
 
+    def test_evidence_first_node_types_and_relationships_pass(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            directory = Path(tmp)
+            seed = self.write_seed(
+                directory,
+                "evidence_first.json",
+                {
+                    "nodes": [
+                        {
+                            "id": "corpus_sample",
+                            "type": "Corpus",
+                            "name": "Sample Corpus",
+                        },
+                        {
+                            "id": "source_sample",
+                            "type": "Source",
+                            "name": "Sample Source",
+                        },
+                        {
+                            "id": "work_sample",
+                            "type": "Work",
+                            "name": "Sample Work",
+                        },
+                        {
+                            "id": "document_sample",
+                            "type": "Document",
+                            "name": "Sample Document",
+                        },
+                        {
+                            "id": "evidence_sample",
+                            "type": "Evidence",
+                            "name": "Sample Evidence",
+                        },
+                        {
+                            "id": "citation_sample",
+                            "type": "Citation",
+                            "name": "Sample Citation",
+                        },
+                        {
+                            "id": "concept_sample",
+                            "type": "Concept",
+                            "name": "Sample Concept",
+                        },
+                    ],
+                    "relationships": [
+                        {
+                            "source": "source_sample",
+                            "type": "BELONGS_TO_CORPUS",
+                            "target": "corpus_sample",
+                        },
+                        {
+                            "source": "source_sample",
+                            "type": "HAS_DOCUMENT",
+                            "target": "document_sample",
+                        },
+                        {
+                            "source": "work_sample",
+                            "type": "HAS_DOCUMENT",
+                            "target": "document_sample",
+                        },
+                        {
+                            "source": "document_sample",
+                            "type": "DERIVED_FROM",
+                            "target": "source_sample",
+                        },
+                        {
+                            "source": "document_sample",
+                            "type": "HAS_EVIDENCE",
+                            "target": "evidence_sample",
+                        },
+                        {
+                            "source": "evidence_sample",
+                            "type": "DERIVED_FROM",
+                            "target": "document_sample",
+                        },
+                        {
+                            "source": "evidence_sample",
+                            "type": "EVIDENCES",
+                            "target": "concept_sample",
+                        },
+                        {
+                            "source": "evidence_sample",
+                            "type": "HAS_CITATION",
+                            "target": "citation_sample",
+                        },
+                    ],
+                },
+            )
+
+            self.assertEqual(validate_seed_files([seed]), [])
+
+    def test_evidence_first_prefixes_are_enforced(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            directory = Path(tmp)
+            seed = self.write_seed(
+                directory,
+                "bad_evidence_prefix.json",
+                {
+                    "nodes": [
+                        {
+                            "id": "concept_evidence",
+                            "type": "Evidence",
+                            "name": "Bad Evidence Prefix",
+                        }
+                    ],
+                    "relationships": [],
+                },
+            )
+
+            errors = validate_seed_files([seed])
+
+            self.assertTrue(
+                any("id should start with 'evidence_'" in error for error in errors),
+                errors,
+            )
+
+    def test_evidence_first_relationship_rules_are_enforced(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            directory = Path(tmp)
+            seed = self.write_seed(
+                directory,
+                "bad_evidence_relationship.json",
+                {
+                    "nodes": [
+                        {
+                            "id": "document_sample",
+                            "type": "Document",
+                            "name": "Document",
+                        },
+                        {
+                            "id": "concept_sample",
+                            "type": "Concept",
+                            "name": "Concept",
+                        },
+                    ],
+                    "relationships": [
+                        {
+                            "source": "document_sample",
+                            "type": "HAS_EVIDENCE",
+                            "target": "concept_sample",
+                        }
+                    ],
+                },
+            )
+
+            errors = validate_seed_files([seed])
+
+            self.assertTrue(
+                any("does not allow target type 'Concept'" in error for error in errors),
+                errors,
+            )
+
+
 if __name__ == "__main__":
     unittest.main()

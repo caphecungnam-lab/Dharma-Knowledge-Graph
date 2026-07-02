@@ -2,11 +2,12 @@ window.DHARMA_GRAPH = {
   "metadata": {
     "title": "Dharma Knowledge Graph",
     "version": "0.1",
-    "content_hash": "894684fd8a7fb1e9b57850490dbe53e6c55ff9d4a7534755a989960d8ae76e12",
+    "content_hash": "d43fcbe67d675efcf6643d90d201ad7dabee654870e05d45fb9f61e279d94857",
     "source_files": [
       "data/seeds/concepts.json",
       "data/seeds/core.json",
       "data/seeds/dhammapada.json",
+      "data/seeds/giac_khang_pilot.json",
       "data/seeds/heart_sutra.json",
       "data/seeds/places_traditions.json",
       "data/seeds/terms.json",
@@ -15,24 +16,35 @@ window.DHARMA_GRAPH = {
     ]
   },
   "summary": {
-    "node_count": 122,
-    "relationship_count": 188,
+    "node_count": 132,
+    "relationship_count": 213,
     "node_type_counts": {
-      "Citation": 17,
+      "Citation": 20,
       "Concept": 37,
+      "Corpus": 1,
+      "Document": 1,
+      "Evidence": 3,
       "Person": 1,
       "Place": 6,
       "School": 5,
+      "Source": 1,
       "Term": 53,
-      "Text": 3
+      "Text": 3,
+      "Work": 1
     },
     "relationship_type_counts": {
       "AUTHORED_BY": 1,
+      "BELONGS_TO_CORPUS": 6,
       "BELONGS_TO_SCHOOL": 13,
       "CITES": 17,
       "DEFINES": 60,
+      "DERIVED_FROM": 5,
+      "EVIDENCES": 3,
+      "HAS_CITATION": 3,
+      "HAS_DOCUMENT": 2,
+      "HAS_EVIDENCE": 3,
       "LOCATED_IN": 4,
-      "MENTIONS": 56,
+      "MENTIONS": 59,
       "RELATED_TO": 37
     }
   },
@@ -126,6 +138,33 @@ window.DHARMA_GRAPH = {
       "locator": "Verse 50",
       "notes": "Pilot citation for self-examination in ethical practice.",
       "source_file": "data/seeds/dhammapada.json"
+    },
+    {
+      "id": "citation_giac_khang_notes_pratityasamutpada",
+      "type": "Citation",
+      "name": "Giac Khang notes, Dependent arising excerpt",
+      "source": "Giac Khang MVP Notes",
+      "locator": "pilot-note-001#dependent-arising",
+      "notes": "Pilot citation for evidence about dependent arising.",
+      "source_file": "data/seeds/giac_khang_pilot.json"
+    },
+    {
+      "id": "citation_giac_khang_notes_middle_way",
+      "type": "Citation",
+      "name": "Giac Khang notes, Middle Way excerpt",
+      "source": "Giac Khang MVP Notes",
+      "locator": "pilot-note-001#middle-way",
+      "notes": "Pilot citation for evidence about the middle way.",
+      "source_file": "data/seeds/giac_khang_pilot.json"
+    },
+    {
+      "id": "citation_giac_khang_notes_sunyata",
+      "type": "Citation",
+      "name": "Giac Khang notes, Sunyata excerpt",
+      "source": "Giac Khang MVP Notes",
+      "locator": "pilot-note-001#sunyata",
+      "notes": "Pilot citation for evidence about emptiness.",
+      "source_file": "data/seeds/giac_khang_pilot.json"
     },
     {
       "id": "citation_heart_sutra_dharmas",
@@ -553,6 +592,58 @@ window.DHARMA_GRAPH = {
       "source_file": "data/seeds/concepts.json"
     },
     {
+      "id": "corpus_giac_khang_pilot",
+      "type": "Corpus",
+      "name": "Giac Khang Pilot Corpus",
+      "language": "Vietnamese",
+      "scope": "21-day MVP evidence-first pilot",
+      "description": "A bounded pilot corpus for testing evidence-first Dharma Knowledge Graph ingestion.",
+      "source_file": "data/seeds/giac_khang_pilot.json"
+    },
+    {
+      "id": "document_giac_khang_mvp_notes",
+      "type": "Document",
+      "name": "Giac Khang MVP Notes",
+      "document_type": "study_note",
+      "language": "Vietnamese",
+      "locator": "pilot-note-001",
+      "description": "A single pilot document used to test document-to-evidence modeling.",
+      "source_file": "data/seeds/giac_khang_pilot.json"
+    },
+    {
+      "id": "evidence_giac_khang_pratityasamutpada_001",
+      "type": "Evidence",
+      "name": "Evidence: Dependent arising as relational explanation",
+      "evidence_type": "excerpt",
+      "language": "Vietnamese",
+      "confidence": "medium",
+      "locator": "pilot-note-001#dependent-arising",
+      "evidence_text": "Dependent arising is represented as the principle that phenomena appear through conditions and relationships.",
+      "source_file": "data/seeds/giac_khang_pilot.json"
+    },
+    {
+      "id": "evidence_giac_khang_middle_way_001",
+      "type": "Evidence",
+      "name": "Evidence: Middle Way avoids extremes",
+      "evidence_type": "excerpt",
+      "language": "Vietnamese",
+      "confidence": "medium",
+      "locator": "pilot-note-001#middle-way",
+      "evidence_text": "The middle way is represented as avoiding fixed extremes while preserving practical conventional meaning.",
+      "source_file": "data/seeds/giac_khang_pilot.json"
+    },
+    {
+      "id": "evidence_giac_khang_sunyata_001",
+      "type": "Evidence",
+      "name": "Evidence: Sunyata as non-independent existence",
+      "evidence_type": "excerpt",
+      "language": "Vietnamese",
+      "confidence": "medium",
+      "locator": "pilot-note-001#sunyata",
+      "evidence_text": "Emptiness is represented as the absence of independent, self-existing nature rather than simple nothingness.",
+      "source_file": "data/seeds/giac_khang_pilot.json"
+    },
+    {
       "id": "person_nagarjuna",
       "type": "Person",
       "name": "Nagarjuna",
@@ -648,6 +739,15 @@ window.DHARMA_GRAPH = {
       "name": "Theravada",
       "description": "A Buddhist tradition preserving the Pali Canon.",
       "source_file": "data/seeds/core.json"
+    },
+    {
+      "id": "source_giac_khang_notes",
+      "type": "Source",
+      "name": "Giac Khang Study Notes",
+      "source_type": "local_notes",
+      "language": "Vietnamese",
+      "description": "Pilot source material used to model evidence before API, embeddings, or LLM extraction.",
+      "source_file": "data/seeds/giac_khang_pilot.json"
     },
     {
       "id": "term_ahimsa_sanskrit",
@@ -1262,6 +1362,14 @@ window.DHARMA_GRAPH = {
       "tradition": "Mahayana",
       "description": "A foundational Madhyamaka text attributed to Nagarjuna.",
       "source_file": "data/seeds/core.json"
+    },
+    {
+      "id": "work_giac_khang_pilot_teachings",
+      "type": "Work",
+      "name": "Giac Khang Pilot Teachings",
+      "language": "Vietnamese",
+      "description": "A pilot work grouping selected notes for the evidence-first MVP.",
+      "source_file": "data/seeds/giac_khang_pilot.json"
     }
   ],
   "relationships": [
@@ -1270,6 +1378,42 @@ window.DHARMA_GRAPH = {
       "type": "AUTHORED_BY",
       "target": "person_nagarjuna",
       "source_file": "data/seeds/core.json"
+    },
+    {
+      "source": "citation_giac_khang_notes_middle_way",
+      "type": "BELONGS_TO_CORPUS",
+      "target": "corpus_giac_khang_pilot",
+      "source_file": "data/seeds/giac_khang_pilot.json"
+    },
+    {
+      "source": "citation_giac_khang_notes_pratityasamutpada",
+      "type": "BELONGS_TO_CORPUS",
+      "target": "corpus_giac_khang_pilot",
+      "source_file": "data/seeds/giac_khang_pilot.json"
+    },
+    {
+      "source": "citation_giac_khang_notes_sunyata",
+      "type": "BELONGS_TO_CORPUS",
+      "target": "corpus_giac_khang_pilot",
+      "source_file": "data/seeds/giac_khang_pilot.json"
+    },
+    {
+      "source": "document_giac_khang_mvp_notes",
+      "type": "BELONGS_TO_CORPUS",
+      "target": "corpus_giac_khang_pilot",
+      "source_file": "data/seeds/giac_khang_pilot.json"
+    },
+    {
+      "source": "source_giac_khang_notes",
+      "type": "BELONGS_TO_CORPUS",
+      "target": "corpus_giac_khang_pilot",
+      "source_file": "data/seeds/giac_khang_pilot.json"
+    },
+    {
+      "source": "work_giac_khang_pilot_teachings",
+      "type": "BELONGS_TO_CORPUS",
+      "target": "corpus_giac_khang_pilot",
+      "source_file": "data/seeds/giac_khang_pilot.json"
     },
     {
       "source": "concept_avalokitesvara",
@@ -1812,6 +1956,102 @@ window.DHARMA_GRAPH = {
       "source_file": "data/seeds/terms_remaining.json"
     },
     {
+      "source": "document_giac_khang_mvp_notes",
+      "type": "DERIVED_FROM",
+      "target": "source_giac_khang_notes",
+      "source_file": "data/seeds/giac_khang_pilot.json"
+    },
+    {
+      "source": "evidence_giac_khang_middle_way_001",
+      "type": "DERIVED_FROM",
+      "target": "document_giac_khang_mvp_notes",
+      "source_file": "data/seeds/giac_khang_pilot.json"
+    },
+    {
+      "source": "evidence_giac_khang_pratityasamutpada_001",
+      "type": "DERIVED_FROM",
+      "target": "document_giac_khang_mvp_notes",
+      "source_file": "data/seeds/giac_khang_pilot.json"
+    },
+    {
+      "source": "evidence_giac_khang_sunyata_001",
+      "type": "DERIVED_FROM",
+      "target": "document_giac_khang_mvp_notes",
+      "source_file": "data/seeds/giac_khang_pilot.json"
+    },
+    {
+      "source": "work_giac_khang_pilot_teachings",
+      "type": "DERIVED_FROM",
+      "target": "source_giac_khang_notes",
+      "source_file": "data/seeds/giac_khang_pilot.json"
+    },
+    {
+      "source": "evidence_giac_khang_middle_way_001",
+      "type": "EVIDENCES",
+      "target": "concept_middle_way",
+      "source_file": "data/seeds/giac_khang_pilot.json"
+    },
+    {
+      "source": "evidence_giac_khang_pratityasamutpada_001",
+      "type": "EVIDENCES",
+      "target": "concept_pratityasamutpada",
+      "source_file": "data/seeds/giac_khang_pilot.json"
+    },
+    {
+      "source": "evidence_giac_khang_sunyata_001",
+      "type": "EVIDENCES",
+      "target": "concept_sunyata",
+      "source_file": "data/seeds/giac_khang_pilot.json"
+    },
+    {
+      "source": "evidence_giac_khang_middle_way_001",
+      "type": "HAS_CITATION",
+      "target": "citation_giac_khang_notes_middle_way",
+      "source_file": "data/seeds/giac_khang_pilot.json"
+    },
+    {
+      "source": "evidence_giac_khang_pratityasamutpada_001",
+      "type": "HAS_CITATION",
+      "target": "citation_giac_khang_notes_pratityasamutpada",
+      "source_file": "data/seeds/giac_khang_pilot.json"
+    },
+    {
+      "source": "evidence_giac_khang_sunyata_001",
+      "type": "HAS_CITATION",
+      "target": "citation_giac_khang_notes_sunyata",
+      "source_file": "data/seeds/giac_khang_pilot.json"
+    },
+    {
+      "source": "source_giac_khang_notes",
+      "type": "HAS_DOCUMENT",
+      "target": "document_giac_khang_mvp_notes",
+      "source_file": "data/seeds/giac_khang_pilot.json"
+    },
+    {
+      "source": "work_giac_khang_pilot_teachings",
+      "type": "HAS_DOCUMENT",
+      "target": "document_giac_khang_mvp_notes",
+      "source_file": "data/seeds/giac_khang_pilot.json"
+    },
+    {
+      "source": "document_giac_khang_mvp_notes",
+      "type": "HAS_EVIDENCE",
+      "target": "evidence_giac_khang_middle_way_001",
+      "source_file": "data/seeds/giac_khang_pilot.json"
+    },
+    {
+      "source": "document_giac_khang_mvp_notes",
+      "type": "HAS_EVIDENCE",
+      "target": "evidence_giac_khang_pratityasamutpada_001",
+      "source_file": "data/seeds/giac_khang_pilot.json"
+    },
+    {
+      "source": "document_giac_khang_mvp_notes",
+      "type": "HAS_EVIDENCE",
+      "target": "evidence_giac_khang_sunyata_001",
+      "source_file": "data/seeds/giac_khang_pilot.json"
+    },
+    {
       "source": "place_bodh_gaya",
       "type": "LOCATED_IN",
       "target": "place_magadha",
@@ -1924,6 +2164,24 @@ window.DHARMA_GRAPH = {
       "type": "MENTIONS",
       "target": "concept_sila",
       "source_file": "data/seeds/dhammapada.json"
+    },
+    {
+      "source": "citation_giac_khang_notes_middle_way",
+      "type": "MENTIONS",
+      "target": "concept_middle_way",
+      "source_file": "data/seeds/giac_khang_pilot.json"
+    },
+    {
+      "source": "citation_giac_khang_notes_pratityasamutpada",
+      "type": "MENTIONS",
+      "target": "concept_pratityasamutpada",
+      "source_file": "data/seeds/giac_khang_pilot.json"
+    },
+    {
+      "source": "citation_giac_khang_notes_sunyata",
+      "type": "MENTIONS",
+      "target": "concept_sunyata",
+      "source_file": "data/seeds/giac_khang_pilot.json"
     },
     {
       "source": "citation_heart_sutra_dharmas",

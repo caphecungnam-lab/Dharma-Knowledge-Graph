@@ -24,6 +24,16 @@ NODE_FIELDS = [
     "sanskrit",
     "tradition",
     "language",
+    "source",
+    "locator",
+    "url",
+    "notes",
+    "scope",
+    "source_type",
+    "document_type",
+    "evidence_type",
+    "evidence_text",
+    "confidence",
     "source_file",
 ]
 RELATIONSHIP_FIELDS = [
@@ -45,7 +55,7 @@ def load_graph() -> dict:
 
 def write_nodes(nodes: list[dict], path: Path) -> None:
     with path.open("w", newline="", encoding="utf-8") as file:
-        writer = csv.DictWriter(file, fieldnames=NODE_FIELDS)
+        writer = csv.DictWriter(file, fieldnames=NODE_FIELDS, lineterminator="\n")
         writer.writeheader()
 
         for node in nodes:
@@ -60,6 +70,16 @@ def write_nodes(nodes: list[dict], path: Path) -> None:
                     "sanskrit": node.get("sanskrit", ""),
                     "tradition": node.get("tradition", ""),
                     "language": node.get("language", ""),
+                    "source": node.get("source", ""),
+                    "locator": node.get("locator", ""),
+                    "url": node.get("url", ""),
+                    "notes": node.get("notes", ""),
+                    "scope": node.get("scope", ""),
+                    "source_type": node.get("source_type", ""),
+                    "document_type": node.get("document_type", ""),
+                    "evidence_type": node.get("evidence_type", ""),
+                    "evidence_text": node.get("evidence_text", ""),
+                    "confidence": node.get("confidence", ""),
                     "source_file": node.get("source_file", ""),
                 }
             )
@@ -67,7 +87,7 @@ def write_nodes(nodes: list[dict], path: Path) -> None:
 
 def write_relationships(relationships: list[dict], path: Path) -> None:
     with path.open("w", newline="", encoding="utf-8") as file:
-        writer = csv.DictWriter(file, fieldnames=RELATIONSHIP_FIELDS)
+        writer = csv.DictWriter(file, fieldnames=RELATIONSHIP_FIELDS, lineterminator="\n")
         writer.writeheader()
 
         for relationship in relationships:
