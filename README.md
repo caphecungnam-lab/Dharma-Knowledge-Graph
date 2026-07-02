@@ -72,6 +72,12 @@ python3 scripts/validate_seed_data.py
 The validator checks that seed files are valid JSON and that every node has the
 required fields: `id`, `type`, and `name`.
 
+You can also run the main project checks with:
+
+```bash
+make check
+```
+
 ## Build Graph Explorer
 
 Run:
@@ -97,3 +103,8 @@ python3 scripts/write_graph_report.py
 
 This writes `docs/reports/graph-summary.md`, a readable summary of graph size,
 node types, relationship types, highly connected nodes, and isolated nodes.
+
+## Continuous Checks
+
+GitHub Actions runs `make check` on pushes to `main` and on pull requests. The
+workflow also fails if generated graph files or reports are out of date.
