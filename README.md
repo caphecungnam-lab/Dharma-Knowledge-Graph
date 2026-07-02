@@ -137,6 +137,17 @@ This writes:
 
 These CSV files are shaped for Neo4j-style graph imports.
 
+## Export RDF/Turtle
+
+Run:
+
+```bash
+python3 scripts/export_rdf_turtle.py
+```
+
+This writes `data/processed/rdf/graph.ttl`, a simple Turtle export for RDF and
+semantic web tooling.
+
 ## Continuous Checks
 
 GitHub Actions runs `make check` on pushes to `main` and on pull requests. The

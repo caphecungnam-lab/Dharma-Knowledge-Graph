@@ -1,0 +1,814 @@
+@prefix dkge: <https://caphecungnam-lab.github.io/Dharma-Knowledge-Graph/entity/> .
+@prefix dkg: <https://caphecungnam-lab.github.io/Dharma-Knowledge-Graph/ontology/> .
+
+dkge:citation_dhammapada_1
+    a dkg:Citation ;
+    dkg:name "Dhammapada 1" ;
+    dkg:source "Dhammapada" ;
+    dkg:locator "Verse 1" ;
+    dkg:notes "Pilot citation for the relation between mind, intention, and suffering." ;
+    dkg:sourceFile "data/seeds/dhammapada.json" .
+
+dkge:citation_dhammapada_129
+    a dkg:Citation ;
+    dkg:name "Dhammapada 129" ;
+    dkg:source "Dhammapada" ;
+    dkg:locator "Verse 129" ;
+    dkg:notes "Pilot citation for non-harming and empathy toward beings." ;
+    dkg:sourceFile "data/seeds/dhammapada.json" .
+
+dkge:citation_dhammapada_183
+    a dkg:Citation ;
+    dkg:name "Dhammapada 183" ;
+    dkg:source "Dhammapada" ;
+    dkg:locator "Verse 183" ;
+    dkg:notes "Pilot citation for ethical restraint, wholesome cultivation, and mental purification." ;
+    dkg:sourceFile "data/seeds/dhammapada.json" .
+
+dkge:citation_dhammapada_2
+    a dkg:Citation ;
+    dkg:name "Dhammapada 2" ;
+    dkg:source "Dhammapada" ;
+    dkg:locator "Verse 2" ;
+    dkg:notes "Pilot citation for the relation between mind, intention, and well-being." ;
+    dkg:sourceFile "data/seeds/dhammapada.json" .
+
+dkge:citation_dhammapada_21
+    a dkg:Citation ;
+    dkg:name "Dhammapada 21" ;
+    dkg:source "Dhammapada" ;
+    dkg:locator "Verse 21" ;
+    dkg:notes "Pilot citation for heedfulness as a path quality." ;
+    dkg:sourceFile "data/seeds/dhammapada.json" .
+
+dkge:citation_dhammapada_277
+    a dkg:Citation ;
+    dkg:name "Dhammapada 277" ;
+    dkg:source "Dhammapada" ;
+    dkg:locator "Verse 277" ;
+    dkg:notes "Pilot citation for impermanence." ;
+    dkg:sourceFile "data/seeds/dhammapada.json" .
+
+dkge:citation_dhammapada_279
+    a dkg:Citation ;
+    dkg:name "Dhammapada 279" ;
+    dkg:source "Dhammapada" ;
+    dkg:locator "Verse 279" ;
+    dkg:notes "Pilot citation for not-self." ;
+    dkg:sourceFile "data/seeds/dhammapada.json" .
+
+dkge:citation_dhammapada_35
+    a dkg:Citation ;
+    dkg:name "Dhammapada 35" ;
+    dkg:source "Dhammapada" ;
+    dkg:locator "Verse 35" ;
+    dkg:notes "Pilot citation for the training and restraint of mind." ;
+    dkg:sourceFile "data/seeds/dhammapada.json" .
+
+dkge:citation_dhammapada_5
+    a dkg:Citation ;
+    dkg:name "Dhammapada 5" ;
+    dkg:source "Dhammapada" ;
+    dkg:locator "Verse 5" ;
+    dkg:notes "Pilot citation for non-hatred and reconciliation." ;
+    dkg:sourceFile "data/seeds/dhammapada.json" .
+
+dkge:citation_dhammapada_50
+    a dkg:Citation ;
+    dkg:name "Dhammapada 50" ;
+    dkg:source "Dhammapada" ;
+    dkg:locator "Verse 50" ;
+    dkg:notes "Pilot citation for self-examination in ethical practice." ;
+    dkg:sourceFile "data/seeds/dhammapada.json" .
+
+dkge:concept_ahimsa
+    a dkg:Concept ;
+    dkg:name "Ahimsa" ;
+    dkg:description "Non-harming; an ethical orientation of restraint from violence and injury." ;
+    dkg:category "ethics" ;
+    dkg:pali "avihimsa" ;
+    dkg:sanskrit "ahimsa" ;
+    dkg:sourceFile "data/seeds/dhammapada.json" .
+
+dkge:concept_anatta
+    a dkg:Concept ;
+    dkg:name "Anatta" ;
+    dkg:description "Not-self; the absence of a permanent, independent self in conditioned phenomena." ;
+    dkg:category "doctrine" ;
+    dkg:pali "anatta" ;
+    dkg:sanskrit "anatman" ;
+    dkg:sourceFile "data/seeds/concepts.json" .
+
+dkge:concept_anicca
+    a dkg:Concept ;
+    dkg:name "Anicca" ;
+    dkg:description "Impermanence; the conditioned nature of phenomena as changing and unstable." ;
+    dkg:category "doctrine" ;
+    dkg:pali "anicca" ;
+    dkg:sanskrit "anitya" ;
+    dkg:sourceFile "data/seeds/concepts.json" .
+
+dkge:concept_appamada
+    a dkg:Concept ;
+    dkg:name "Appamada" ;
+    dkg:description "Heedfulness or diligent care in practice." ;
+    dkg:category "practice" ;
+    dkg:pali "appamada" ;
+    dkg:sanskrit "apramada" ;
+    dkg:sourceFile "data/seeds/dhammapada.json" .
+
+dkge:concept_avidya
+    a dkg:Concept ;
+    dkg:name "Avidya" ;
+    dkg:description "Ignorance or misknowing, especially regarding the nature of reality and the path." ;
+    dkg:category "psychology" ;
+    dkg:pali "avijja" ;
+    dkg:sanskrit "avidya" ;
+    dkg:sourceFile "data/seeds/concepts.json" .
+
+dkge:concept_bodhicitta
+    a dkg:Concept ;
+    dkg:name "Bodhicitta" ;
+    dkg:description "The awakened mind or aspiration to attain awakening for the benefit of all beings." ;
+    dkg:category "mahayana" ;
+    dkg:sanskrit "bodhicitta" ;
+    dkg:sourceFile "data/seeds/concepts.json" .
+
+dkge:concept_bodhisattva
+    a dkg:Concept ;
+    dkg:name "Bodhisattva" ;
+    dkg:description "A being oriented toward awakening, especially for the liberation of all beings in Mahayana contexts." ;
+    dkg:category "mahayana" ;
+    dkg:pali "bodhisatta" ;
+    dkg:sanskrit "bodhisattva" ;
+    dkg:sourceFile "data/seeds/concepts.json" .
+
+dkge:concept_brahmaviharas
+    a dkg:Concept ;
+    dkg:name "Brahmaviharas" ;
+    dkg:description "The four divine abodes: loving-kindness, compassion, sympathetic joy, and equanimity." ;
+    dkg:category "practice" ;
+    dkg:pali "brahmavihara" ;
+    dkg:sanskrit "brahmavihara" ;
+    dkg:sourceFile "data/seeds/concepts.json" .
+
+dkge:concept_citta
+    a dkg:Concept ;
+    dkg:name "Citta" ;
+    dkg:description "Mind, heart, or mental orientation; a key term for understanding intention and experience." ;
+    dkg:category "psychology" ;
+    dkg:pali "citta" ;
+    dkg:sanskrit "citta" ;
+    dkg:sourceFile "data/seeds/dhammapada.json" .
+
+dkge:concept_dukkha
+    a dkg:Concept ;
+    dkg:name "Dukkha" ;
+    dkg:description "A central Dharma concept often translated as suffering, unsatisfactoriness, or stress." ;
+    dkg:pali "dukkha" ;
+    dkg:sanskrit "duhkha" ;
+    dkg:sourceFile "data/seeds/core.json" .
+
+dkge:concept_dhatu
+    a dkg:Concept ;
+    dkg:name "Elements" ;
+    dkg:description "Elements or domains used to analyze experience and phenomena." ;
+    dkg:category "analysis" ;
+    dkg:pali "dhatu" ;
+    dkg:sanskrit "dhatu" ;
+    dkg:sourceFile "data/seeds/concepts.json" .
+
+dkge:concept_skandhas
+    a dkg:Concept ;
+    dkg:name "Five Aggregates" ;
+    dkg:description "Form, feeling, perception, formations, and consciousness as a framework for analyzing experience." ;
+    dkg:category "analysis" ;
+    dkg:pali "khandha" ;
+    dkg:sanskrit "skandha" ;
+    dkg:sourceFile "data/seeds/concepts.json" .
+
+dkge:concept_four_noble_truths
+    a dkg:Concept ;
+    dkg:name "Four Noble Truths" ;
+    dkg:description "The teaching of suffering, its origin, its cessation, and the path leading to cessation." ;
+    dkg:category "doctrine" ;
+    dkg:pali "cattari ariyasaccani" ;
+    dkg:sanskrit "catvari aryasatyani" ;
+    dkg:sourceFile "data/seeds/concepts.json" .
+
+dkge:concept_karma
+    a dkg:Concept ;
+    dkg:name "Karma" ;
+    dkg:description "Intentional action and its ethical consequences." ;
+    dkg:category "ethics" ;
+    dkg:pali "kamma" ;
+    dkg:sanskrit "karma" ;
+    dkg:sourceFile "data/seeds/concepts.json" .
+
+dkge:concept_karuna
+    a dkg:Concept ;
+    dkg:name "Karuna" ;
+    dkg:description "Compassion; the wish for beings to be free from suffering." ;
+    dkg:category "practice" ;
+    dkg:pali "karuna" ;
+    dkg:sanskrit "karuna" ;
+    dkg:sourceFile "data/seeds/concepts.json" .
+
+dkge:concept_klesha
+    a dkg:Concept ;
+    dkg:name "Klesha" ;
+    dkg:description "Afflictive mental states that disturb the mind and condition suffering." ;
+    dkg:category "psychology" ;
+    dkg:pali "kilesa" ;
+    dkg:sanskrit "klesa" ;
+    dkg:sourceFile "data/seeds/concepts.json" .
+
+dkge:concept_metta
+    a dkg:Concept ;
+    dkg:name "Metta" ;
+    dkg:description "Loving-kindness; the cultivation of goodwill and friendliness." ;
+    dkg:category "practice" ;
+    dkg:pali "metta" ;
+    dkg:sanskrit "maitri" ;
+    dkg:sourceFile "data/seeds/concepts.json" .
+
+dkge:concept_middle_way
+    a dkg:Concept ;
+    dkg:name "Middle Way" ;
+    dkg:description "A path avoiding extremes, often framed as avoiding indulgence and self-mortification or eternalism and nihilism." ;
+    dkg:category "practice" ;
+    dkg:pali "majjhima patipada" ;
+    dkg:sanskrit "madhyama pratipad" ;
+    dkg:sourceFile "data/seeds/concepts.json" .
+
+dkge:concept_mudita
+    a dkg:Concept ;
+    dkg:name "Mudita" ;
+    dkg:description "Sympathetic joy; delight in the welfare and happiness of others." ;
+    dkg:category "practice" ;
+    dkg:pali "mudita" ;
+    dkg:sanskrit "mudita" ;
+    dkg:sourceFile "data/seeds/concepts.json" .
+
+dkge:concept_nirvana
+    a dkg:Concept ;
+    dkg:name "Nirvana" ;
+    dkg:description "Liberation; the extinguishing of greed, hatred, and delusion." ;
+    dkg:category "liberation" ;
+    dkg:pali "nibbana" ;
+    dkg:sanskrit "nirvana" ;
+    dkg:sourceFile "data/seeds/concepts.json" .
+
+dkge:concept_noble_eightfold_path
+    a dkg:Concept ;
+    dkg:name "Noble Eightfold Path" ;
+    dkg:description "The path of right view, intention, speech, action, livelihood, effort, mindfulness, and concentration." ;
+    dkg:category "practice" ;
+    dkg:pali "ariya atthangika magga" ;
+    dkg:sanskrit "arya astangika marga" ;
+    dkg:sourceFile "data/seeds/concepts.json" .
+
+dkge:concept_paramita
+    a dkg:Concept ;
+    dkg:name "Paramita" ;
+    dkg:description "Perfection or transcendent virtue cultivated on the bodhisattva path." ;
+    dkg:category "mahayana" ;
+    dkg:pali "parami" ;
+    dkg:sanskrit "paramita" ;
+    dkg:sourceFile "data/seeds/concepts.json" .
+
+dkge:concept_prajna
+    a dkg:Concept ;
+    dkg:name "Prajna" ;
+    dkg:description "Wisdom or liberating insight into the nature of phenomena." ;
+    dkg:category "wisdom" ;
+    dkg:pali "panna" ;
+    dkg:sanskrit "prajna" ;
+    dkg:sourceFile "data/seeds/concepts.json" .
+
+dkge:concept_pratityasamutpada
+    a dkg:Concept ;
+    dkg:name "Pratityasamutpada" ;
+    dkg:description "Dependent arising; the principle that phenomena arise in dependence on causes and conditions." ;
+    dkg:category "doctrine" ;
+    dkg:pali "paticcasamuppada" ;
+    dkg:sanskrit "pratityasamutpada" ;
+    dkg:sourceFile "data/seeds/concepts.json" .
+
+dkge:concept_samadhi
+    a dkg:Concept ;
+    dkg:name "Samadhi" ;
+    dkg:description "Collectedness, concentration, or meditative absorption." ;
+    dkg:category "practice" ;
+    dkg:pali "samadhi" ;
+    dkg:sanskrit "samadhi" ;
+    dkg:sourceFile "data/seeds/concepts.json" .
+
+dkge:concept_samsara
+    a dkg:Concept ;
+    dkg:name "Samsara" ;
+    dkg:description "The cycle of birth, death, and rebirth conditioned by ignorance and craving." ;
+    dkg:category "cosmology" ;
+    dkg:pali "samsara" ;
+    dkg:sanskrit "samsara" ;
+    dkg:sourceFile "data/seeds/concepts.json" .
+
+dkge:concept_sila
+    a dkg:Concept ;
+    dkg:name "Sila" ;
+    dkg:description "Ethical conduct or moral discipline." ;
+    dkg:category "ethics" ;
+    dkg:pali "sila" ;
+    dkg:sanskrit "sila" ;
+    dkg:sourceFile "data/seeds/concepts.json" .
+
+dkge:concept_ayatana
+    a dkg:Concept ;
+    dkg:name "Six Sense Bases" ;
+    dkg:description "The internal and external sense bases involved in perceptual experience." ;
+    dkg:category "analysis" ;
+    dkg:pali "ayatana" ;
+    dkg:sanskrit "ayatana" ;
+    dkg:sourceFile "data/seeds/concepts.json" .
+
+dkge:concept_sunyata
+    a dkg:Concept ;
+    dkg:name "Sunyata" ;
+    dkg:description "A Mahayana concept commonly translated as emptiness." ;
+    dkg:sanskrit "sunyata" ;
+    dkg:sourceFile "data/seeds/core.json" .
+
+dkge:concept_tanha
+    a dkg:Concept ;
+    dkg:name "Tanha" ;
+    dkg:description "Craving or thirst; a central condition in the arising of suffering." ;
+    dkg:category "psychology" ;
+    dkg:pali "tanha" ;
+    dkg:sanskrit "trsna" ;
+    dkg:sourceFile "data/seeds/concepts.json" .
+
+dkge:concept_three_marks
+    a dkg:Concept ;
+    dkg:name "Three Marks of Existence" ;
+    dkg:description "The marks of impermanence, suffering or unsatisfactoriness, and not-self." ;
+    dkg:category "doctrine" ;
+    dkg:pali "tilakkhana" ;
+    dkg:sanskrit "trilaksana" ;
+    dkg:sourceFile "data/seeds/concepts.json" .
+
+dkge:concept_two_truths
+    a dkg:Concept ;
+    dkg:name "Two Truths" ;
+    dkg:description "The distinction between conventional truth and ultimate truth." ;
+    dkg:category "mahayana" ;
+    dkg:sanskrit "satya-dvaya" ;
+    dkg:sourceFile "data/seeds/concepts.json" .
+
+dkge:concept_upekkha
+    a dkg:Concept ;
+    dkg:name "Upekkha" ;
+    dkg:description "Equanimity; balanced presence toward changing experience." ;
+    dkg:category "practice" ;
+    dkg:pali "upekkha" ;
+    dkg:sanskrit "upeksa" ;
+    dkg:sourceFile "data/seeds/concepts.json" .
+
+dkge:person_nagarjuna
+    a dkg:Person ;
+    dkg:name "Nagarjuna" ;
+    dkg:description "A major Buddhist philosopher associated with Madhyamaka." ;
+    dkg:tradition "Mahayana" ;
+    dkg:sourceFile "data/seeds/core.json" .
+
+dkge:place_bodh_gaya
+    a dkg:Place ;
+    dkg:name "Bodh Gaya" ;
+    dkg:description "A major Buddhist pilgrimage place associated with the Buddha's awakening." ;
+    dkg:country "India" ;
+    dkg:region "Bihar" ;
+    dkg:sourceFile "data/seeds/places_traditions.json" .
+
+dkge:place_gandhara
+    a dkg:Place ;
+    dkg:name "Gandhara" ;
+    dkg:description "A historical Buddhist region important for textual and artistic transmission." ;
+    dkg:country "Historical region" ;
+    dkg:region "Northwest South Asia" ;
+    dkg:sourceFile "data/seeds/places_traditions.json" .
+
+dkge:place_magadha
+    a dkg:Place ;
+    dkg:name "Magadha" ;
+    dkg:description "An ancient region important in early Buddhist history." ;
+    dkg:country "India" ;
+    dkg:region "Eastern India" ;
+    dkg:sourceFile "data/seeds/places_traditions.json" .
+
+dkge:place_nalanda
+    a dkg:Place ;
+    dkg:name "Nalanda" ;
+    dkg:description "A historic center of Buddhist monastic learning." ;
+    dkg:country "India" ;
+    dkg:region "Bihar" ;
+    dkg:sourceFile "data/seeds/places_traditions.json" .
+
+dkge:place_sarnath
+    a dkg:Place ;
+    dkg:name "Sarnath" ;
+    dkg:description "A major Buddhist pilgrimage place associated with the first teaching." ;
+    dkg:country "India" ;
+    dkg:region "Uttar Pradesh" ;
+    dkg:sourceFile "data/seeds/places_traditions.json" .
+
+dkge:place_sri_lanka
+    a dkg:Place ;
+    dkg:name "Sri Lanka" ;
+    dkg:description "A major historical center for Theravada Buddhist transmission." ;
+    dkg:country "Sri Lanka" ;
+    dkg:region "South Asia" ;
+    dkg:sourceFile "data/seeds/places_traditions.json" .
+
+dkge:school_early_buddhism
+    a dkg:School ;
+    dkg:name "Early Buddhism" ;
+    dkg:description "A working category for early Buddhist teachings and textual layers." ;
+    dkg:sourceFile "data/seeds/places_traditions.json" .
+
+dkge:school_madhyamaka
+    a dkg:School ;
+    dkg:name "Madhyamaka" ;
+    dkg:description "A Mahayana philosophical school associated with analysis of emptiness." ;
+    dkg:sourceFile "data/seeds/core.json" .
+
+dkge:school_mahayana
+    a dkg:School ;
+    dkg:name "Mahayana" ;
+    dkg:description "A broad family of Buddhist traditions emphasizing the bodhisattva path." ;
+    dkg:sourceFile "data/seeds/places_traditions.json" .
+
+dkge:school_pali_canon
+    a dkg:School ;
+    dkg:name "Pali Canon" ;
+    dkg:description "A textual tradition preserving canonical materials in Pali." ;
+    dkg:sourceFile "data/seeds/places_traditions.json" .
+
+dkge:school_theravada
+    a dkg:School ;
+    dkg:name "Theravada" ;
+    dkg:description "A Buddhist tradition preserving the Pali Canon." ;
+    dkg:sourceFile "data/seeds/core.json" .
+
+dkge:term_anatman_sanskrit
+    a dkg:Term ;
+    dkg:name "anatman" ;
+    dkg:language "Sanskrit" ;
+    dkg:script "Latin" ;
+    dkg:transliteration "anatman" ;
+    dkg:translation "not-self; no self" ;
+    dkg:notes "Sanskrit form corresponding to Pali anatta." ;
+    dkg:sourceFile "data/seeds/terms.json" .
+
+dkge:term_anatta_pali
+    a dkg:Term ;
+    dkg:name "anatta" ;
+    dkg:language "Pali" ;
+    dkg:script "Latin" ;
+    dkg:transliteration "anatta" ;
+    dkg:translation "not-self" ;
+    dkg:notes "Pali form used for the doctrine of not-self." ;
+    dkg:sourceFile "data/seeds/terms.json" .
+
+dkge:term_anicca_pali
+    a dkg:Term ;
+    dkg:name "anicca" ;
+    dkg:language "Pali" ;
+    dkg:script "Latin" ;
+    dkg:transliteration "anicca" ;
+    dkg:translation "impermanent" ;
+    dkg:notes "Pali form used for impermanence." ;
+    dkg:sourceFile "data/seeds/terms.json" .
+
+dkge:term_anitya_sanskrit
+    a dkg:Term ;
+    dkg:name "anitya" ;
+    dkg:language "Sanskrit" ;
+    dkg:script "Latin" ;
+    dkg:transliteration "anitya" ;
+    dkg:translation "impermanent" ;
+    dkg:notes "Sanskrit form used for impermanence." ;
+    dkg:sourceFile "data/seeds/terms.json" .
+
+dkge:term_appamada_pali
+    a dkg:Term ;
+    dkg:name "appamada" ;
+    dkg:language "Pali" ;
+    dkg:script "Latin" ;
+    dkg:transliteration "appamada" ;
+    dkg:translation "heedfulness; diligence" ;
+    dkg:notes "A central practice quality highlighted in the Dhammapada." ;
+    dkg:sourceFile "data/seeds/terms.json" .
+
+dkge:term_citta_pali
+    a dkg:Term ;
+    dkg:name "citta" ;
+    dkg:language "Pali" ;
+    dkg:script "Latin" ;
+    dkg:transliteration "citta" ;
+    dkg:translation "mind; heart" ;
+    dkg:notes "A term for mind, heart, or mental orientation." ;
+    dkg:sourceFile "data/seeds/terms.json" .
+
+dkge:term_duhkha_sanskrit
+    a dkg:Term ;
+    dkg:name "duhkha" ;
+    dkg:language "Sanskrit" ;
+    dkg:script "Latin" ;
+    dkg:transliteration "duhkha" ;
+    dkg:translation "suffering; unsatisfactoriness" ;
+    dkg:notes "Sanskrit cognate of Pali dukkha." ;
+    dkg:sourceFile "data/seeds/terms.json" .
+
+dkge:term_dukkha_pali
+    a dkg:Term ;
+    dkg:name "dukkha" ;
+    dkg:language "Pali" ;
+    dkg:script "Latin" ;
+    dkg:transliteration "dukkha" ;
+    dkg:translation "suffering; unsatisfactoriness; stress" ;
+    dkg:notes "A core Pali term in the analysis of conditioned experience." ;
+    dkg:sourceFile "data/seeds/terms.json" .
+
+dkge:term_karuna_pali
+    a dkg:Term ;
+    dkg:name "karuna" ;
+    dkg:language "Pali" ;
+    dkg:script "Latin" ;
+    dkg:transliteration "karuna" ;
+    dkg:translation "compassion" ;
+    dkg:notes "Pali and Sanskrit term for compassion." ;
+    dkg:sourceFile "data/seeds/terms.json" .
+
+dkge:term_metta_pali
+    a dkg:Term ;
+    dkg:name "metta" ;
+    dkg:language "Pali" ;
+    dkg:script "Latin" ;
+    dkg:transliteration "metta" ;
+    dkg:translation "loving-kindness" ;
+    dkg:notes "Pali term for loving-kindness." ;
+    dkg:sourceFile "data/seeds/terms.json" .
+
+dkge:term_nibbana_pali
+    a dkg:Term ;
+    dkg:name "nibbana" ;
+    dkg:language "Pali" ;
+    dkg:script "Latin" ;
+    dkg:transliteration "nibbana" ;
+    dkg:translation "liberation; extinguishing" ;
+    dkg:notes "Pali term commonly rendered as nirvana." ;
+    dkg:sourceFile "data/seeds/terms.json" .
+
+dkge:term_nirvana_sanskrit
+    a dkg:Term ;
+    dkg:name "nirvana" ;
+    dkg:language "Sanskrit" ;
+    dkg:script "Latin" ;
+    dkg:transliteration "nirvana" ;
+    dkg:translation "liberation; extinguishing" ;
+    dkg:notes "Sanskrit form corresponding to Pali nibbana." ;
+    dkg:sourceFile "data/seeds/terms.json" .
+
+dkge:term_paticcasamuppada_pali
+    a dkg:Term ;
+    dkg:name "paticcasamuppada" ;
+    dkg:language "Pali" ;
+    dkg:script "Latin" ;
+    dkg:transliteration "paticcasamuppada" ;
+    dkg:translation "dependent arising" ;
+    dkg:notes "Pali term for dependent arising." ;
+    dkg:sourceFile "data/seeds/terms.json" .
+
+dkge:term_pratityasamutpada_sanskrit
+    a dkg:Term ;
+    dkg:name "pratityasamutpada" ;
+    dkg:language "Sanskrit" ;
+    dkg:script "Latin" ;
+    dkg:transliteration "pratityasamutpada" ;
+    dkg:translation "dependent arising" ;
+    dkg:notes "Sanskrit term for dependent arising." ;
+    dkg:sourceFile "data/seeds/terms.json" .
+
+dkge:term_sunyata_sanskrit
+    a dkg:Term ;
+    dkg:name "sunyata" ;
+    dkg:language "Sanskrit" ;
+    dkg:script "Latin" ;
+    dkg:transliteration "sunyata" ;
+    dkg:translation "emptiness" ;
+    dkg:notes "A key Mahayana term, especially important in Madhyamaka contexts." ;
+    dkg:sourceFile "data/seeds/terms.json" .
+
+dkge:text_dhammapada
+    a dkg:Text ;
+    dkg:name "Dhammapada" ;
+    dkg:description "A collection of verses from the Pali Canon, traditionally arranged into 26 chapters." ;
+    dkg:tradition "Theravada" ;
+    dkg:language "Pali" ;
+    dkg:sourceFile "data/seeds/dhammapada.json" .
+
+dkge:text_mulamadhyamakakarika
+    a dkg:Text ;
+    dkg:name "Mulamadhyamakakarika" ;
+    dkg:description "A foundational Madhyamaka text attributed to Nagarjuna." ;
+    dkg:tradition "Mahayana" ;
+    dkg:language "Sanskrit" ;
+    dkg:sourceFile "data/seeds/core.json" .
+
+dkge:citation_dhammapada_1
+    dkg:mentions dkge:concept_citta ;
+    dkg:mentions dkge:concept_dukkha ;
+    dkg:mentions dkge:concept_karma .
+
+dkge:citation_dhammapada_129
+    dkg:mentions dkge:concept_ahimsa ;
+    dkg:mentions dkge:concept_karuna .
+
+dkge:citation_dhammapada_183
+    dkg:mentions dkge:concept_citta ;
+    dkg:mentions dkge:concept_sila .
+
+dkge:citation_dhammapada_2
+    dkg:mentions dkge:concept_citta ;
+    dkg:mentions dkge:concept_karma .
+
+dkge:citation_dhammapada_21
+    dkg:mentions dkge:concept_appamada .
+
+dkge:citation_dhammapada_277
+    dkg:mentions dkge:concept_anicca .
+
+dkge:citation_dhammapada_279
+    dkg:mentions dkge:concept_anatta .
+
+dkge:citation_dhammapada_35
+    dkg:mentions dkge:concept_citta .
+
+dkge:citation_dhammapada_5
+    dkg:mentions dkge:concept_metta .
+
+dkge:citation_dhammapada_50
+    dkg:mentions dkge:concept_sila .
+
+dkge:concept_bodhicitta
+    dkg:belongsToSchool dkge:school_mahayana .
+
+dkge:concept_bodhisattva
+    dkg:belongsToSchool dkge:school_mahayana ;
+    dkg:relatedTo dkge:concept_bodhicitta ;
+    dkg:relatedTo dkge:concept_paramita .
+
+dkge:concept_brahmaviharas
+    dkg:defines dkge:concept_karuna ;
+    dkg:defines dkge:concept_metta ;
+    dkg:defines dkge:concept_mudita ;
+    dkg:defines dkge:concept_upekkha .
+
+dkge:concept_four_noble_truths
+    dkg:mentions dkge:concept_dukkha ;
+    dkg:mentions dkge:concept_nirvana ;
+    dkg:mentions dkge:concept_noble_eightfold_path ;
+    dkg:mentions dkge:concept_tanha ;
+    dkg:relatedTo dkge:place_sarnath .
+
+dkge:concept_klesha
+    dkg:relatedTo dkge:concept_avidya ;
+    dkg:relatedTo dkge:concept_tanha .
+
+dkge:concept_middle_way
+    dkg:relatedTo dkge:concept_two_truths .
+
+dkge:concept_nirvana
+    dkg:relatedTo dkge:place_bodh_gaya .
+
+dkge:concept_noble_eightfold_path
+    dkg:mentions dkge:concept_prajna ;
+    dkg:mentions dkge:concept_samadhi ;
+    dkg:mentions dkge:concept_sila .
+
+dkge:concept_pratityasamutpada
+    dkg:relatedTo dkge:concept_avidya ;
+    dkg:relatedTo dkge:concept_karma ;
+    dkg:relatedTo dkge:concept_tanha .
+
+dkge:concept_samsara
+    dkg:relatedTo dkge:concept_avidya ;
+    dkg:relatedTo dkge:concept_karma ;
+    dkg:relatedTo dkge:concept_nirvana .
+
+dkge:concept_sunyata
+    dkg:belongsToSchool dkge:school_mahayana ;
+    dkg:relatedTo dkge:concept_pratityasamutpada ;
+    dkg:relatedTo dkge:concept_two_truths .
+
+dkge:concept_three_marks
+    dkg:defines dkge:concept_anatta ;
+    dkg:defines dkge:concept_anicca ;
+    dkg:defines dkge:concept_dukkha .
+
+dkge:person_nagarjuna
+    dkg:belongsToSchool dkge:school_madhyamaka ;
+    dkg:belongsToSchool dkge:school_mahayana .
+
+dkge:place_bodh_gaya
+    dkg:locatedIn dkge:place_magadha .
+
+dkge:place_nalanda
+    dkg:locatedIn dkge:place_magadha .
+
+dkge:school_madhyamaka
+    dkg:belongsToSchool dkge:school_mahayana .
+
+dkge:school_mahayana
+    dkg:relatedTo dkge:place_gandhara .
+
+dkge:school_pali_canon
+    dkg:locatedIn dkge:place_sri_lanka ;
+    dkg:relatedTo dkge:school_theravada .
+
+dkge:school_theravada
+    dkg:locatedIn dkge:place_sri_lanka .
+
+dkge:term_anatman_sanskrit
+    dkg:defines dkge:concept_anatta .
+
+dkge:term_anatta_pali
+    dkg:defines dkge:concept_anatta ;
+    dkg:relatedTo dkge:term_anatman_sanskrit .
+
+dkge:term_anicca_pali
+    dkg:defines dkge:concept_anicca ;
+    dkg:relatedTo dkge:term_anitya_sanskrit .
+
+dkge:term_anitya_sanskrit
+    dkg:defines dkge:concept_anicca .
+
+dkge:term_appamada_pali
+    dkg:defines dkge:concept_appamada .
+
+dkge:term_citta_pali
+    dkg:defines dkge:concept_citta .
+
+dkge:term_duhkha_sanskrit
+    dkg:defines dkge:concept_dukkha .
+
+dkge:term_dukkha_pali
+    dkg:defines dkge:concept_dukkha ;
+    dkg:relatedTo dkge:term_duhkha_sanskrit .
+
+dkge:term_karuna_pali
+    dkg:defines dkge:concept_karuna .
+
+dkge:term_metta_pali
+    dkg:defines dkge:concept_metta .
+
+dkge:term_nibbana_pali
+    dkg:defines dkge:concept_nirvana ;
+    dkg:relatedTo dkge:term_nirvana_sanskrit .
+
+dkge:term_nirvana_sanskrit
+    dkg:defines dkge:concept_nirvana .
+
+dkge:term_paticcasamuppada_pali
+    dkg:defines dkge:concept_pratityasamutpada ;
+    dkg:relatedTo dkge:term_pratityasamutpada_sanskrit .
+
+dkge:term_pratityasamutpada_sanskrit
+    dkg:defines dkge:concept_pratityasamutpada .
+
+dkge:term_sunyata_sanskrit
+    dkg:defines dkge:concept_sunyata .
+
+dkge:text_dhammapada
+    dkg:belongsToSchool dkge:school_early_buddhism ;
+    dkg:belongsToSchool dkge:school_pali_canon ;
+    dkg:belongsToSchool dkge:school_theravada ;
+    dkg:cites dkge:citation_dhammapada_1 ;
+    dkg:cites dkge:citation_dhammapada_129 ;
+    dkg:cites dkge:citation_dhammapada_183 ;
+    dkg:cites dkge:citation_dhammapada_2 ;
+    dkg:cites dkge:citation_dhammapada_21 ;
+    dkg:cites dkge:citation_dhammapada_277 ;
+    dkg:cites dkge:citation_dhammapada_279 ;
+    dkg:cites dkge:citation_dhammapada_35 ;
+    dkg:cites dkge:citation_dhammapada_5 ;
+    dkg:cites dkge:citation_dhammapada_50 ;
+    dkg:mentions dkge:concept_anatta ;
+    dkg:mentions dkge:concept_anicca ;
+    dkg:mentions dkge:concept_appamada ;
+    dkg:mentions dkge:concept_citta ;
+    dkg:mentions dkge:concept_sila .
+
+dkge:text_mulamadhyamakakarika
+    dkg:authoredBy dkge:person_nagarjuna ;
+    dkg:belongsToSchool dkge:school_madhyamaka ;
+    dkg:mentions dkge:concept_sunyata .
