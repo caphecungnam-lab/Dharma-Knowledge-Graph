@@ -38,6 +38,7 @@ RELATIONSHIP_TYPE_RULES = {
     "CITES": ({"Citation", "Text"}, {"Citation"}),
     "COMMENTS_ON": ({"Citation", "Text"}, {"Concept", "Text"}),
     "DEFINES": ({"Citation", "Concept", "Term", "Text"}, {"Concept", "Term"}),
+    "DENOTES": ({"Term"}, {"Concept"}),
     "DERIVED_FROM": (
         {"Citation", "Document", "Evidence", "Work"},
         {"Citation", "Document", "Source", "Work"},

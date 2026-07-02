@@ -2,11 +2,12 @@
   "metadata": {
     "title": "Dharma Knowledge Graph",
     "version": "0.1",
-    "content_hash": "2df132909b39c71b635c31703e22709fd386d7cafa97b798af9c2d90f74b8c6c",
+    "content_hash": "be3c8509bc22146dbdb4318d3edb5a1db567757c1e1a8dbf2b7e4902623c66fa",
     "source_files": [
       "data/seeds/concepts.json",
       "data/seeds/core.json",
       "data/seeds/dhammapada.json",
+      "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json",
       "data/seeds/giac_khang_pilot.json",
       "data/seeds/giac_khang_real_evidence_sample.json",
       "data/seeds/heart_sutra.json",
@@ -17,36 +18,37 @@
     ]
   },
   "summary": {
-    "node_count": 133,
-    "relationship_count": 213,
+    "node_count": 148,
+    "relationship_count": 228,
     "node_type_counts": {
-      "Citation": 20,
-      "Concept": 37,
-      "Corpus": 1,
-      "Document": 1,
+      "Citation": 21,
+      "Concept": 42,
+      "Corpus": 2,
+      "Document": 2,
       "Evidence": 4,
       "Person": 1,
       "Place": 6,
       "School": 5,
-      "Source": 1,
-      "Term": 53,
+      "Source": 2,
+      "Term": 59,
       "Text": 3,
       "Work": 1
     },
     "relationship_type_counts": {
       "AUTHORED_BY": 1,
-      "BELONGS_TO_CORPUS": 6,
+      "BELONGS_TO_CORPUS": 8,
       "BELONGS_TO_SCHOOL": 13,
       "CITES": 17,
       "DEFINES": 60,
-      "DERIVED_FROM": 5,
+      "DENOTES": 6,
+      "DERIVED_FROM": 7,
       "EVIDENCES": 3,
       "HAS_CITATION": 3,
-      "HAS_DOCUMENT": 2,
+      "HAS_DOCUMENT": 3,
       "HAS_EVIDENCE": 3,
       "LOCATED_IN": 4,
       "MENTIONS": 59,
-      "RELATED_TO": 37
+      "RELATED_TO": 41
     }
   },
   "nodes": [
@@ -231,6 +233,15 @@
       "source_file": "data/seeds/core.json"
     },
     {
+      "id": "citation_youtube_fisp_arohzy8",
+      "type": "Citation",
+      "name": "YouTube citation for FISpARohzy8",
+      "source_url": "https://www.youtube.com/watch?v=FISpARohzy8",
+      "locator": "video root",
+      "review_status": "unreviewed",
+      "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json"
+    },
+    {
       "id": "concept_ahimsa",
       "type": "Concept",
       "name": "Ahimsa",
@@ -398,6 +409,15 @@
       "source_file": "data/seeds/concepts.json"
     },
     {
+      "id": "concept_kinh_sau_sau",
+      "type": "Concept",
+      "name": "Kinh Sáu Sáu",
+      "language": "vi",
+      "category": "text_topic",
+      "description": "Pilot topic concept for Giác Khang teachings on Kinh Sáu Sáu.",
+      "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json"
+    },
+    {
       "id": "concept_klesha",
       "type": "Concept",
       "name": "Klesha",
@@ -406,6 +426,15 @@
       "category": "psychology",
       "description": "Afflictive mental states that disturb the mind and condition suffering.",
       "source_file": "data/seeds/concepts.json"
+    },
+    {
+      "id": "concept_luc_can_luc_tran_luc_thuc",
+      "type": "Concept",
+      "name": "Lục căn, lục trần, lục thức",
+      "language": "vi",
+      "category": "doctrine",
+      "description": "Grouping concept for six faculties, six objects, and six consciousnesses.",
+      "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json"
     },
     {
       "id": "concept_mantra",
@@ -554,6 +583,33 @@
       "source_file": "data/seeds/core.json"
     },
     {
+      "id": "concept_sau_can",
+      "type": "Concept",
+      "name": "Sáu căn",
+      "language": "vi",
+      "category": "doctrine",
+      "description": "Vietnamese concept placeholder for the six sense faculties in the Kinh Sáu Sáu pilot.",
+      "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json"
+    },
+    {
+      "id": "concept_sau_thuc",
+      "type": "Concept",
+      "name": "Sáu thức",
+      "language": "vi",
+      "category": "doctrine",
+      "description": "Vietnamese concept placeholder for the six consciousnesses in the Kinh Sáu Sáu pilot.",
+      "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json"
+    },
+    {
+      "id": "concept_sau_tran",
+      "type": "Concept",
+      "name": "Sáu trần",
+      "language": "vi",
+      "category": "doctrine",
+      "description": "Vietnamese concept placeholder for the six sense objects in the Kinh Sáu Sáu pilot.",
+      "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json"
+    },
+    {
       "id": "concept_tanha",
       "type": "Concept",
       "name": "Tanha",
@@ -602,6 +658,12 @@
       "source_file": "data/seeds/giac_khang_pilot.json"
     },
     {
+      "id": "corpus_giac_khang",
+      "type": "Corpus",
+      "name": "Giác Khang Corpus",
+      "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json"
+    },
+    {
       "id": "document_giac_khang_mvp_notes",
       "type": "Document",
       "name": "Giac Khang MVP Notes",
@@ -610,6 +672,18 @@
       "locator": "pilot-note-001",
       "description": "A single pilot document used to test document-to-evidence modeling.",
       "source_file": "data/seeds/giac_khang_pilot.json"
+    },
+    {
+      "id": "document_transcript_fisp_arohzy8",
+      "type": "Document",
+      "name": "Transcript placeholder for 1A. KINH 6 6 L2CÂU 1 P1",
+      "document_kind": "transcript",
+      "language": "vi",
+      "source_url": "https://www.youtube.com/watch?v=FISpARohzy8",
+      "source_kind": "youtube",
+      "review_status": "unreviewed",
+      "notes": "Transcript not yet imported. Evidence must not be created without real excerpt text and timestamp.",
+      "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json"
     },
     {
       "id": "evidence_giac_khang_pratityasamutpada_001",
@@ -777,6 +851,19 @@
       "language": "Vietnamese",
       "description": "Pilot source material used to model evidence before API, embeddings, or LLM extraction.",
       "source_file": "data/seeds/giac_khang_pilot.json"
+    },
+    {
+      "id": "source_youtube_fisp_arohzy8",
+      "type": "Source",
+      "name": "YouTube video FISpARohzy8",
+      "source_kind": "youtube",
+      "source_url": "https://www.youtube.com/watch?v=FISpARohzy8",
+      "channel": "PHÁP ÂM SƯ KHANG",
+      "title": "1A. KINH 6 6 L2CÂU 1 P1",
+      "speaker": "HT. Thích Giác Khang",
+      "topic": "Kinh Sáu Sáu",
+      "review_status": "unreviewed",
+      "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json"
     },
     {
       "id": "term_ahimsa_sanskrit",
@@ -1076,6 +1163,33 @@
       "source_file": "data/seeds/terms_remaining.json"
     },
     {
+      "id": "term_luc_can_hv",
+      "type": "Term",
+      "name": "lục căn",
+      "language": "vi",
+      "script": "Hán-Việt",
+      "translation": "six sense faculties",
+      "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json"
+    },
+    {
+      "id": "term_luc_thuc_hv",
+      "type": "Term",
+      "name": "lục thức",
+      "language": "vi",
+      "script": "Hán-Việt",
+      "translation": "six consciousnesses",
+      "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json"
+    },
+    {
+      "id": "term_luc_tran_hv",
+      "type": "Term",
+      "name": "lục trần",
+      "language": "vi",
+      "script": "Hán-Việt",
+      "translation": "six sense objects",
+      "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json"
+    },
+    {
       "id": "term_madhyama_pratipad_sanskrit",
       "type": "Term",
       "name": "madhyama pratipad",
@@ -1296,6 +1410,30 @@
       "source_file": "data/seeds/terms.json"
     },
     {
+      "id": "term_sau_can_vi",
+      "type": "Term",
+      "name": "sáu căn",
+      "language": "vi",
+      "translation": "six sense faculties",
+      "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json"
+    },
+    {
+      "id": "term_sau_thuc_vi",
+      "type": "Term",
+      "name": "sáu thức",
+      "language": "vi",
+      "translation": "six consciousnesses",
+      "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json"
+    },
+    {
+      "id": "term_sau_tran_vi",
+      "type": "Term",
+      "name": "sáu trần",
+      "language": "vi",
+      "translation": "six sense objects",
+      "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json"
+    },
+    {
       "id": "term_tanha_pali",
       "type": "Term",
       "name": "tanha",
@@ -1433,10 +1571,22 @@
       "source_file": "data/seeds/giac_khang_pilot.json"
     },
     {
+      "source": "document_transcript_fisp_arohzy8",
+      "type": "BELONGS_TO_CORPUS",
+      "target": "corpus_giac_khang",
+      "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json"
+    },
+    {
       "source": "source_giac_khang_notes",
       "type": "BELONGS_TO_CORPUS",
       "target": "corpus_giac_khang_pilot",
       "source_file": "data/seeds/giac_khang_pilot.json"
+    },
+    {
+      "source": "source_youtube_fisp_arohzy8",
+      "type": "BELONGS_TO_CORPUS",
+      "target": "corpus_giac_khang",
+      "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json"
     },
     {
       "source": "work_giac_khang_pilot_teachings",
@@ -1985,10 +2135,58 @@
       "source_file": "data/seeds/terms_remaining.json"
     },
     {
+      "source": "term_luc_can_hv",
+      "type": "DENOTES",
+      "target": "concept_sau_can",
+      "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json"
+    },
+    {
+      "source": "term_luc_thuc_hv",
+      "type": "DENOTES",
+      "target": "concept_sau_thuc",
+      "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json"
+    },
+    {
+      "source": "term_luc_tran_hv",
+      "type": "DENOTES",
+      "target": "concept_sau_tran",
+      "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json"
+    },
+    {
+      "source": "term_sau_can_vi",
+      "type": "DENOTES",
+      "target": "concept_sau_can",
+      "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json"
+    },
+    {
+      "source": "term_sau_thuc_vi",
+      "type": "DENOTES",
+      "target": "concept_sau_thuc",
+      "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json"
+    },
+    {
+      "source": "term_sau_tran_vi",
+      "type": "DENOTES",
+      "target": "concept_sau_tran",
+      "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json"
+    },
+    {
+      "source": "citation_youtube_fisp_arohzy8",
+      "type": "DERIVED_FROM",
+      "target": "source_youtube_fisp_arohzy8",
+      "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json"
+    },
+    {
       "source": "document_giac_khang_mvp_notes",
       "type": "DERIVED_FROM",
       "target": "source_giac_khang_notes",
       "source_file": "data/seeds/giac_khang_pilot.json"
+    },
+    {
+      "source": "document_transcript_fisp_arohzy8",
+      "type": "DERIVED_FROM",
+      "target": "source_youtube_fisp_arohzy8",
+      "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json"
     },
     {
       "source": "evidence_giac_khang_middle_way_001",
@@ -2055,6 +2253,12 @@
       "type": "HAS_DOCUMENT",
       "target": "document_giac_khang_mvp_notes",
       "source_file": "data/seeds/giac_khang_pilot.json"
+    },
+    {
+      "source": "source_youtube_fisp_arohzy8",
+      "type": "HAS_DOCUMENT",
+      "target": "document_transcript_fisp_arohzy8",
+      "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json"
     },
     {
       "source": "work_giac_khang_pilot_teachings",
@@ -2501,6 +2705,12 @@
       "source_file": "data/seeds/concepts.json"
     },
     {
+      "source": "concept_luc_can_luc_tran_luc_thuc",
+      "type": "RELATED_TO",
+      "target": "concept_kinh_sau_sau",
+      "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json"
+    },
+    {
       "source": "concept_middle_way",
       "type": "RELATED_TO",
       "target": "concept_two_truths",
@@ -2559,6 +2769,24 @@
       "type": "RELATED_TO",
       "target": "concept_nirvana",
       "source_file": "data/seeds/concepts.json"
+    },
+    {
+      "source": "concept_sau_can",
+      "type": "RELATED_TO",
+      "target": "concept_kinh_sau_sau",
+      "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json"
+    },
+    {
+      "source": "concept_sau_thuc",
+      "type": "RELATED_TO",
+      "target": "concept_kinh_sau_sau",
+      "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json"
+    },
+    {
+      "source": "concept_sau_tran",
+      "type": "RELATED_TO",
+      "target": "concept_kinh_sau_sau",
+      "source_file": "data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json"
     },
     {
       "source": "concept_sunyata",

@@ -74,6 +74,7 @@ Allowed relationship types and type pairs:
 | `CITES` | `Citation`, `Text` | `Citation` |
 | `COMMENTS_ON` | `Citation`, `Text` | `Concept`, `Text` |
 | `DEFINES` | `Citation`, `Concept`, `Term`, `Text` | `Concept`, `Term` |
+| `DENOTES` | `Term` | `Concept` |
 | `DERIVED_FROM` | `Citation`, `Document`, `Evidence`, `Work` | `Citation`, `Document`, `Source`, `Work` |
 | `EVIDENCES` | `Evidence` | `Concept`, `Term`, `Text`, `Work` |
 | `HAS_CITATION` | `Document`, `Evidence`, `Text`, `Work` | `Citation` |
@@ -160,6 +161,13 @@ Conditional validation:
 
 - If `evidence_type` is `transcript_excerpt`, `speaker` is required.
 - If `source_kind` is `youtube`, `source_url` is required.
+
+Evidence can only be added when all four fields are present:
+
+- `source_url`
+- timestamp or `locator`
+- `evidence_text`
+- `review_status`
 
 ## Validation
 

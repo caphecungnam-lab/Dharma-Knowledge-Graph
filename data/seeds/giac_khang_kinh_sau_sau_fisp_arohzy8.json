@@ -1,0 +1,202 @@
+{
+  "nodes": [
+    {
+      "id": "corpus_giac_khang",
+      "type": "Corpus",
+      "name": "Giác Khang Corpus"
+    },
+    {
+      "id": "source_youtube_fisp_arohzy8",
+      "type": "Source",
+      "name": "YouTube video FISpARohzy8",
+      "source_kind": "youtube",
+      "source_url": "https://www.youtube.com/watch?v=FISpARohzy8",
+      "channel": "PHÁP ÂM SƯ KHANG",
+      "title": "1A. KINH 6 6 L2CÂU 1 P1",
+      "speaker": "HT. Thích Giác Khang",
+      "topic": "Kinh Sáu Sáu",
+      "review_status": "unreviewed"
+    },
+    {
+      "id": "document_transcript_fisp_arohzy8",
+      "type": "Document",
+      "name": "Transcript placeholder for 1A. KINH 6 6 L2CÂU 1 P1",
+      "document_kind": "transcript",
+      "language": "vi",
+      "source_url": "https://www.youtube.com/watch?v=FISpARohzy8",
+      "source_kind": "youtube",
+      "review_status": "unreviewed",
+      "notes": "Transcript not yet imported. Evidence must not be created without real excerpt text and timestamp."
+    },
+    {
+      "id": "concept_sau_can",
+      "type": "Concept",
+      "name": "Sáu căn",
+      "language": "vi",
+      "category": "doctrine",
+      "description": "Vietnamese concept placeholder for the six sense faculties in the Kinh Sáu Sáu pilot."
+    },
+    {
+      "id": "concept_sau_tran",
+      "type": "Concept",
+      "name": "Sáu trần",
+      "language": "vi",
+      "category": "doctrine",
+      "description": "Vietnamese concept placeholder for the six sense objects in the Kinh Sáu Sáu pilot."
+    },
+    {
+      "id": "concept_sau_thuc",
+      "type": "Concept",
+      "name": "Sáu thức",
+      "language": "vi",
+      "category": "doctrine",
+      "description": "Vietnamese concept placeholder for the six consciousnesses in the Kinh Sáu Sáu pilot."
+    },
+    {
+      "id": "concept_kinh_sau_sau",
+      "type": "Concept",
+      "name": "Kinh Sáu Sáu",
+      "language": "vi",
+      "category": "text_topic",
+      "description": "Pilot topic concept for Giác Khang teachings on Kinh Sáu Sáu."
+    },
+    {
+      "id": "concept_luc_can_luc_tran_luc_thuc",
+      "type": "Concept",
+      "name": "Lục căn, lục trần, lục thức",
+      "language": "vi",
+      "category": "doctrine",
+      "description": "Grouping concept for six faculties, six objects, and six consciousnesses."
+    },
+    {
+      "id": "term_sau_can_vi",
+      "type": "Term",
+      "name": "sáu căn",
+      "language": "vi",
+      "translation": "six sense faculties"
+    },
+    {
+      "id": "term_sau_tran_vi",
+      "type": "Term",
+      "name": "sáu trần",
+      "language": "vi",
+      "translation": "six sense objects"
+    },
+    {
+      "id": "term_sau_thuc_vi",
+      "type": "Term",
+      "name": "sáu thức",
+      "language": "vi",
+      "translation": "six consciousnesses"
+    },
+    {
+      "id": "term_luc_can_hv",
+      "type": "Term",
+      "name": "lục căn",
+      "language": "vi",
+      "script": "Hán-Việt",
+      "translation": "six sense faculties"
+    },
+    {
+      "id": "term_luc_tran_hv",
+      "type": "Term",
+      "name": "lục trần",
+      "language": "vi",
+      "script": "Hán-Việt",
+      "translation": "six sense objects"
+    },
+    {
+      "id": "term_luc_thuc_hv",
+      "type": "Term",
+      "name": "lục thức",
+      "language": "vi",
+      "script": "Hán-Việt",
+      "translation": "six consciousnesses"
+    },
+    {
+      "id": "citation_youtube_fisp_arohzy8",
+      "type": "Citation",
+      "name": "YouTube citation for FISpARohzy8",
+      "source_url": "https://www.youtube.com/watch?v=FISpARohzy8",
+      "locator": "video root",
+      "review_status": "unreviewed"
+    }
+  ],
+  "relationships": [
+    {
+      "source": "source_youtube_fisp_arohzy8",
+      "type": "BELONGS_TO_CORPUS",
+      "target": "corpus_giac_khang"
+    },
+    {
+      "source": "document_transcript_fisp_arohzy8",
+      "type": "BELONGS_TO_CORPUS",
+      "target": "corpus_giac_khang"
+    },
+    {
+      "source": "source_youtube_fisp_arohzy8",
+      "type": "HAS_DOCUMENT",
+      "target": "document_transcript_fisp_arohzy8"
+    },
+    {
+      "source": "document_transcript_fisp_arohzy8",
+      "type": "DERIVED_FROM",
+      "target": "source_youtube_fisp_arohzy8"
+    },
+    {
+      "source": "citation_youtube_fisp_arohzy8",
+      "type": "DERIVED_FROM",
+      "target": "source_youtube_fisp_arohzy8"
+    },
+    {
+      "source": "concept_sau_can",
+      "type": "RELATED_TO",
+      "target": "concept_kinh_sau_sau"
+    },
+    {
+      "source": "concept_sau_tran",
+      "type": "RELATED_TO",
+      "target": "concept_kinh_sau_sau"
+    },
+    {
+      "source": "concept_sau_thuc",
+      "type": "RELATED_TO",
+      "target": "concept_kinh_sau_sau"
+    },
+    {
+      "source": "concept_luc_can_luc_tran_luc_thuc",
+      "type": "RELATED_TO",
+      "target": "concept_kinh_sau_sau"
+    },
+    {
+      "source": "term_sau_can_vi",
+      "type": "DENOTES",
+      "target": "concept_sau_can"
+    },
+    {
+      "source": "term_sau_tran_vi",
+      "type": "DENOTES",
+      "target": "concept_sau_tran"
+    },
+    {
+      "source": "term_sau_thuc_vi",
+      "type": "DENOTES",
+      "target": "concept_sau_thuc"
+    },
+    {
+      "source": "term_luc_can_hv",
+      "type": "DENOTES",
+      "target": "concept_sau_can"
+    },
+    {
+      "source": "term_luc_tran_hv",
+      "type": "DENOTES",
+      "target": "concept_sau_tran"
+    },
+    {
+      "source": "term_luc_thuc_hv",
+      "type": "DENOTES",
+      "target": "concept_sau_thuc"
+    }
+  ]
+}
