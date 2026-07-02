@@ -17,7 +17,11 @@ SPEAKER = "HT. Thích Giác Khang"
 OUTPUT_PATH = (
     Path("data") / "processed" / "giac_khang" / VIDEO_ID / "evidence_first_pass.json"
 )
-MAX_SEGMENTS = 5
+MAX_EVIDENCE_COUNT = 5
+TARGET_DURATION_SECONDS = 20
+MIN_DURATION_SECONDS = 5
+PREFERRED_MIN_DURATION_SECONDS = 10
+MAX_DURATION_SECONDS = 30
 
 TIMESTAMP_LINE = re.compile(
     r"^(?P<start>\d{2}:\d{2}:\d{2}\.\d{3})\s+-->\s+"
@@ -25,12 +29,58 @@ TIMESTAMP_LINE = re.compile(
 )
 HTML_TAG = re.compile(r"<[^>]+>")
 WHITESPACE = re.compile(r"\s+")
+SENTENCE_PUNCTUATION = tuple(".?!:;…。！？")
+
+
+def parse_vtt_timestamp(value: str) -> float:
+    parts = value.strip().split(":")
+    if len(parts) != 3:
+        raise ValueError(f"Invalid VTT timestamp: {value}")
+
+    hours = int(parts[0])
+    minutes = int(parts[1])
+    seconds = float(parts[2])
+    return (hours * 3600) + (minutes * 60) + seconds
+
+
+def format_timestamp(seconds: float) -> str:
+    milliseconds = int(round(seconds * 1000))
+    hours, remainder = divmod(milliseconds, 3_600_000)
+    minutes, remainder = divmod(remainder, 60_000)
+    whole_seconds, milliseconds = divmod(remainder, 1000)
+    return f"{hours:02d}:{minutes:02d}:{whole_seconds:02d}.{milliseconds:03d}"
 
 
 def clean_caption_text(value: str) -> str:
     without_tags = HTML_TAG.sub("", value)
     unescaped = html.unescape(without_tags)
     return WHITESPACE.sub(" ", unescaped).strip()
+
+
+def dedupe_adjacent_text(previous: str, current: str) -> str:
+    previous = clean_caption_text(previous)
+    current = clean_caption_text(current)
+
+    if not current:
+        return ""
+    if not previous:
+        return current
+    if current == previous or current in previous:
+        return ""
+    if current.startswith(previous):
+        return current[len(previous) :].strip()
+
+    previous_words = previous.split()
+    current_words = current.split()
+    max_overlap = min(len(previous_words), len(current_words))
+
+    for overlap_size in range(max_overlap, 0, -1):
+        previous_tail = previous_words[-overlap_size:]
+        current_head = current_words[:overlap_size]
+        if previous_tail == current_head:
+            return " ".join(current_words[overlap_size:]).strip()
+
+    return current
 
 
 def parse_timestamp_line(line: str) -> tuple[str, str] | None:
@@ -99,6 +149,62 @@ def parse_vtt_segments(vtt_text: str) -> list[dict[str, str]]:
     return segments
 
 
+def segment_duration(segment: dict[str, str]) -> float:
+    return parse_vtt_timestamp(segment["end_time"]) - parse_vtt_timestamp(
+        segment["start_time"]
+    )
+
+
+def should_close_segment(segment: dict[str, str]) -> bool:
+    duration = segment_duration(segment)
+    text = segment["text"].strip()
+
+    if duration >= MAX_DURATION_SECONDS:
+        return True
+    if duration < PREFERRED_MIN_DURATION_SECONDS:
+        return False
+    if duration >= TARGET_DURATION_SECONDS:
+        return True
+    return text.endswith(SENTENCE_PUNCTUATION)
+
+
+def merge_cues(cues: list[dict]) -> list[dict]:
+    merged: list[dict[str, str]] = []
+    current: dict[str, str] | None = None
+    last_merged_text = ""
+
+    for cue in cues:
+        cue_text = clean_caption_text(cue.get("text", ""))
+        if not cue_text:
+            continue
+
+        if current is None:
+            cue_text = dedupe_adjacent_text(last_merged_text, cue_text)
+            if not cue_text:
+                continue
+
+            current = {
+                "start_time": cue["start_time"],
+                "end_time": cue["end_time"],
+                "text": cue_text,
+            }
+        else:
+            new_text = dedupe_adjacent_text(current["text"], cue_text)
+            current["end_time"] = cue["end_time"]
+            if new_text:
+                current["text"] = clean_caption_text(f"{current['text']} {new_text}")
+
+        if current and should_close_segment(current):
+            merged.append(current)
+            last_merged_text = current["text"]
+            current = None
+
+    if current and segment_duration(current) >= MIN_DURATION_SECONDS:
+        merged.append(current)
+
+    return merged
+
+
 def evidence_id(index: int) -> str:
     return f"evidence_fisp_arohzy8_{index + 1:04d}"
 
@@ -141,8 +247,11 @@ def build_evidence_relationships(evidence_node_id: str) -> list[dict[str, str]]:
     ]
 
 
-def convert_vtt_to_evidence(vtt_text: str) -> dict[str, list[dict[str, str]]]:
-    segments = parse_vtt_segments(vtt_text)[:MAX_SEGMENTS]
+def convert_vtt_to_evidence(
+    vtt_text: str,
+    max_evidence_count: int = MAX_EVIDENCE_COUNT,
+) -> dict[str, list[dict[str, str]]]:
+    segments = merge_cues(parse_vtt_segments(vtt_text))[:max_evidence_count]
     nodes: list[dict[str, str]] = []
     relationships: list[dict[str, str]] = []
 
