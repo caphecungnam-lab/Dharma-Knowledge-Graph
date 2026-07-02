@@ -20,7 +20,7 @@ Evidence nodes are added.
 - Topic: `Kinh Sáu Sáu`
 - Focus concepts: `sáu căn`, `sáu trần`, `sáu thức`
 
-## Why This Video
+## Why this video
 
 This video is selected as the first real transcript pilot because it has a
 stable public source URL, a clear speaker, a clear channel, and a focused topic
@@ -63,3 +63,10 @@ DKG-003 should produce:
 - concept and term nodes for the Kinh Sáu Sáu pilot;
 - provenance and terminology relationships;
 - no Evidence nodes until real transcript text is available.
+
+## Next Step: Transcript Extraction
+
+The next step is to obtain a real transcript for the video and extract a small
+reviewable set of timestamped excerpts. Each excerpt should become an Evidence
+node only after the source URL, timestamp or locator, excerpt text, speaker, and
+review status are known.

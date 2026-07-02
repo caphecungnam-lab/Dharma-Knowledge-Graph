@@ -96,7 +96,10 @@ def validate_evidence_node(path: Path, index: int, node: dict) -> list[str]:
             )
 
     evidence_type = node.get("evidence_type")
-    if is_non_empty_string(evidence_type) and evidence_type not in ALLOWED_EVIDENCE_TYPES:
+    if (
+        is_non_empty_string(evidence_type)
+        and evidence_type not in ALLOWED_EVIDENCE_TYPES
+    ):
         errors.append(
             f"{path}: node {index} Evidence has invalid evidence_type: "
             f"{evidence_type}"
@@ -109,19 +112,26 @@ def validate_evidence_node(path: Path, index: int, node: dict) -> list[str]:
         )
 
     review_status = node.get("review_status")
-    if is_non_empty_string(review_status) and review_status not in ALLOWED_REVIEW_STATUS:
+    if (
+        is_non_empty_string(review_status)
+        and review_status not in ALLOWED_REVIEW_STATUS
+    ):
         errors.append(
             f"{path}: node {index} Evidence has invalid review_status: "
             f"{review_status}"
         )
 
-    if evidence_type == "transcript_excerpt" and missing_or_empty_string(node, "speaker"):
+    if evidence_type == "transcript_excerpt" and missing_or_empty_string(
+        node, "speaker"
+    ):
         errors.append(
             f"{path}: node {index} Evidence with transcript_excerpt "
             "requires speaker"
         )
 
-    if node.get("source_kind") == "youtube" and missing_or_empty_string(node, "source_url"):
+    if node.get("source_kind") == "youtube" and missing_or_empty_string(
+        node, "source_url"
+    ):
         errors.append(
             f"{path}: node {index} Evidence with source_kind youtube "
             "requires source_url"
@@ -223,9 +233,13 @@ def validate_seed_files(seed_files: list[Path]) -> list[str]:
             relationship_type = relationship["type"]
             target = relationship["target"]
             if source not in node_locations:
-                errors.append(f"{path}: relationship {index} has unknown source: {source}")
+                errors.append(
+                    f"{path}: relationship {index} has unknown source: {source}"
+                )
             if target not in node_locations:
-                errors.append(f"{path}: relationship {index} has unknown target: {target}")
+                errors.append(
+                    f"{path}: relationship {index} has unknown target: {target}"
+                )
 
             if not isinstance(relationship_type, str):
                 errors.append(f"{path}: relationship {index} has non-string type")

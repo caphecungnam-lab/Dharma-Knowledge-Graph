@@ -28,6 +28,36 @@ This keeps early editing easy while leaving room to export later to:
 - RDF/OWL for semantic web interoperability
 - Markdown or static site views for human-readable study notes
 
+## Evidence-first MVP
+
+The current MVP direction is evidence-first: concept links should become
+traceable to source material before API, frontend, embedding, or LLM work is
+added. The Evidence-first architecture notes are in `docs/architecture/`, and
+the seed-data rules are captured in `docs/ontology/data-contract-v0.1.md`.
+
+Transcript Evidence must not be fabricated. It can only be added when these
+fields are present:
+
+- `source_url`
+- timestamp or `locator`
+- `evidence_text`
+- `review_status`
+
+## Giác Khang Pilot Source
+
+The first real transcript scaffold is for the Giác Khang Corpus:
+
+- Source video: `https://www.youtube.com/watch?v=FISpARohzy8`
+- Title: `1A. KINH 6 6 L2CÂU 1 P1`
+- Speaker: `HT. Thích Giác Khang`
+- Channel: `PHÁP ÂM SƯ KHANG`
+- Topic: `Kinh Sáu Sáu`
+
+The scaffold is in
+`data/seeds/giac_khang_kinh_sau_sau_fisp_arohzy8.json`. It includes source,
+document, citation, concept, and term nodes only. Evidence nodes should be added
+later only after real transcript excerpts and timestamps are available.
+
 ## First Data Model
 
 The initial ontology is documented in
