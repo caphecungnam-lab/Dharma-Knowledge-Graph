@@ -6,7 +6,7 @@ Generated from `data/processed/graph.json`.
 
 | Metric | Value |
 | --- | --- |
-| Nodes | 132 |
+| Nodes | 133 |
 | Relationships | 213 |
 | Concepts | 37 |
 | Terms | 53 |
@@ -16,7 +16,7 @@ Generated from `data/processed/graph.json`.
 | Texts without citations | 0 |
 | Citations | 20 |
 | Citations without concept mentions | 0 |
-| Isolated nodes | 0 |
+| Isolated nodes | 1 |
 
 ## Concepts Without Term Definitions
 
@@ -32,4 +32,6 @@ Every citation mentions at least one concept.
 
 ## Isolated Nodes
 
-No isolated nodes.
+| Node | Type | ID |
+| --- | --- | --- |
+| Unreviewed Giac Khang transcript evidence sample | Evidence | evidence_giac_khang_real_sample_001 |

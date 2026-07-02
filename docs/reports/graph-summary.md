@@ -6,11 +6,11 @@ Generated from `data/processed/graph.json`.
 
 | Metric | Value |
 | --- | --- |
-| Nodes | 132 |
+| Nodes | 133 |
 | Relationships | 213 |
-| Source files | 9 |
+| Source files | 10 |
 | Graph version | 0.1 |
-| Content hash | d43fcbe67d675efcf6643d90d201ad7dabee654870e05d45fb9f61e279d94857 |
+| Content hash | 2df132909b39c71b635c31703e22709fd386d7cafa97b798af9c2d90f74b8c6c |
 
 ## Node Types
 
@@ -20,7 +20,7 @@ Generated from `data/processed/graph.json`.
 | Concept | 37 |
 | Corpus | 1 |
 | Document | 1 |
-| Evidence | 3 |
+| Evidence | 4 |
 | Person | 1 |
 | Place | 6 |
 | School | 5 |
@@ -64,7 +64,9 @@ Generated from `data/processed/graph.json`.
 
 ## Isolated Nodes
 
-No isolated nodes.
+| Node | Type | ID |
+| --- | --- | --- |
+| Unreviewed Giac Khang transcript evidence sample | Evidence | evidence_giac_khang_real_sample_001 |
 
 ## Source Files
 
@@ -72,6 +74,7 @@ No isolated nodes.
 - `data/seeds/core.json`
 - `data/seeds/dhammapada.json`
 - `data/seeds/giac_khang_pilot.json`
+- `data/seeds/giac_khang_real_evidence_sample.json`
 - `data/seeds/heart_sutra.json`
 - `data/seeds/places_traditions.json`
 - `data/seeds/terms.json`

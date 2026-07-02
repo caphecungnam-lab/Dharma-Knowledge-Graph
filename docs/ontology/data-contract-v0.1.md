@@ -106,6 +106,61 @@ Corpus -> Source -> Document -> Evidence -> Concept
 When a locator is available, evidence should also connect to a `Citation` via
 `HAS_CITATION`.
 
+## Real Evidence Fields
+
+DKG-002 prepares Evidence nodes for real transcript excerpts from Giac Khang
+teachings. Real Evidence nodes should include:
+
+- `id`
+- `type`
+- `name`
+- `evidence_text`
+- `evidence_type`
+- `language`
+- `confidence`
+- `source_kind`
+- `source_url`
+- `document_id`
+- `locator`
+- `start_time`
+- `end_time`
+- `speaker`
+- `review_status`
+- `notes`
+
+Allowed `evidence_type` values:
+
+- `transcript_excerpt`
+- `citation_excerpt`
+- `paraphrase`
+- `ai_summary`
+- `human_note`
+
+Allowed `confidence` values:
+
+- `low`
+- `medium`
+- `high`
+
+Allowed `review_status` values:
+
+- `unreviewed`
+- `ai_processed`
+- `human_reviewed`
+- `verified`
+
+Validation currently enforces these Evidence fields:
+
+- `evidence_text`
+- `evidence_type`
+- `confidence`
+- `review_status`
+
+Conditional validation:
+
+- If `evidence_type` is `transcript_excerpt`, `speaker` is required.
+- If `source_kind` is `youtube`, `source_url` is required.
+
 ## Validation
 
 Run:

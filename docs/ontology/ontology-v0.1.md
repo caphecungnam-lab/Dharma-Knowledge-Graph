@@ -244,8 +244,15 @@ Suggested fields:
 - `evidence_text`
 - `evidence_type`
 - `confidence`
+- `source_kind`
+- `source_url`
+- `document_id`
 - `locator`
+- `start_time`
+- `end_time`
+- `speaker`
 - `language`
+- `review_status`
 - `notes`
 
 Examples:

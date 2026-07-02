@@ -508,7 +508,10 @@ dkge:evidence_giac_khang_pratityasamutpada_001
     dkg:name "Evidence: Dependent arising as relational explanation" ;
     dkg:language "Vietnamese" ;
     dkg:locator "pilot-note-001#dependent-arising" ;
-    dkg:evidenceType "excerpt" ;
+    dkg:sourceKind "local_notes" ;
+    dkg:documentId "document_giac_khang_mvp_notes" ;
+    dkg:reviewStatus "human_reviewed" ;
+    dkg:evidenceType "human_note" ;
     dkg:evidenceText "Dependent arising is represented as the principle that phenomena appear through conditions and relationships." ;
     dkg:confidence "medium" ;
     dkg:sourceFile "data/seeds/giac_khang_pilot.json" .
@@ -518,7 +521,10 @@ dkge:evidence_giac_khang_middle_way_001
     dkg:name "Evidence: Middle Way avoids extremes" ;
     dkg:language "Vietnamese" ;
     dkg:locator "pilot-note-001#middle-way" ;
-    dkg:evidenceType "excerpt" ;
+    dkg:sourceKind "local_notes" ;
+    dkg:documentId "document_giac_khang_mvp_notes" ;
+    dkg:reviewStatus "human_reviewed" ;
+    dkg:evidenceType "human_note" ;
     dkg:evidenceText "The middle way is represented as avoiding fixed extremes while preserving practical conventional meaning." ;
     dkg:confidence "medium" ;
     dkg:sourceFile "data/seeds/giac_khang_pilot.json" .
@@ -528,10 +534,31 @@ dkge:evidence_giac_khang_sunyata_001
     dkg:name "Evidence: Sunyata as non-independent existence" ;
     dkg:language "Vietnamese" ;
     dkg:locator "pilot-note-001#sunyata" ;
-    dkg:evidenceType "excerpt" ;
+    dkg:sourceKind "local_notes" ;
+    dkg:documentId "document_giac_khang_mvp_notes" ;
+    dkg:reviewStatus "human_reviewed" ;
+    dkg:evidenceType "human_note" ;
     dkg:evidenceText "Emptiness is represented as the absence of independent, self-existing nature rather than simple nothingness." ;
     dkg:confidence "medium" ;
     dkg:sourceFile "data/seeds/giac_khang_pilot.json" .
+
+dkge:evidence_giac_khang_real_sample_001
+    a dkg:Evidence ;
+    dkg:name "Unreviewed Giac Khang transcript evidence sample" ;
+    dkg:language "Vietnamese" ;
+    dkg:locator "youtube-placeholder#t=00:00:00" ;
+    dkg:sourceKind "youtube" ;
+    dkg:sourceUrl "https://www.youtube.com/watch?v=placeholder_unreviewed" ;
+    dkg:documentId "document_giac_khang_mvp_notes" ;
+    dkg:startTime "00:00:00" ;
+    dkg:endTime "00:00:30" ;
+    dkg:speaker "Giac Khang" ;
+    dkg:reviewStatus "unreviewed" ;
+    dkg:notes "Unreviewed placeholder node for DKG-002. Do not treat as verified teaching evidence." ;
+    dkg:evidenceType "transcript_excerpt" ;
+    dkg:evidenceText "Placeholder transcript excerpt for DKG-002 schema validation. This text is not reviewed and must be replaced with a real transcript excerpt before use." ;
+    dkg:confidence "low" ;
+    dkg:sourceFile "data/seeds/giac_khang_real_evidence_sample.json" .
 
 dkge:person_nagarjuna
     a dkg:Person ;

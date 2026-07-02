@@ -129,7 +129,6 @@ class ValidateSeedDataTest(unittest.TestCase):
                 errors,
             )
 
-
     def test_evidence_first_node_types_and_relationships_pass(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             directory = Path(tmp)
@@ -162,6 +161,10 @@ class ValidateSeedDataTest(unittest.TestCase):
                             "id": "evidence_sample",
                             "type": "Evidence",
                             "name": "Sample Evidence",
+                            "evidence_text": "A sample human note.",
+                            "evidence_type": "human_note",
+                            "confidence": "medium",
+                            "review_status": "human_reviewed",
                         },
                         {
                             "id": "citation_sample",
@@ -279,6 +282,163 @@ class ValidateSeedDataTest(unittest.TestCase):
 
             self.assertTrue(
                 any("does not allow target type 'Concept'" in error for error in errors),
+                errors,
+            )
+
+    def test_valid_real_evidence_node_passes(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            directory = Path(tmp)
+            seed = self.write_seed(
+                directory,
+                "real_evidence.json",
+                {
+                    "nodes": [
+                        {
+                            "id": "evidence_real_sample",
+                            "type": "Evidence",
+                            "name": "Real Evidence Sample",
+                            "evidence_text": "A placeholder transcript excerpt.",
+                            "evidence_type": "transcript_excerpt",
+                            "language": "Vietnamese",
+                            "confidence": "low",
+                            "source_kind": "youtube",
+                            "source_url": "https://www.youtube.com/watch?v=sample",
+                            "document_id": "document_sample",
+                            "locator": "00:00:00-00:00:30",
+                            "start_time": "00:00:00",
+                            "end_time": "00:00:30",
+                            "speaker": "Giac Khang",
+                            "review_status": "unreviewed",
+                            "notes": "Unreviewed test fixture.",
+                        }
+                    ],
+                    "relationships": [],
+                },
+            )
+
+            self.assertEqual(validate_seed_files([seed]), [])
+
+    def test_evidence_required_fields_are_enforced(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            directory = Path(tmp)
+            seed = self.write_seed(
+                directory,
+                "missing_evidence_text.json",
+                {
+                    "nodes": [
+                        {
+                            "id": "evidence_missing_text",
+                            "type": "Evidence",
+                            "name": "Missing Text",
+                            "evidence_type": "human_note",
+                            "confidence": "medium",
+                            "review_status": "unreviewed",
+                        }
+                    ],
+                    "relationships": [],
+                },
+            )
+
+            errors = validate_seed_files([seed])
+
+            self.assertTrue(
+                any("Evidence missing required field: evidence_text" in error for error in errors),
+                errors,
+            )
+
+    def test_evidence_allowed_values_are_enforced(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            directory = Path(tmp)
+            seed = self.write_seed(
+                directory,
+                "bad_evidence_values.json",
+                {
+                    "nodes": [
+                        {
+                            "id": "evidence_bad_values",
+                            "type": "Evidence",
+                            "name": "Bad Values",
+                            "evidence_text": "A sample note.",
+                            "evidence_type": "excerpt",
+                            "confidence": "certain",
+                            "review_status": "done",
+                        }
+                    ],
+                    "relationships": [],
+                },
+            )
+
+            errors = validate_seed_files([seed])
+
+            self.assertTrue(
+                any("invalid evidence_type: excerpt" in error for error in errors),
+                errors,
+            )
+            self.assertTrue(
+                any("invalid confidence: certain" in error for error in errors),
+                errors,
+            )
+            self.assertTrue(
+                any("invalid review_status: done" in error for error in errors),
+                errors,
+            )
+
+    def test_transcript_evidence_requires_speaker(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            directory = Path(tmp)
+            seed = self.write_seed(
+                directory,
+                "transcript_without_speaker.json",
+                {
+                    "nodes": [
+                        {
+                            "id": "evidence_no_speaker",
+                            "type": "Evidence",
+                            "name": "No Speaker",
+                            "evidence_text": "A transcript excerpt.",
+                            "evidence_type": "transcript_excerpt",
+                            "confidence": "medium",
+                            "review_status": "unreviewed",
+                        }
+                    ],
+                    "relationships": [],
+                },
+            )
+
+            errors = validate_seed_files([seed])
+
+            self.assertTrue(
+                any("transcript_excerpt requires speaker" in error for error in errors),
+                errors,
+            )
+
+    def test_youtube_evidence_requires_source_url(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            directory = Path(tmp)
+            seed = self.write_seed(
+                directory,
+                "youtube_without_source_url.json",
+                {
+                    "nodes": [
+                        {
+                            "id": "evidence_no_source_url",
+                            "type": "Evidence",
+                            "name": "No Source URL",
+                            "evidence_text": "A human note.",
+                            "evidence_type": "human_note",
+                            "confidence": "medium",
+                            "review_status": "unreviewed",
+                            "source_kind": "youtube",
+                        }
+                    ],
+                    "relationships": [],
+                },
+            )
+
+            errors = validate_seed_files([seed])
+
+            self.assertTrue(
+                any("source_kind youtube requires source_url" in error for error in errors),
                 errors,
             )
 

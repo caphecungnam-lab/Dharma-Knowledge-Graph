@@ -54,6 +54,75 @@ RELATIONSHIP_TYPE_RULES = {
     "RELATED_TO": (KNOWN_NODE_TYPES, KNOWN_NODE_TYPES),
     "TRANSLATED_BY": ({"Text"}, {"Person"}),
 }
+REQUIRED_EVIDENCE_FIELDS = {
+    "evidence_text",
+    "evidence_type",
+    "confidence",
+    "review_status",
+}
+EVIDENCE_TYPE_VALUES = {
+    "transcript_excerpt",
+    "citation_excerpt",
+    "paraphrase",
+    "ai_summary",
+    "human_note",
+}
+CONFIDENCE_VALUES = {"low", "medium", "high"}
+REVIEW_STATUS_VALUES = {
+    "unreviewed",
+    "ai_processed",
+    "human_reviewed",
+    "verified",
+}
+
+
+def missing_or_empty(node: dict, field: str) -> bool:
+    value = node.get(field)
+    return value is None or value == ""
+
+
+def validate_evidence_node(path: Path, index: int, node: dict) -> list[str]:
+    errors: list[str] = []
+
+    for field in sorted(REQUIRED_EVIDENCE_FIELDS):
+        if missing_or_empty(node, field):
+            errors.append(
+                f"{path}: node {index} Evidence missing required field: {field}"
+            )
+
+    evidence_type = node.get("evidence_type")
+    if evidence_type and evidence_type not in EVIDENCE_TYPE_VALUES:
+        errors.append(
+            f"{path}: node {index} Evidence has invalid evidence_type: "
+            f"{evidence_type}"
+        )
+
+    confidence = node.get("confidence")
+    if confidence and confidence not in CONFIDENCE_VALUES:
+        errors.append(
+            f"{path}: node {index} Evidence has invalid confidence: {confidence}"
+        )
+
+    review_status = node.get("review_status")
+    if review_status and review_status not in REVIEW_STATUS_VALUES:
+        errors.append(
+            f"{path}: node {index} Evidence has invalid review_status: "
+            f"{review_status}"
+        )
+
+    if evidence_type == "transcript_excerpt" and missing_or_empty(node, "speaker"):
+        errors.append(
+            f"{path}: node {index} Evidence with transcript_excerpt "
+            "requires speaker"
+        )
+
+    if node.get("source_kind") == "youtube" and missing_or_empty(node, "source_url"):
+        errors.append(
+            f"{path}: node {index} Evidence with source_kind youtube "
+            "requires source_url"
+        )
+
+    return errors
 
 
 def load_seed_file(path: Path) -> tuple[dict, list[str]]:
@@ -129,6 +198,8 @@ def validate_seed_files(seed_files: list[Path]) -> list[str]:
                 errors.append(f"{path}: node {index} has non-string type")
             elif node_type not in TYPE_PREFIXES:
                 errors.append(f"{path}: node {index} has unknown type: {node_type}")
+            elif node_type == "Evidence":
+                errors.extend(validate_evidence_node(path, index, node))
 
     for path, data in loaded_files:
         for index, relationship in enumerate(data.get("relationships", [])):

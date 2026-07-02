@@ -1,133 +1,134 @@
-id:ID,:LABEL,name,description,category,pali,sanskrit,tradition,language,source,locator,url,notes,scope,source_type,document_type,evidence_type,evidence_text,confidence,source_file
-citation_dhammapada_1,Citation,Dhammapada 1,,,,,,,Dhammapada,Verse 1,,"Pilot citation for the relation between mind, intention, and suffering.",,,,,,,data/seeds/dhammapada.json
-citation_dhammapada_129,Citation,Dhammapada 129,,,,,,,Dhammapada,Verse 129,,Pilot citation for non-harming and empathy toward beings.,,,,,,,data/seeds/dhammapada.json
-citation_dhammapada_183,Citation,Dhammapada 183,,,,,,,Dhammapada,Verse 183,,"Pilot citation for ethical restraint, wholesome cultivation, and mental purification.",,,,,,,data/seeds/dhammapada.json
-citation_dhammapada_2,Citation,Dhammapada 2,,,,,,,Dhammapada,Verse 2,,"Pilot citation for the relation between mind, intention, and well-being.",,,,,,,data/seeds/dhammapada.json
-citation_dhammapada_21,Citation,Dhammapada 21,,,,,,,Dhammapada,Verse 21,,Pilot citation for heedfulness as a path quality.,,,,,,,data/seeds/dhammapada.json
-citation_dhammapada_277,Citation,Dhammapada 277,,,,,,,Dhammapada,Verse 277,,Pilot citation for impermanence.,,,,,,,data/seeds/dhammapada.json
-citation_dhammapada_279,Citation,Dhammapada 279,,,,,,,Dhammapada,Verse 279,,Pilot citation for not-self.,,,,,,,data/seeds/dhammapada.json
-citation_dhammapada_35,Citation,Dhammapada 35,,,,,,,Dhammapada,Verse 35,,Pilot citation for the training and restraint of mind.,,,,,,,data/seeds/dhammapada.json
-citation_dhammapada_5,Citation,Dhammapada 5,,,,,,,Dhammapada,Verse 5,,Pilot citation for non-hatred and reconciliation.,,,,,,,data/seeds/dhammapada.json
-citation_dhammapada_50,Citation,Dhammapada 50,,,,,,,Dhammapada,Verse 50,,Pilot citation for self-examination in ethical practice.,,,,,,,data/seeds/dhammapada.json
-citation_giac_khang_notes_pratityasamutpada,Citation,"Giac Khang notes, Dependent arising excerpt",,,,,,,Giac Khang MVP Notes,pilot-note-001#dependent-arising,,Pilot citation for evidence about dependent arising.,,,,,,,data/seeds/giac_khang_pilot.json
-citation_giac_khang_notes_middle_way,Citation,"Giac Khang notes, Middle Way excerpt",,,,,,,Giac Khang MVP Notes,pilot-note-001#middle-way,,Pilot citation for evidence about the middle way.,,,,,,,data/seeds/giac_khang_pilot.json
-citation_giac_khang_notes_sunyata,Citation,"Giac Khang notes, Sunyata excerpt",,,,,,,Giac Khang MVP Notes,pilot-note-001#sunyata,,Pilot citation for evidence about emptiness.,,,,,,,data/seeds/giac_khang_pilot.json
-citation_heart_sutra_dharmas,Citation,Heart Sutra Dharmas Passage,,,,,,,Heart Sutra,Dharmas and categories passage,,"Pilot citation for sense bases, elements, dependent arising categories, and the four truths.",,,,,,,data/seeds/heart_sutra.json
-citation_heart_sutra_mantra,Citation,Heart Sutra Mantra Passage,,,,,,,Heart Sutra,Mantra passage,,Pilot citation for mantra and prajnaparamita as a practice expression.,,,,,,,data/seeds/heart_sutra.json
-citation_heart_sutra_opening,Citation,Heart Sutra Opening,,,,,,,Heart Sutra,Opening scene,,"Pilot citation for Avalokitesvara, prajnaparamita, and the five aggregates.",,,,,,,data/seeds/heart_sutra.json
-citation_heart_sutra_skandhas,Citation,Heart Sutra Skandhas Passage,,,,,,,Heart Sutra,Five aggregates passage,,"Pilot citation for the relationship between form, the aggregates, and emptiness.",,,,,,,data/seeds/heart_sutra.json
-citation_mmkv_24_18,Citation,Mulamadhyamakakarika 24.18,,,,,,,Mulamadhyamakakarika,"Chapter 24, verse 18",,"Pilot citation for dependent designation, emptiness, and the middle way.",,,,,,,data/seeds/core.json
-citation_mmkv_24_19,Citation,Mulamadhyamakakarika 24.19,,,,,,,Mulamadhyamakakarika,"Chapter 24, verse 19",,Pilot citation for the relation between dependent arising and emptiness.,,,,,,,data/seeds/core.json
-citation_mmkv_25_19,Citation,Mulamadhyamakakarika 25.19,,,,,,,Mulamadhyamakakarika,"Chapter 25, verse 19",,Pilot citation for the relation between samsara and nirvana in Madhyamaka analysis.,,,,,,,data/seeds/core.json
-concept_ahimsa,Concept,Ahimsa,Non-harming; an ethical orientation of restraint from violence and injury.,ethics,avihimsa,ahimsa,,,,,,,,,,,,,data/seeds/dhammapada.json
-concept_anatta,Concept,Anatta,"Not-self; the absence of a permanent, independent self in conditioned phenomena.",doctrine,anatta,anatman,,,,,,,,,,,,,data/seeds/concepts.json
-concept_anicca,Concept,Anicca,Impermanence; the conditioned nature of phenomena as changing and unstable.,doctrine,anicca,anitya,,,,,,,,,,,,,data/seeds/concepts.json
-concept_appamada,Concept,Appamada,Heedfulness or diligent care in practice.,practice,appamada,apramada,,,,,,,,,,,,,data/seeds/dhammapada.json
-concept_avalokitesvara,Concept,Avalokitesvara,A bodhisattva associated with compassion and prominent in the Heart Sutra setting.,mahayana,,avalokitesvara,,,,,,,,,,,,,data/seeds/heart_sutra.json
-concept_avidya,Concept,Avidya,"Ignorance or misknowing, especially regarding the nature of reality and the path.",psychology,avijja,avidya,,,,,,,,,,,,,data/seeds/concepts.json
-concept_bodhicitta,Concept,Bodhicitta,The awakened mind or aspiration to attain awakening for the benefit of all beings.,mahayana,,bodhicitta,,,,,,,,,,,,,data/seeds/concepts.json
-concept_bodhisattva,Concept,Bodhisattva,"A being oriented toward awakening, especially for the liberation of all beings in Mahayana contexts.",mahayana,bodhisatta,bodhisattva,,,,,,,,,,,,,data/seeds/concepts.json
-concept_brahmaviharas,Concept,Brahmaviharas,"The four divine abodes: loving-kindness, compassion, sympathetic joy, and equanimity.",practice,brahmavihara,brahmavihara,,,,,,,,,,,,,data/seeds/concepts.json
-concept_citta,Concept,Citta,"Mind, heart, or mental orientation; a key term for understanding intention and experience.",psychology,citta,citta,,,,,,,,,,,,,data/seeds/dhammapada.json
-concept_dukkha,Concept,Dukkha,"A central Dharma concept often translated as suffering, unsatisfactoriness, or stress.",,dukkha,duhkha,,,,,,,,,,,,,data/seeds/core.json
-concept_dhatu,Concept,Elements,Elements or domains used to analyze experience and phenomena.,analysis,dhatu,dhatu,,,,,,,,,,,,,data/seeds/concepts.json
-concept_skandhas,Concept,Five Aggregates,"Form, feeling, perception, formations, and consciousness as a framework for analyzing experience.",analysis,khandha,skandha,,,,,,,,,,,,,data/seeds/concepts.json
-concept_form,Concept,Form,Material form; one of the five aggregates.,analysis,rupa,rupa,,,,,,,,,,,,,data/seeds/heart_sutra.json
-concept_four_noble_truths,Concept,Four Noble Truths,"The teaching of suffering, its origin, its cessation, and the path leading to cessation.",doctrine,cattari ariyasaccani,catvari aryasatyani,,,,,,,,,,,,,data/seeds/concepts.json
-concept_karma,Concept,Karma,Intentional action and its ethical consequences.,ethics,kamma,karma,,,,,,,,,,,,,data/seeds/concepts.json
-concept_karuna,Concept,Karuna,Compassion; the wish for beings to be free from suffering.,practice,karuna,karuna,,,,,,,,,,,,,data/seeds/concepts.json
-concept_klesha,Concept,Klesha,Afflictive mental states that disturb the mind and condition suffering.,psychology,kilesa,klesa,,,,,,,,,,,,,data/seeds/concepts.json
-concept_mantra,Concept,Mantra,A sacred utterance or formula used in contemplative and ritual contexts.,practice,,mantra,,,,,,,,,,,,,data/seeds/heart_sutra.json
-concept_metta,Concept,Metta,Loving-kindness; the cultivation of goodwill and friendliness.,practice,metta,maitri,,,,,,,,,,,,,data/seeds/concepts.json
-concept_middle_way,Concept,Middle Way,"A path avoiding extremes, often framed as avoiding indulgence and self-mortification or eternalism and nihilism.",practice,majjhima patipada,madhyama pratipad,,,,,,,,,,,,,data/seeds/concepts.json
-concept_mudita,Concept,Mudita,Sympathetic joy; delight in the welfare and happiness of others.,practice,mudita,mudita,,,,,,,,,,,,,data/seeds/concepts.json
-concept_nirvana,Concept,Nirvana,"Liberation; the extinguishing of greed, hatred, and delusion.",liberation,nibbana,nirvana,,,,,,,,,,,,,data/seeds/concepts.json
-concept_noble_eightfold_path,Concept,Noble Eightfold Path,"The path of right view, intention, speech, action, livelihood, effort, mindfulness, and concentration.",practice,ariya atthangika magga,arya astangika marga,,,,,,,,,,,,,data/seeds/concepts.json
-concept_paramita,Concept,Paramita,Perfection or transcendent virtue cultivated on the bodhisattva path.,mahayana,parami,paramita,,,,,,,,,,,,,data/seeds/concepts.json
-concept_prajna,Concept,Prajna,Wisdom or liberating insight into the nature of phenomena.,wisdom,panna,prajna,,,,,,,,,,,,,data/seeds/concepts.json
-concept_prajnaparamita,Concept,Prajnaparamita,The perfection of wisdom; a central theme in Mahayana sutra literature.,mahayana,,prajnaparamita,,,,,,,,,,,,,data/seeds/heart_sutra.json
-concept_pratityasamutpada,Concept,Pratityasamutpada,Dependent arising; the principle that phenomena arise in dependence on causes and conditions.,doctrine,paticcasamuppada,pratityasamutpada,,,,,,,,,,,,,data/seeds/concepts.json
-concept_samadhi,Concept,Samadhi,"Collectedness, concentration, or meditative absorption.",practice,samadhi,samadhi,,,,,,,,,,,,,data/seeds/concepts.json
-concept_samsara,Concept,Samsara,"The cycle of birth, death, and rebirth conditioned by ignorance and craving.",cosmology,samsara,samsara,,,,,,,,,,,,,data/seeds/concepts.json
-concept_sila,Concept,Sila,Ethical conduct or moral discipline.,ethics,sila,sila,,,,,,,,,,,,,data/seeds/concepts.json
-concept_ayatana,Concept,Six Sense Bases,The internal and external sense bases involved in perceptual experience.,analysis,ayatana,ayatana,,,,,,,,,,,,,data/seeds/concepts.json
-concept_sunyata,Concept,Sunyata,A Mahayana concept commonly translated as emptiness.,,,sunyata,,,,,,,,,,,,,data/seeds/core.json
-concept_tanha,Concept,Tanha,Craving or thirst; a central condition in the arising of suffering.,psychology,tanha,trsna,,,,,,,,,,,,,data/seeds/concepts.json
-concept_three_marks,Concept,Three Marks of Existence,"The marks of impermanence, suffering or unsatisfactoriness, and not-self.",doctrine,tilakkhana,trilaksana,,,,,,,,,,,,,data/seeds/concepts.json
-concept_two_truths,Concept,Two Truths,The distinction between conventional truth and ultimate truth.,mahayana,,satya-dvaya,,,,,,,,,,,,,data/seeds/concepts.json
-concept_upekkha,Concept,Upekkha,Equanimity; balanced presence toward changing experience.,practice,upekkha,upeksa,,,,,,,,,,,,,data/seeds/concepts.json
-corpus_giac_khang_pilot,Corpus,Giac Khang Pilot Corpus,A bounded pilot corpus for testing evidence-first Dharma Knowledge Graph ingestion.,,,,,Vietnamese,,,,,21-day MVP evidence-first pilot,,,,,,data/seeds/giac_khang_pilot.json
-document_giac_khang_mvp_notes,Document,Giac Khang MVP Notes,A single pilot document used to test document-to-evidence modeling.,,,,,Vietnamese,,pilot-note-001,,,,,study_note,,,,data/seeds/giac_khang_pilot.json
-evidence_giac_khang_pratityasamutpada_001,Evidence,Evidence: Dependent arising as relational explanation,,,,,,Vietnamese,,pilot-note-001#dependent-arising,,,,,,excerpt,Dependent arising is represented as the principle that phenomena appear through conditions and relationships.,medium,data/seeds/giac_khang_pilot.json
-evidence_giac_khang_middle_way_001,Evidence,Evidence: Middle Way avoids extremes,,,,,,Vietnamese,,pilot-note-001#middle-way,,,,,,excerpt,The middle way is represented as avoiding fixed extremes while preserving practical conventional meaning.,medium,data/seeds/giac_khang_pilot.json
-evidence_giac_khang_sunyata_001,Evidence,Evidence: Sunyata as non-independent existence,,,,,,Vietnamese,,pilot-note-001#sunyata,,,,,,excerpt,"Emptiness is represented as the absence of independent, self-existing nature rather than simple nothingness.",medium,data/seeds/giac_khang_pilot.json
-person_nagarjuna,Person,Nagarjuna,A major Buddhist philosopher associated with Madhyamaka.,,,,Mahayana,,,,,,,,,,,,data/seeds/core.json
-place_bodh_gaya,Place,Bodh Gaya,A major Buddhist pilgrimage place associated with the Buddha's awakening.,,,,,,,,,,,,,,,,data/seeds/places_traditions.json
-place_gandhara,Place,Gandhara,A historical Buddhist region important for textual and artistic transmission.,,,,,,,,,,,,,,,,data/seeds/places_traditions.json
-place_magadha,Place,Magadha,An ancient region important in early Buddhist history.,,,,,,,,,,,,,,,,data/seeds/places_traditions.json
-place_nalanda,Place,Nalanda,A historic center of Buddhist monastic learning.,,,,,,,,,,,,,,,,data/seeds/places_traditions.json
-place_sarnath,Place,Sarnath,A major Buddhist pilgrimage place associated with the first teaching.,,,,,,,,,,,,,,,,data/seeds/places_traditions.json
-place_sri_lanka,Place,Sri Lanka,A major historical center for Theravada Buddhist transmission.,,,,,,,,,,,,,,,,data/seeds/places_traditions.json
-school_early_buddhism,School,Early Buddhism,A working category for early Buddhist teachings and textual layers.,,,,,,,,,,,,,,,,data/seeds/places_traditions.json
-school_madhyamaka,School,Madhyamaka,A Mahayana philosophical school associated with analysis of emptiness.,,,,,,,,,,,,,,,,data/seeds/core.json
-school_mahayana,School,Mahayana,A broad family of Buddhist traditions emphasizing the bodhisattva path.,,,,,,,,,,,,,,,,data/seeds/places_traditions.json
-school_pali_canon,School,Pali Canon,A textual tradition preserving canonical materials in Pali.,,,,,,,,,,,,,,,,data/seeds/places_traditions.json
-school_theravada,School,Theravada,A Buddhist tradition preserving the Pali Canon.,,,,,,,,,,,,,,,,data/seeds/core.json
-source_giac_khang_notes,Source,Giac Khang Study Notes,"Pilot source material used to model evidence before API, embeddings, or LLM extraction.",,,,,Vietnamese,,,,,,local_notes,,,,,data/seeds/giac_khang_pilot.json
-term_ahimsa_sanskrit,Term,ahimsa,,,,,,Sanskrit,,,,Sanskrit term for non-harming.,,,,,,,data/seeds/terms_remaining.json
-term_anatman_sanskrit,Term,anatman,,,,,,Sanskrit,,,,Sanskrit form corresponding to Pali anatta.,,,,,,,data/seeds/terms.json
-term_anatta_pali,Term,anatta,,,,,,Pali,,,,Pali form used for the doctrine of not-self.,,,,,,,data/seeds/terms.json
-term_anicca_pali,Term,anicca,,,,,,Pali,,,,Pali form used for impermanence.,,,,,,,data/seeds/terms.json
-term_anitya_sanskrit,Term,anitya,,,,,,Sanskrit,,,,Sanskrit form used for impermanence.,,,,,,,data/seeds/terms.json
-term_appamada_pali,Term,appamada,,,,,,Pali,,,,A central practice quality highlighted in the Dhammapada.,,,,,,,data/seeds/terms.json
-term_ariya_atthangika_magga_pali,Term,ariya atthangika magga,,,,,,Pali,,,,Pali phrase for the Noble Eightfold Path.,,,,,,,data/seeds/terms_remaining.json
-term_arya_astangika_marga_sanskrit,Term,arya astangika marga,,,,,,Sanskrit,,,,Sanskrit phrase for the Noble Eightfold Path.,,,,,,,data/seeds/terms_remaining.json
-term_avalokitesvara_sanskrit,Term,avalokitesvara,,,,,,Sanskrit,,,,Sanskrit name of the bodhisattva associated with compassion.,,,,,,,data/seeds/terms_remaining.json
-term_avidya_sanskrit,Term,avidya,,,,,,Sanskrit,,,,Sanskrit term for ignorance or misknowing.,,,,,,,data/seeds/terms_extended.json
-term_avihimsa_pali,Term,avihimsa,,,,,,Pali,,,,Pali term related to non-harming.,,,,,,,data/seeds/terms_remaining.json
-term_avijja_pali,Term,avijja,,,,,,Pali,,,,Pali term for ignorance or misknowing.,,,,,,,data/seeds/terms_extended.json
-term_ayatana_pali,Term,ayatana,,,,,,Pali,,,,Pali and Sanskrit term for sense base.,,,,,,,data/seeds/terms_extended.json
-term_bodhicitta_sanskrit,Term,bodhicitta,,,,,,Sanskrit,,,,Sanskrit term for the awakened mind or aspiration toward awakening.,,,,,,,data/seeds/terms_extended.json
-term_bodhisattva_sanskrit,Term,bodhisattva,,,,,,Sanskrit,,,,Sanskrit term for a being oriented toward awakening.,,,,,,,data/seeds/terms_extended.json
-term_brahmavihara_pali,Term,brahmavihara,,,,,,Pali,,,,Pali term for the divine abodes.,,,,,,,data/seeds/terms_remaining.json
-term_cattari_ariyasaccani_pali,Term,cattari ariyasaccani,,,,,,Pali,,,,Pali phrase for the Four Noble Truths.,,,,,,,data/seeds/terms_remaining.json
-term_catvari_aryasatyani_sanskrit,Term,catvari aryasatyani,,,,,,Sanskrit,,,,Sanskrit phrase for the Four Noble Truths.,,,,,,,data/seeds/terms_remaining.json
-term_citta_pali,Term,citta,,,,,,Pali,,,,"A term for mind, heart, or mental orientation.",,,,,,,data/seeds/terms.json
-term_dhatu_pali,Term,dhatu,,,,,,Pali,,,,Pali and Sanskrit term for element or domain.,,,,,,,data/seeds/terms_extended.json
-term_duhkha_sanskrit,Term,duhkha,,,,,,Sanskrit,,,,Sanskrit cognate of Pali dukkha.,,,,,,,data/seeds/terms.json
-term_dukkha_pali,Term,dukkha,,,,,,Pali,,,,A core Pali term in the analysis of conditioned experience.,,,,,,,data/seeds/terms.json
-term_kamma_pali,Term,kamma,,,,,,Pali,,,,Pali form corresponding to Sanskrit karma.,,,,,,,data/seeds/terms_extended.json
-term_karma_sanskrit,Term,karma,,,,,,Sanskrit,,,,Sanskrit form for intentional action and its consequences.,,,,,,,data/seeds/terms_extended.json
-term_karuna_pali,Term,karuna,,,,,,Pali,,,,Pali and Sanskrit term for compassion.,,,,,,,data/seeds/terms.json
-term_kilesa_pali,Term,kilesa,,,,,,Pali,,,,Pali term for afflictive mental states.,,,,,,,data/seeds/terms_remaining.json
-term_klesa_sanskrit,Term,klesa,,,,,,Sanskrit,,,,Sanskrit term for afflictive mental states.,,,,,,,data/seeds/terms_remaining.json
-term_madhyama_pratipad_sanskrit,Term,madhyama pratipad,,,,,,Sanskrit,,,,Sanskrit phrase for the middle way.,,,,,,,data/seeds/terms_remaining.json
-term_majjhima_patipada_pali,Term,majjhima patipada,,,,,,Pali,,,,Pali phrase for the middle way.,,,,,,,data/seeds/terms_remaining.json
-term_mantra_sanskrit,Term,mantra,,,,,,Sanskrit,,,,Sanskrit term for a sacred utterance or formula.,,,,,,,data/seeds/terms_extended.json
-term_metta_pali,Term,metta,,,,,,Pali,,,,Pali term for loving-kindness.,,,,,,,data/seeds/terms.json
-term_mudita_pali,Term,mudita,,,,,,Pali,,,,Pali and Sanskrit term for sympathetic joy.,,,,,,,data/seeds/terms_remaining.json
-term_nibbana_pali,Term,nibbana,,,,,,Pali,,,,Pali term commonly rendered as nirvana.,,,,,,,data/seeds/terms.json
-term_nirvana_sanskrit,Term,nirvana,,,,,,Sanskrit,,,,Sanskrit form corresponding to Pali nibbana.,,,,,,,data/seeds/terms.json
-term_panna_pali,Term,panna,,,,,,Pali,,,,Pali term corresponding to Sanskrit prajna.,,,,,,,data/seeds/terms_extended.json
-term_paramita_sanskrit,Term,paramita,,,,,,Sanskrit,,,,Sanskrit term for perfection or transcendent virtue.,,,,,,,data/seeds/terms_extended.json
-term_paticcasamuppada_pali,Term,paticcasamuppada,,,,,,Pali,,,,Pali term for dependent arising.,,,,,,,data/seeds/terms.json
-term_prajna_sanskrit,Term,prajna,,,,,,Sanskrit,,,,Sanskrit term for wisdom or liberating insight.,,,,,,,data/seeds/terms_extended.json
-term_prajnaparamita_sanskrit,Term,prajnaparamita,,,,,,Sanskrit,,,,Sanskrit term for the perfection of wisdom.,,,,,,,data/seeds/terms_extended.json
-term_pratityasamutpada_sanskrit,Term,pratityasamutpada,,,,,,Sanskrit,,,,Sanskrit term for dependent arising.,,,,,,,data/seeds/terms.json
-term_rupa_pali,Term,rupa,,,,,,Pali,,,,Pali and Sanskrit term for form.,,,,,,,data/seeds/terms_extended.json
-term_samadhi_pali,Term,samadhi,,,,,,Pali,,,,Pali and Sanskrit term for meditative collectedness.,,,,,,,data/seeds/terms_extended.json
-term_samsara_pali,Term,samsara,,,,,,Pali,,,,Pali form for the cycle of conditioned existence.,,,,,,,data/seeds/terms_extended.json
-term_satya_dvaya_sanskrit,Term,satya-dvaya,,,,,,Sanskrit,,,,Sanskrit phrase for the two truths.,,,,,,,data/seeds/terms_remaining.json
-term_sila_pali,Term,sila,,,,,,Pali,,,,Pali term for moral discipline or ethical conduct.,,,,,,,data/seeds/terms_extended.json
-term_skandha_sanskrit,Term,skandha,,,,,,Sanskrit,,,,Sanskrit term for aggregate.,,,,,,,data/seeds/terms_extended.json
-term_sunyata_sanskrit,Term,sunyata,,,,,,Sanskrit,,,,"A key Mahayana term, especially important in Madhyamaka contexts.",,,,,,,data/seeds/terms.json
-term_tanha_pali,Term,tanha,,,,,,Pali,,,,Pali term for craving.,,,,,,,data/seeds/terms_extended.json
-term_tilakkhana_pali,Term,tilakkhana,,,,,,Pali,,,,Pali term for the three marks of existence.,,,,,,,data/seeds/terms_remaining.json
-term_trilaksana_sanskrit,Term,trilaksana,,,,,,Sanskrit,,,,Sanskrit term for the three marks of existence.,,,,,,,data/seeds/terms_remaining.json
-term_trsna_sanskrit,Term,trsna,,,,,,Sanskrit,,,,Sanskrit term corresponding to Pali tanha.,,,,,,,data/seeds/terms_extended.json
-term_upekkha_pali,Term,upekkha,,,,,,Pali,,,,Pali term for equanimity.,,,,,,,data/seeds/terms_remaining.json
-term_upeksa_sanskrit,Term,upeksa,,,,,,Sanskrit,,,,Sanskrit term corresponding to Pali upekkha.,,,,,,,data/seeds/terms_remaining.json
-text_dhammapada,Text,Dhammapada,"A collection of verses from the Pali Canon, traditionally arranged into 26 chapters.",,,,Theravada,Pali,,,,,,,,,,,data/seeds/dhammapada.json
-text_heart_sutra,Text,Heart Sutra,A short Mahayana sutra associated with the perfection of wisdom literature and the teaching of emptiness.,,,,Mahayana,Sanskrit,,,,,,,,,,,data/seeds/heart_sutra.json
-text_mulamadhyamakakarika,Text,Mulamadhyamakakarika,A foundational Madhyamaka text attributed to Nagarjuna.,,,,Mahayana,Sanskrit,,,,,,,,,,,data/seeds/core.json
-work_giac_khang_pilot_teachings,Work,Giac Khang Pilot Teachings,A pilot work grouping selected notes for the evidence-first MVP.,,,,,Vietnamese,,,,,,,,,,,data/seeds/giac_khang_pilot.json
+id:ID,:LABEL,name,description,category,pali,sanskrit,tradition,language,source,locator,source_kind,source_url,document_id,start_time,end_time,speaker,review_status,url,notes,scope,source_type,document_type,evidence_type,evidence_text,confidence,source_file
+citation_dhammapada_1,Citation,Dhammapada 1,,,,,,,Dhammapada,Verse 1,,,,,,,,,"Pilot citation for the relation between mind, intention, and suffering.",,,,,,,data/seeds/dhammapada.json
+citation_dhammapada_129,Citation,Dhammapada 129,,,,,,,Dhammapada,Verse 129,,,,,,,,,Pilot citation for non-harming and empathy toward beings.,,,,,,,data/seeds/dhammapada.json
+citation_dhammapada_183,Citation,Dhammapada 183,,,,,,,Dhammapada,Verse 183,,,,,,,,,"Pilot citation for ethical restraint, wholesome cultivation, and mental purification.",,,,,,,data/seeds/dhammapada.json
+citation_dhammapada_2,Citation,Dhammapada 2,,,,,,,Dhammapada,Verse 2,,,,,,,,,"Pilot citation for the relation between mind, intention, and well-being.",,,,,,,data/seeds/dhammapada.json
+citation_dhammapada_21,Citation,Dhammapada 21,,,,,,,Dhammapada,Verse 21,,,,,,,,,Pilot citation for heedfulness as a path quality.,,,,,,,data/seeds/dhammapada.json
+citation_dhammapada_277,Citation,Dhammapada 277,,,,,,,Dhammapada,Verse 277,,,,,,,,,Pilot citation for impermanence.,,,,,,,data/seeds/dhammapada.json
+citation_dhammapada_279,Citation,Dhammapada 279,,,,,,,Dhammapada,Verse 279,,,,,,,,,Pilot citation for not-self.,,,,,,,data/seeds/dhammapada.json
+citation_dhammapada_35,Citation,Dhammapada 35,,,,,,,Dhammapada,Verse 35,,,,,,,,,Pilot citation for the training and restraint of mind.,,,,,,,data/seeds/dhammapada.json
+citation_dhammapada_5,Citation,Dhammapada 5,,,,,,,Dhammapada,Verse 5,,,,,,,,,Pilot citation for non-hatred and reconciliation.,,,,,,,data/seeds/dhammapada.json
+citation_dhammapada_50,Citation,Dhammapada 50,,,,,,,Dhammapada,Verse 50,,,,,,,,,Pilot citation for self-examination in ethical practice.,,,,,,,data/seeds/dhammapada.json
+citation_giac_khang_notes_pratityasamutpada,Citation,"Giac Khang notes, Dependent arising excerpt",,,,,,,Giac Khang MVP Notes,pilot-note-001#dependent-arising,,,,,,,,,Pilot citation for evidence about dependent arising.,,,,,,,data/seeds/giac_khang_pilot.json
+citation_giac_khang_notes_middle_way,Citation,"Giac Khang notes, Middle Way excerpt",,,,,,,Giac Khang MVP Notes,pilot-note-001#middle-way,,,,,,,,,Pilot citation for evidence about the middle way.,,,,,,,data/seeds/giac_khang_pilot.json
+citation_giac_khang_notes_sunyata,Citation,"Giac Khang notes, Sunyata excerpt",,,,,,,Giac Khang MVP Notes,pilot-note-001#sunyata,,,,,,,,,Pilot citation for evidence about emptiness.,,,,,,,data/seeds/giac_khang_pilot.json
+citation_heart_sutra_dharmas,Citation,Heart Sutra Dharmas Passage,,,,,,,Heart Sutra,Dharmas and categories passage,,,,,,,,,"Pilot citation for sense bases, elements, dependent arising categories, and the four truths.",,,,,,,data/seeds/heart_sutra.json
+citation_heart_sutra_mantra,Citation,Heart Sutra Mantra Passage,,,,,,,Heart Sutra,Mantra passage,,,,,,,,,Pilot citation for mantra and prajnaparamita as a practice expression.,,,,,,,data/seeds/heart_sutra.json
+citation_heart_sutra_opening,Citation,Heart Sutra Opening,,,,,,,Heart Sutra,Opening scene,,,,,,,,,"Pilot citation for Avalokitesvara, prajnaparamita, and the five aggregates.",,,,,,,data/seeds/heart_sutra.json
+citation_heart_sutra_skandhas,Citation,Heart Sutra Skandhas Passage,,,,,,,Heart Sutra,Five aggregates passage,,,,,,,,,"Pilot citation for the relationship between form, the aggregates, and emptiness.",,,,,,,data/seeds/heart_sutra.json
+citation_mmkv_24_18,Citation,Mulamadhyamakakarika 24.18,,,,,,,Mulamadhyamakakarika,"Chapter 24, verse 18",,,,,,,,,"Pilot citation for dependent designation, emptiness, and the middle way.",,,,,,,data/seeds/core.json
+citation_mmkv_24_19,Citation,Mulamadhyamakakarika 24.19,,,,,,,Mulamadhyamakakarika,"Chapter 24, verse 19",,,,,,,,,Pilot citation for the relation between dependent arising and emptiness.,,,,,,,data/seeds/core.json
+citation_mmkv_25_19,Citation,Mulamadhyamakakarika 25.19,,,,,,,Mulamadhyamakakarika,"Chapter 25, verse 19",,,,,,,,,Pilot citation for the relation between samsara and nirvana in Madhyamaka analysis.,,,,,,,data/seeds/core.json
+concept_ahimsa,Concept,Ahimsa,Non-harming; an ethical orientation of restraint from violence and injury.,ethics,avihimsa,ahimsa,,,,,,,,,,,,,,,,,,,,data/seeds/dhammapada.json
+concept_anatta,Concept,Anatta,"Not-self; the absence of a permanent, independent self in conditioned phenomena.",doctrine,anatta,anatman,,,,,,,,,,,,,,,,,,,,data/seeds/concepts.json
+concept_anicca,Concept,Anicca,Impermanence; the conditioned nature of phenomena as changing and unstable.,doctrine,anicca,anitya,,,,,,,,,,,,,,,,,,,,data/seeds/concepts.json
+concept_appamada,Concept,Appamada,Heedfulness or diligent care in practice.,practice,appamada,apramada,,,,,,,,,,,,,,,,,,,,data/seeds/dhammapada.json
+concept_avalokitesvara,Concept,Avalokitesvara,A bodhisattva associated with compassion and prominent in the Heart Sutra setting.,mahayana,,avalokitesvara,,,,,,,,,,,,,,,,,,,,data/seeds/heart_sutra.json
+concept_avidya,Concept,Avidya,"Ignorance or misknowing, especially regarding the nature of reality and the path.",psychology,avijja,avidya,,,,,,,,,,,,,,,,,,,,data/seeds/concepts.json
+concept_bodhicitta,Concept,Bodhicitta,The awakened mind or aspiration to attain awakening for the benefit of all beings.,mahayana,,bodhicitta,,,,,,,,,,,,,,,,,,,,data/seeds/concepts.json
+concept_bodhisattva,Concept,Bodhisattva,"A being oriented toward awakening, especially for the liberation of all beings in Mahayana contexts.",mahayana,bodhisatta,bodhisattva,,,,,,,,,,,,,,,,,,,,data/seeds/concepts.json
+concept_brahmaviharas,Concept,Brahmaviharas,"The four divine abodes: loving-kindness, compassion, sympathetic joy, and equanimity.",practice,brahmavihara,brahmavihara,,,,,,,,,,,,,,,,,,,,data/seeds/concepts.json
+concept_citta,Concept,Citta,"Mind, heart, or mental orientation; a key term for understanding intention and experience.",psychology,citta,citta,,,,,,,,,,,,,,,,,,,,data/seeds/dhammapada.json
+concept_dukkha,Concept,Dukkha,"A central Dharma concept often translated as suffering, unsatisfactoriness, or stress.",,dukkha,duhkha,,,,,,,,,,,,,,,,,,,,data/seeds/core.json
+concept_dhatu,Concept,Elements,Elements or domains used to analyze experience and phenomena.,analysis,dhatu,dhatu,,,,,,,,,,,,,,,,,,,,data/seeds/concepts.json
+concept_skandhas,Concept,Five Aggregates,"Form, feeling, perception, formations, and consciousness as a framework for analyzing experience.",analysis,khandha,skandha,,,,,,,,,,,,,,,,,,,,data/seeds/concepts.json
+concept_form,Concept,Form,Material form; one of the five aggregates.,analysis,rupa,rupa,,,,,,,,,,,,,,,,,,,,data/seeds/heart_sutra.json
+concept_four_noble_truths,Concept,Four Noble Truths,"The teaching of suffering, its origin, its cessation, and the path leading to cessation.",doctrine,cattari ariyasaccani,catvari aryasatyani,,,,,,,,,,,,,,,,,,,,data/seeds/concepts.json
+concept_karma,Concept,Karma,Intentional action and its ethical consequences.,ethics,kamma,karma,,,,,,,,,,,,,,,,,,,,data/seeds/concepts.json
+concept_karuna,Concept,Karuna,Compassion; the wish for beings to be free from suffering.,practice,karuna,karuna,,,,,,,,,,,,,,,,,,,,data/seeds/concepts.json
+concept_klesha,Concept,Klesha,Afflictive mental states that disturb the mind and condition suffering.,psychology,kilesa,klesa,,,,,,,,,,,,,,,,,,,,data/seeds/concepts.json
+concept_mantra,Concept,Mantra,A sacred utterance or formula used in contemplative and ritual contexts.,practice,,mantra,,,,,,,,,,,,,,,,,,,,data/seeds/heart_sutra.json
+concept_metta,Concept,Metta,Loving-kindness; the cultivation of goodwill and friendliness.,practice,metta,maitri,,,,,,,,,,,,,,,,,,,,data/seeds/concepts.json
+concept_middle_way,Concept,Middle Way,"A path avoiding extremes, often framed as avoiding indulgence and self-mortification or eternalism and nihilism.",practice,majjhima patipada,madhyama pratipad,,,,,,,,,,,,,,,,,,,,data/seeds/concepts.json
+concept_mudita,Concept,Mudita,Sympathetic joy; delight in the welfare and happiness of others.,practice,mudita,mudita,,,,,,,,,,,,,,,,,,,,data/seeds/concepts.json
+concept_nirvana,Concept,Nirvana,"Liberation; the extinguishing of greed, hatred, and delusion.",liberation,nibbana,nirvana,,,,,,,,,,,,,,,,,,,,data/seeds/concepts.json
+concept_noble_eightfold_path,Concept,Noble Eightfold Path,"The path of right view, intention, speech, action, livelihood, effort, mindfulness, and concentration.",practice,ariya atthangika magga,arya astangika marga,,,,,,,,,,,,,,,,,,,,data/seeds/concepts.json
+concept_paramita,Concept,Paramita,Perfection or transcendent virtue cultivated on the bodhisattva path.,mahayana,parami,paramita,,,,,,,,,,,,,,,,,,,,data/seeds/concepts.json
+concept_prajna,Concept,Prajna,Wisdom or liberating insight into the nature of phenomena.,wisdom,panna,prajna,,,,,,,,,,,,,,,,,,,,data/seeds/concepts.json
+concept_prajnaparamita,Concept,Prajnaparamita,The perfection of wisdom; a central theme in Mahayana sutra literature.,mahayana,,prajnaparamita,,,,,,,,,,,,,,,,,,,,data/seeds/heart_sutra.json
+concept_pratityasamutpada,Concept,Pratityasamutpada,Dependent arising; the principle that phenomena arise in dependence on causes and conditions.,doctrine,paticcasamuppada,pratityasamutpada,,,,,,,,,,,,,,,,,,,,data/seeds/concepts.json
+concept_samadhi,Concept,Samadhi,"Collectedness, concentration, or meditative absorption.",practice,samadhi,samadhi,,,,,,,,,,,,,,,,,,,,data/seeds/concepts.json
+concept_samsara,Concept,Samsara,"The cycle of birth, death, and rebirth conditioned by ignorance and craving.",cosmology,samsara,samsara,,,,,,,,,,,,,,,,,,,,data/seeds/concepts.json
+concept_sila,Concept,Sila,Ethical conduct or moral discipline.,ethics,sila,sila,,,,,,,,,,,,,,,,,,,,data/seeds/concepts.json
+concept_ayatana,Concept,Six Sense Bases,The internal and external sense bases involved in perceptual experience.,analysis,ayatana,ayatana,,,,,,,,,,,,,,,,,,,,data/seeds/concepts.json
+concept_sunyata,Concept,Sunyata,A Mahayana concept commonly translated as emptiness.,,,sunyata,,,,,,,,,,,,,,,,,,,,data/seeds/core.json
+concept_tanha,Concept,Tanha,Craving or thirst; a central condition in the arising of suffering.,psychology,tanha,trsna,,,,,,,,,,,,,,,,,,,,data/seeds/concepts.json
+concept_three_marks,Concept,Three Marks of Existence,"The marks of impermanence, suffering or unsatisfactoriness, and not-self.",doctrine,tilakkhana,trilaksana,,,,,,,,,,,,,,,,,,,,data/seeds/concepts.json
+concept_two_truths,Concept,Two Truths,The distinction between conventional truth and ultimate truth.,mahayana,,satya-dvaya,,,,,,,,,,,,,,,,,,,,data/seeds/concepts.json
+concept_upekkha,Concept,Upekkha,Equanimity; balanced presence toward changing experience.,practice,upekkha,upeksa,,,,,,,,,,,,,,,,,,,,data/seeds/concepts.json
+corpus_giac_khang_pilot,Corpus,Giac Khang Pilot Corpus,A bounded pilot corpus for testing evidence-first Dharma Knowledge Graph ingestion.,,,,,Vietnamese,,,,,,,,,,,,21-day MVP evidence-first pilot,,,,,,data/seeds/giac_khang_pilot.json
+document_giac_khang_mvp_notes,Document,Giac Khang MVP Notes,A single pilot document used to test document-to-evidence modeling.,,,,,Vietnamese,,pilot-note-001,,,,,,,,,,,,study_note,,,,data/seeds/giac_khang_pilot.json
+evidence_giac_khang_pratityasamutpada_001,Evidence,Evidence: Dependent arising as relational explanation,,,,,,Vietnamese,,pilot-note-001#dependent-arising,local_notes,,document_giac_khang_mvp_notes,,,,human_reviewed,,,,,,human_note,Dependent arising is represented as the principle that phenomena appear through conditions and relationships.,medium,data/seeds/giac_khang_pilot.json
+evidence_giac_khang_middle_way_001,Evidence,Evidence: Middle Way avoids extremes,,,,,,Vietnamese,,pilot-note-001#middle-way,local_notes,,document_giac_khang_mvp_notes,,,,human_reviewed,,,,,,human_note,The middle way is represented as avoiding fixed extremes while preserving practical conventional meaning.,medium,data/seeds/giac_khang_pilot.json
+evidence_giac_khang_sunyata_001,Evidence,Evidence: Sunyata as non-independent existence,,,,,,Vietnamese,,pilot-note-001#sunyata,local_notes,,document_giac_khang_mvp_notes,,,,human_reviewed,,,,,,human_note,"Emptiness is represented as the absence of independent, self-existing nature rather than simple nothingness.",medium,data/seeds/giac_khang_pilot.json
+evidence_giac_khang_real_sample_001,Evidence,Unreviewed Giac Khang transcript evidence sample,,,,,,Vietnamese,,youtube-placeholder#t=00:00:00,youtube,https://www.youtube.com/watch?v=placeholder_unreviewed,document_giac_khang_mvp_notes,00:00:00,00:00:30,Giac Khang,unreviewed,,Unreviewed placeholder node for DKG-002. Do not treat as verified teaching evidence.,,,,transcript_excerpt,Placeholder transcript excerpt for DKG-002 schema validation. This text is not reviewed and must be replaced with a real transcript excerpt before use.,low,data/seeds/giac_khang_real_evidence_sample.json
+person_nagarjuna,Person,Nagarjuna,A major Buddhist philosopher associated with Madhyamaka.,,,,Mahayana,,,,,,,,,,,,,,,,,,,data/seeds/core.json
+place_bodh_gaya,Place,Bodh Gaya,A major Buddhist pilgrimage place associated with the Buddha's awakening.,,,,,,,,,,,,,,,,,,,,,,,data/seeds/places_traditions.json
+place_gandhara,Place,Gandhara,A historical Buddhist region important for textual and artistic transmission.,,,,,,,,,,,,,,,,,,,,,,,data/seeds/places_traditions.json
+place_magadha,Place,Magadha,An ancient region important in early Buddhist history.,,,,,,,,,,,,,,,,,,,,,,,data/seeds/places_traditions.json
+place_nalanda,Place,Nalanda,A historic center of Buddhist monastic learning.,,,,,,,,,,,,,,,,,,,,,,,data/seeds/places_traditions.json
+place_sarnath,Place,Sarnath,A major Buddhist pilgrimage place associated with the first teaching.,,,,,,,,,,,,,,,,,,,,,,,data/seeds/places_traditions.json
+place_sri_lanka,Place,Sri Lanka,A major historical center for Theravada Buddhist transmission.,,,,,,,,,,,,,,,,,,,,,,,data/seeds/places_traditions.json
+school_early_buddhism,School,Early Buddhism,A working category for early Buddhist teachings and textual layers.,,,,,,,,,,,,,,,,,,,,,,,data/seeds/places_traditions.json
+school_madhyamaka,School,Madhyamaka,A Mahayana philosophical school associated with analysis of emptiness.,,,,,,,,,,,,,,,,,,,,,,,data/seeds/core.json
+school_mahayana,School,Mahayana,A broad family of Buddhist traditions emphasizing the bodhisattva path.,,,,,,,,,,,,,,,,,,,,,,,data/seeds/places_traditions.json
+school_pali_canon,School,Pali Canon,A textual tradition preserving canonical materials in Pali.,,,,,,,,,,,,,,,,,,,,,,,data/seeds/places_traditions.json
+school_theravada,School,Theravada,A Buddhist tradition preserving the Pali Canon.,,,,,,,,,,,,,,,,,,,,,,,data/seeds/core.json
+source_giac_khang_notes,Source,Giac Khang Study Notes,"Pilot source material used to model evidence before API, embeddings, or LLM extraction.",,,,,Vietnamese,,,,,,,,,,,,,local_notes,,,,,data/seeds/giac_khang_pilot.json
+term_ahimsa_sanskrit,Term,ahimsa,,,,,,Sanskrit,,,,,,,,,,,Sanskrit term for non-harming.,,,,,,,data/seeds/terms_remaining.json
+term_anatman_sanskrit,Term,anatman,,,,,,Sanskrit,,,,,,,,,,,Sanskrit form corresponding to Pali anatta.,,,,,,,data/seeds/terms.json
+term_anatta_pali,Term,anatta,,,,,,Pali,,,,,,,,,,,Pali form used for the doctrine of not-self.,,,,,,,data/seeds/terms.json
+term_anicca_pali,Term,anicca,,,,,,Pali,,,,,,,,,,,Pali form used for impermanence.,,,,,,,data/seeds/terms.json
+term_anitya_sanskrit,Term,anitya,,,,,,Sanskrit,,,,,,,,,,,Sanskrit form used for impermanence.,,,,,,,data/seeds/terms.json
+term_appamada_pali,Term,appamada,,,,,,Pali,,,,,,,,,,,A central practice quality highlighted in the Dhammapada.,,,,,,,data/seeds/terms.json
+term_ariya_atthangika_magga_pali,Term,ariya atthangika magga,,,,,,Pali,,,,,,,,,,,Pali phrase for the Noble Eightfold Path.,,,,,,,data/seeds/terms_remaining.json
+term_arya_astangika_marga_sanskrit,Term,arya astangika marga,,,,,,Sanskrit,,,,,,,,,,,Sanskrit phrase for the Noble Eightfold Path.,,,,,,,data/seeds/terms_remaining.json
+term_avalokitesvara_sanskrit,Term,avalokitesvara,,,,,,Sanskrit,,,,,,,,,,,Sanskrit name of the bodhisattva associated with compassion.,,,,,,,data/seeds/terms_remaining.json
+term_avidya_sanskrit,Term,avidya,,,,,,Sanskrit,,,,,,,,,,,Sanskrit term for ignorance or misknowing.,,,,,,,data/seeds/terms_extended.json
+term_avihimsa_pali,Term,avihimsa,,,,,,Pali,,,,,,,,,,,Pali term related to non-harming.,,,,,,,data/seeds/terms_remaining.json
+term_avijja_pali,Term,avijja,,,,,,Pali,,,,,,,,,,,Pali term for ignorance or misknowing.,,,,,,,data/seeds/terms_extended.json
+term_ayatana_pali,Term,ayatana,,,,,,Pali,,,,,,,,,,,Pali and Sanskrit term for sense base.,,,,,,,data/seeds/terms_extended.json
+term_bodhicitta_sanskrit,Term,bodhicitta,,,,,,Sanskrit,,,,,,,,,,,Sanskrit term for the awakened mind or aspiration toward awakening.,,,,,,,data/seeds/terms_extended.json
+term_bodhisattva_sanskrit,Term,bodhisattva,,,,,,Sanskrit,,,,,,,,,,,Sanskrit term for a being oriented toward awakening.,,,,,,,data/seeds/terms_extended.json
+term_brahmavihara_pali,Term,brahmavihara,,,,,,Pali,,,,,,,,,,,Pali term for the divine abodes.,,,,,,,data/seeds/terms_remaining.json
+term_cattari_ariyasaccani_pali,Term,cattari ariyasaccani,,,,,,Pali,,,,,,,,,,,Pali phrase for the Four Noble Truths.,,,,,,,data/seeds/terms_remaining.json
+term_catvari_aryasatyani_sanskrit,Term,catvari aryasatyani,,,,,,Sanskrit,,,,,,,,,,,Sanskrit phrase for the Four Noble Truths.,,,,,,,data/seeds/terms_remaining.json
+term_citta_pali,Term,citta,,,,,,Pali,,,,,,,,,,,"A term for mind, heart, or mental orientation.",,,,,,,data/seeds/terms.json
+term_dhatu_pali,Term,dhatu,,,,,,Pali,,,,,,,,,,,Pali and Sanskrit term for element or domain.,,,,,,,data/seeds/terms_extended.json
+term_duhkha_sanskrit,Term,duhkha,,,,,,Sanskrit,,,,,,,,,,,Sanskrit cognate of Pali dukkha.,,,,,,,data/seeds/terms.json
+term_dukkha_pali,Term,dukkha,,,,,,Pali,,,,,,,,,,,A core Pali term in the analysis of conditioned experience.,,,,,,,data/seeds/terms.json
+term_kamma_pali,Term,kamma,,,,,,Pali,,,,,,,,,,,Pali form corresponding to Sanskrit karma.,,,,,,,data/seeds/terms_extended.json
+term_karma_sanskrit,Term,karma,,,,,,Sanskrit,,,,,,,,,,,Sanskrit form for intentional action and its consequences.,,,,,,,data/seeds/terms_extended.json
+term_karuna_pali,Term,karuna,,,,,,Pali,,,,,,,,,,,Pali and Sanskrit term for compassion.,,,,,,,data/seeds/terms.json
+term_kilesa_pali,Term,kilesa,,,,,,Pali,,,,,,,,,,,Pali term for afflictive mental states.,,,,,,,data/seeds/terms_remaining.json
+term_klesa_sanskrit,Term,klesa,,,,,,Sanskrit,,,,,,,,,,,Sanskrit term for afflictive mental states.,,,,,,,data/seeds/terms_remaining.json
+term_madhyama_pratipad_sanskrit,Term,madhyama pratipad,,,,,,Sanskrit,,,,,,,,,,,Sanskrit phrase for the middle way.,,,,,,,data/seeds/terms_remaining.json
+term_majjhima_patipada_pali,Term,majjhima patipada,,,,,,Pali,,,,,,,,,,,Pali phrase for the middle way.,,,,,,,data/seeds/terms_remaining.json
+term_mantra_sanskrit,Term,mantra,,,,,,Sanskrit,,,,,,,,,,,Sanskrit term for a sacred utterance or formula.,,,,,,,data/seeds/terms_extended.json
+term_metta_pali,Term,metta,,,,,,Pali,,,,,,,,,,,Pali term for loving-kindness.,,,,,,,data/seeds/terms.json
+term_mudita_pali,Term,mudita,,,,,,Pali,,,,,,,,,,,Pali and Sanskrit term for sympathetic joy.,,,,,,,data/seeds/terms_remaining.json
+term_nibbana_pali,Term,nibbana,,,,,,Pali,,,,,,,,,,,Pali term commonly rendered as nirvana.,,,,,,,data/seeds/terms.json
+term_nirvana_sanskrit,Term,nirvana,,,,,,Sanskrit,,,,,,,,,,,Sanskrit form corresponding to Pali nibbana.,,,,,,,data/seeds/terms.json
+term_panna_pali,Term,panna,,,,,,Pali,,,,,,,,,,,Pali term corresponding to Sanskrit prajna.,,,,,,,data/seeds/terms_extended.json
+term_paramita_sanskrit,Term,paramita,,,,,,Sanskrit,,,,,,,,,,,Sanskrit term for perfection or transcendent virtue.,,,,,,,data/seeds/terms_extended.json
+term_paticcasamuppada_pali,Term,paticcasamuppada,,,,,,Pali,,,,,,,,,,,Pali term for dependent arising.,,,,,,,data/seeds/terms.json
+term_prajna_sanskrit,Term,prajna,,,,,,Sanskrit,,,,,,,,,,,Sanskrit term for wisdom or liberating insight.,,,,,,,data/seeds/terms_extended.json
+term_prajnaparamita_sanskrit,Term,prajnaparamita,,,,,,Sanskrit,,,,,,,,,,,Sanskrit term for the perfection of wisdom.,,,,,,,data/seeds/terms_extended.json
+term_pratityasamutpada_sanskrit,Term,pratityasamutpada,,,,,,Sanskrit,,,,,,,,,,,Sanskrit term for dependent arising.,,,,,,,data/seeds/terms.json
+term_rupa_pali,Term,rupa,,,,,,Pali,,,,,,,,,,,Pali and Sanskrit term for form.,,,,,,,data/seeds/terms_extended.json
+term_samadhi_pali,Term,samadhi,,,,,,Pali,,,,,,,,,,,Pali and Sanskrit term for meditative collectedness.,,,,,,,data/seeds/terms_extended.json
+term_samsara_pali,Term,samsara,,,,,,Pali,,,,,,,,,,,Pali form for the cycle of conditioned existence.,,,,,,,data/seeds/terms_extended.json
+term_satya_dvaya_sanskrit,Term,satya-dvaya,,,,,,Sanskrit,,,,,,,,,,,Sanskrit phrase for the two truths.,,,,,,,data/seeds/terms_remaining.json
+term_sila_pali,Term,sila,,,,,,Pali,,,,,,,,,,,Pali term for moral discipline or ethical conduct.,,,,,,,data/seeds/terms_extended.json
+term_skandha_sanskrit,Term,skandha,,,,,,Sanskrit,,,,,,,,,,,Sanskrit term for aggregate.,,,,,,,data/seeds/terms_extended.json
+term_sunyata_sanskrit,Term,sunyata,,,,,,Sanskrit,,,,,,,,,,,"A key Mahayana term, especially important in Madhyamaka contexts.",,,,,,,data/seeds/terms.json
+term_tanha_pali,Term,tanha,,,,,,Pali,,,,,,,,,,,Pali term for craving.,,,,,,,data/seeds/terms_extended.json
+term_tilakkhana_pali,Term,tilakkhana,,,,,,Pali,,,,,,,,,,,Pali term for the three marks of existence.,,,,,,,data/seeds/terms_remaining.json
+term_trilaksana_sanskrit,Term,trilaksana,,,,,,Sanskrit,,,,,,,,,,,Sanskrit term for the three marks of existence.,,,,,,,data/seeds/terms_remaining.json
+term_trsna_sanskrit,Term,trsna,,,,,,Sanskrit,,,,,,,,,,,Sanskrit term corresponding to Pali tanha.,,,,,,,data/seeds/terms_extended.json
+term_upekkha_pali,Term,upekkha,,,,,,Pali,,,,,,,,,,,Pali term for equanimity.,,,,,,,data/seeds/terms_remaining.json
+term_upeksa_sanskrit,Term,upeksa,,,,,,Sanskrit,,,,,,,,,,,Sanskrit term corresponding to Pali upekkha.,,,,,,,data/seeds/terms_remaining.json
+text_dhammapada,Text,Dhammapada,"A collection of verses from the Pali Canon, traditionally arranged into 26 chapters.",,,,Theravada,Pali,,,,,,,,,,,,,,,,,,data/seeds/dhammapada.json
+text_heart_sutra,Text,Heart Sutra,A short Mahayana sutra associated with the perfection of wisdom literature and the teaching of emptiness.,,,,Mahayana,Sanskrit,,,,,,,,,,,,,,,,,,data/seeds/heart_sutra.json
+text_mulamadhyamakakarika,Text,Mulamadhyamakakarika,A foundational Madhyamaka text attributed to Nagarjuna.,,,,Mahayana,Sanskrit,,,,,,,,,,,,,,,,,,data/seeds/core.json
+work_giac_khang_pilot_teachings,Work,Giac Khang Pilot Teachings,A pilot work grouping selected notes for the evidence-first MVP.,,,,,Vietnamese,,,,,,,,,,,,,,,,,,data/seeds/giac_khang_pilot.json
