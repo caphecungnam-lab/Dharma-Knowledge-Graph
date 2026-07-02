@@ -128,22 +128,41 @@ h3 {
 
 .controls {
   display: grid;
-  grid-template-columns: minmax(180px, 1fr) minmax(140px, 180px) minmax(160px, 220px) 84px;
+  grid-template-columns: minmax(240px, 280px) minmax(180px, 1fr) minmax(110px, 140px) minmax(140px, 180px) minmax(160px, 220px) 84px;
   gap: 10px;
   margin-bottom: 14px;
 }
 
+.scope-toggle,
 .search-box,
 .select-box {
   display: grid;
   gap: 5px;
 }
 
+.scope-toggle > span,
 .search-box span,
 .select-box span {
   color: var(--muted);
   font-size: 12px;
   font-weight: 700;
+}
+
+.scope-buttons {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 6px;
+}
+
+.scope-buttons button {
+  min-height: 40px;
+  padding: 0 10px;
+}
+
+.scope-buttons button.active {
+  border-color: var(--forest);
+  background: rgba(31, 111, 82, 0.1);
+  color: var(--forest);
 }
 
 input,
@@ -214,12 +233,22 @@ canvas {
   display: inline-flex;
   min-height: 28px;
   align-items: center;
+  gap: 6px;
   border-radius: 999px;
   background: rgba(31, 111, 82, 0.1);
   color: var(--forest);
   padding: 0 10px;
   font-size: 12px;
   font-weight: 700;
+}
+
+.badge-pill {
+  border-radius: 999px;
+  background: var(--forest);
+  color: #ffffff;
+  padding: 3px 7px;
+  font-size: 10px;
+  text-transform: uppercase;
 }
 
 .description {

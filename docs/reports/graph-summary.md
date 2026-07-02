@@ -6,11 +6,11 @@ Generated from `data/processed/graph.json`.
 
 | Metric | Value |
 | --- | --- |
-| Nodes | 148 |
-| Relationships | 228 |
-| Source files | 11 |
+| Nodes | 153 |
+| Relationships | 238 |
+| Source files | 13 |
 | Graph version | 0.1 |
-| Content hash | be3c8509bc22146dbdb4318d3edb5a1db567757c1e1a8dbf2b7e4902623c66fa |
+| Content hash | a71739ba126b977a3507406f899d3d2696e43a8d63467094990ad23fba75f31b |
 
 ## Node Types
 
@@ -20,7 +20,7 @@ Generated from `data/processed/graph.json`.
 | Concept | 42 |
 | Corpus | 2 |
 | Document | 2 |
-| Evidence | 4 |
+| Evidence | 9 |
 | Person | 1 |
 | Place | 6 |
 | School | 5 |
@@ -39,9 +39,9 @@ Generated from `data/processed/graph.json`.
 | CITES | 17 |
 | DEFINES | 60 |
 | DENOTES | 6 |
-| DERIVED_FROM | 7 |
+| DERIVED_FROM | 12 |
 | EVIDENCES | 3 |
-| HAS_CITATION | 3 |
+| HAS_CITATION | 8 |
 | HAS_DOCUMENT | 3 |
 | HAS_EVIDENCE | 3 |
 | LOCATED_IN | 4 |
@@ -59,9 +59,9 @@ Generated from `data/processed/graph.json`.
 | Giac Khang MVP Notes | Document | 10 |
 | Mahayana | School | 9 |
 | Mulamadhyamakakarika | Text | 8 |
+| Transcript placeholder for 1A. KINH 6 6 L2CÂU 1 P1 | Document | 8 |
 | Four Noble Truths | Concept | 8 |
 | Prajnaparamita | Concept | 7 |
-| Giac Khang Pilot Corpus | Corpus | 6 |
 
 ## Isolated Nodes
 
@@ -82,3 +82,5 @@ Generated from `data/processed/graph.json`.
 - `data/seeds/terms.json`
 - `data/seeds/terms_extended.json`
 - `data/seeds/terms_remaining.json`
+- `data/processed/giac_khang/FISpARohzy8/evidence_first_pass.json`
+- `data/reviewed/giac_khang/FISpARohzy8/evidence_review_queue.json`

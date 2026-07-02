@@ -6,8 +6,8 @@ Generated from `data/processed/graph.json`.
 
 | Metric | Value |
 | --- | --- |
-| Nodes | 148 |
-| Relationships | 228 |
+| Nodes | 153 |
+| Relationships | 238 |
 | Concepts | 42 |
 | Terms | 59 |
 | Concepts with term definitions | 37 |

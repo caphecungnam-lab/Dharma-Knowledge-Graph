@@ -1,5 +1,11 @@
 (function () {
-  const graph = window.DHARMA_GRAPH;
+  const graphScopes = window.DHARMA_GRAPH_SCOPES || {
+    default_mode: "giac_khang",
+    modes: {
+      giac_khang: window.DHARMA_GRAPH,
+    },
+  };
+  let graph = graphScopes.modes[graphScopes.default_mode] || window.DHARMA_GRAPH;
 
   if (!graph) {
     throw new Error("Graph data is missing. Run scripts/build_graph.py first.");
@@ -9,6 +15,8 @@
   const ctx = canvas.getContext("2d");
   const statsEl = document.getElementById("stats");
   const searchInput = document.getElementById("searchInput");
+  const dataModeToggle = document.getElementById("dataModeToggle");
+  const languageFilter = document.getElementById("languageFilter");
   const typeFilter = document.getElementById("typeFilter");
   const relationshipFilter = document.getElementById("relationshipFilter");
   const resetButton = document.getElementById("resetButton");
@@ -27,7 +35,28 @@
     Place: "#6d5b9a",
     Term: "#5d6b2f",
     Citation: "#6b6258",
+    Corpus: "#174f3c",
+    Source: "#6b6258",
+    Document: "#2f6f9f",
+    Evidence: "#b45b2d",
+    Work: "#5d6b2f",
   };
+
+  const badgeColors = {
+    corpus: "#174f3c",
+    seed: "#6b6258",
+    processed: "#2f6f9f",
+    reviewed: "#b45b2d",
+    curated: "#1f6f52",
+  };
+
+  const modeTranslationKeys = {
+    giac_khang: "giacKhang",
+    seeds_only: "seeds",
+    all_data: "allData",
+  };
+
+  const languageOptions = ["All", "vi", "en", "pali", "sanskrit"];
 
   const languageKey = "dkg_language";
   const translations = {
@@ -36,6 +65,11 @@
       explorerTitle: "Graph Explorer v0.1",
       search: "Search",
       searchPlaceholder: "Concept, text, school...",
+      dataScope: "Data",
+      giacKhang: "Giác Khang",
+      seeds: "Seeds",
+      allData: "All",
+      languageFilter: "Language",
       type: "Type",
       relationship: "Relationship",
       reset: "Reset",
@@ -55,12 +89,18 @@
       to: "to",
       from: "from",
       noRelationshipsYet: "No relationships yet.",
+      sourceBadge: "Source badge",
     },
     vi: {
       brand: "Dharma Knowledge Graph",
       explorerTitle: "Graph Explorer v0.1",
       search: "Tìm kiếm",
       searchPlaceholder: "Khái niệm, văn bản, trường phái...",
+      dataScope: "Dữ liệu",
+      giacKhang: "Giác Khang",
+      seeds: "Seeds",
+      allData: "Tất cả",
+      languageFilter: "Ngôn ngữ",
       type: "Loại",
       relationship: "Quan hệ",
       reset: "Đặt lại",
@@ -80,6 +120,7 @@
       to: "đến",
       from: "từ",
       noRelationshipsYet: "Chưa có quan hệ.",
+      sourceBadge: "Nhãn nguồn",
     },
   };
   let language = localStorage.getItem(languageKey) === "vi" ? "vi" : "en";
@@ -88,6 +129,8 @@
     selectedId: graph.nodes[0] ? graph.nodes[0].id : null,
     hoveredId: null,
     draggingId: null,
+    dataMode: graphScopes.default_mode || "giac_khang",
+    languageFilter: "All",
     search: "",
     type: "All",
     relationship: "All",
@@ -95,13 +138,10 @@
     height: 0,
   };
 
-  const nodeById = new Map(graph.nodes.map((node) => [node.id, node]));
-  const adjacency = new Map(graph.nodes.map((node) => [node.id, []]));
-
-  graph.relationships.forEach((relationship) => {
-    adjacency.get(relationship.source)?.push({ direction: "out", ...relationship });
-    adjacency.get(relationship.target)?.push({ direction: "in", ...relationship });
-  });
+  let nodeById = new Map();
+  let adjacency = new Map();
+  let layoutNodes = [];
+  let layoutById = new Map();
 
   function t(key) {
     return translations[language][key] || translations.en[key] || key;
@@ -126,19 +166,33 @@
     renderDetails();
   }
 
-  const layoutNodes = graph.nodes.map((node, index) => {
-    const angle = (index / Math.max(graph.nodes.length, 1)) * Math.PI * 2;
-    const ring = 170 + (index % 4) * 36;
-    return {
-      ...node,
-      x: Math.cos(angle) * ring,
-      y: Math.sin(angle) * ring,
-      vx: 0,
-      vy: 0,
-      radius: node.type === "Concept" ? 8 : 10,
-    };
-  });
-  const layoutById = new Map(layoutNodes.map((node) => [node.id, node]));
+  function setGraph(nextGraph) {
+    graph = nextGraph;
+    state.selectedId = graph.nodes[0] ? graph.nodes[0].id : null;
+    state.hoveredId = null;
+    state.draggingId = null;
+
+    nodeById = new Map(graph.nodes.map((node) => [node.id, node]));
+    adjacency = new Map(graph.nodes.map((node) => [node.id, []]));
+    graph.relationships.forEach((relationship) => {
+      adjacency.get(relationship.source)?.push({ direction: "out", ...relationship });
+      adjacency.get(relationship.target)?.push({ direction: "in", ...relationship });
+    });
+
+    layoutNodes = graph.nodes.map((node, index) => {
+      const angle = (index / Math.max(graph.nodes.length, 1)) * Math.PI * 2;
+      const ring = 170 + (index % 4) * 36;
+      return {
+        ...node,
+        x: Math.cos(angle) * ring,
+        y: Math.sin(angle) * ring,
+        vx: 0,
+        vy: 0,
+        radius: node.type === "Concept" ? 8 : 10,
+      };
+    });
+    layoutById = new Map(layoutNodes.map((node) => [node.id, node]));
+  }
 
   function populateStats() {
     statsEl.innerHTML = [
@@ -151,18 +205,46 @@
       .join("");
   }
 
+  function populateDataModeToggle() {
+    if (!dataModeToggle) return;
+
+    dataModeToggle.querySelectorAll("button").forEach((button) => {
+      const isActive = button.dataset.mode === state.dataMode;
+      button.classList.toggle("active", isActive);
+      button.setAttribute("aria-pressed", String(isActive));
+      const translationKey = modeTranslationKeys[button.dataset.mode];
+      button.textContent = translationKey ? t(translationKey) : button.dataset.mode;
+    });
+  }
+
   function populateFilters() {
     const nodeTypes = ["All", ...Object.keys(graph.summary.node_type_counts).sort()];
     const relationshipTypes = ["All", ...Object.keys(graph.summary.relationship_type_counts).sort()];
 
+    languageFilter.innerHTML = languageOptions
+      .map((option) => {
+        const label = option === "All" ? t("all") : option;
+        return `<option value="${option}">${label}</option>`;
+      })
+      .join("");
     typeFilter.innerHTML = nodeTypes
       .map((type) => `<option value="${type}">${type === "All" ? t("all") : type}</option>`)
       .join("");
     relationshipFilter.innerHTML = relationshipTypes
       .map((type) => `<option value="${type}">${type === "All" ? t("all") : type}</option>`)
       .join("");
+    languageFilter.value = state.languageFilter;
     typeFilter.value = state.type;
     relationshipFilter.value = state.relationship;
+    populateDataModeToggle();
+  }
+
+  function normalizeLanguage(value) {
+    if (!value) return "";
+    const normalized = String(value).trim().toLowerCase();
+    if (normalized === "vietnamese") return "vi";
+    if (normalized === "english") return "en";
+    return normalized;
   }
 
   function filteredNodeIds() {
@@ -171,6 +253,9 @@
 
     graph.nodes.forEach((node) => {
       const matchesType = state.type === "All" || node.type === state.type;
+      const matchesLanguage =
+        state.languageFilter === "All" ||
+        normalizeLanguage(node.language) === state.languageFilter;
       const searchable = [
         node.id,
         node.name,
@@ -185,7 +270,7 @@
         .toLowerCase();
       const matchesSearch = !search || searchable.includes(search);
 
-      if (matchesType && matchesSearch) {
+      if (matchesType && matchesLanguage && matchesSearch) {
         ids.add(node.id);
       }
     });
@@ -326,6 +411,28 @@
     ctx.fill();
   }
 
+  function badgeLabel(node) {
+    return node.source_badge || (node.type === "Corpus" ? "corpus" : "seed");
+  }
+
+  function drawNodeBadge(point, node) {
+    const badge = badgeLabel(node);
+    const label = badge.slice(0, 3).toUpperCase();
+    const width = Math.max(24, ctx.measureText(label).width + 8);
+    const height = 14;
+    const x = point.x + node.radius - 2;
+    const y = point.y - node.radius - 8;
+
+    ctx.fillStyle = badgeColors[badge] || "#6b6258";
+    ctx.beginPath();
+    ctx.roundRect(x, y, width, height, 4);
+    ctx.fill();
+    ctx.fillStyle = "#ffffff";
+    ctx.textAlign = "center";
+    ctx.textBaseline = "middle";
+    ctx.fillText(label, x + width / 2, y + height / 2 + 0.5);
+  }
+
   function draw() {
     const visibleIds = filteredNodeIds();
     const relationships = visibleRelationships(visibleIds);
@@ -383,6 +490,7 @@
       ctx.strokeStyle = "#ffffff";
       ctx.lineWidth = 2;
       ctx.stroke();
+      drawNodeBadge(point, node);
 
       const labelVisible = isSelected || isHovered || node.type !== "Concept";
       if (labelVisible) {
@@ -433,7 +541,7 @@
     }
 
     detailTitle.textContent = node.name;
-    detailType.textContent = node.type;
+    detailType.innerHTML = `${escapeHtml(node.type)} <span class="badge-pill">${escapeHtml(badgeLabel(node))}</span>`;
     detailDescription.textContent = node.description || t("noDescription");
 
     const hiddenProperties = new Set(["id", "name", "type", "description"]);
@@ -512,6 +620,29 @@
     state.search = searchInput.value;
   });
 
+  dataModeToggle.addEventListener("click", (event) => {
+    const button = event.target.closest("button[data-mode]");
+    if (!button) return;
+
+    const nextMode = button.dataset.mode;
+    const nextGraph = graphScopes.modes[nextMode];
+    if (!nextGraph) return;
+
+    state.dataMode = nextMode;
+    state.search = "";
+    state.type = "All";
+    state.relationship = "All";
+    searchInput.value = "";
+    setGraph(nextGraph);
+    populateStats();
+    populateFilters();
+    renderDetails();
+  });
+
+  languageFilter.addEventListener("change", () => {
+    state.languageFilter = languageFilter.value;
+  });
+
   typeFilter.addEventListener("change", () => {
     state.type = typeFilter.value;
   });
@@ -524,7 +655,9 @@
     state.search = "";
     state.type = "All";
     state.relationship = "All";
+    state.languageFilter = "All";
     searchInput.value = "";
+    languageFilter.value = "All";
     typeFilter.value = "All";
     relationshipFilter.value = "All";
   });
@@ -539,6 +672,7 @@
 
   window.addEventListener("resize", resizeCanvas);
 
+  setGraph(graph);
   applyLanguage();
   resizeCanvas();
   requestAnimationFrame(draw);

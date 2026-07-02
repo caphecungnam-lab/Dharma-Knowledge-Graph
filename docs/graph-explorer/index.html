@@ -21,9 +21,21 @@
         </header>
 
         <div class="controls" aria-label="Graph controls">
+          <div class="scope-toggle" aria-label="Data scope">
+            <span data-i18n="dataScope">Data</span>
+            <div class="scope-buttons" id="dataModeToggle">
+              <button type="button" data-mode="giac_khang" data-i18n="giacKhang">Giác Khang</button>
+              <button type="button" data-mode="seeds_only" data-i18n="seeds">Seeds</button>
+              <button type="button" data-mode="all_data" data-i18n="allData">All</button>
+            </div>
+          </div>
           <label class="search-box">
             <span data-i18n="search">Search</span>
             <input id="searchInput" type="search" placeholder="Concept, text, school..." data-i18n-placeholder="searchPlaceholder">
+          </label>
+          <label class="select-box">
+            <span data-i18n="languageFilter">Language</span>
+            <select id="languageFilter"></select>
           </label>
           <label class="select-box">
             <span data-i18n="type">Type</span>
