@@ -85,6 +85,7 @@ Sanskrit `Term` nodes for selected concepts and links them back to the concept
 layer.
 
 Additional language coverage is in `data/seeds/terms_extended.json`.
+The final v0.1 term coverage batch is in `data/seeds/terms_remaining.json`.
 
 ## Places & Traditions Pilot
 

@@ -2,7 +2,7 @@ window.DHARMA_GRAPH = {
   "metadata": {
     "title": "Dharma Knowledge Graph",
     "version": "0.1",
-    "generated_at": "2026-07-02T09:57:11.273667+00:00",
+    "generated_at": "2026-07-02T10:02:24.101577+00:00",
     "source_files": [
       "data/seeds/concepts.json",
       "data/seeds/core.json",
@@ -10,29 +10,30 @@ window.DHARMA_GRAPH = {
       "data/seeds/heart_sutra.json",
       "data/seeds/places_traditions.json",
       "data/seeds/terms.json",
-      "data/seeds/terms_extended.json"
+      "data/seeds/terms_extended.json",
+      "data/seeds/terms_remaining.json"
     ]
   },
   "summary": {
-    "node_count": 104,
-    "relationship_count": 163,
+    "node_count": 122,
+    "relationship_count": 188,
     "node_type_counts": {
       "Citation": 17,
       "Concept": 37,
       "Person": 1,
       "Place": 6,
       "School": 5,
-      "Term": 35,
+      "Term": 53,
       "Text": 3
     },
     "relationship_type_counts": {
       "AUTHORED_BY": 1,
       "BELONGS_TO_SCHOOL": 13,
       "CITES": 17,
-      "DEFINES": 42,
+      "DEFINES": 60,
       "LOCATED_IN": 4,
       "MENTIONS": 56,
-      "RELATED_TO": 30
+      "RELATED_TO": 37
     }
   },
   "nodes": [
@@ -649,6 +650,17 @@ window.DHARMA_GRAPH = {
       "source_file": "data/seeds/core.json"
     },
     {
+      "id": "term_ahimsa_sanskrit",
+      "type": "Term",
+      "name": "ahimsa",
+      "language": "Sanskrit",
+      "script": "Latin",
+      "transliteration": "ahimsa",
+      "translation": "non-harming",
+      "notes": "Sanskrit term for non-harming.",
+      "source_file": "data/seeds/terms_remaining.json"
+    },
+    {
       "id": "term_anatman_sanskrit",
       "type": "Term",
       "name": "anatman",
@@ -704,6 +716,39 @@ window.DHARMA_GRAPH = {
       "source_file": "data/seeds/terms.json"
     },
     {
+      "id": "term_ariya_atthangika_magga_pali",
+      "type": "Term",
+      "name": "ariya atthangika magga",
+      "language": "Pali",
+      "script": "Latin",
+      "transliteration": "ariya atthangika magga",
+      "translation": "noble eightfold path",
+      "notes": "Pali phrase for the Noble Eightfold Path.",
+      "source_file": "data/seeds/terms_remaining.json"
+    },
+    {
+      "id": "term_arya_astangika_marga_sanskrit",
+      "type": "Term",
+      "name": "arya astangika marga",
+      "language": "Sanskrit",
+      "script": "Latin",
+      "transliteration": "arya astangika marga",
+      "translation": "noble eightfold path",
+      "notes": "Sanskrit phrase for the Noble Eightfold Path.",
+      "source_file": "data/seeds/terms_remaining.json"
+    },
+    {
+      "id": "term_avalokitesvara_sanskrit",
+      "type": "Term",
+      "name": "avalokitesvara",
+      "language": "Sanskrit",
+      "script": "Latin",
+      "transliteration": "avalokitesvara",
+      "translation": "Avalokitesvara",
+      "notes": "Sanskrit name of the bodhisattva associated with compassion.",
+      "source_file": "data/seeds/terms_remaining.json"
+    },
+    {
       "id": "term_avidya_sanskrit",
       "type": "Term",
       "name": "avidya",
@@ -713,6 +758,17 @@ window.DHARMA_GRAPH = {
       "translation": "ignorance",
       "notes": "Sanskrit term for ignorance or misknowing.",
       "source_file": "data/seeds/terms_extended.json"
+    },
+    {
+      "id": "term_avihimsa_pali",
+      "type": "Term",
+      "name": "avihimsa",
+      "language": "Pali",
+      "script": "Latin",
+      "transliteration": "avihimsa",
+      "translation": "non-harming",
+      "notes": "Pali term related to non-harming.",
+      "source_file": "data/seeds/terms_remaining.json"
     },
     {
       "id": "term_avijja_pali",
@@ -757,6 +813,39 @@ window.DHARMA_GRAPH = {
       "translation": "awakening being",
       "notes": "Sanskrit term for a being oriented toward awakening.",
       "source_file": "data/seeds/terms_extended.json"
+    },
+    {
+      "id": "term_brahmavihara_pali",
+      "type": "Term",
+      "name": "brahmavihara",
+      "language": "Pali",
+      "script": "Latin",
+      "transliteration": "brahmavihara",
+      "translation": "divine abode",
+      "notes": "Pali term for the divine abodes.",
+      "source_file": "data/seeds/terms_remaining.json"
+    },
+    {
+      "id": "term_cattari_ariyasaccani_pali",
+      "type": "Term",
+      "name": "cattari ariyasaccani",
+      "language": "Pali",
+      "script": "Latin",
+      "transliteration": "cattari ariyasaccani",
+      "translation": "four noble truths",
+      "notes": "Pali phrase for the Four Noble Truths.",
+      "source_file": "data/seeds/terms_remaining.json"
+    },
+    {
+      "id": "term_catvari_aryasatyani_sanskrit",
+      "type": "Term",
+      "name": "catvari aryasatyani",
+      "language": "Sanskrit",
+      "script": "Latin",
+      "transliteration": "catvari aryasatyani",
+      "translation": "four noble truths",
+      "notes": "Sanskrit phrase for the Four Noble Truths.",
+      "source_file": "data/seeds/terms_remaining.json"
     },
     {
       "id": "term_citta_pali",
@@ -836,6 +925,50 @@ window.DHARMA_GRAPH = {
       "source_file": "data/seeds/terms.json"
     },
     {
+      "id": "term_kilesa_pali",
+      "type": "Term",
+      "name": "kilesa",
+      "language": "Pali",
+      "script": "Latin",
+      "transliteration": "kilesa",
+      "translation": "affliction; defilement",
+      "notes": "Pali term for afflictive mental states.",
+      "source_file": "data/seeds/terms_remaining.json"
+    },
+    {
+      "id": "term_klesa_sanskrit",
+      "type": "Term",
+      "name": "klesa",
+      "language": "Sanskrit",
+      "script": "Latin",
+      "transliteration": "klesa",
+      "translation": "affliction",
+      "notes": "Sanskrit term for afflictive mental states.",
+      "source_file": "data/seeds/terms_remaining.json"
+    },
+    {
+      "id": "term_madhyama_pratipad_sanskrit",
+      "type": "Term",
+      "name": "madhyama pratipad",
+      "language": "Sanskrit",
+      "script": "Latin",
+      "transliteration": "madhyama pratipad",
+      "translation": "middle way",
+      "notes": "Sanskrit phrase for the middle way.",
+      "source_file": "data/seeds/terms_remaining.json"
+    },
+    {
+      "id": "term_majjhima_patipada_pali",
+      "type": "Term",
+      "name": "majjhima patipada",
+      "language": "Pali",
+      "script": "Latin",
+      "transliteration": "majjhima patipada",
+      "translation": "middle way",
+      "notes": "Pali phrase for the middle way.",
+      "source_file": "data/seeds/terms_remaining.json"
+    },
+    {
       "id": "term_mantra_sanskrit",
       "type": "Term",
       "name": "mantra",
@@ -856,6 +989,17 @@ window.DHARMA_GRAPH = {
       "translation": "loving-kindness",
       "notes": "Pali term for loving-kindness.",
       "source_file": "data/seeds/terms.json"
+    },
+    {
+      "id": "term_mudita_pali",
+      "type": "Term",
+      "name": "mudita",
+      "language": "Pali",
+      "script": "Latin",
+      "transliteration": "mudita",
+      "translation": "sympathetic joy",
+      "notes": "Pali and Sanskrit term for sympathetic joy.",
+      "source_file": "data/seeds/terms_remaining.json"
     },
     {
       "id": "term_nibbana_pali",
@@ -979,6 +1123,17 @@ window.DHARMA_GRAPH = {
       "source_file": "data/seeds/terms_extended.json"
     },
     {
+      "id": "term_satya_dvaya_sanskrit",
+      "type": "Term",
+      "name": "satya-dvaya",
+      "language": "Sanskrit",
+      "script": "Latin",
+      "transliteration": "satya-dvaya",
+      "translation": "two truths",
+      "notes": "Sanskrit phrase for the two truths.",
+      "source_file": "data/seeds/terms_remaining.json"
+    },
+    {
       "id": "term_sila_pali",
       "type": "Term",
       "name": "sila",
@@ -1023,6 +1178,28 @@ window.DHARMA_GRAPH = {
       "source_file": "data/seeds/terms_extended.json"
     },
     {
+      "id": "term_tilakkhana_pali",
+      "type": "Term",
+      "name": "tilakkhana",
+      "language": "Pali",
+      "script": "Latin",
+      "transliteration": "tilakkhana",
+      "translation": "three marks",
+      "notes": "Pali term for the three marks of existence.",
+      "source_file": "data/seeds/terms_remaining.json"
+    },
+    {
+      "id": "term_trilaksana_sanskrit",
+      "type": "Term",
+      "name": "trilaksana",
+      "language": "Sanskrit",
+      "script": "Latin",
+      "transliteration": "trilaksana",
+      "translation": "three marks",
+      "notes": "Sanskrit term for the three marks of existence.",
+      "source_file": "data/seeds/terms_remaining.json"
+    },
+    {
       "id": "term_trsna_sanskrit",
       "type": "Term",
       "name": "trsna",
@@ -1032,6 +1209,28 @@ window.DHARMA_GRAPH = {
       "translation": "craving; thirst",
       "notes": "Sanskrit term corresponding to Pali tanha.",
       "source_file": "data/seeds/terms_extended.json"
+    },
+    {
+      "id": "term_upekkha_pali",
+      "type": "Term",
+      "name": "upekkha",
+      "language": "Pali",
+      "script": "Latin",
+      "transliteration": "upekkha",
+      "translation": "equanimity",
+      "notes": "Pali term for equanimity.",
+      "source_file": "data/seeds/terms_remaining.json"
+    },
+    {
+      "id": "term_upeksa_sanskrit",
+      "type": "Term",
+      "name": "upeksa",
+      "language": "Sanskrit",
+      "script": "Latin",
+      "transliteration": "upeksa",
+      "translation": "equanimity",
+      "notes": "Sanskrit term corresponding to Pali upekkha.",
+      "source_file": "data/seeds/terms_remaining.json"
     },
     {
       "id": "text_dhammapada",
@@ -1295,6 +1494,12 @@ window.DHARMA_GRAPH = {
       "source_file": "data/seeds/concepts.json"
     },
     {
+      "source": "term_ahimsa_sanskrit",
+      "type": "DEFINES",
+      "target": "concept_ahimsa",
+      "source_file": "data/seeds/terms_remaining.json"
+    },
+    {
       "source": "term_anatman_sanskrit",
       "type": "DEFINES",
       "target": "concept_anatta",
@@ -1325,10 +1530,34 @@ window.DHARMA_GRAPH = {
       "source_file": "data/seeds/terms.json"
     },
     {
+      "source": "term_ariya_atthangika_magga_pali",
+      "type": "DEFINES",
+      "target": "concept_noble_eightfold_path",
+      "source_file": "data/seeds/terms_remaining.json"
+    },
+    {
+      "source": "term_arya_astangika_marga_sanskrit",
+      "type": "DEFINES",
+      "target": "concept_noble_eightfold_path",
+      "source_file": "data/seeds/terms_remaining.json"
+    },
+    {
+      "source": "term_avalokitesvara_sanskrit",
+      "type": "DEFINES",
+      "target": "concept_avalokitesvara",
+      "source_file": "data/seeds/terms_remaining.json"
+    },
+    {
       "source": "term_avidya_sanskrit",
       "type": "DEFINES",
       "target": "concept_avidya",
       "source_file": "data/seeds/terms_extended.json"
+    },
+    {
+      "source": "term_avihimsa_pali",
+      "type": "DEFINES",
+      "target": "concept_ahimsa",
+      "source_file": "data/seeds/terms_remaining.json"
     },
     {
       "source": "term_avijja_pali",
@@ -1353,6 +1582,24 @@ window.DHARMA_GRAPH = {
       "type": "DEFINES",
       "target": "concept_bodhisattva",
       "source_file": "data/seeds/terms_extended.json"
+    },
+    {
+      "source": "term_brahmavihara_pali",
+      "type": "DEFINES",
+      "target": "concept_brahmaviharas",
+      "source_file": "data/seeds/terms_remaining.json"
+    },
+    {
+      "source": "term_cattari_ariyasaccani_pali",
+      "type": "DEFINES",
+      "target": "concept_four_noble_truths",
+      "source_file": "data/seeds/terms_remaining.json"
+    },
+    {
+      "source": "term_catvari_aryasatyani_sanskrit",
+      "type": "DEFINES",
+      "target": "concept_four_noble_truths",
+      "source_file": "data/seeds/terms_remaining.json"
     },
     {
       "source": "term_citta_pali",
@@ -1397,6 +1644,30 @@ window.DHARMA_GRAPH = {
       "source_file": "data/seeds/terms.json"
     },
     {
+      "source": "term_kilesa_pali",
+      "type": "DEFINES",
+      "target": "concept_klesha",
+      "source_file": "data/seeds/terms_remaining.json"
+    },
+    {
+      "source": "term_klesa_sanskrit",
+      "type": "DEFINES",
+      "target": "concept_klesha",
+      "source_file": "data/seeds/terms_remaining.json"
+    },
+    {
+      "source": "term_madhyama_pratipad_sanskrit",
+      "type": "DEFINES",
+      "target": "concept_middle_way",
+      "source_file": "data/seeds/terms_remaining.json"
+    },
+    {
+      "source": "term_majjhima_patipada_pali",
+      "type": "DEFINES",
+      "target": "concept_middle_way",
+      "source_file": "data/seeds/terms_remaining.json"
+    },
+    {
       "source": "term_mantra_sanskrit",
       "type": "DEFINES",
       "target": "concept_mantra",
@@ -1407,6 +1678,12 @@ window.DHARMA_GRAPH = {
       "type": "DEFINES",
       "target": "concept_metta",
       "source_file": "data/seeds/terms.json"
+    },
+    {
+      "source": "term_mudita_pali",
+      "type": "DEFINES",
+      "target": "concept_mudita",
+      "source_file": "data/seeds/terms_remaining.json"
     },
     {
       "source": "term_nibbana_pali",
@@ -1475,6 +1752,12 @@ window.DHARMA_GRAPH = {
       "source_file": "data/seeds/terms_extended.json"
     },
     {
+      "source": "term_satya_dvaya_sanskrit",
+      "type": "DEFINES",
+      "target": "concept_two_truths",
+      "source_file": "data/seeds/terms_remaining.json"
+    },
+    {
       "source": "term_sila_pali",
       "type": "DEFINES",
       "target": "concept_sila",
@@ -1499,10 +1782,34 @@ window.DHARMA_GRAPH = {
       "source_file": "data/seeds/terms_extended.json"
     },
     {
+      "source": "term_tilakkhana_pali",
+      "type": "DEFINES",
+      "target": "concept_three_marks",
+      "source_file": "data/seeds/terms_remaining.json"
+    },
+    {
+      "source": "term_trilaksana_sanskrit",
+      "type": "DEFINES",
+      "target": "concept_three_marks",
+      "source_file": "data/seeds/terms_remaining.json"
+    },
+    {
       "source": "term_trsna_sanskrit",
       "type": "DEFINES",
       "target": "concept_tanha",
       "source_file": "data/seeds/terms_extended.json"
+    },
+    {
+      "source": "term_upekkha_pali",
+      "type": "DEFINES",
+      "target": "concept_upekkha",
+      "source_file": "data/seeds/terms_remaining.json"
+    },
+    {
+      "source": "term_upeksa_sanskrit",
+      "type": "DEFINES",
+      "target": "concept_upekkha",
+      "source_file": "data/seeds/terms_remaining.json"
     },
     {
       "source": "place_bodh_gaya",
@@ -2003,10 +2310,28 @@ window.DHARMA_GRAPH = {
       "source_file": "data/seeds/terms.json"
     },
     {
+      "source": "term_ariya_atthangika_magga_pali",
+      "type": "RELATED_TO",
+      "target": "term_arya_astangika_marga_sanskrit",
+      "source_file": "data/seeds/terms_remaining.json"
+    },
+    {
+      "source": "term_avihimsa_pali",
+      "type": "RELATED_TO",
+      "target": "term_ahimsa_sanskrit",
+      "source_file": "data/seeds/terms_remaining.json"
+    },
+    {
       "source": "term_avijja_pali",
       "type": "RELATED_TO",
       "target": "term_avidya_sanskrit",
       "source_file": "data/seeds/terms_extended.json"
+    },
+    {
+      "source": "term_cattari_ariyasaccani_pali",
+      "type": "RELATED_TO",
+      "target": "term_catvari_aryasatyani_sanskrit",
+      "source_file": "data/seeds/terms_remaining.json"
     },
     {
       "source": "term_dukkha_pali",
@@ -2019,6 +2344,18 @@ window.DHARMA_GRAPH = {
       "type": "RELATED_TO",
       "target": "term_karma_sanskrit",
       "source_file": "data/seeds/terms_extended.json"
+    },
+    {
+      "source": "term_kilesa_pali",
+      "type": "RELATED_TO",
+      "target": "term_klesa_sanskrit",
+      "source_file": "data/seeds/terms_remaining.json"
+    },
+    {
+      "source": "term_majjhima_patipada_pali",
+      "type": "RELATED_TO",
+      "target": "term_madhyama_pratipad_sanskrit",
+      "source_file": "data/seeds/terms_remaining.json"
     },
     {
       "source": "term_nibbana_pali",
@@ -2043,6 +2380,18 @@ window.DHARMA_GRAPH = {
       "type": "RELATED_TO",
       "target": "term_trsna_sanskrit",
       "source_file": "data/seeds/terms_extended.json"
+    },
+    {
+      "source": "term_tilakkhana_pali",
+      "type": "RELATED_TO",
+      "target": "term_trilaksana_sanskrit",
+      "source_file": "data/seeds/terms_remaining.json"
+    },
+    {
+      "source": "term_upekkha_pali",
+      "type": "RELATED_TO",
+      "target": "term_upeksa_sanskrit",
+      "source_file": "data/seeds/terms_remaining.json"
     }
   ]
 };

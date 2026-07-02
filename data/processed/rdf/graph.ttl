@@ -547,6 +547,16 @@ dkge:school_theravada
     dkg:description "A Buddhist tradition preserving the Pali Canon." ;
     dkg:sourceFile "data/seeds/core.json" .
 
+dkge:term_ahimsa_sanskrit
+    a dkg:Term ;
+    dkg:name "ahimsa" ;
+    dkg:language "Sanskrit" ;
+    dkg:script "Latin" ;
+    dkg:transliteration "ahimsa" ;
+    dkg:translation "non-harming" ;
+    dkg:notes "Sanskrit term for non-harming." ;
+    dkg:sourceFile "data/seeds/terms_remaining.json" .
+
 dkge:term_anatman_sanskrit
     a dkg:Term ;
     dkg:name "anatman" ;
@@ -597,6 +607,36 @@ dkge:term_appamada_pali
     dkg:notes "A central practice quality highlighted in the Dhammapada." ;
     dkg:sourceFile "data/seeds/terms.json" .
 
+dkge:term_ariya_atthangika_magga_pali
+    a dkg:Term ;
+    dkg:name "ariya atthangika magga" ;
+    dkg:language "Pali" ;
+    dkg:script "Latin" ;
+    dkg:transliteration "ariya atthangika magga" ;
+    dkg:translation "noble eightfold path" ;
+    dkg:notes "Pali phrase for the Noble Eightfold Path." ;
+    dkg:sourceFile "data/seeds/terms_remaining.json" .
+
+dkge:term_arya_astangika_marga_sanskrit
+    a dkg:Term ;
+    dkg:name "arya astangika marga" ;
+    dkg:language "Sanskrit" ;
+    dkg:script "Latin" ;
+    dkg:transliteration "arya astangika marga" ;
+    dkg:translation "noble eightfold path" ;
+    dkg:notes "Sanskrit phrase for the Noble Eightfold Path." ;
+    dkg:sourceFile "data/seeds/terms_remaining.json" .
+
+dkge:term_avalokitesvara_sanskrit
+    a dkg:Term ;
+    dkg:name "avalokitesvara" ;
+    dkg:language "Sanskrit" ;
+    dkg:script "Latin" ;
+    dkg:transliteration "avalokitesvara" ;
+    dkg:translation "Avalokitesvara" ;
+    dkg:notes "Sanskrit name of the bodhisattva associated with compassion." ;
+    dkg:sourceFile "data/seeds/terms_remaining.json" .
+
 dkge:term_avidya_sanskrit
     a dkg:Term ;
     dkg:name "avidya" ;
@@ -606,6 +646,16 @@ dkge:term_avidya_sanskrit
     dkg:translation "ignorance" ;
     dkg:notes "Sanskrit term for ignorance or misknowing." ;
     dkg:sourceFile "data/seeds/terms_extended.json" .
+
+dkge:term_avihimsa_pali
+    a dkg:Term ;
+    dkg:name "avihimsa" ;
+    dkg:language "Pali" ;
+    dkg:script "Latin" ;
+    dkg:transliteration "avihimsa" ;
+    dkg:translation "non-harming" ;
+    dkg:notes "Pali term related to non-harming." ;
+    dkg:sourceFile "data/seeds/terms_remaining.json" .
 
 dkge:term_avijja_pali
     a dkg:Term ;
@@ -646,6 +696,36 @@ dkge:term_bodhisattva_sanskrit
     dkg:translation "awakening being" ;
     dkg:notes "Sanskrit term for a being oriented toward awakening." ;
     dkg:sourceFile "data/seeds/terms_extended.json" .
+
+dkge:term_brahmavihara_pali
+    a dkg:Term ;
+    dkg:name "brahmavihara" ;
+    dkg:language "Pali" ;
+    dkg:script "Latin" ;
+    dkg:transliteration "brahmavihara" ;
+    dkg:translation "divine abode" ;
+    dkg:notes "Pali term for the divine abodes." ;
+    dkg:sourceFile "data/seeds/terms_remaining.json" .
+
+dkge:term_cattari_ariyasaccani_pali
+    a dkg:Term ;
+    dkg:name "cattari ariyasaccani" ;
+    dkg:language "Pali" ;
+    dkg:script "Latin" ;
+    dkg:transliteration "cattari ariyasaccani" ;
+    dkg:translation "four noble truths" ;
+    dkg:notes "Pali phrase for the Four Noble Truths." ;
+    dkg:sourceFile "data/seeds/terms_remaining.json" .
+
+dkge:term_catvari_aryasatyani_sanskrit
+    a dkg:Term ;
+    dkg:name "catvari aryasatyani" ;
+    dkg:language "Sanskrit" ;
+    dkg:script "Latin" ;
+    dkg:transliteration "catvari aryasatyani" ;
+    dkg:translation "four noble truths" ;
+    dkg:notes "Sanskrit phrase for the Four Noble Truths." ;
+    dkg:sourceFile "data/seeds/terms_remaining.json" .
 
 dkge:term_citta_pali
     a dkg:Term ;
@@ -717,6 +797,46 @@ dkge:term_karuna_pali
     dkg:notes "Pali and Sanskrit term for compassion." ;
     dkg:sourceFile "data/seeds/terms.json" .
 
+dkge:term_kilesa_pali
+    a dkg:Term ;
+    dkg:name "kilesa" ;
+    dkg:language "Pali" ;
+    dkg:script "Latin" ;
+    dkg:transliteration "kilesa" ;
+    dkg:translation "affliction; defilement" ;
+    dkg:notes "Pali term for afflictive mental states." ;
+    dkg:sourceFile "data/seeds/terms_remaining.json" .
+
+dkge:term_klesa_sanskrit
+    a dkg:Term ;
+    dkg:name "klesa" ;
+    dkg:language "Sanskrit" ;
+    dkg:script "Latin" ;
+    dkg:transliteration "klesa" ;
+    dkg:translation "affliction" ;
+    dkg:notes "Sanskrit term for afflictive mental states." ;
+    dkg:sourceFile "data/seeds/terms_remaining.json" .
+
+dkge:term_madhyama_pratipad_sanskrit
+    a dkg:Term ;
+    dkg:name "madhyama pratipad" ;
+    dkg:language "Sanskrit" ;
+    dkg:script "Latin" ;
+    dkg:transliteration "madhyama pratipad" ;
+    dkg:translation "middle way" ;
+    dkg:notes "Sanskrit phrase for the middle way." ;
+    dkg:sourceFile "data/seeds/terms_remaining.json" .
+
+dkge:term_majjhima_patipada_pali
+    a dkg:Term ;
+    dkg:name "majjhima patipada" ;
+    dkg:language "Pali" ;
+    dkg:script "Latin" ;
+    dkg:transliteration "majjhima patipada" ;
+    dkg:translation "middle way" ;
+    dkg:notes "Pali phrase for the middle way." ;
+    dkg:sourceFile "data/seeds/terms_remaining.json" .
+
 dkge:term_mantra_sanskrit
     a dkg:Term ;
     dkg:name "mantra" ;
@@ -736,6 +856,16 @@ dkge:term_metta_pali
     dkg:translation "loving-kindness" ;
     dkg:notes "Pali term for loving-kindness." ;
     dkg:sourceFile "data/seeds/terms.json" .
+
+dkge:term_mudita_pali
+    a dkg:Term ;
+    dkg:name "mudita" ;
+    dkg:language "Pali" ;
+    dkg:script "Latin" ;
+    dkg:transliteration "mudita" ;
+    dkg:translation "sympathetic joy" ;
+    dkg:notes "Pali and Sanskrit term for sympathetic joy." ;
+    dkg:sourceFile "data/seeds/terms_remaining.json" .
 
 dkge:term_nibbana_pali
     a dkg:Term ;
@@ -847,6 +977,16 @@ dkge:term_samsara_pali
     dkg:notes "Pali form for the cycle of conditioned existence." ;
     dkg:sourceFile "data/seeds/terms_extended.json" .
 
+dkge:term_satya_dvaya_sanskrit
+    a dkg:Term ;
+    dkg:name "satya-dvaya" ;
+    dkg:language "Sanskrit" ;
+    dkg:script "Latin" ;
+    dkg:transliteration "satya-dvaya" ;
+    dkg:translation "two truths" ;
+    dkg:notes "Sanskrit phrase for the two truths." ;
+    dkg:sourceFile "data/seeds/terms_remaining.json" .
+
 dkge:term_sila_pali
     a dkg:Term ;
     dkg:name "sila" ;
@@ -887,6 +1027,26 @@ dkge:term_tanha_pali
     dkg:notes "Pali term for craving." ;
     dkg:sourceFile "data/seeds/terms_extended.json" .
 
+dkge:term_tilakkhana_pali
+    a dkg:Term ;
+    dkg:name "tilakkhana" ;
+    dkg:language "Pali" ;
+    dkg:script "Latin" ;
+    dkg:transliteration "tilakkhana" ;
+    dkg:translation "three marks" ;
+    dkg:notes "Pali term for the three marks of existence." ;
+    dkg:sourceFile "data/seeds/terms_remaining.json" .
+
+dkge:term_trilaksana_sanskrit
+    a dkg:Term ;
+    dkg:name "trilaksana" ;
+    dkg:language "Sanskrit" ;
+    dkg:script "Latin" ;
+    dkg:transliteration "trilaksana" ;
+    dkg:translation "three marks" ;
+    dkg:notes "Sanskrit term for the three marks of existence." ;
+    dkg:sourceFile "data/seeds/terms_remaining.json" .
+
 dkge:term_trsna_sanskrit
     a dkg:Term ;
     dkg:name "trsna" ;
@@ -896,6 +1056,26 @@ dkge:term_trsna_sanskrit
     dkg:translation "craving; thirst" ;
     dkg:notes "Sanskrit term corresponding to Pali tanha." ;
     dkg:sourceFile "data/seeds/terms_extended.json" .
+
+dkge:term_upekkha_pali
+    a dkg:Term ;
+    dkg:name "upekkha" ;
+    dkg:language "Pali" ;
+    dkg:script "Latin" ;
+    dkg:transliteration "upekkha" ;
+    dkg:translation "equanimity" ;
+    dkg:notes "Pali term for equanimity." ;
+    dkg:sourceFile "data/seeds/terms_remaining.json" .
+
+dkge:term_upeksa_sanskrit
+    a dkg:Term ;
+    dkg:name "upeksa" ;
+    dkg:language "Sanskrit" ;
+    dkg:script "Latin" ;
+    dkg:transliteration "upeksa" ;
+    dkg:translation "equanimity" ;
+    dkg:notes "Sanskrit term corresponding to Pali upekkha." ;
+    dkg:sourceFile "data/seeds/terms_remaining.json" .
 
 dkge:text_dhammapada
     a dkg:Text ;
@@ -1081,6 +1261,9 @@ dkge:school_pali_canon
 dkge:school_theravada
     dkg:locatedIn dkge:place_sri_lanka .
 
+dkge:term_ahimsa_sanskrit
+    dkg:defines dkge:concept_ahimsa .
+
 dkge:term_anatman_sanskrit
     dkg:defines dkge:concept_anatta .
 
@@ -1098,8 +1281,22 @@ dkge:term_anitya_sanskrit
 dkge:term_appamada_pali
     dkg:defines dkge:concept_appamada .
 
+dkge:term_ariya_atthangika_magga_pali
+    dkg:defines dkge:concept_noble_eightfold_path ;
+    dkg:relatedTo dkge:term_arya_astangika_marga_sanskrit .
+
+dkge:term_arya_astangika_marga_sanskrit
+    dkg:defines dkge:concept_noble_eightfold_path .
+
+dkge:term_avalokitesvara_sanskrit
+    dkg:defines dkge:concept_avalokitesvara .
+
 dkge:term_avidya_sanskrit
     dkg:defines dkge:concept_avidya .
+
+dkge:term_avihimsa_pali
+    dkg:defines dkge:concept_ahimsa ;
+    dkg:relatedTo dkge:term_ahimsa_sanskrit .
 
 dkge:term_avijja_pali
     dkg:defines dkge:concept_avidya ;
@@ -1113,6 +1310,16 @@ dkge:term_bodhicitta_sanskrit
 
 dkge:term_bodhisattva_sanskrit
     dkg:defines dkge:concept_bodhisattva .
+
+dkge:term_brahmavihara_pali
+    dkg:defines dkge:concept_brahmaviharas .
+
+dkge:term_cattari_ariyasaccani_pali
+    dkg:defines dkge:concept_four_noble_truths ;
+    dkg:relatedTo dkge:term_catvari_aryasatyani_sanskrit .
+
+dkge:term_catvari_aryasatyani_sanskrit
+    dkg:defines dkge:concept_four_noble_truths .
 
 dkge:term_citta_pali
     dkg:defines dkge:concept_citta .
@@ -1137,11 +1344,28 @@ dkge:term_karma_sanskrit
 dkge:term_karuna_pali
     dkg:defines dkge:concept_karuna .
 
+dkge:term_kilesa_pali
+    dkg:defines dkge:concept_klesha ;
+    dkg:relatedTo dkge:term_klesa_sanskrit .
+
+dkge:term_klesa_sanskrit
+    dkg:defines dkge:concept_klesha .
+
+dkge:term_madhyama_pratipad_sanskrit
+    dkg:defines dkge:concept_middle_way .
+
+dkge:term_majjhima_patipada_pali
+    dkg:defines dkge:concept_middle_way ;
+    dkg:relatedTo dkge:term_madhyama_pratipad_sanskrit .
+
 dkge:term_mantra_sanskrit
     dkg:defines dkge:concept_mantra .
 
 dkge:term_metta_pali
     dkg:defines dkge:concept_metta .
+
+dkge:term_mudita_pali
+    dkg:defines dkge:concept_mudita .
 
 dkge:term_nibbana_pali
     dkg:defines dkge:concept_nirvana ;
@@ -1179,6 +1403,9 @@ dkge:term_samadhi_pali
 dkge:term_samsara_pali
     dkg:defines dkge:concept_samsara .
 
+dkge:term_satya_dvaya_sanskrit
+    dkg:defines dkge:concept_two_truths .
+
 dkge:term_sila_pali
     dkg:defines dkge:concept_sila .
 
@@ -1192,8 +1419,22 @@ dkge:term_tanha_pali
     dkg:defines dkge:concept_tanha ;
     dkg:relatedTo dkge:term_trsna_sanskrit .
 
+dkge:term_tilakkhana_pali
+    dkg:defines dkge:concept_three_marks ;
+    dkg:relatedTo dkge:term_trilaksana_sanskrit .
+
+dkge:term_trilaksana_sanskrit
+    dkg:defines dkge:concept_three_marks .
+
 dkge:term_trsna_sanskrit
     dkg:defines dkge:concept_tanha .
+
+dkge:term_upekkha_pali
+    dkg:defines dkge:concept_upekkha ;
+    dkg:relatedTo dkge:term_upeksa_sanskrit .
+
+dkge:term_upeksa_sanskrit
+    dkg:defines dkge:concept_upekkha .
 
 dkge:text_dhammapada
     dkg:belongsToSchool dkge:school_early_buddhism ;

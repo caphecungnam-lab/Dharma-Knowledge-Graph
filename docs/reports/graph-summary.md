@@ -6,11 +6,11 @@ Generated from `data/processed/graph.json`.
 
 | Metric | Value |
 | --- | --- |
-| Nodes | 104 |
-| Relationships | 163 |
-| Source files | 7 |
+| Nodes | 122 |
+| Relationships | 188 |
+| Source files | 8 |
 | Graph version | 0.1 |
-| Generated at | 2026-07-02T09:57:11.273667+00:00 |
+| Generated at | 2026-07-02T10:02:24.101577+00:00 |
 
 ## Node Types
 
@@ -21,7 +21,7 @@ Generated from `data/processed/graph.json`.
 | Person | 1 |
 | Place | 6 |
 | School | 5 |
-| Term | 35 |
+| Term | 53 |
 | Text | 3 |
 
 ## Relationship Types
@@ -31,10 +31,10 @@ Generated from `data/processed/graph.json`.
 | AUTHORED_BY | 1 |
 | BELONGS_TO_SCHOOL | 13 |
 | CITES | 17 |
-| DEFINES | 42 |
+| DEFINES | 60 |
 | LOCATED_IN | 4 |
 | MENTIONS | 56 |
-| RELATED_TO | 30 |
+| RELATED_TO | 37 |
 
 ## Most Connected Nodes
 
@@ -46,10 +46,10 @@ Generated from `data/processed/graph.json`.
 | Mahayana | School | 9 |
 | Sunyata | Concept | 9 |
 | Mulamadhyamakakarika | Text | 8 |
+| Four Noble Truths | Concept | 8 |
 | Prajnaparamita | Concept | 7 |
+| Noble Eightfold Path | Concept | 6 |
 | Citta | Concept | 6 |
-| Karma | Concept | 6 |
-| Nirvana | Concept | 6 |
 
 ## Isolated Nodes
 
@@ -64,3 +64,4 @@ No isolated nodes.
 - `data/seeds/places_traditions.json`
 - `data/seeds/terms.json`
 - `data/seeds/terms_extended.json`
+- `data/seeds/terms_remaining.json`

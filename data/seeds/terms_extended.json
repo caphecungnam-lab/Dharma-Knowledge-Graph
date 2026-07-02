@@ -1,0 +1,326 @@
+{
+  "nodes": [
+    {
+      "id": "term_kamma_pali",
+      "type": "Term",
+      "name": "kamma",
+      "language": "Pali",
+      "script": "Latin",
+      "transliteration": "kamma",
+      "translation": "intentional action",
+      "notes": "Pali form corresponding to Sanskrit karma."
+    },
+    {
+      "id": "term_karma_sanskrit",
+      "type": "Term",
+      "name": "karma",
+      "language": "Sanskrit",
+      "script": "Latin",
+      "transliteration": "karma",
+      "translation": "intentional action",
+      "notes": "Sanskrit form for intentional action and its consequences."
+    },
+    {
+      "id": "term_samsara_pali",
+      "type": "Term",
+      "name": "samsara",
+      "language": "Pali",
+      "script": "Latin",
+      "transliteration": "samsara",
+      "translation": "cycle of rebirth",
+      "notes": "Pali form for the cycle of conditioned existence."
+    },
+    {
+      "id": "term_avijja_pali",
+      "type": "Term",
+      "name": "avijja",
+      "language": "Pali",
+      "script": "Latin",
+      "transliteration": "avijja",
+      "translation": "ignorance",
+      "notes": "Pali term for ignorance or misknowing."
+    },
+    {
+      "id": "term_avidya_sanskrit",
+      "type": "Term",
+      "name": "avidya",
+      "language": "Sanskrit",
+      "script": "Latin",
+      "transliteration": "avidya",
+      "translation": "ignorance",
+      "notes": "Sanskrit term for ignorance or misknowing."
+    },
+    {
+      "id": "term_tanha_pali",
+      "type": "Term",
+      "name": "tanha",
+      "language": "Pali",
+      "script": "Latin",
+      "transliteration": "tanha",
+      "translation": "craving; thirst",
+      "notes": "Pali term for craving."
+    },
+    {
+      "id": "term_trsna_sanskrit",
+      "type": "Term",
+      "name": "trsna",
+      "language": "Sanskrit",
+      "script": "Latin",
+      "transliteration": "trsna",
+      "translation": "craving; thirst",
+      "notes": "Sanskrit term corresponding to Pali tanha."
+    },
+    {
+      "id": "term_sila_pali",
+      "type": "Term",
+      "name": "sila",
+      "language": "Pali",
+      "script": "Latin",
+      "transliteration": "sila",
+      "translation": "ethical conduct",
+      "notes": "Pali term for moral discipline or ethical conduct."
+    },
+    {
+      "id": "term_samadhi_pali",
+      "type": "Term",
+      "name": "samadhi",
+      "language": "Pali",
+      "script": "Latin",
+      "transliteration": "samadhi",
+      "translation": "concentration; collectedness",
+      "notes": "Pali and Sanskrit term for meditative collectedness."
+    },
+    {
+      "id": "term_panna_pali",
+      "type": "Term",
+      "name": "panna",
+      "language": "Pali",
+      "script": "Latin",
+      "transliteration": "panna",
+      "translation": "wisdom",
+      "notes": "Pali term corresponding to Sanskrit prajna."
+    },
+    {
+      "id": "term_prajna_sanskrit",
+      "type": "Term",
+      "name": "prajna",
+      "language": "Sanskrit",
+      "script": "Latin",
+      "transliteration": "prajna",
+      "translation": "wisdom",
+      "notes": "Sanskrit term for wisdom or liberating insight."
+    },
+    {
+      "id": "term_paramita_sanskrit",
+      "type": "Term",
+      "name": "paramita",
+      "language": "Sanskrit",
+      "script": "Latin",
+      "transliteration": "paramita",
+      "translation": "perfection",
+      "notes": "Sanskrit term for perfection or transcendent virtue."
+    },
+    {
+      "id": "term_bodhicitta_sanskrit",
+      "type": "Term",
+      "name": "bodhicitta",
+      "language": "Sanskrit",
+      "script": "Latin",
+      "transliteration": "bodhicitta",
+      "translation": "awakening mind",
+      "notes": "Sanskrit term for the awakened mind or aspiration toward awakening."
+    },
+    {
+      "id": "term_bodhisattva_sanskrit",
+      "type": "Term",
+      "name": "bodhisattva",
+      "language": "Sanskrit",
+      "script": "Latin",
+      "transliteration": "bodhisattva",
+      "translation": "awakening being",
+      "notes": "Sanskrit term for a being oriented toward awakening."
+    },
+    {
+      "id": "term_prajnaparamita_sanskrit",
+      "type": "Term",
+      "name": "prajnaparamita",
+      "language": "Sanskrit",
+      "script": "Latin",
+      "transliteration": "prajnaparamita",
+      "translation": "perfection of wisdom",
+      "notes": "Sanskrit term for the perfection of wisdom."
+    },
+    {
+      "id": "term_rupa_pali",
+      "type": "Term",
+      "name": "rupa",
+      "language": "Pali",
+      "script": "Latin",
+      "transliteration": "rupa",
+      "translation": "form; material form",
+      "notes": "Pali and Sanskrit term for form."
+    },
+    {
+      "id": "term_skandha_sanskrit",
+      "type": "Term",
+      "name": "skandha",
+      "language": "Sanskrit",
+      "script": "Latin",
+      "transliteration": "skandha",
+      "translation": "aggregate",
+      "notes": "Sanskrit term for aggregate."
+    },
+    {
+      "id": "term_ayatana_pali",
+      "type": "Term",
+      "name": "ayatana",
+      "language": "Pali",
+      "script": "Latin",
+      "transliteration": "ayatana",
+      "translation": "sense base",
+      "notes": "Pali and Sanskrit term for sense base."
+    },
+    {
+      "id": "term_dhatu_pali",
+      "type": "Term",
+      "name": "dhatu",
+      "language": "Pali",
+      "script": "Latin",
+      "transliteration": "dhatu",
+      "translation": "element; domain",
+      "notes": "Pali and Sanskrit term for element or domain."
+    },
+    {
+      "id": "term_mantra_sanskrit",
+      "type": "Term",
+      "name": "mantra",
+      "language": "Sanskrit",
+      "script": "Latin",
+      "transliteration": "mantra",
+      "translation": "sacred utterance",
+      "notes": "Sanskrit term for a sacred utterance or formula."
+    }
+  ],
+  "relationships": [
+    {
+      "source": "term_kamma_pali",
+      "type": "DEFINES",
+      "target": "concept_karma"
+    },
+    {
+      "source": "term_karma_sanskrit",
+      "type": "DEFINES",
+      "target": "concept_karma"
+    },
+    {
+      "source": "term_samsara_pali",
+      "type": "DEFINES",
+      "target": "concept_samsara"
+    },
+    {
+      "source": "term_avijja_pali",
+      "type": "DEFINES",
+      "target": "concept_avidya"
+    },
+    {
+      "source": "term_avidya_sanskrit",
+      "type": "DEFINES",
+      "target": "concept_avidya"
+    },
+    {
+      "source": "term_tanha_pali",
+      "type": "DEFINES",
+      "target": "concept_tanha"
+    },
+    {
+      "source": "term_trsna_sanskrit",
+      "type": "DEFINES",
+      "target": "concept_tanha"
+    },
+    {
+      "source": "term_sila_pali",
+      "type": "DEFINES",
+      "target": "concept_sila"
+    },
+    {
+      "source": "term_samadhi_pali",
+      "type": "DEFINES",
+      "target": "concept_samadhi"
+    },
+    {
+      "source": "term_panna_pali",
+      "type": "DEFINES",
+      "target": "concept_prajna"
+    },
+    {
+      "source": "term_prajna_sanskrit",
+      "type": "DEFINES",
+      "target": "concept_prajna"
+    },
+    {
+      "source": "term_paramita_sanskrit",
+      "type": "DEFINES",
+      "target": "concept_paramita"
+    },
+    {
+      "source": "term_bodhicitta_sanskrit",
+      "type": "DEFINES",
+      "target": "concept_bodhicitta"
+    },
+    {
+      "source": "term_bodhisattva_sanskrit",
+      "type": "DEFINES",
+      "target": "concept_bodhisattva"
+    },
+    {
+      "source": "term_prajnaparamita_sanskrit",
+      "type": "DEFINES",
+      "target": "concept_prajnaparamita"
+    },
+    {
+      "source": "term_rupa_pali",
+      "type": "DEFINES",
+      "target": "concept_form"
+    },
+    {
+      "source": "term_skandha_sanskrit",
+      "type": "DEFINES",
+      "target": "concept_skandhas"
+    },
+    {
+      "source": "term_ayatana_pali",
+      "type": "DEFINES",
+      "target": "concept_ayatana"
+    },
+    {
+      "source": "term_dhatu_pali",
+      "type": "DEFINES",
+      "target": "concept_dhatu"
+    },
+    {
+      "source": "term_mantra_sanskrit",
+      "type": "DEFINES",
+      "target": "concept_mantra"
+    },
+    {
+      "source": "term_kamma_pali",
+      "type": "RELATED_TO",
+      "target": "term_karma_sanskrit"
+    },
+    {
+      "source": "term_avijja_pali",
+      "type": "RELATED_TO",
+      "target": "term_avidya_sanskrit"
+    },
+    {
+      "source": "term_tanha_pali",
+      "type": "RELATED_TO",
+      "target": "term_trsna_sanskrit"
+    },
+    {
+      "source": "term_panna_pali",
+      "type": "RELATED_TO",
+      "target": "term_prajna_sanskrit"
+    }
+  ]
+}
