@@ -124,7 +124,8 @@ def validate_evidence_node(path: Path, index: int, node: dict) -> list[str]:
         node, "speaker"
     ):
         errors.append(
-            f"{path}: node {index} Evidence with transcript_excerpt " "requires speaker"
+            f"{path}: node {index} Evidence with transcript_excerpt "
+            "requires speaker"
         )
 
     if node.get("source_kind") == "youtube" and missing_or_empty_string(
@@ -180,7 +181,9 @@ def validate_seed_files(seed_files: list[Path]) -> list[str]:
 
             missing = REQUIRED_NODE_FIELDS - node.keys()
             if missing:
-                errors.append(f"{path}: node {index} missing fields: {sorted(missing)}")
+                errors.append(
+                    f"{path}: node {index} missing fields: {sorted(missing)}"
+                )
 
             node_id = node.get("id")
             node_type = node.get("type")
