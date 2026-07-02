@@ -1,4 +1,4 @@
-.PHONY: all validate build report check clean
+.PHONY: all validate build report export-neo4j check clean
 
 all: check
 
@@ -11,8 +11,11 @@ build:
 report: build
 	python3 scripts/write_graph_report.py
 
-check: validate report
-	python3 -m py_compile scripts/build_graph.py scripts/validate_seed_data.py scripts/write_graph_report.py
+export-neo4j: build
+	python3 scripts/export_neo4j_csv.py
+
+check: validate report export-neo4j
+	python3 -m py_compile scripts/build_graph.py scripts/validate_seed_data.py scripts/write_graph_report.py scripts/export_neo4j_csv.py
 
 clean:
 	rm -rf scripts/__pycache__

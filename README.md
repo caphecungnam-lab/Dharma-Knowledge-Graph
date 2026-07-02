@@ -104,6 +104,21 @@ python3 scripts/write_graph_report.py
 This writes `docs/reports/graph-summary.md`, a readable summary of graph size,
 node types, relationship types, highly connected nodes, and isolated nodes.
 
+## Export Neo4j CSV
+
+Run:
+
+```bash
+python3 scripts/export_neo4j_csv.py
+```
+
+This writes:
+
+- `data/processed/neo4j/nodes.csv`
+- `data/processed/neo4j/relationships.csv`
+
+These CSV files are shaped for Neo4j-style graph imports.
+
 ## Continuous Checks
 
 GitHub Actions runs `make check` on pushes to `main` and on pull requests. The

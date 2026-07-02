@@ -1,0 +1,35 @@
+id:ID,:LABEL,name,description,category,pali,sanskrit,tradition,language,source_file
+concept_anatta,Concept,Anatta,"Not-self; the absence of a permanent, independent self in conditioned phenomena.",doctrine,anatta,anatman,,,data/seeds/concepts.json
+concept_anicca,Concept,Anicca,Impermanence; the conditioned nature of phenomena as changing and unstable.,doctrine,anicca,anitya,,,data/seeds/concepts.json
+concept_avidya,Concept,Avidya,"Ignorance or misknowing, especially regarding the nature of reality and the path.",psychology,avijja,avidya,,,data/seeds/concepts.json
+concept_bodhicitta,Concept,Bodhicitta,The awakened mind or aspiration to attain awakening for the benefit of all beings.,mahayana,,bodhicitta,,,data/seeds/concepts.json
+concept_bodhisattva,Concept,Bodhisattva,"A being oriented toward awakening, especially for the liberation of all beings in Mahayana contexts.",mahayana,bodhisatta,bodhisattva,,,data/seeds/concepts.json
+concept_brahmaviharas,Concept,Brahmaviharas,"The four divine abodes: loving-kindness, compassion, sympathetic joy, and equanimity.",practice,brahmavihara,brahmavihara,,,data/seeds/concepts.json
+concept_dukkha,Concept,Dukkha,"A central Dharma concept often translated as suffering, unsatisfactoriness, or stress.",,dukkha,duhkha,,,data/seeds/core.json
+concept_dhatu,Concept,Elements,Elements or domains used to analyze experience and phenomena.,analysis,dhatu,dhatu,,,data/seeds/concepts.json
+concept_skandhas,Concept,Five Aggregates,"Form, feeling, perception, formations, and consciousness as a framework for analyzing experience.",analysis,khandha,skandha,,,data/seeds/concepts.json
+concept_four_noble_truths,Concept,Four Noble Truths,"The teaching of suffering, its origin, its cessation, and the path leading to cessation.",doctrine,cattari ariyasaccani,catvari aryasatyani,,,data/seeds/concepts.json
+concept_karma,Concept,Karma,Intentional action and its ethical consequences.,ethics,kamma,karma,,,data/seeds/concepts.json
+concept_karuna,Concept,Karuna,Compassion; the wish for beings to be free from suffering.,practice,karuna,karuna,,,data/seeds/concepts.json
+concept_klesha,Concept,Klesha,Afflictive mental states that disturb the mind and condition suffering.,psychology,kilesa,klesa,,,data/seeds/concepts.json
+concept_metta,Concept,Metta,Loving-kindness; the cultivation of goodwill and friendliness.,practice,metta,maitri,,,data/seeds/concepts.json
+concept_middle_way,Concept,Middle Way,"A path avoiding extremes, often framed as avoiding indulgence and self-mortification or eternalism and nihilism.",practice,majjhima patipada,madhyama pratipad,,,data/seeds/concepts.json
+concept_mudita,Concept,Mudita,Sympathetic joy; delight in the welfare and happiness of others.,practice,mudita,mudita,,,data/seeds/concepts.json
+concept_nirvana,Concept,Nirvana,"Liberation; the extinguishing of greed, hatred, and delusion.",liberation,nibbana,nirvana,,,data/seeds/concepts.json
+concept_noble_eightfold_path,Concept,Noble Eightfold Path,"The path of right view, intention, speech, action, livelihood, effort, mindfulness, and concentration.",practice,ariya atthangika magga,arya astangika marga,,,data/seeds/concepts.json
+concept_paramita,Concept,Paramita,Perfection or transcendent virtue cultivated on the bodhisattva path.,mahayana,parami,paramita,,,data/seeds/concepts.json
+concept_prajna,Concept,Prajna,Wisdom or liberating insight into the nature of phenomena.,wisdom,panna,prajna,,,data/seeds/concepts.json
+concept_pratityasamutpada,Concept,Pratityasamutpada,Dependent arising; the principle that phenomena arise in dependence on causes and conditions.,doctrine,paticcasamuppada,pratityasamutpada,,,data/seeds/concepts.json
+concept_samadhi,Concept,Samadhi,"Collectedness, concentration, or meditative absorption.",practice,samadhi,samadhi,,,data/seeds/concepts.json
+concept_samsara,Concept,Samsara,"The cycle of birth, death, and rebirth conditioned by ignorance and craving.",cosmology,samsara,samsara,,,data/seeds/concepts.json
+concept_sila,Concept,Sila,Ethical conduct or moral discipline.,ethics,sila,sila,,,data/seeds/concepts.json
+concept_ayatana,Concept,Six Sense Bases,The internal and external sense bases involved in perceptual experience.,analysis,ayatana,ayatana,,,data/seeds/concepts.json
+concept_sunyata,Concept,Sunyata,A Mahayana concept commonly translated as emptiness.,,,sunyata,,,data/seeds/core.json
+concept_tanha,Concept,Tanha,Craving or thirst; a central condition in the arising of suffering.,psychology,tanha,trsna,,,data/seeds/concepts.json
+concept_three_marks,Concept,Three Marks of Existence,"The marks of impermanence, suffering or unsatisfactoriness, and not-self.",doctrine,tilakkhana,trilaksana,,,data/seeds/concepts.json
+concept_two_truths,Concept,Two Truths,The distinction between conventional truth and ultimate truth.,mahayana,,satya-dvaya,,,data/seeds/concepts.json
+concept_upekkha,Concept,Upekkha,Equanimity; balanced presence toward changing experience.,practice,upekkha,upeksa,,,data/seeds/concepts.json
+person_nagarjuna,Person,Nagarjuna,A major Buddhist philosopher associated with Madhyamaka.,,,,Mahayana,,data/seeds/core.json
+school_madhyamaka,School,Madhyamaka,A Mahayana philosophical school associated with analysis of emptiness.,,,,,,data/seeds/core.json
+school_theravada,School,Theravada,A Buddhist tradition preserving the Pali Canon.,,,,,,data/seeds/core.json
+text_mulamadhyamakakarika,Text,Mulamadhyamakakarika,A foundational Madhyamaka text attributed to Nagarjuna.,,,,Mahayana,Sanskrit,data/seeds/core.json
