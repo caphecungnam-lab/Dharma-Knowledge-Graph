@@ -597,6 +597,56 @@ dkge:term_appamada_pali
     dkg:notes "A central practice quality highlighted in the Dhammapada." ;
     dkg:sourceFile "data/seeds/terms.json" .
 
+dkge:term_avidya_sanskrit
+    a dkg:Term ;
+    dkg:name "avidya" ;
+    dkg:language "Sanskrit" ;
+    dkg:script "Latin" ;
+    dkg:transliteration "avidya" ;
+    dkg:translation "ignorance" ;
+    dkg:notes "Sanskrit term for ignorance or misknowing." ;
+    dkg:sourceFile "data/seeds/terms_extended.json" .
+
+dkge:term_avijja_pali
+    a dkg:Term ;
+    dkg:name "avijja" ;
+    dkg:language "Pali" ;
+    dkg:script "Latin" ;
+    dkg:transliteration "avijja" ;
+    dkg:translation "ignorance" ;
+    dkg:notes "Pali term for ignorance or misknowing." ;
+    dkg:sourceFile "data/seeds/terms_extended.json" .
+
+dkge:term_ayatana_pali
+    a dkg:Term ;
+    dkg:name "ayatana" ;
+    dkg:language "Pali" ;
+    dkg:script "Latin" ;
+    dkg:transliteration "ayatana" ;
+    dkg:translation "sense base" ;
+    dkg:notes "Pali and Sanskrit term for sense base." ;
+    dkg:sourceFile "data/seeds/terms_extended.json" .
+
+dkge:term_bodhicitta_sanskrit
+    a dkg:Term ;
+    dkg:name "bodhicitta" ;
+    dkg:language "Sanskrit" ;
+    dkg:script "Latin" ;
+    dkg:transliteration "bodhicitta" ;
+    dkg:translation "awakening mind" ;
+    dkg:notes "Sanskrit term for the awakened mind or aspiration toward awakening." ;
+    dkg:sourceFile "data/seeds/terms_extended.json" .
+
+dkge:term_bodhisattva_sanskrit
+    a dkg:Term ;
+    dkg:name "bodhisattva" ;
+    dkg:language "Sanskrit" ;
+    dkg:script "Latin" ;
+    dkg:transliteration "bodhisattva" ;
+    dkg:translation "awakening being" ;
+    dkg:notes "Sanskrit term for a being oriented toward awakening." ;
+    dkg:sourceFile "data/seeds/terms_extended.json" .
+
 dkge:term_citta_pali
     a dkg:Term ;
     dkg:name "citta" ;
@@ -606,6 +656,16 @@ dkge:term_citta_pali
     dkg:translation "mind; heart" ;
     dkg:notes "A term for mind, heart, or mental orientation." ;
     dkg:sourceFile "data/seeds/terms.json" .
+
+dkge:term_dhatu_pali
+    a dkg:Term ;
+    dkg:name "dhatu" ;
+    dkg:language "Pali" ;
+    dkg:script "Latin" ;
+    dkg:transliteration "dhatu" ;
+    dkg:translation "element; domain" ;
+    dkg:notes "Pali and Sanskrit term for element or domain." ;
+    dkg:sourceFile "data/seeds/terms_extended.json" .
 
 dkge:term_duhkha_sanskrit
     a dkg:Term ;
@@ -627,6 +687,26 @@ dkge:term_dukkha_pali
     dkg:notes "A core Pali term in the analysis of conditioned experience." ;
     dkg:sourceFile "data/seeds/terms.json" .
 
+dkge:term_kamma_pali
+    a dkg:Term ;
+    dkg:name "kamma" ;
+    dkg:language "Pali" ;
+    dkg:script "Latin" ;
+    dkg:transliteration "kamma" ;
+    dkg:translation "intentional action" ;
+    dkg:notes "Pali form corresponding to Sanskrit karma." ;
+    dkg:sourceFile "data/seeds/terms_extended.json" .
+
+dkge:term_karma_sanskrit
+    a dkg:Term ;
+    dkg:name "karma" ;
+    dkg:language "Sanskrit" ;
+    dkg:script "Latin" ;
+    dkg:transliteration "karma" ;
+    dkg:translation "intentional action" ;
+    dkg:notes "Sanskrit form for intentional action and its consequences." ;
+    dkg:sourceFile "data/seeds/terms_extended.json" .
+
 dkge:term_karuna_pali
     a dkg:Term ;
     dkg:name "karuna" ;
@@ -636,6 +716,16 @@ dkge:term_karuna_pali
     dkg:translation "compassion" ;
     dkg:notes "Pali and Sanskrit term for compassion." ;
     dkg:sourceFile "data/seeds/terms.json" .
+
+dkge:term_mantra_sanskrit
+    a dkg:Term ;
+    dkg:name "mantra" ;
+    dkg:language "Sanskrit" ;
+    dkg:script "Latin" ;
+    dkg:transliteration "mantra" ;
+    dkg:translation "sacred utterance" ;
+    dkg:notes "Sanskrit term for a sacred utterance or formula." ;
+    dkg:sourceFile "data/seeds/terms_extended.json" .
 
 dkge:term_metta_pali
     a dkg:Term ;
@@ -667,6 +757,26 @@ dkge:term_nirvana_sanskrit
     dkg:notes "Sanskrit form corresponding to Pali nibbana." ;
     dkg:sourceFile "data/seeds/terms.json" .
 
+dkge:term_panna_pali
+    a dkg:Term ;
+    dkg:name "panna" ;
+    dkg:language "Pali" ;
+    dkg:script "Latin" ;
+    dkg:transliteration "panna" ;
+    dkg:translation "wisdom" ;
+    dkg:notes "Pali term corresponding to Sanskrit prajna." ;
+    dkg:sourceFile "data/seeds/terms_extended.json" .
+
+dkge:term_paramita_sanskrit
+    a dkg:Term ;
+    dkg:name "paramita" ;
+    dkg:language "Sanskrit" ;
+    dkg:script "Latin" ;
+    dkg:transliteration "paramita" ;
+    dkg:translation "perfection" ;
+    dkg:notes "Sanskrit term for perfection or transcendent virtue." ;
+    dkg:sourceFile "data/seeds/terms_extended.json" .
+
 dkge:term_paticcasamuppada_pali
     a dkg:Term ;
     dkg:name "paticcasamuppada" ;
@@ -676,6 +786,26 @@ dkge:term_paticcasamuppada_pali
     dkg:translation "dependent arising" ;
     dkg:notes "Pali term for dependent arising." ;
     dkg:sourceFile "data/seeds/terms.json" .
+
+dkge:term_prajna_sanskrit
+    a dkg:Term ;
+    dkg:name "prajna" ;
+    dkg:language "Sanskrit" ;
+    dkg:script "Latin" ;
+    dkg:transliteration "prajna" ;
+    dkg:translation "wisdom" ;
+    dkg:notes "Sanskrit term for wisdom or liberating insight." ;
+    dkg:sourceFile "data/seeds/terms_extended.json" .
+
+dkge:term_prajnaparamita_sanskrit
+    a dkg:Term ;
+    dkg:name "prajnaparamita" ;
+    dkg:language "Sanskrit" ;
+    dkg:script "Latin" ;
+    dkg:transliteration "prajnaparamita" ;
+    dkg:translation "perfection of wisdom" ;
+    dkg:notes "Sanskrit term for the perfection of wisdom." ;
+    dkg:sourceFile "data/seeds/terms_extended.json" .
 
 dkge:term_pratityasamutpada_sanskrit
     a dkg:Term ;
@@ -687,6 +817,56 @@ dkge:term_pratityasamutpada_sanskrit
     dkg:notes "Sanskrit term for dependent arising." ;
     dkg:sourceFile "data/seeds/terms.json" .
 
+dkge:term_rupa_pali
+    a dkg:Term ;
+    dkg:name "rupa" ;
+    dkg:language "Pali" ;
+    dkg:script "Latin" ;
+    dkg:transliteration "rupa" ;
+    dkg:translation "form; material form" ;
+    dkg:notes "Pali and Sanskrit term for form." ;
+    dkg:sourceFile "data/seeds/terms_extended.json" .
+
+dkge:term_samadhi_pali
+    a dkg:Term ;
+    dkg:name "samadhi" ;
+    dkg:language "Pali" ;
+    dkg:script "Latin" ;
+    dkg:transliteration "samadhi" ;
+    dkg:translation "concentration; collectedness" ;
+    dkg:notes "Pali and Sanskrit term for meditative collectedness." ;
+    dkg:sourceFile "data/seeds/terms_extended.json" .
+
+dkge:term_samsara_pali
+    a dkg:Term ;
+    dkg:name "samsara" ;
+    dkg:language "Pali" ;
+    dkg:script "Latin" ;
+    dkg:transliteration "samsara" ;
+    dkg:translation "cycle of rebirth" ;
+    dkg:notes "Pali form for the cycle of conditioned existence." ;
+    dkg:sourceFile "data/seeds/terms_extended.json" .
+
+dkge:term_sila_pali
+    a dkg:Term ;
+    dkg:name "sila" ;
+    dkg:language "Pali" ;
+    dkg:script "Latin" ;
+    dkg:transliteration "sila" ;
+    dkg:translation "ethical conduct" ;
+    dkg:notes "Pali term for moral discipline or ethical conduct." ;
+    dkg:sourceFile "data/seeds/terms_extended.json" .
+
+dkge:term_skandha_sanskrit
+    a dkg:Term ;
+    dkg:name "skandha" ;
+    dkg:language "Sanskrit" ;
+    dkg:script "Latin" ;
+    dkg:transliteration "skandha" ;
+    dkg:translation "aggregate" ;
+    dkg:notes "Sanskrit term for aggregate." ;
+    dkg:sourceFile "data/seeds/terms_extended.json" .
+
 dkge:term_sunyata_sanskrit
     a dkg:Term ;
     dkg:name "sunyata" ;
@@ -696,6 +876,26 @@ dkge:term_sunyata_sanskrit
     dkg:translation "emptiness" ;
     dkg:notes "A key Mahayana term, especially important in Madhyamaka contexts." ;
     dkg:sourceFile "data/seeds/terms.json" .
+
+dkge:term_tanha_pali
+    a dkg:Term ;
+    dkg:name "tanha" ;
+    dkg:language "Pali" ;
+    dkg:script "Latin" ;
+    dkg:transliteration "tanha" ;
+    dkg:translation "craving; thirst" ;
+    dkg:notes "Pali term for craving." ;
+    dkg:sourceFile "data/seeds/terms_extended.json" .
+
+dkge:term_trsna_sanskrit
+    a dkg:Term ;
+    dkg:name "trsna" ;
+    dkg:language "Sanskrit" ;
+    dkg:script "Latin" ;
+    dkg:transliteration "trsna" ;
+    dkg:translation "craving; thirst" ;
+    dkg:notes "Sanskrit term corresponding to Pali tanha." ;
+    dkg:sourceFile "data/seeds/terms_extended.json" .
 
 dkge:text_dhammapada
     a dkg:Text ;
@@ -898,8 +1098,27 @@ dkge:term_anitya_sanskrit
 dkge:term_appamada_pali
     dkg:defines dkge:concept_appamada .
 
+dkge:term_avidya_sanskrit
+    dkg:defines dkge:concept_avidya .
+
+dkge:term_avijja_pali
+    dkg:defines dkge:concept_avidya ;
+    dkg:relatedTo dkge:term_avidya_sanskrit .
+
+dkge:term_ayatana_pali
+    dkg:defines dkge:concept_ayatana .
+
+dkge:term_bodhicitta_sanskrit
+    dkg:defines dkge:concept_bodhicitta .
+
+dkge:term_bodhisattva_sanskrit
+    dkg:defines dkge:concept_bodhisattva .
+
 dkge:term_citta_pali
     dkg:defines dkge:concept_citta .
+
+dkge:term_dhatu_pali
+    dkg:defines dkge:concept_dhatu .
 
 dkge:term_duhkha_sanskrit
     dkg:defines dkge:concept_dukkha .
@@ -908,8 +1127,18 @@ dkge:term_dukkha_pali
     dkg:defines dkge:concept_dukkha ;
     dkg:relatedTo dkge:term_duhkha_sanskrit .
 
+dkge:term_kamma_pali
+    dkg:defines dkge:concept_karma ;
+    dkg:relatedTo dkge:term_karma_sanskrit .
+
+dkge:term_karma_sanskrit
+    dkg:defines dkge:concept_karma .
+
 dkge:term_karuna_pali
     dkg:defines dkge:concept_karuna .
+
+dkge:term_mantra_sanskrit
+    dkg:defines dkge:concept_mantra .
 
 dkge:term_metta_pali
     dkg:defines dkge:concept_metta .
@@ -921,15 +1150,50 @@ dkge:term_nibbana_pali
 dkge:term_nirvana_sanskrit
     dkg:defines dkge:concept_nirvana .
 
+dkge:term_panna_pali
+    dkg:defines dkge:concept_prajna ;
+    dkg:relatedTo dkge:term_prajna_sanskrit .
+
+dkge:term_paramita_sanskrit
+    dkg:defines dkge:concept_paramita .
+
 dkge:term_paticcasamuppada_pali
     dkg:defines dkge:concept_pratityasamutpada ;
     dkg:relatedTo dkge:term_pratityasamutpada_sanskrit .
 
+dkge:term_prajna_sanskrit
+    dkg:defines dkge:concept_prajna .
+
+dkge:term_prajnaparamita_sanskrit
+    dkg:defines dkge:concept_prajnaparamita .
+
 dkge:term_pratityasamutpada_sanskrit
     dkg:defines dkge:concept_pratityasamutpada .
 
+dkge:term_rupa_pali
+    dkg:defines dkge:concept_form .
+
+dkge:term_samadhi_pali
+    dkg:defines dkge:concept_samadhi .
+
+dkge:term_samsara_pali
+    dkg:defines dkge:concept_samsara .
+
+dkge:term_sila_pali
+    dkg:defines dkge:concept_sila .
+
+dkge:term_skandha_sanskrit
+    dkg:defines dkge:concept_skandhas .
+
 dkge:term_sunyata_sanskrit
     dkg:defines dkge:concept_sunyata .
+
+dkge:term_tanha_pali
+    dkg:defines dkge:concept_tanha ;
+    dkg:relatedTo dkge:term_trsna_sanskrit .
+
+dkge:term_trsna_sanskrit
+    dkg:defines dkge:concept_tanha .
 
 dkge:text_dhammapada
     dkg:belongsToSchool dkge:school_early_buddhism ;

@@ -2,36 +2,37 @@ window.DHARMA_GRAPH = {
   "metadata": {
     "title": "Dharma Knowledge Graph",
     "version": "0.1",
-    "generated_at": "2026-07-02T09:49:05.692166+00:00",
+    "generated_at": "2026-07-02T09:57:11.273667+00:00",
     "source_files": [
       "data/seeds/concepts.json",
       "data/seeds/core.json",
       "data/seeds/dhammapada.json",
       "data/seeds/heart_sutra.json",
       "data/seeds/places_traditions.json",
-      "data/seeds/terms.json"
+      "data/seeds/terms.json",
+      "data/seeds/terms_extended.json"
     ]
   },
   "summary": {
-    "node_count": 84,
-    "relationship_count": 139,
+    "node_count": 104,
+    "relationship_count": 163,
     "node_type_counts": {
       "Citation": 17,
       "Concept": 37,
       "Person": 1,
       "Place": 6,
       "School": 5,
-      "Term": 15,
+      "Term": 35,
       "Text": 3
     },
     "relationship_type_counts": {
       "AUTHORED_BY": 1,
       "BELONGS_TO_SCHOOL": 13,
       "CITES": 17,
-      "DEFINES": 22,
+      "DEFINES": 42,
       "LOCATED_IN": 4,
       "MENTIONS": 56,
-      "RELATED_TO": 26
+      "RELATED_TO": 30
     }
   },
   "nodes": [
@@ -703,6 +704,61 @@ window.DHARMA_GRAPH = {
       "source_file": "data/seeds/terms.json"
     },
     {
+      "id": "term_avidya_sanskrit",
+      "type": "Term",
+      "name": "avidya",
+      "language": "Sanskrit",
+      "script": "Latin",
+      "transliteration": "avidya",
+      "translation": "ignorance",
+      "notes": "Sanskrit term for ignorance or misknowing.",
+      "source_file": "data/seeds/terms_extended.json"
+    },
+    {
+      "id": "term_avijja_pali",
+      "type": "Term",
+      "name": "avijja",
+      "language": "Pali",
+      "script": "Latin",
+      "transliteration": "avijja",
+      "translation": "ignorance",
+      "notes": "Pali term for ignorance or misknowing.",
+      "source_file": "data/seeds/terms_extended.json"
+    },
+    {
+      "id": "term_ayatana_pali",
+      "type": "Term",
+      "name": "ayatana",
+      "language": "Pali",
+      "script": "Latin",
+      "transliteration": "ayatana",
+      "translation": "sense base",
+      "notes": "Pali and Sanskrit term for sense base.",
+      "source_file": "data/seeds/terms_extended.json"
+    },
+    {
+      "id": "term_bodhicitta_sanskrit",
+      "type": "Term",
+      "name": "bodhicitta",
+      "language": "Sanskrit",
+      "script": "Latin",
+      "transliteration": "bodhicitta",
+      "translation": "awakening mind",
+      "notes": "Sanskrit term for the awakened mind or aspiration toward awakening.",
+      "source_file": "data/seeds/terms_extended.json"
+    },
+    {
+      "id": "term_bodhisattva_sanskrit",
+      "type": "Term",
+      "name": "bodhisattva",
+      "language": "Sanskrit",
+      "script": "Latin",
+      "transliteration": "bodhisattva",
+      "translation": "awakening being",
+      "notes": "Sanskrit term for a being oriented toward awakening.",
+      "source_file": "data/seeds/terms_extended.json"
+    },
+    {
       "id": "term_citta_pali",
       "type": "Term",
       "name": "citta",
@@ -712,6 +768,17 @@ window.DHARMA_GRAPH = {
       "translation": "mind; heart",
       "notes": "A term for mind, heart, or mental orientation.",
       "source_file": "data/seeds/terms.json"
+    },
+    {
+      "id": "term_dhatu_pali",
+      "type": "Term",
+      "name": "dhatu",
+      "language": "Pali",
+      "script": "Latin",
+      "transliteration": "dhatu",
+      "translation": "element; domain",
+      "notes": "Pali and Sanskrit term for element or domain.",
+      "source_file": "data/seeds/terms_extended.json"
     },
     {
       "id": "term_duhkha_sanskrit",
@@ -736,6 +803,28 @@ window.DHARMA_GRAPH = {
       "source_file": "data/seeds/terms.json"
     },
     {
+      "id": "term_kamma_pali",
+      "type": "Term",
+      "name": "kamma",
+      "language": "Pali",
+      "script": "Latin",
+      "transliteration": "kamma",
+      "translation": "intentional action",
+      "notes": "Pali form corresponding to Sanskrit karma.",
+      "source_file": "data/seeds/terms_extended.json"
+    },
+    {
+      "id": "term_karma_sanskrit",
+      "type": "Term",
+      "name": "karma",
+      "language": "Sanskrit",
+      "script": "Latin",
+      "transliteration": "karma",
+      "translation": "intentional action",
+      "notes": "Sanskrit form for intentional action and its consequences.",
+      "source_file": "data/seeds/terms_extended.json"
+    },
+    {
       "id": "term_karuna_pali",
       "type": "Term",
       "name": "karuna",
@@ -745,6 +834,17 @@ window.DHARMA_GRAPH = {
       "translation": "compassion",
       "notes": "Pali and Sanskrit term for compassion.",
       "source_file": "data/seeds/terms.json"
+    },
+    {
+      "id": "term_mantra_sanskrit",
+      "type": "Term",
+      "name": "mantra",
+      "language": "Sanskrit",
+      "script": "Latin",
+      "transliteration": "mantra",
+      "translation": "sacred utterance",
+      "notes": "Sanskrit term for a sacred utterance or formula.",
+      "source_file": "data/seeds/terms_extended.json"
     },
     {
       "id": "term_metta_pali",
@@ -780,6 +880,28 @@ window.DHARMA_GRAPH = {
       "source_file": "data/seeds/terms.json"
     },
     {
+      "id": "term_panna_pali",
+      "type": "Term",
+      "name": "panna",
+      "language": "Pali",
+      "script": "Latin",
+      "transliteration": "panna",
+      "translation": "wisdom",
+      "notes": "Pali term corresponding to Sanskrit prajna.",
+      "source_file": "data/seeds/terms_extended.json"
+    },
+    {
+      "id": "term_paramita_sanskrit",
+      "type": "Term",
+      "name": "paramita",
+      "language": "Sanskrit",
+      "script": "Latin",
+      "transliteration": "paramita",
+      "translation": "perfection",
+      "notes": "Sanskrit term for perfection or transcendent virtue.",
+      "source_file": "data/seeds/terms_extended.json"
+    },
+    {
       "id": "term_paticcasamuppada_pali",
       "type": "Term",
       "name": "paticcasamuppada",
@@ -789,6 +911,28 @@ window.DHARMA_GRAPH = {
       "translation": "dependent arising",
       "notes": "Pali term for dependent arising.",
       "source_file": "data/seeds/terms.json"
+    },
+    {
+      "id": "term_prajna_sanskrit",
+      "type": "Term",
+      "name": "prajna",
+      "language": "Sanskrit",
+      "script": "Latin",
+      "transliteration": "prajna",
+      "translation": "wisdom",
+      "notes": "Sanskrit term for wisdom or liberating insight.",
+      "source_file": "data/seeds/terms_extended.json"
+    },
+    {
+      "id": "term_prajnaparamita_sanskrit",
+      "type": "Term",
+      "name": "prajnaparamita",
+      "language": "Sanskrit",
+      "script": "Latin",
+      "transliteration": "prajnaparamita",
+      "translation": "perfection of wisdom",
+      "notes": "Sanskrit term for the perfection of wisdom.",
+      "source_file": "data/seeds/terms_extended.json"
     },
     {
       "id": "term_pratityasamutpada_sanskrit",
@@ -802,6 +946,61 @@ window.DHARMA_GRAPH = {
       "source_file": "data/seeds/terms.json"
     },
     {
+      "id": "term_rupa_pali",
+      "type": "Term",
+      "name": "rupa",
+      "language": "Pali",
+      "script": "Latin",
+      "transliteration": "rupa",
+      "translation": "form; material form",
+      "notes": "Pali and Sanskrit term for form.",
+      "source_file": "data/seeds/terms_extended.json"
+    },
+    {
+      "id": "term_samadhi_pali",
+      "type": "Term",
+      "name": "samadhi",
+      "language": "Pali",
+      "script": "Latin",
+      "transliteration": "samadhi",
+      "translation": "concentration; collectedness",
+      "notes": "Pali and Sanskrit term for meditative collectedness.",
+      "source_file": "data/seeds/terms_extended.json"
+    },
+    {
+      "id": "term_samsara_pali",
+      "type": "Term",
+      "name": "samsara",
+      "language": "Pali",
+      "script": "Latin",
+      "transliteration": "samsara",
+      "translation": "cycle of rebirth",
+      "notes": "Pali form for the cycle of conditioned existence.",
+      "source_file": "data/seeds/terms_extended.json"
+    },
+    {
+      "id": "term_sila_pali",
+      "type": "Term",
+      "name": "sila",
+      "language": "Pali",
+      "script": "Latin",
+      "transliteration": "sila",
+      "translation": "ethical conduct",
+      "notes": "Pali term for moral discipline or ethical conduct.",
+      "source_file": "data/seeds/terms_extended.json"
+    },
+    {
+      "id": "term_skandha_sanskrit",
+      "type": "Term",
+      "name": "skandha",
+      "language": "Sanskrit",
+      "script": "Latin",
+      "transliteration": "skandha",
+      "translation": "aggregate",
+      "notes": "Sanskrit term for aggregate.",
+      "source_file": "data/seeds/terms_extended.json"
+    },
+    {
       "id": "term_sunyata_sanskrit",
       "type": "Term",
       "name": "sunyata",
@@ -811,6 +1010,28 @@ window.DHARMA_GRAPH = {
       "translation": "emptiness",
       "notes": "A key Mahayana term, especially important in Madhyamaka contexts.",
       "source_file": "data/seeds/terms.json"
+    },
+    {
+      "id": "term_tanha_pali",
+      "type": "Term",
+      "name": "tanha",
+      "language": "Pali",
+      "script": "Latin",
+      "transliteration": "tanha",
+      "translation": "craving; thirst",
+      "notes": "Pali term for craving.",
+      "source_file": "data/seeds/terms_extended.json"
+    },
+    {
+      "id": "term_trsna_sanskrit",
+      "type": "Term",
+      "name": "trsna",
+      "language": "Sanskrit",
+      "script": "Latin",
+      "transliteration": "trsna",
+      "translation": "craving; thirst",
+      "notes": "Sanskrit term corresponding to Pali tanha.",
+      "source_file": "data/seeds/terms_extended.json"
     },
     {
       "id": "text_dhammapada",
@@ -1104,10 +1325,46 @@ window.DHARMA_GRAPH = {
       "source_file": "data/seeds/terms.json"
     },
     {
+      "source": "term_avidya_sanskrit",
+      "type": "DEFINES",
+      "target": "concept_avidya",
+      "source_file": "data/seeds/terms_extended.json"
+    },
+    {
+      "source": "term_avijja_pali",
+      "type": "DEFINES",
+      "target": "concept_avidya",
+      "source_file": "data/seeds/terms_extended.json"
+    },
+    {
+      "source": "term_ayatana_pali",
+      "type": "DEFINES",
+      "target": "concept_ayatana",
+      "source_file": "data/seeds/terms_extended.json"
+    },
+    {
+      "source": "term_bodhicitta_sanskrit",
+      "type": "DEFINES",
+      "target": "concept_bodhicitta",
+      "source_file": "data/seeds/terms_extended.json"
+    },
+    {
+      "source": "term_bodhisattva_sanskrit",
+      "type": "DEFINES",
+      "target": "concept_bodhisattva",
+      "source_file": "data/seeds/terms_extended.json"
+    },
+    {
       "source": "term_citta_pali",
       "type": "DEFINES",
       "target": "concept_citta",
       "source_file": "data/seeds/terms.json"
+    },
+    {
+      "source": "term_dhatu_pali",
+      "type": "DEFINES",
+      "target": "concept_dhatu",
+      "source_file": "data/seeds/terms_extended.json"
     },
     {
       "source": "term_duhkha_sanskrit",
@@ -1122,10 +1379,28 @@ window.DHARMA_GRAPH = {
       "source_file": "data/seeds/terms.json"
     },
     {
+      "source": "term_kamma_pali",
+      "type": "DEFINES",
+      "target": "concept_karma",
+      "source_file": "data/seeds/terms_extended.json"
+    },
+    {
+      "source": "term_karma_sanskrit",
+      "type": "DEFINES",
+      "target": "concept_karma",
+      "source_file": "data/seeds/terms_extended.json"
+    },
+    {
       "source": "term_karuna_pali",
       "type": "DEFINES",
       "target": "concept_karuna",
       "source_file": "data/seeds/terms.json"
+    },
+    {
+      "source": "term_mantra_sanskrit",
+      "type": "DEFINES",
+      "target": "concept_mantra",
+      "source_file": "data/seeds/terms_extended.json"
     },
     {
       "source": "term_metta_pali",
@@ -1146,10 +1421,34 @@ window.DHARMA_GRAPH = {
       "source_file": "data/seeds/terms.json"
     },
     {
+      "source": "term_panna_pali",
+      "type": "DEFINES",
+      "target": "concept_prajna",
+      "source_file": "data/seeds/terms_extended.json"
+    },
+    {
+      "source": "term_paramita_sanskrit",
+      "type": "DEFINES",
+      "target": "concept_paramita",
+      "source_file": "data/seeds/terms_extended.json"
+    },
+    {
       "source": "term_paticcasamuppada_pali",
       "type": "DEFINES",
       "target": "concept_pratityasamutpada",
       "source_file": "data/seeds/terms.json"
+    },
+    {
+      "source": "term_prajna_sanskrit",
+      "type": "DEFINES",
+      "target": "concept_prajna",
+      "source_file": "data/seeds/terms_extended.json"
+    },
+    {
+      "source": "term_prajnaparamita_sanskrit",
+      "type": "DEFINES",
+      "target": "concept_prajnaparamita",
+      "source_file": "data/seeds/terms_extended.json"
     },
     {
       "source": "term_pratityasamutpada_sanskrit",
@@ -1158,10 +1457,52 @@ window.DHARMA_GRAPH = {
       "source_file": "data/seeds/terms.json"
     },
     {
+      "source": "term_rupa_pali",
+      "type": "DEFINES",
+      "target": "concept_form",
+      "source_file": "data/seeds/terms_extended.json"
+    },
+    {
+      "source": "term_samadhi_pali",
+      "type": "DEFINES",
+      "target": "concept_samadhi",
+      "source_file": "data/seeds/terms_extended.json"
+    },
+    {
+      "source": "term_samsara_pali",
+      "type": "DEFINES",
+      "target": "concept_samsara",
+      "source_file": "data/seeds/terms_extended.json"
+    },
+    {
+      "source": "term_sila_pali",
+      "type": "DEFINES",
+      "target": "concept_sila",
+      "source_file": "data/seeds/terms_extended.json"
+    },
+    {
+      "source": "term_skandha_sanskrit",
+      "type": "DEFINES",
+      "target": "concept_skandhas",
+      "source_file": "data/seeds/terms_extended.json"
+    },
+    {
       "source": "term_sunyata_sanskrit",
       "type": "DEFINES",
       "target": "concept_sunyata",
       "source_file": "data/seeds/terms.json"
+    },
+    {
+      "source": "term_tanha_pali",
+      "type": "DEFINES",
+      "target": "concept_tanha",
+      "source_file": "data/seeds/terms_extended.json"
+    },
+    {
+      "source": "term_trsna_sanskrit",
+      "type": "DEFINES",
+      "target": "concept_tanha",
+      "source_file": "data/seeds/terms_extended.json"
     },
     {
       "source": "place_bodh_gaya",
@@ -1662,10 +2003,22 @@ window.DHARMA_GRAPH = {
       "source_file": "data/seeds/terms.json"
     },
     {
+      "source": "term_avijja_pali",
+      "type": "RELATED_TO",
+      "target": "term_avidya_sanskrit",
+      "source_file": "data/seeds/terms_extended.json"
+    },
+    {
       "source": "term_dukkha_pali",
       "type": "RELATED_TO",
       "target": "term_duhkha_sanskrit",
       "source_file": "data/seeds/terms.json"
+    },
+    {
+      "source": "term_kamma_pali",
+      "type": "RELATED_TO",
+      "target": "term_karma_sanskrit",
+      "source_file": "data/seeds/terms_extended.json"
     },
     {
       "source": "term_nibbana_pali",
@@ -1674,10 +2027,22 @@ window.DHARMA_GRAPH = {
       "source_file": "data/seeds/terms.json"
     },
     {
+      "source": "term_panna_pali",
+      "type": "RELATED_TO",
+      "target": "term_prajna_sanskrit",
+      "source_file": "data/seeds/terms_extended.json"
+    },
+    {
       "source": "term_paticcasamuppada_pali",
       "type": "RELATED_TO",
       "target": "term_pratityasamutpada_sanskrit",
       "source_file": "data/seeds/terms.json"
+    },
+    {
+      "source": "term_tanha_pali",
+      "type": "RELATED_TO",
+      "target": "term_trsna_sanskrit",
+      "source_file": "data/seeds/terms_extended.json"
     }
   ]
 };

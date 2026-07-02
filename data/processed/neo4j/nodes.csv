@@ -70,16 +70,36 @@ term_anatta_pali,Term,anatta,,,,,,Pali,data/seeds/terms.json
 term_anicca_pali,Term,anicca,,,,,,Pali,data/seeds/terms.json
 term_anitya_sanskrit,Term,anitya,,,,,,Sanskrit,data/seeds/terms.json
 term_appamada_pali,Term,appamada,,,,,,Pali,data/seeds/terms.json
+term_avidya_sanskrit,Term,avidya,,,,,,Sanskrit,data/seeds/terms_extended.json
+term_avijja_pali,Term,avijja,,,,,,Pali,data/seeds/terms_extended.json
+term_ayatana_pali,Term,ayatana,,,,,,Pali,data/seeds/terms_extended.json
+term_bodhicitta_sanskrit,Term,bodhicitta,,,,,,Sanskrit,data/seeds/terms_extended.json
+term_bodhisattva_sanskrit,Term,bodhisattva,,,,,,Sanskrit,data/seeds/terms_extended.json
 term_citta_pali,Term,citta,,,,,,Pali,data/seeds/terms.json
+term_dhatu_pali,Term,dhatu,,,,,,Pali,data/seeds/terms_extended.json
 term_duhkha_sanskrit,Term,duhkha,,,,,,Sanskrit,data/seeds/terms.json
 term_dukkha_pali,Term,dukkha,,,,,,Pali,data/seeds/terms.json
+term_kamma_pali,Term,kamma,,,,,,Pali,data/seeds/terms_extended.json
+term_karma_sanskrit,Term,karma,,,,,,Sanskrit,data/seeds/terms_extended.json
 term_karuna_pali,Term,karuna,,,,,,Pali,data/seeds/terms.json
+term_mantra_sanskrit,Term,mantra,,,,,,Sanskrit,data/seeds/terms_extended.json
 term_metta_pali,Term,metta,,,,,,Pali,data/seeds/terms.json
 term_nibbana_pali,Term,nibbana,,,,,,Pali,data/seeds/terms.json
 term_nirvana_sanskrit,Term,nirvana,,,,,,Sanskrit,data/seeds/terms.json
+term_panna_pali,Term,panna,,,,,,Pali,data/seeds/terms_extended.json
+term_paramita_sanskrit,Term,paramita,,,,,,Sanskrit,data/seeds/terms_extended.json
 term_paticcasamuppada_pali,Term,paticcasamuppada,,,,,,Pali,data/seeds/terms.json
+term_prajna_sanskrit,Term,prajna,,,,,,Sanskrit,data/seeds/terms_extended.json
+term_prajnaparamita_sanskrit,Term,prajnaparamita,,,,,,Sanskrit,data/seeds/terms_extended.json
 term_pratityasamutpada_sanskrit,Term,pratityasamutpada,,,,,,Sanskrit,data/seeds/terms.json
+term_rupa_pali,Term,rupa,,,,,,Pali,data/seeds/terms_extended.json
+term_samadhi_pali,Term,samadhi,,,,,,Pali,data/seeds/terms_extended.json
+term_samsara_pali,Term,samsara,,,,,,Pali,data/seeds/terms_extended.json
+term_sila_pali,Term,sila,,,,,,Pali,data/seeds/terms_extended.json
+term_skandha_sanskrit,Term,skandha,,,,,,Sanskrit,data/seeds/terms_extended.json
 term_sunyata_sanskrit,Term,sunyata,,,,,,Sanskrit,data/seeds/terms.json
+term_tanha_pali,Term,tanha,,,,,,Pali,data/seeds/terms_extended.json
+term_trsna_sanskrit,Term,trsna,,,,,,Sanskrit,data/seeds/terms_extended.json
 text_dhammapada,Text,Dhammapada,"A collection of verses from the Pali Canon, traditionally arranged into 26 chapters.",,,,Theravada,Pali,data/seeds/dhammapada.json
 text_heart_sutra,Text,Heart Sutra,A short Mahayana sutra associated with the perfection of wisdom literature and the teaching of emptiness.,,,,Mahayana,Sanskrit,data/seeds/heart_sutra.json
 text_mulamadhyamakakarika,Text,Mulamadhyamakakarika,A foundational Madhyamaka text attributed to Nagarjuna.,,,,Mahayana,Sanskrit,data/seeds/core.json
