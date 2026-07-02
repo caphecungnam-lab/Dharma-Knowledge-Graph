@@ -1,6 +1,8 @@
 from __future__ import annotations
 
+import json
 import sys
+import tempfile
 import unittest
 from pathlib import Path
 
@@ -12,89 +14,142 @@ from import_manual_transcript import (  # noqa: E402
     DOCUMENT_ID,
     SOURCE_ID,
     ManualTranscriptError,
-    convert_manual_transcript,
+    import_transcript_file,
 )
 
 
-def transcript_data(segment: dict) -> dict:
+def valid_segment(text: str = "Non-empty test transcript fixture.") -> dict:
+    return {
+        "start_time": "00:00:00",
+        "end_time": "00:00:30",
+        "text": text,
+        "review_status": "unreviewed",
+        "notes": "Test-only segment.",
+    }
+
+
+def valid_transcript(*segments: dict) -> dict:
     return {
         "source_url": "https://www.youtube.com/watch?v=FISpARohzy8",
         "video_id": "FISpARohzy8",
         "title": "1A. KINH 6 6 L2CÂU 1 P1",
         "speaker": "HT. Thích Giác Khang",
         "language": "vi",
-        "segments": [segment],
+        "segments": list(segments),
     }
 
 
-class ImportManualTranscriptTest(unittest.TestCase):
-    def valid_segment(self) -> dict:
-        return {
-            "start_time": "00:00:00",
-            "end_time": "00:00:30",
-            "text": "Exact transcript text from the source.",
-            "review_status": "unreviewed",
-            "notes": "Test fixture text.",
-        }
-
-    def test_rejects_empty_text(self) -> None:
-        segment = self.valid_segment()
-        segment["text"] = ""
-
-        with self.assertRaisesRegex(ManualTranscriptError, "empty text"):
-            convert_manual_transcript(transcript_data(segment))
-
-    def test_rejects_missing_start_time(self) -> None:
-        segment = self.valid_segment()
-        del segment["start_time"]
-
-        with self.assertRaisesRegex(ManualTranscriptError, "missing start_time"):
-            convert_manual_transcript(transcript_data(segment))
-
-    def test_rejects_missing_end_time(self) -> None:
-        segment = self.valid_segment()
-        del segment["end_time"]
-
-        with self.assertRaisesRegex(ManualTranscriptError, "missing end_time"):
-            convert_manual_transcript(transcript_data(segment))
-
-    def test_creates_evidence_node_with_correct_fields(self) -> None:
-        converted = convert_manual_transcript(transcript_data(self.valid_segment()))
-
-        self.assertEqual(len(converted["nodes"]), 1)
-        node = converted["nodes"][0]
-        self.assertEqual(node["id"], "evidence_fisp_arohzy8_0001")
-        self.assertEqual(node["type"], "Evidence")
-        self.assertEqual(node["evidence_type"], "transcript_excerpt")
-        self.assertEqual(node["confidence"], "low")
-        self.assertEqual(node["source_kind"], "youtube")
-        self.assertEqual(
-            node["source_url"],
-            "https://www.youtube.com/watch?v=FISpARohzy8",
-        )
-        self.assertEqual(node["document_id"], DOCUMENT_ID)
-        self.assertEqual(node["locator"], "00:00:00-00:00:30")
-        self.assertEqual(node["speaker"], "HT. Thích Giác Khang")
-        self.assertEqual(node["review_status"], "unreviewed")
-
-        relationships = converted["relationships"]
-        self.assertIn(
-            {"source": DOCUMENT_ID, "type": "HAS_EVIDENCE", "target": node["id"]},
-            relationships,
-        )
-        self.assertIn(
-            {"source": node["id"], "type": "DERIVED_FROM", "target": DOCUMENT_ID},
-            relationships,
-        )
-        self.assertIn(
-            {"source": node["id"], "type": "DERIVED_FROM", "target": SOURCE_ID},
-            relationships,
-        )
-        self.assertIn(
-            {"source": node["id"], "type": "HAS_CITATION", "target": CITATION_ID},
-            relationships,
-        )
+def write_transcript_file(directory: Path, data: dict) -> Path:
+    path = directory / "transcript.json"
+    path.write_text(json.dumps(data), encoding="utf-8")
+    return path
 
 
-if __name__ == "__main__":
-    unittest.main()
+def assert_import_fails(data: dict, message: str) -> None:
+    with tempfile.TemporaryDirectory() as tmp:
+        path = write_transcript_file(Path(tmp), data)
+        try:
+            import_transcript_file(path)
+        except ManualTranscriptError as exc:
+            assert message in str(exc)
+        else:
+            raise AssertionError("import_transcript_file should have failed")
+
+
+def test_valid_transcript_creates_evidence_node() -> None:
+    with tempfile.TemporaryDirectory() as tmp:
+        path = write_transcript_file(Path(tmp), valid_transcript(valid_segment()))
+        converted = import_transcript_file(path)
+
+    assert len(converted["nodes"]) == 1
+    node = converted["nodes"][0]
+
+    assert node["id"] == "evidence_fisp_arohzy8_0001"
+    assert node["type"] == "Evidence"
+    assert node["name"] == "Transcript excerpt 0001 from FISpARohzy8"
+    assert node["evidence_text"] == "Non-empty test transcript fixture."
+    assert node["evidence_type"] == "transcript_excerpt"
+    assert node["language"] == "vi"
+    assert node["confidence"] == "low"
+    assert node["source_kind"] == "youtube"
+    assert node["source_url"] == "https://www.youtube.com/watch?v=FISpARohzy8"
+    assert node["document_id"] == DOCUMENT_ID
+    assert node["start_time"] == "00:00:00"
+    assert node["end_time"] == "00:00:30"
+    assert node["speaker"] == "HT. Thích Giác Khang"
+    assert node["review_status"] == "unreviewed"
+    assert node["notes"] == "Test-only segment."
+
+    assert {
+        "source": DOCUMENT_ID,
+        "type": "HAS_EVIDENCE",
+        "target": node["id"],
+    } in converted["relationships"]
+    assert {
+        "source": node["id"],
+        "type": "DERIVED_FROM",
+        "target": DOCUMENT_ID,
+    } in converted["relationships"]
+    assert {
+        "source": node["id"],
+        "type": "DERIVED_FROM",
+        "target": SOURCE_ID,
+    } in converted["relationships"]
+    assert {
+        "source": node["id"],
+        "type": "HAS_CITATION",
+        "target": CITATION_ID,
+    } in converted["relationships"]
+
+
+def test_empty_text_is_rejected() -> None:
+    segment = valid_segment(text="")
+    assert_import_fails(valid_transcript(segment), "empty text")
+
+
+def test_missing_start_time_is_rejected() -> None:
+    segment = valid_segment()
+    del segment["start_time"]
+    assert_import_fails(valid_transcript(segment), "missing start_time")
+
+
+def test_missing_end_time_is_rejected() -> None:
+    segment = valid_segment()
+    del segment["end_time"]
+    assert_import_fails(valid_transcript(segment), "missing end_time")
+
+
+def test_missing_review_status_is_rejected() -> None:
+    segment = valid_segment()
+    del segment["review_status"]
+    assert_import_fails(valid_transcript(segment), "missing review_status")
+
+
+def test_multiple_segments_generate_stable_sequential_ids() -> None:
+    first = valid_segment(text="First non-empty test fixture.")
+    second = valid_segment(text="Second non-empty test fixture.")
+    second["start_time"] = "00:00:31"
+    second["end_time"] = "00:01:00"
+
+    with tempfile.TemporaryDirectory() as tmp:
+        path = write_transcript_file(Path(tmp), valid_transcript(first, second))
+        converted = import_transcript_file(path)
+
+    assert [node["id"] for node in converted["nodes"]] == [
+        "evidence_fisp_arohzy8_0001",
+        "evidence_fisp_arohzy8_0002",
+    ]
+
+
+def load_tests(
+    loader: unittest.TestLoader,
+    tests: unittest.TestSuite,
+    pattern: str | None,
+) -> unittest.TestSuite:
+    del loader, tests, pattern
+
+    suite = unittest.TestSuite()
+    for name, value in sorted(globals().items()):
+        if name.startswith("test_") and callable(value):
+            suite.addTest(unittest.FunctionTestCase(value))
+    return suite

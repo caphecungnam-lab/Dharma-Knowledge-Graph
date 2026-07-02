@@ -1,19 +1,22 @@
 # DKG-004: Transcript Extraction Pilot
 
-DKG-004 prepares the project to convert manually reviewed transcript excerpts
-from the Giác Khang video `FISpARohzy8` into Evidence nodes.
+DKG-004 prepares a safe manual transcript extraction path for the Giác Khang
+video `FISpARohzy8`.
 
 ## Purpose
 
-The goal is to create a safe transcript intake path before adding any real
-transcript content to the graph.
+The purpose of this step is to prepare the repository for real transcript
+Evidence without adding transcript text yet.
 
-This step provides:
+DKG-004 adds:
 
 - a raw input folder for the source video;
 - a manual transcript JSON template;
-- an importer that converts non-empty transcript segments into Evidence nodes;
-- tests proving that empty or incomplete transcript segments are rejected.
+- an importer for converting reviewed transcript segments into Evidence nodes;
+- tests that reject empty or incomplete transcript segments.
+
+The importer is intentionally conservative. It should only convert segments
+that contain exact transcript text and required timing metadata.
 
 ## Source
 
@@ -27,9 +30,12 @@ This step provides:
 
 Do not invent transcript text.
 
-The manual template intentionally contains an empty `text` field. That template
-is valid as a capture worksheet, but it cannot be converted into Evidence until
-the field contains exact transcript text from the source video.
+The manual template contains an empty `text` field by design. That file is only
+a worksheet for future manual capture.
+
+A segment cannot become Evidence until `text` contains exact transcript text
+from the source video. Paraphrases, summaries, and guessed wording are not valid
+for this transcript extraction pilot.
 
 ## Manual Input Shape
 
@@ -39,6 +45,15 @@ Manual transcript files live under:
 data/raw/giac_khang/FISpARohzy8/
 ```
 
+The top-level transcript JSON must include:
+
+- `source_url`
+- `video_id`
+- `title`
+- `speaker`
+- `language`
+- `segments`
+
 Each segment must include:
 
 - `start_time`
@@ -46,29 +61,59 @@ Each segment must include:
 - `text`
 - `review_status`
 
-The transcript file must also provide a usable `source_url`, either at the file
-level or on each segment.
-
 ## Evidence Conversion
 
-Only non-empty segment text can become Evidence.
+Each valid segment becomes one Evidence node.
 
-Each converted segment becomes an Evidence node with:
+Generated Evidence fields include:
 
+- `id`, such as `evidence_fisp_arohzy8_0001`
+- `type: Evidence`
+- `name`
+- `evidence_text`
 - `evidence_type: transcript_excerpt`
+- `language: vi`
 - `confidence: low`
 - `source_kind: youtube`
-- `speaker: HT. Thích Giác Khang`
-- a stable ID such as `evidence_fisp_arohzy8_0001`
+- `source_url`
+- `document_id: document_transcript_fisp_arohzy8`
+- `start_time`
+- `end_time`
+- `speaker`
+- `review_status`
+- `notes`
 
-The importer attaches each Evidence node to:
+The importer also links each Evidence node to:
 
 - `document_transcript_fisp_arohzy8`
 - `source_youtube_fisp_arohzy8`
 - `citation_youtube_fisp_arohzy8`
 
-## Expected Output
+## Validation Rules
 
-The importer returns a seed-style JSON object with `nodes` and `relationships`.
-The output should only be committed after the transcript excerpt text has been
-checked and the review status is appropriate.
+The importer rejects transcript files when required top-level fields are
+missing or empty.
+
+The importer rejects any segment that is missing:
+
+- `start_time`
+- `end_time`
+- `text`
+- `review_status`
+
+The importer also rejects empty `text` when converting a segment into Evidence.
+This prevents placeholder template rows from becoming fake Evidence.
+
+Multiple valid segments receive stable sequential IDs:
+
+- `evidence_fisp_arohzy8_0001`
+- `evidence_fisp_arohzy8_0002`
+- `evidence_fisp_arohzy8_0003`
+
+## Next Step
+
+The next step is manual transcript capture.
+
+Fill `data/raw/giac_khang/FISpARohzy8/transcript_manual_template.json` with a
+small number of exact transcript excerpts and timestamps. After review, run the
+importer to generate an Evidence seed fragment for inspection.

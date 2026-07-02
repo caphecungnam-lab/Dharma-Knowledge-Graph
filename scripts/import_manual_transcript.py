@@ -12,11 +12,19 @@ from typing import Any
 SOURCE_ID = "source_youtube_fisp_arohzy8"
 DOCUMENT_ID = "document_transcript_fisp_arohzy8"
 CITATION_ID = "citation_youtube_fisp_arohzy8"
-DEFAULT_SPEAKER = "HT. Thích Giác Khang"
-DEFAULT_LANGUAGE = "vi"
-DEFAULT_SOURCE_KIND = "youtube"
+
 DEFAULT_CONFIDENCE = "low"
 DEFAULT_EVIDENCE_TYPE = "transcript_excerpt"
+DEFAULT_SOURCE_KIND = "youtube"
+
+REQUIRED_TOP_LEVEL_FIELDS = {
+    "source_url",
+    "video_id",
+    "title",
+    "speaker",
+    "language",
+    "segments",
+}
 
 REQUIRED_SEGMENT_FIELDS = {
     "start_time",
@@ -34,7 +42,7 @@ def is_non_empty_string(value: object) -> bool:
     return isinstance(value, str) and value.strip() != ""
 
 
-def read_manual_transcript(path: Path) -> dict[str, Any]:
+def read_json_file(path: Path) -> dict[str, Any]:
     try:
         data = json.loads(path.read_text(encoding="utf-8"))
     except json.JSONDecodeError as exc:
@@ -43,11 +51,49 @@ def read_manual_transcript(path: Path) -> dict[str, Any]:
     if not isinstance(data, dict):
         raise ManualTranscriptError(f"{path}: transcript file must be a JSON object")
 
-    segments = data.get("segments")
-    if not isinstance(segments, list):
-        raise ManualTranscriptError(f"{path}: 'segments' must be a list")
-
     return data
+
+
+def validate_required_top_level_fields(data: dict[str, Any]) -> None:
+    for field in sorted(REQUIRED_TOP_LEVEL_FIELDS):
+        if field not in data:
+            raise ManualTranscriptError(f"missing top-level field: {field}")
+
+    for field in ("source_url", "video_id", "title", "speaker", "language"):
+        if not is_non_empty_string(data.get(field)):
+            raise ManualTranscriptError(f"empty top-level field: {field}")
+
+    if not isinstance(data.get("segments"), list):
+        raise ManualTranscriptError("top-level field 'segments' must be a list")
+
+
+def validate_required_segment_fields(index: int, segment: dict[str, Any]) -> None:
+    for field in sorted(REQUIRED_SEGMENT_FIELDS):
+        if field not in segment:
+            raise ManualTranscriptError(f"segment {index}: missing {field}")
+
+    for field in ("start_time", "end_time", "review_status"):
+        if not is_non_empty_string(segment.get(field)):
+            raise ManualTranscriptError(f"segment {index}: empty {field}")
+
+    if not is_non_empty_string(segment.get("text")):
+        raise ManualTranscriptError(
+            f"segment {index}: empty text cannot be converted to Evidence"
+        )
+
+
+def validate_segment(index: int, segment: object) -> None:
+    if not isinstance(segment, dict):
+        raise ManualTranscriptError(f"segment {index}: must be an object")
+
+    validate_required_segment_fields(index, segment)
+
+
+def validate_transcript_data(data: dict[str, Any]) -> None:
+    validate_required_top_level_fields(data)
+
+    for index, segment in enumerate(data["segments"]):
+        validate_segment(index, segment)
 
 
 def evidence_id_prefix(video_id: str) -> str:
@@ -57,123 +103,85 @@ def evidence_id_prefix(video_id: str) -> str:
     return normalized
 
 
-def effective_source_url(data: dict[str, Any], segment: dict[str, Any]) -> object:
-    return segment.get("source_url", data.get("source_url"))
+def evidence_id(video_id: str, index: int) -> str:
+    return f"evidence_{evidence_id_prefix(video_id)}_{index + 1:04d}"
 
 
-def validate_segment(
-    data: dict[str, Any],
-    index: int,
-    segment: object,
-    *,
-    require_text: bool,
-) -> None:
-    if not isinstance(segment, dict):
-        raise ManualTranscriptError(f"segment {index}: must be an object")
-
-    source_url = effective_source_url(data, segment)
-    if not is_non_empty_string(source_url):
-        raise ManualTranscriptError(f"segment {index}: missing source_url")
-
-    for field in sorted(REQUIRED_SEGMENT_FIELDS):
-        if field not in segment:
-            raise ManualTranscriptError(f"segment {index}: missing {field}")
-
-    for field in ("start_time", "end_time", "review_status"):
-        if not is_non_empty_string(segment.get(field)):
-            raise ManualTranscriptError(f"segment {index}: empty {field}")
-
-    text = segment.get("text")
-    if require_text and not is_non_empty_string(text):
-        raise ManualTranscriptError(
-            f"segment {index}: empty text cannot be converted to Evidence"
-        )
+def evidence_name(video_id: str, index: int) -> str:
+    return f"Transcript excerpt {index + 1:04d} from {video_id}"
 
 
-def validate_manual_transcript(data: dict[str, Any], *, require_text: bool) -> None:
-    segments = data.get("segments")
-    if not isinstance(segments, list):
-        raise ManualTranscriptError("'segments' must be a list")
-
-    for index, segment in enumerate(segments):
-        validate_segment(data, index, segment, require_text=require_text)
-
-
-def segment_locator(segment: dict[str, Any]) -> str:
-    if is_non_empty_string(segment.get("locator")):
-        return str(segment["locator"]).strip()
-    return f"{segment['start_time']}-{segment['end_time']}"
-
-
-def evidence_node(
+def build_evidence_node(
     data: dict[str, Any],
     segment: dict[str, Any],
     index: int,
 ) -> dict[str, str]:
-    video_id = str(data.get("video_id", "FISpARohzy8"))
-    evidence_id = f"evidence_{evidence_id_prefix(video_id)}_{index + 1:04d}"
-    source_url = str(effective_source_url(data, segment)).strip()
-    speaker = str(data.get("speaker") or DEFAULT_SPEAKER).strip()
+    video_id = str(data["video_id"]).strip()
 
     return {
-        "id": evidence_id,
+        "id": evidence_id(video_id, index),
         "type": "Evidence",
-        "name": f"Transcript excerpt {index + 1:04d} from {video_id}",
+        "name": evidence_name(video_id, index),
         "evidence_text": str(segment["text"]).strip(),
         "evidence_type": DEFAULT_EVIDENCE_TYPE,
-        "language": str(data.get("language") or DEFAULT_LANGUAGE),
+        "language": str(data["language"]).strip(),
         "confidence": DEFAULT_CONFIDENCE,
         "source_kind": DEFAULT_SOURCE_KIND,
-        "source_url": source_url,
+        "source_url": str(data["source_url"]).strip(),
         "document_id": DOCUMENT_ID,
-        "locator": segment_locator(segment),
-        "start_time": str(segment["start_time"]),
-        "end_time": str(segment["end_time"]),
-        "speaker": speaker,
-        "review_status": str(segment["review_status"]),
-        "notes": str(segment.get("notes", "")),
+        "start_time": str(segment["start_time"]).strip(),
+        "end_time": str(segment["end_time"]).strip(),
+        "speaker": str(data["speaker"]).strip(),
+        "review_status": str(segment["review_status"]).strip(),
+        "notes": str(segment.get("notes", "")).strip(),
     }
 
 
-def evidence_relationships(evidence_id: str) -> list[dict[str, str]]:
+def build_evidence_relationships(evidence_node_id: str) -> list[dict[str, str]]:
     return [
         {
             "source": DOCUMENT_ID,
             "type": "HAS_EVIDENCE",
-            "target": evidence_id,
+            "target": evidence_node_id,
         },
         {
-            "source": evidence_id,
+            "source": evidence_node_id,
             "type": "DERIVED_FROM",
             "target": DOCUMENT_ID,
         },
         {
-            "source": evidence_id,
+            "source": evidence_node_id,
             "type": "DERIVED_FROM",
             "target": SOURCE_ID,
         },
         {
-            "source": evidence_id,
+            "source": evidence_node_id,
             "type": "HAS_CITATION",
             "target": CITATION_ID,
         },
     ]
 
 
-def convert_manual_transcript(data: dict[str, Any]) -> dict[str, list[dict[str, str]]]:
-    validate_manual_transcript(data, require_text=True)
+def convert_transcript_data(data: dict[str, Any]) -> dict[str, list[dict[str, str]]]:
+    validate_transcript_data(data)
 
     nodes: list[dict[str, str]] = []
     relationships: list[dict[str, str]] = []
+
     for index, segment in enumerate(data["segments"]):
-        node = evidence_node(data, segment, index)
+        node = build_evidence_node(data, segment, index)
         nodes.append(node)
-        relationships.extend(evidence_relationships(node["id"]))
+        relationships.extend(build_evidence_relationships(node["id"]))
 
     return {
         "nodes": nodes,
         "relationships": relationships,
     }
+
+
+def import_transcript_file(input_path: Path) -> dict[str, list[dict[str, str]]]:
+    data = read_json_file(input_path)
+    return convert_transcript_data(data)
 
 
 def parse_args() -> argparse.Namespace:
@@ -194,8 +202,7 @@ def main() -> int:
     args = parse_args()
 
     try:
-        data = read_manual_transcript(args.input)
-        converted = convert_manual_transcript(data)
+        converted = import_transcript_file(args.input)
     except ManualTranscriptError as exc:
         print(f"Transcript import failed: {exc}")
         return 1
