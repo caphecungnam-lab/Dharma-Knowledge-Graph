@@ -1,10 +1,23 @@
 id:ID,:LABEL,name,description,category,pali,sanskrit,tradition,language,source_file
+citation_dhammapada_1,Citation,Dhammapada 1,,,,,,,data/seeds/dhammapada.json
+citation_dhammapada_129,Citation,Dhammapada 129,,,,,,,data/seeds/dhammapada.json
+citation_dhammapada_183,Citation,Dhammapada 183,,,,,,,data/seeds/dhammapada.json
+citation_dhammapada_2,Citation,Dhammapada 2,,,,,,,data/seeds/dhammapada.json
+citation_dhammapada_21,Citation,Dhammapada 21,,,,,,,data/seeds/dhammapada.json
+citation_dhammapada_277,Citation,Dhammapada 277,,,,,,,data/seeds/dhammapada.json
+citation_dhammapada_279,Citation,Dhammapada 279,,,,,,,data/seeds/dhammapada.json
+citation_dhammapada_35,Citation,Dhammapada 35,,,,,,,data/seeds/dhammapada.json
+citation_dhammapada_5,Citation,Dhammapada 5,,,,,,,data/seeds/dhammapada.json
+citation_dhammapada_50,Citation,Dhammapada 50,,,,,,,data/seeds/dhammapada.json
+concept_ahimsa,Concept,Ahimsa,Non-harming; an ethical orientation of restraint from violence and injury.,ethics,avihimsa,ahimsa,,,data/seeds/dhammapada.json
 concept_anatta,Concept,Anatta,"Not-self; the absence of a permanent, independent self in conditioned phenomena.",doctrine,anatta,anatman,,,data/seeds/concepts.json
 concept_anicca,Concept,Anicca,Impermanence; the conditioned nature of phenomena as changing and unstable.,doctrine,anicca,anitya,,,data/seeds/concepts.json
+concept_appamada,Concept,Appamada,Heedfulness or diligent care in practice.,practice,appamada,apramada,,,data/seeds/dhammapada.json
 concept_avidya,Concept,Avidya,"Ignorance or misknowing, especially regarding the nature of reality and the path.",psychology,avijja,avidya,,,data/seeds/concepts.json
 concept_bodhicitta,Concept,Bodhicitta,The awakened mind or aspiration to attain awakening for the benefit of all beings.,mahayana,,bodhicitta,,,data/seeds/concepts.json
 concept_bodhisattva,Concept,Bodhisattva,"A being oriented toward awakening, especially for the liberation of all beings in Mahayana contexts.",mahayana,bodhisatta,bodhisattva,,,data/seeds/concepts.json
 concept_brahmaviharas,Concept,Brahmaviharas,"The four divine abodes: loving-kindness, compassion, sympathetic joy, and equanimity.",practice,brahmavihara,brahmavihara,,,data/seeds/concepts.json
+concept_citta,Concept,Citta,"Mind, heart, or mental orientation; a key term for understanding intention and experience.",psychology,citta,citta,,,data/seeds/dhammapada.json
 concept_dukkha,Concept,Dukkha,"A central Dharma concept often translated as suffering, unsatisfactoriness, or stress.",,dukkha,duhkha,,,data/seeds/core.json
 concept_dhatu,Concept,Elements,Elements or domains used to analyze experience and phenomena.,analysis,dhatu,dhatu,,,data/seeds/concepts.json
 concept_skandhas,Concept,Five Aggregates,"Form, feeling, perception, formations, and consciousness as a framework for analyzing experience.",analysis,khandha,skandha,,,data/seeds/concepts.json
@@ -32,4 +45,5 @@ concept_upekkha,Concept,Upekkha,Equanimity; balanced presence toward changing ex
 person_nagarjuna,Person,Nagarjuna,A major Buddhist philosopher associated with Madhyamaka.,,,,Mahayana,,data/seeds/core.json
 school_madhyamaka,School,Madhyamaka,A Mahayana philosophical school associated with analysis of emptiness.,,,,,,data/seeds/core.json
 school_theravada,School,Theravada,A Buddhist tradition preserving the Pali Canon.,,,,,,data/seeds/core.json
+text_dhammapada,Text,Dhammapada,"A collection of verses from the Pali Canon, traditionally arranged into 26 chapters.",,,,Theravada,Pali,data/seeds/dhammapada.json
 text_mulamadhyamakakarika,Text,Mulamadhyamakakarika,A foundational Madhyamaka text attributed to Nagarjuna.,,,,Mahayana,Sanskrit,data/seeds/core.json

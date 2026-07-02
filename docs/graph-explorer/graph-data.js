@@ -2,30 +2,133 @@ window.DHARMA_GRAPH = {
   "metadata": {
     "title": "Dharma Knowledge Graph",
     "version": "0.1",
-    "generated_at": "2026-07-02T08:19:58.070709+00:00",
+    "generated_at": "2026-07-02T09:13:10.244781+00:00",
     "source_files": [
       "data/seeds/concepts.json",
-      "data/seeds/core.json"
+      "data/seeds/core.json",
+      "data/seeds/dhammapada.json"
     ]
   },
   "summary": {
-    "node_count": 34,
-    "relationship_count": 30,
+    "node_count": 48,
+    "relationship_count": 61,
     "node_type_counts": {
-      "Concept": 30,
+      "Citation": 10,
+      "Concept": 33,
       "Person": 1,
       "School": 2,
-      "Text": 1
+      "Text": 2
     },
     "relationship_type_counts": {
       "AUTHORED_BY": 1,
-      "BELONGS_TO_SCHOOL": 1,
+      "BELONGS_TO_SCHOOL": 2,
+      "CITES": 10,
       "DEFINES": 7,
-      "MENTIONS": 8,
+      "MENTIONS": 28,
       "RELATED_TO": 13
     }
   },
   "nodes": [
+    {
+      "id": "citation_dhammapada_1",
+      "type": "Citation",
+      "name": "Dhammapada 1",
+      "source": "Dhammapada",
+      "locator": "Verse 1",
+      "notes": "Pilot citation for the relation between mind, intention, and suffering.",
+      "source_file": "data/seeds/dhammapada.json"
+    },
+    {
+      "id": "citation_dhammapada_129",
+      "type": "Citation",
+      "name": "Dhammapada 129",
+      "source": "Dhammapada",
+      "locator": "Verse 129",
+      "notes": "Pilot citation for non-harming and empathy toward beings.",
+      "source_file": "data/seeds/dhammapada.json"
+    },
+    {
+      "id": "citation_dhammapada_183",
+      "type": "Citation",
+      "name": "Dhammapada 183",
+      "source": "Dhammapada",
+      "locator": "Verse 183",
+      "notes": "Pilot citation for ethical restraint, wholesome cultivation, and mental purification.",
+      "source_file": "data/seeds/dhammapada.json"
+    },
+    {
+      "id": "citation_dhammapada_2",
+      "type": "Citation",
+      "name": "Dhammapada 2",
+      "source": "Dhammapada",
+      "locator": "Verse 2",
+      "notes": "Pilot citation for the relation between mind, intention, and well-being.",
+      "source_file": "data/seeds/dhammapada.json"
+    },
+    {
+      "id": "citation_dhammapada_21",
+      "type": "Citation",
+      "name": "Dhammapada 21",
+      "source": "Dhammapada",
+      "locator": "Verse 21",
+      "notes": "Pilot citation for heedfulness as a path quality.",
+      "source_file": "data/seeds/dhammapada.json"
+    },
+    {
+      "id": "citation_dhammapada_277",
+      "type": "Citation",
+      "name": "Dhammapada 277",
+      "source": "Dhammapada",
+      "locator": "Verse 277",
+      "notes": "Pilot citation for impermanence.",
+      "source_file": "data/seeds/dhammapada.json"
+    },
+    {
+      "id": "citation_dhammapada_279",
+      "type": "Citation",
+      "name": "Dhammapada 279",
+      "source": "Dhammapada",
+      "locator": "Verse 279",
+      "notes": "Pilot citation for not-self.",
+      "source_file": "data/seeds/dhammapada.json"
+    },
+    {
+      "id": "citation_dhammapada_35",
+      "type": "Citation",
+      "name": "Dhammapada 35",
+      "source": "Dhammapada",
+      "locator": "Verse 35",
+      "notes": "Pilot citation for the training and restraint of mind.",
+      "source_file": "data/seeds/dhammapada.json"
+    },
+    {
+      "id": "citation_dhammapada_5",
+      "type": "Citation",
+      "name": "Dhammapada 5",
+      "source": "Dhammapada",
+      "locator": "Verse 5",
+      "notes": "Pilot citation for non-hatred and reconciliation.",
+      "source_file": "data/seeds/dhammapada.json"
+    },
+    {
+      "id": "citation_dhammapada_50",
+      "type": "Citation",
+      "name": "Dhammapada 50",
+      "source": "Dhammapada",
+      "locator": "Verse 50",
+      "notes": "Pilot citation for self-examination in ethical practice.",
+      "source_file": "data/seeds/dhammapada.json"
+    },
+    {
+      "id": "concept_ahimsa",
+      "type": "Concept",
+      "name": "Ahimsa",
+      "pali": "avihimsa",
+      "sanskrit": "ahimsa",
+      "category": "ethics",
+      "description": "Non-harming; an ethical orientation of restraint from violence and injury.",
+      "source_file": "data/seeds/dhammapada.json"
+    },
     {
       "id": "concept_anatta",
       "type": "Concept",
@@ -45,6 +148,16 @@ window.DHARMA_GRAPH = {
       "category": "doctrine",
       "description": "Impermanence; the conditioned nature of phenomena as changing and unstable.",
       "source_file": "data/seeds/concepts.json"
+    },
+    {
+      "id": "concept_appamada",
+      "type": "Concept",
+      "name": "Appamada",
+      "pali": "appamada",
+      "sanskrit": "apramada",
+      "category": "practice",
+      "description": "Heedfulness or diligent care in practice.",
+      "source_file": "data/seeds/dhammapada.json"
     },
     {
       "id": "concept_avidya",
@@ -84,6 +197,16 @@ window.DHARMA_GRAPH = {
       "category": "practice",
       "description": "The four divine abodes: loving-kindness, compassion, sympathetic joy, and equanimity.",
       "source_file": "data/seeds/concepts.json"
+    },
+    {
+      "id": "concept_citta",
+      "type": "Concept",
+      "name": "Citta",
+      "pali": "citta",
+      "sanskrit": "citta",
+      "category": "psychology",
+      "description": "Mind, heart, or mental orientation; a key term for understanding intention and experience.",
+      "source_file": "data/seeds/dhammapada.json"
     },
     {
       "id": "concept_dukkha",
@@ -344,6 +467,15 @@ window.DHARMA_GRAPH = {
       "source_file": "data/seeds/core.json"
     },
     {
+      "id": "text_dhammapada",
+      "type": "Text",
+      "name": "Dhammapada",
+      "language": "Pali",
+      "tradition": "Theravada",
+      "description": "A collection of verses from the Pali Canon, traditionally arranged into 26 chapters.",
+      "source_file": "data/seeds/dhammapada.json"
+    },
+    {
       "id": "text_mulamadhyamakakarika",
       "type": "Text",
       "name": "Mulamadhyamakakarika",
@@ -365,6 +497,72 @@ window.DHARMA_GRAPH = {
       "type": "BELONGS_TO_SCHOOL",
       "target": "school_madhyamaka",
       "source_file": "data/seeds/core.json"
+    },
+    {
+      "source": "text_dhammapada",
+      "type": "BELONGS_TO_SCHOOL",
+      "target": "school_theravada",
+      "source_file": "data/seeds/dhammapada.json"
+    },
+    {
+      "source": "text_dhammapada",
+      "type": "CITES",
+      "target": "citation_dhammapada_1",
+      "source_file": "data/seeds/dhammapada.json"
+    },
+    {
+      "source": "text_dhammapada",
+      "type": "CITES",
+      "target": "citation_dhammapada_129",
+      "source_file": "data/seeds/dhammapada.json"
+    },
+    {
+      "source": "text_dhammapada",
+      "type": "CITES",
+      "target": "citation_dhammapada_183",
+      "source_file": "data/seeds/dhammapada.json"
+    },
+    {
+      "source": "text_dhammapada",
+      "type": "CITES",
+      "target": "citation_dhammapada_2",
+      "source_file": "data/seeds/dhammapada.json"
+    },
+    {
+      "source": "text_dhammapada",
+      "type": "CITES",
+      "target": "citation_dhammapada_21",
+      "source_file": "data/seeds/dhammapada.json"
+    },
+    {
+      "source": "text_dhammapada",
+      "type": "CITES",
+      "target": "citation_dhammapada_277",
+      "source_file": "data/seeds/dhammapada.json"
+    },
+    {
+      "source": "text_dhammapada",
+      "type": "CITES",
+      "target": "citation_dhammapada_279",
+      "source_file": "data/seeds/dhammapada.json"
+    },
+    {
+      "source": "text_dhammapada",
+      "type": "CITES",
+      "target": "citation_dhammapada_35",
+      "source_file": "data/seeds/dhammapada.json"
+    },
+    {
+      "source": "text_dhammapada",
+      "type": "CITES",
+      "target": "citation_dhammapada_5",
+      "source_file": "data/seeds/dhammapada.json"
+    },
+    {
+      "source": "text_dhammapada",
+      "type": "CITES",
+      "target": "citation_dhammapada_50",
+      "source_file": "data/seeds/dhammapada.json"
     },
     {
       "source": "concept_brahmaviharas",
@@ -409,6 +607,96 @@ window.DHARMA_GRAPH = {
       "source_file": "data/seeds/concepts.json"
     },
     {
+      "source": "citation_dhammapada_1",
+      "type": "MENTIONS",
+      "target": "concept_citta",
+      "source_file": "data/seeds/dhammapada.json"
+    },
+    {
+      "source": "citation_dhammapada_1",
+      "type": "MENTIONS",
+      "target": "concept_dukkha",
+      "source_file": "data/seeds/dhammapada.json"
+    },
+    {
+      "source": "citation_dhammapada_1",
+      "type": "MENTIONS",
+      "target": "concept_karma",
+      "source_file": "data/seeds/dhammapada.json"
+    },
+    {
+      "source": "citation_dhammapada_129",
+      "type": "MENTIONS",
+      "target": "concept_ahimsa",
+      "source_file": "data/seeds/dhammapada.json"
+    },
+    {
+      "source": "citation_dhammapada_129",
+      "type": "MENTIONS",
+      "target": "concept_karuna",
+      "source_file": "data/seeds/dhammapada.json"
+    },
+    {
+      "source": "citation_dhammapada_183",
+      "type": "MENTIONS",
+      "target": "concept_citta",
+      "source_file": "data/seeds/dhammapada.json"
+    },
+    {
+      "source": "citation_dhammapada_183",
+      "type": "MENTIONS",
+      "target": "concept_sila",
+      "source_file": "data/seeds/dhammapada.json"
+    },
+    {
+      "source": "citation_dhammapada_2",
+      "type": "MENTIONS",
+      "target": "concept_citta",
+      "source_file": "data/seeds/dhammapada.json"
+    },
+    {
+      "source": "citation_dhammapada_2",
+      "type": "MENTIONS",
+      "target": "concept_karma",
+      "source_file": "data/seeds/dhammapada.json"
+    },
+    {
+      "source": "citation_dhammapada_21",
+      "type": "MENTIONS",
+      "target": "concept_appamada",
+      "source_file": "data/seeds/dhammapada.json"
+    },
+    {
+      "source": "citation_dhammapada_277",
+      "type": "MENTIONS",
+      "target": "concept_anicca",
+      "source_file": "data/seeds/dhammapada.json"
+    },
+    {
+      "source": "citation_dhammapada_279",
+      "type": "MENTIONS",
+      "target": "concept_anatta",
+      "source_file": "data/seeds/dhammapada.json"
+    },
+    {
+      "source": "citation_dhammapada_35",
+      "type": "MENTIONS",
+      "target": "concept_citta",
+      "source_file": "data/seeds/dhammapada.json"
+    },
+    {
+      "source": "citation_dhammapada_5",
+      "type": "MENTIONS",
+      "target": "concept_metta",
+      "source_file": "data/seeds/dhammapada.json"
+    },
+    {
+      "source": "citation_dhammapada_50",
+      "type": "MENTIONS",
+      "target": "concept_sila",
+      "source_file": "data/seeds/dhammapada.json"
+    },
+    {
       "source": "concept_four_noble_truths",
       "type": "MENTIONS",
       "target": "concept_dukkha",
@@ -449,6 +737,36 @@ window.DHARMA_GRAPH = {
       "type": "MENTIONS",
       "target": "concept_sila",
       "source_file": "data/seeds/concepts.json"
+    },
+    {
+      "source": "text_dhammapada",
+      "type": "MENTIONS",
+      "target": "concept_anatta",
+      "source_file": "data/seeds/dhammapada.json"
+    },
+    {
+      "source": "text_dhammapada",
+      "type": "MENTIONS",
+      "target": "concept_anicca",
+      "source_file": "data/seeds/dhammapada.json"
+    },
+    {
+      "source": "text_dhammapada",
+      "type": "MENTIONS",
+      "target": "concept_appamada",
+      "source_file": "data/seeds/dhammapada.json"
+    },
+    {
+      "source": "text_dhammapada",
+      "type": "MENTIONS",
+      "target": "concept_citta",
+      "source_file": "data/seeds/dhammapada.json"
+    },
+    {
+      "source": "text_dhammapada",
+      "type": "MENTIONS",
+      "target": "concept_sila",
+      "source_file": "data/seeds/dhammapada.json"
     },
     {
       "source": "text_mulamadhyamakakarika",

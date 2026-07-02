@@ -61,6 +61,12 @@ The first pilot dataset is in `data/seeds/concepts.json`. Together with the
 starter concepts in `data/seeds/core.json`, it contains 30 foundational Dharma
 concepts and a small set of relationships between them.
 
+## Text Pilot
+
+The first text-level pilot is in `data/seeds/dhammapada.json`. It adds a
+`Text` node for the Dhammapada, citation nodes for selected verses, and concept
+links for themes such as mind, heedfulness, ethics, impermanence, and not-self.
+
 ## Validate Seed Data
 
 Run:
