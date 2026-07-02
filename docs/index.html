@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dharma Knowledge Graph</title>
+    <style>
+      :root {
+        --bg: #f5f7f4;
+        --surface: #ffffff;
+        --ink: #17201b;
+        --muted: #607067;
+        --line: #d8ded8;
+        --forest: #1f6f52;
+        --saffron: #c47a24;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      }
+
+      main {
+        max-width: 1120px;
+        margin: 0 auto;
+        padding: 40px 20px 56px;
+      }
+
+      header {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 24px;
+        align-items: end;
+        padding-bottom: 28px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      h1 {
+        margin: 0 0 10px;
+        font-size: 42px;
+        line-height: 1.05;
+      }
+
+      h2 {
+        margin: 0 0 14px;
+        font-size: 22px;
+      }
+
+      p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.6;
+      }
+
+      a {
+        color: var(--forest);
+        font-weight: 700;
+        text-decoration: none;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+      .eyebrow {
+        color: var(--forest);
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 0;
+        margin-bottom: 8px;
+        text-transform: uppercase;
+      }
+
+      .stats {
+        display: grid;
+        grid-template-columns: repeat(2, 132px);
+        gap: 10px;
+      }
+
+      .stat,
+      .panel,
+      .resource {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--surface);
+      }
+
+      .stat {
+        padding: 14px;
+      }
+
+      .stat strong {
+        display: block;
+        font-size: 26px;
+        line-height: 1;
+      }
+
+      .stat span {
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(280px, 360px);
+        gap: 20px;
+        margin-top: 24px;
+      }
+
+      .panel {
+        padding: 22px;
+      }
+
+      .resource-list {
+        display: grid;
+        gap: 12px;
+        margin-top: 16px;
+      }
+
+      .resource {
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+        padding: 14px;
+      }
+
+      .resource span {
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .workflow {
+        display: grid;
+        gap: 10px;
+        margin: 16px 0 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .workflow li {
+        border-left: 3px solid var(--saffron);
+        padding: 4px 0 4px 12px;
+      }
+
+      code {
+        border: 1px solid var(--line);
+        border-radius: 6px;
+        background: #fbfcfa;
+        padding: 2px 6px;
+      }
+
+      @media (max-width: 780px) {
+        header,
+        .grid {
+          grid-template-columns: 1fr;
+        }
+
+        .stats {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        h1 {
+          font-size: 34px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <header>
+        <div>
+          <div class="eyebrow">Dharma Knowledge Graph</div>
+          <h1>Structured Dharma data for graph exploration</h1>
+          <p>
+            A curated seed graph connecting texts, citations, concepts, terms,
+            traditions, people, and places.
+          </p>
+        </div>
+        <section class="stats" aria-label="Graph statistics">
+          <div class="stat"><strong>81</strong><span>Nodes</span></div>
+          <div class="stat"><strong>126</strong><span>Relationships</span></div>
+          <div class="stat"><strong>6</strong><span>Seed files</span></div>
+          <div class="stat"><strong>0</strong><span>Isolated nodes</span></div>
+        </section>
+      </header>
+
+      <section class="grid">
+        <article class="panel">
+          <h2>Explore</h2>
+          <p>
+            Open the graph explorer to browse nodes, filter by type, search
+            concepts and texts, and inspect relationships.
+          </p>
+          <div class="resource-list">
+            <a class="resource" href="graph-explorer/index.html">
+              <strong>Graph Explorer</strong>
+              <span>interactive HTML</span>
+            </a>
+            <a class="resource" href="reports/graph-summary.md">
+              <strong>Graph Summary</strong>
+              <span>Markdown report</span>
+            </a>
+          </div>
+        </article>
+
+        <aside class="panel">
+          <h2>Workflow</h2>
+          <p>Run the full local check before committing data changes.</p>
+          <ul class="workflow">
+            <li><code>make check</code></li>
+            <li>Validate seed data</li>
+            <li>Rebuild graph artifacts</li>
+            <li>Export Neo4j CSV and RDF/Turtle</li>
+          </ul>
+        </aside>
+      </section>
+
+      <section class="grid">
+        <article class="panel">
+          <h2>Data Artifacts</h2>
+          <div class="resource-list">
+            <a class="resource" href="../data/processed/graph.json">
+              <strong>Graph JSON</strong>
+              <span>processed graph</span>
+            </a>
+            <a class="resource" href="../data/processed/neo4j/nodes.csv">
+              <strong>Neo4j Nodes CSV</strong>
+              <span>node import</span>
+            </a>
+            <a class="resource" href="../data/processed/neo4j/relationships.csv">
+              <strong>Neo4j Relationships CSV</strong>
+              <span>edge import</span>
+            </a>
+            <a class="resource" href="../data/processed/rdf/graph.ttl">
+              <strong>RDF/Turtle</strong>
+              <span>semantic export</span>
+            </a>
+          </div>
+        </article>
+
+        <aside class="panel">
+          <h2>Contracts</h2>
+          <div class="resource-list">
+            <a class="resource" href="ontology/ontology-v0.1.md">
+              <strong>Ontology v0.1</strong>
+              <span>model notes</span>
+            </a>
+            <a class="resource" href="ontology/data-contract-v0.1.md">
+              <strong>Data Contract v0.1</strong>
+              <span>seed rules</span>
+            </a>
+          </div>
+        </aside>
+      </section>
+    </main>
+  </body>
+</html>

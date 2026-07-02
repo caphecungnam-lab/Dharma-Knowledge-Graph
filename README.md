@@ -118,6 +118,8 @@ This writes:
 
 Open `docs/graph-explorer/index.html` in a browser to inspect the graph.
 
+The docs homepage is available at `docs/index.html`.
+
 ## Write Graph Report
 
 Run:
