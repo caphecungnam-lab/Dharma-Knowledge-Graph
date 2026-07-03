@@ -7,6 +7,8 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
 
+from dharma_kg.source_validator import validate_manifest_payload
+
 ROOT = Path(__file__).resolve().parents[2]
 DATA_DIR = ROOT / "data"
 SOURCES_DIR = DATA_DIR / "sources"
@@ -190,6 +192,9 @@ def cmd_validate(_: argparse.Namespace) -> int:
 
     for record in records:
         errors = validate_record(record)
+        for error in validate_manifest_payload(record.data, check_exists=False):
+            if error not in errors:
+                errors.append(error)
 
         if record.source in duplicate_sources:
             errors.append(
