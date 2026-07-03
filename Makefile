@@ -1,4 +1,4 @@
-.PHONY: all validate build report quality export-neo4j export-rdf build-index dashboard health health-strict test docs-links check clean
+.PHONY: all validate build report quality export-neo4j export-rdf build-index dashboard health health-strict source-registry test docs-links check clean
 
 all: check
 
@@ -32,6 +32,9 @@ health:
 health-strict:
 	PYTHONPATH=src python3 scripts/check_corpus_health.py --strict
 
+source-registry:
+	PYTHONPATH=src python3 scripts/source_registry.py validate
+
 test:
 	python3 -m unittest discover -s tests
 
@@ -39,7 +42,7 @@ docs-links:
 	python3 scripts/validate_docs_links.py
 
 check: validate report quality export-neo4j export-rdf docs-links test
-	python3 -m py_compile build_backend/dharma_build.py src/dharma_kg/citations.py src/dharma_kg/quality.py scripts/build_graph.py scripts/validate_seed_data.py scripts/import_manual_transcript.py scripts/vtt_to_evidence.py scripts/review_evidence.py scripts/batch_review_helper.py scripts/promote_reviewed_evidence.py scripts/build_curated_index.py scripts/build_corpus_dashboard.py scripts/search_curated_evidence.py scripts/ask_curated_evidence.py scripts/write_graph_report.py scripts/write_quality_report.py scripts/export_neo4j_csv.py scripts/export_rdf_turtle.py scripts/validate_docs_links.py
+	python3 -m py_compile build_backend/dharma_build.py src/dharma_kg/citations.py src/dharma_kg/quality.py scripts/build_graph.py scripts/validate_seed_data.py scripts/import_manual_transcript.py scripts/vtt_to_evidence.py scripts/review_evidence.py scripts/batch_review_helper.py scripts/promote_reviewed_evidence.py scripts/build_curated_index.py scripts/build_corpus_dashboard.py scripts/source_registry.py scripts/search_curated_evidence.py scripts/ask_curated_evidence.py scripts/write_graph_report.py scripts/write_quality_report.py scripts/export_neo4j_csv.py scripts/export_rdf_turtle.py scripts/validate_docs_links.py
 
 clean:
 	rm -rf scripts/__pycache__ tests/__pycache__

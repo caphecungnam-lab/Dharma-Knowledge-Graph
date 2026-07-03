@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "registry_name": "dkg_source_registry",
+    "version": 1,
+    "updated_at": "2026-07-03T14:30:00+07:00"
+  },
+  "sources": [
+    {
+      "source_id": "source_youtube_fisp_arohzy8",
+      "corpus_id": "corpus_giac_khang",
+      "title": "1A. KINH 6 6 L2CÂU 1 P1",
+      "speaker": "HT. Thích Giác Khang",
+      "source_owner": "PHÁP ÂM SƯ KHANG",
+      "source_kind": "youtube",
+      "source_url": "https://www.youtube.com/watch?v=FISpARohzy8",
+      "video_id": "FISpARohzy8",
+      "language": "vi",
+      "topic": "Kinh Sáu Sáu",
+      "status": "pilot",
+      "ingestion_status": "ingested",
+      "review_status": "partially_reviewed",
+      "curation_status": "partially_curated",
+      "index_status": "indexed",
+      "health_status": "pass",
+      "raw_paths": [
+        "data/raw/giac_khang/FISpARohzy8/source.vi.vtt"
+      ],
+      "processed_paths": [
+        "data/processed/giac_khang/FISpARohzy8/evidence_first_pass.json",
+        "data/processed/giac_khang/FISpARohzy8/evidence_batch_001.json"
+      ],
+      "reviewed_paths": [
+        "data/reviewed/giac_khang/FISpARohzy8/evidence_review_queue.json",
+        "data/reviewed/giac_khang/FISpARohzy8/evidence_batch_001_review_queue.json"
+      ],
+      "curated_paths": [
+        "data/curated/giac_khang/FISpARohzy8/evidence_curated.json",
+        "data/curated/giac_khang/FISpARohzy8/evidence_batch_001_curated.json"
+      ],
+      "index_paths": [
+        "data/indexes/giac_khang/curated_evidence_index.json"
+      ],
+      "notes": "Initial Giac Khang pilot source for Kinh Sáu Sáu.",
+      "created_at": "2026-07-03T14:30:00+07:00",
+      "updated_at": "2026-07-03T14:30:00+07:00"
+    }
+  ]
+}
