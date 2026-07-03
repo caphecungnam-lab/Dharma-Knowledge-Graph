@@ -10,7 +10,7 @@ Generated from `data/processed/graph.json`.
 | Relationships | 238 |
 | Source files | 14 |
 | Graph version | 0.1 |
-| Content hash | 7ac20d2d194448f32d3de85239b528e620f7a1a60b4a993155ff0453757ec230 |
+| Content hash | 8b95a677fabcf81a09dda13889f5c368ffde75f285a3c919a6a4deb4d5796239 |
 
 ## Node Types
 

@@ -38,12 +38,16 @@ Promotion follows these rules:
 - Do not promote `unreviewed` Evidence.
 - Preserve `original_evidence_text`.
 - Use `reviewed_evidence_text` as curated `evidence_text`.
-- Keep timestamps, `source_url`, `document_id`, `speaker`, and citation links.
+- Preserve `reviewed_evidence_text` for traceability.
+- Keep timestamps, `source_url`, `document_id`, `speaker`, `source_kind`,
+  `language`, `evidence_type`, `confidence`, and citation links.
 - Preserve `review_notes`.
 - Add `curated_status: "curated"`.
 - Add `curated_at: "2026-07-03"`.
 - Add `curator: "Minh"`.
 - Do not set `review_status` to `verified`.
+- Do not overwrite reviewed data.
+- Do not change raw or processed Evidence data.
 
 ## Curated Evidence Fields
 
@@ -65,6 +69,7 @@ Curated Evidence keeps the Evidence shape needed by the graph:
 - `review_status`
 - `original_review_status`
 - `original_evidence_text`
+- `reviewed_evidence_text`
 - `review_notes`
 - `curated_status`
 - `curated_at`
@@ -81,6 +86,18 @@ Verification still requires checking:
 - surrounding source context
 - citation target
 - Buddhist terminology
+
+## File Flow
+
+The promotion flow is:
+
+1. VTT-derived Evidence remains in
+   `data/processed/giac_khang/FISpARohzy8/evidence_first_pass.json`.
+2. Human review happens in
+   `data/reviewed/giac_khang/FISpARohzy8/evidence_review_queue.json`.
+3. Only `human_reviewed` Evidence is promoted into
+   `data/curated/giac_khang/FISpARohzy8/evidence_curated.json`.
+4. Raw processed Evidence and reviewed queue data are preserved for traceability.
 
 ## Next Step
 

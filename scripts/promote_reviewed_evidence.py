@@ -44,7 +44,6 @@ def build_curated_evidence_node(node: dict[str, Any]) -> dict[str, Any]:
     reviewed_text = str(node.get("reviewed_evidence_text", ""))
 
     curated_node["evidence_text"] = reviewed_text
-    curated_node.pop("reviewed_evidence_text", None)
     curated_node["curated_status"] = "curated"
     curated_node["curated_at"] = CURATED_AT
     curated_node["curator"] = CURATOR
@@ -58,6 +57,35 @@ def relationship_key(relationship: dict[str, Any]) -> tuple[str, str, str]:
         str(relationship.get("type", "")),
         str(relationship.get("target", "")),
     )
+
+
+def is_source_reference_node(node: dict[str, Any]) -> bool:
+    return node.get("type") in {"Citation", "Document", "Source"}
+
+
+def is_source_reference_id(node_id: str) -> bool:
+    return node_id.startswith(("citation_", "document_", "source_"))
+
+
+def should_preserve_relationship(
+    relationship: dict[str, Any],
+    promoted_node_ids: set[str],
+    existing_node_ids: set[str],
+    source_reference_ids: set[str],
+) -> bool:
+    source = str(relationship.get("source", ""))
+    target = str(relationship.get("target", ""))
+
+    if source not in promoted_node_ids:
+        return False
+
+    if target in promoted_node_ids:
+        return True
+
+    if target in existing_node_ids and target in source_reference_ids:
+        return True
+
+    return is_source_reference_id(target)
 
 
 def default_relationships_for_node(node: dict[str, Any]) -> list[dict[str, str]]:
@@ -88,9 +116,23 @@ def build_curated_relationships(
     promoted_nodes: list[dict[str, Any]],
 ) -> list[dict[str, Any]]:
     relationships: dict[tuple[str, str, str], dict[str, Any]] = {}
+    source_nodes = [
+        node for node in source_payload.get("nodes", []) if isinstance(node, dict)
+    ]
+    existing_node_ids = {str(node.get("id", "")) for node in source_nodes}
+    source_reference_ids = {
+        str(node.get("id", ""))
+        for node in source_nodes
+        if is_source_reference_node(node)
+    }
 
     for relationship in source_payload.get("relationships", []):
-        if relationship.get("source") in promoted_node_ids:
+        if should_preserve_relationship(
+            relationship,
+            promoted_node_ids,
+            existing_node_ids,
+            source_reference_ids,
+        ):
             relationships[relationship_key(relationship)] = deepcopy(relationship)
 
     for node in promoted_nodes:

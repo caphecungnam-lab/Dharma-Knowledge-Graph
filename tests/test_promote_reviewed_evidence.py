@@ -72,6 +72,11 @@ def sample_payload() -> dict:
                 "type": "HAS_CITATION",
                 "target": "citation_youtube_fisp_arohzy8",
             },
+            {
+                "source": "evidence_fisp_arohzy8_0001",
+                "type": "RELATED_TO",
+                "target": "concept_missing_from_curated_output",
+            },
         ],
     }
 
@@ -96,7 +101,7 @@ class PromoteReviewedEvidenceTest(unittest.TestCase):
         node = curated["nodes"][0]
 
         self.assertEqual(node["evidence_text"], "Bản đã được người xem sửa.")
-        self.assertNotIn("reviewed_evidence_text", node)
+        self.assertEqual(node["reviewed_evidence_text"], "Bản đã được người xem sửa.")
 
     def test_preserves_original_evidence_text(self) -> None:
         curated = promote_reviewed_evidence(sample_payload())
@@ -117,6 +122,17 @@ class PromoteReviewedEvidenceTest(unittest.TestCase):
             curated["nodes"][0]["source_url"],
             "https://www.youtube.com/watch?v=FISpARohzy8",
         )
+
+    def test_preserves_core_evidence_fields(self) -> None:
+        curated = promote_reviewed_evidence(sample_payload())
+        node = curated["nodes"][0]
+
+        self.assertEqual(node["document_id"], "document_transcript_fisp_arohzy8")
+        self.assertEqual(node["speaker"], "HT. Thích Giác Khang")
+        self.assertEqual(node["source_kind"], "youtube")
+        self.assertEqual(node["language"], "vi")
+        self.assertEqual(node["evidence_type"], "transcript_excerpt")
+        self.assertEqual(node["confidence"], "low")
 
     def test_writes_curated_status(self) -> None:
         curated = promote_reviewed_evidence(sample_payload())
@@ -151,6 +167,18 @@ class PromoteReviewedEvidenceTest(unittest.TestCase):
                     "target": "citation_youtube_fisp_arohzy8",
                 },
             ],
+        )
+
+    def test_skips_relationships_to_missing_non_source_nodes(self) -> None:
+        curated = promote_reviewed_evidence(sample_payload())
+
+        self.assertNotIn(
+            {
+                "source": "evidence_fisp_arohzy8_0001",
+                "type": "RELATED_TO",
+                "target": "concept_missing_from_curated_output",
+            },
+            curated["relationships"],
         )
 
     def test_writes_curated_file(self) -> None:

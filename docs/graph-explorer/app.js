@@ -55,7 +55,7 @@
     corpus: "COR",
     pilot: "PILOT",
     seed: "SEED",
-    processed: "PRO",
+    processed: "PROC",
     reviewed: "REV",
     curated: "CUR",
   };
@@ -438,7 +438,7 @@
 
   function nodeFullLabel(node) {
     if (node.type === "Evidence" && node.evidence_text) {
-      return truncateLabel(node.evidence_text, 40);
+      return String(node.evidence_text).trim();
     }
     return node.name || node.id;
   }
