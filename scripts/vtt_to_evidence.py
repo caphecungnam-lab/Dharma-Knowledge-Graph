@@ -33,7 +33,11 @@ SENTENCE_PUNCTUATION = tuple(".?!:;…。！？")
 
 
 def parse_vtt_timestamp(value: str) -> float:
-    parts = value.strip().split(":")
+    normalized = value.strip()
+    if "." not in normalized:
+        normalized = f"{normalized}.000"
+
+    parts = normalized.split(":")
     if len(parts) != 3:
         raise ValueError(f"Invalid VTT timestamp: {value}")
 
@@ -88,6 +92,12 @@ def parse_timestamp_line(line: str) -> tuple[str, str] | None:
     if not match:
         return None
     return match.group("start"), match.group("end")
+
+
+def parse_time_filter(value: str | None) -> float | None:
+    if value is None:
+        return None
+    return parse_vtt_timestamp(value)
 
 
 def should_ignore_metadata_line(line: str) -> bool:
@@ -149,6 +159,29 @@ def parse_vtt_segments(vtt_text: str) -> list[dict[str, str]]:
     return segments
 
 
+def filter_cues_by_time(
+    cues: list[dict[str, str]],
+    start_time: str | None = None,
+    end_time: str | None = None,
+) -> list[dict[str, str]]:
+    start_seconds = parse_time_filter(start_time)
+    end_seconds = parse_time_filter(end_time)
+    filtered: list[dict[str, str]] = []
+
+    for cue in cues:
+        cue_start = parse_vtt_timestamp(cue["start_time"])
+        cue_end = parse_vtt_timestamp(cue["end_time"])
+
+        if start_seconds is not None and cue_end <= start_seconds:
+            continue
+        if end_seconds is not None and cue_start >= end_seconds:
+            continue
+
+        filtered.append(cue)
+
+    return filtered
+
+
 def segment_duration(segment: dict[str, str]) -> float:
     return parse_vtt_timestamp(segment["end_time"]) - parse_vtt_timestamp(
         segment["start_time"]
@@ -205,15 +238,18 @@ def merge_cues(cues: list[dict]) -> list[dict]:
     return merged
 
 
-def evidence_id(index: int) -> str:
-    return f"evidence_fisp_arohzy8_{index + 1:04d}"
+def evidence_id(sequence_number: int) -> str:
+    return f"evidence_fisp_arohzy8_{sequence_number:04d}"
 
 
-def build_evidence_node(segment: dict[str, str], index: int) -> dict[str, str]:
+def build_evidence_node(
+    segment: dict[str, str],
+    sequence_number: int,
+) -> dict[str, str]:
     return {
-        "id": evidence_id(index),
+        "id": evidence_id(sequence_number),
         "type": "Evidence",
-        "name": f"VTT caption excerpt {index + 1:04d} from {VIDEO_ID}",
+        "name": f"VTT caption excerpt {sequence_number:04d} from {VIDEO_ID}",
         "evidence_text": segment["text"],
         "evidence_type": "transcript_excerpt",
         "language": "vi",
@@ -250,13 +286,22 @@ def build_evidence_relationships(evidence_node_id: str) -> list[dict[str, str]]:
 def convert_vtt_to_evidence(
     vtt_text: str,
     max_evidence_count: int = MAX_EVIDENCE_COUNT,
+    start_index: int = 1,
+    start_time: str | None = None,
+    end_time: str | None = None,
 ) -> dict[str, list[dict[str, str]]]:
-    segments = merge_cues(parse_vtt_segments(vtt_text))[:max_evidence_count]
+    cues = filter_cues_by_time(
+        parse_vtt_segments(vtt_text),
+        start_time=start_time,
+        end_time=end_time,
+    )
+    segments = merge_cues(cues)[:max_evidence_count]
     nodes: list[dict[str, str]] = []
     relationships: list[dict[str, str]] = []
 
     for index, segment in enumerate(segments):
-        node = build_evidence_node(segment, index)
+        sequence_number = start_index + index
+        node = build_evidence_node(segment, sequence_number)
         nodes.append(node)
         relationships.extend(build_evidence_relationships(node["id"]))
 
@@ -266,9 +311,22 @@ def convert_vtt_to_evidence(
     }
 
 
-def convert_vtt_file(input_path: Path, output_path: Path = OUTPUT_PATH) -> dict:
+def convert_vtt_file(
+    input_path: Path,
+    output_path: Path = OUTPUT_PATH,
+    max_evidence_count: int = MAX_EVIDENCE_COUNT,
+    start_index: int = 1,
+    start_time: str | None = None,
+    end_time: str | None = None,
+) -> dict:
     vtt_text = input_path.read_text(encoding="utf-8")
-    output = convert_vtt_to_evidence(vtt_text)
+    output = convert_vtt_to_evidence(
+        vtt_text,
+        max_evidence_count=max_evidence_count,
+        start_index=start_index,
+        start_time=start_time,
+        end_time=end_time,
+    )
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(
         json.dumps(output, indent=2, ensure_ascii=False) + "\n",
@@ -279,16 +337,54 @@ def convert_vtt_file(input_path: Path, output_path: Path = OUTPUT_PATH) -> dict:
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
-        description="Convert first VTT caption segments into Evidence JSON."
+        description="Convert VTT caption segments into Evidence JSON."
     )
     parser.add_argument("input", type=Path, help="Input .vtt file path")
+    parser.add_argument(
+        "--limit",
+        type=int,
+        default=MAX_EVIDENCE_COUNT,
+        help="Maximum number of Evidence nodes to create.",
+    )
+    parser.add_argument(
+        "--start-index",
+        type=int,
+        default=1,
+        help="One-based sequence number for the first generated Evidence ID.",
+    )
+    parser.add_argument(
+        "--start-time",
+        help="Optional inclusive-ish VTT start filter, for example 00:00:00.",
+    )
+    parser.add_argument(
+        "--end-time",
+        help="Optional exclusive-ish VTT end filter, for example 00:20:00.",
+    )
+    parser.add_argument(
+        "--output",
+        type=Path,
+        default=OUTPUT_PATH,
+        help="Output JSON path.",
+    )
     return parser.parse_args()
 
 
 def main() -> int:
     args = parse_args()
-    output = convert_vtt_file(args.input)
-    print(f"Wrote {OUTPUT_PATH} with {len(output['nodes'])} Evidence node(s).")
+    if args.limit < 1:
+        raise SystemExit("--limit must be greater than 0.")
+    if args.start_index < 1:
+        raise SystemExit("--start-index must be greater than 0.")
+
+    output = convert_vtt_file(
+        args.input,
+        output_path=args.output,
+        max_evidence_count=args.limit,
+        start_index=args.start_index,
+        start_time=args.start_time,
+        end_time=args.end_time,
+    )
+    print(f"Wrote {args.output} with {len(output['nodes'])} Evidence node(s).")
     return 0
 
 

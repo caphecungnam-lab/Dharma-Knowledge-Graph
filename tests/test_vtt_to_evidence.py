@@ -1,6 +1,8 @@
 from __future__ import annotations
 
+import json
 import sys
+import tempfile
 import unittest
 from pathlib import Path
 
@@ -9,6 +11,7 @@ sys.path.insert(0, str(ROOT / "scripts"))
 
 from vtt_to_evidence import (  # noqa: E402
     clean_caption_text,
+    convert_vtt_file,
     convert_vtt_to_evidence,
     dedupe_adjacent_text,
     format_timestamp,
@@ -193,6 +196,79 @@ thì trước tiên tôi xin tóm trước phần.
 
         self.assertIn("sáu căn", output["nodes"][0]["evidence_text"])
         self.assertIn("tiếng Việt", output["nodes"][3]["evidence_text"])
+
+    def test_limit_option_controls_evidence_count(self) -> None:
+        output = convert_vtt_to_evidence(MANY_WINDOWS_VTT, max_evidence_count=2)
+
+        self.assertEqual(len(output["nodes"]), 2)
+
+    def test_start_time_filters_cues_before_merge(self) -> None:
+        output = convert_vtt_to_evidence(
+            MANY_WINDOWS_VTT,
+            max_evidence_count=2,
+            start_time="00:00:21",
+        )
+
+        self.assertEqual(output["nodes"][0]["start_time"], "00:00:21.000")
+        self.assertIn("sáu trần", output["nodes"][0]["evidence_text"])
+
+    def test_end_time_filters_cues_before_merge(self) -> None:
+        output = convert_vtt_to_evidence(
+            MANY_WINDOWS_VTT,
+            max_evidence_count=5,
+            end_time="00:01:03",
+        )
+
+        self.assertEqual(len(output["nodes"]), 3)
+        self.assertEqual(output["nodes"][-1]["end_time"], "00:01:03.000")
+
+    def test_start_index_generates_stable_ids(self) -> None:
+        output = convert_vtt_to_evidence(
+            MANY_WINDOWS_VTT,
+            max_evidence_count=2,
+            start_index=10,
+        )
+
+        self.assertEqual(output["nodes"][0]["id"], "evidence_fisp_arohzy8_0010")
+        self.assertEqual(output["nodes"][1]["id"], "evidence_fisp_arohzy8_0011")
+
+    def test_output_path_writes_requested_file(self) -> None:
+        with tempfile.TemporaryDirectory() as temp_dir:
+            temp_path = Path(temp_dir)
+            input_path = temp_path / "source.vi.vtt"
+            output_path = temp_path / "custom_output.json"
+            input_path.write_text(MANY_WINDOWS_VTT, encoding="utf-8")
+
+            output = convert_vtt_file(
+                input_path,
+                output_path=output_path,
+                max_evidence_count=1,
+            )
+
+            written = json.loads(output_path.read_text(encoding="utf-8"))
+            self.assertEqual(len(output["nodes"]), 1)
+            self.assertEqual(written["nodes"][0]["id"], "evidence_fisp_arohzy8_0001")
+
+    def test_first_pass_is_not_overwritten_when_output_is_explicit(self) -> None:
+        with tempfile.TemporaryDirectory() as temp_dir:
+            temp_path = Path(temp_dir)
+            input_path = temp_path / "source.vi.vtt"
+            first_pass_path = temp_path / "evidence_first_pass.json"
+            batch_path = temp_path / "evidence_batch_001.json"
+            input_path.write_text(MANY_WINDOWS_VTT, encoding="utf-8")
+            first_pass_path.write_text('{"sentinel": true}\n', encoding="utf-8")
+
+            convert_vtt_file(
+                input_path,
+                output_path=batch_path,
+                max_evidence_count=2,
+            )
+
+            self.assertEqual(
+                first_pass_path.read_text(encoding="utf-8"),
+                '{"sentinel": true}\n',
+            )
+            self.assertTrue(batch_path.exists())
 
 
 if __name__ == "__main__":

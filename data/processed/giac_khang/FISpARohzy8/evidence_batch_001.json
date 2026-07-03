@@ -1,0 +1,1356 @@
+{
+  "nodes": [
+    {
+      "id": "evidence_fisp_arohzy8_0001",
+      "type": "Evidence",
+      "name": "VTT caption excerpt 0001 from FISpARohzy8",
+      "evidence_text": "Tiếp tục bài kinh 66 thì trước tiên tôi xin tóm trước rồi hai vị Phật tử sẽ nhắc lại rồi chúng ta sẽ đi vào trả lời bài câu hỏi số 1 thì ở đây bài kinh 66 gồm tất cả là sáu phần. Phần nhập đề tức",
+      "evidence_type": "transcript_excerpt",
+      "language": "vi",
+      "confidence": "low",
+      "source_kind": "youtube",
+      "source_url": "https://www.youtube.com/watch?v=FISpARohzy8",
+      "document_id": "document_transcript_fisp_arohzy8",
+      "start_time": "00:01:18.720",
+      "end_time": "00:01:39.030",
+      "speaker": "HT. Thích Giác Khang",
+      "review_status": "unreviewed",
+      "notes": "Imported from YouTube VTT caption. Needs human review for Buddhist terminology."
+    },
+    {
+      "id": "evidence_fisp_arohzy8_0002",
+      "type": "Evidence",
+      "name": "VTT caption excerpt 0002 from FISpARohzy8",
+      "evidence_text": "là phần dẫn nhập, phần kết luận là hai còn phần thân bài là bốn. Thì ở đây chúng ta thường thấy kinh Phật nói chung đó là có sáu cái ấn chứng, sáu cái chứng để đi vào bài giảng.",
+      "evidence_type": "transcript_excerpt",
+      "language": "vi",
+      "confidence": "low",
+      "source_kind": "youtube",
+      "source_url": "https://www.youtube.com/watch?v=FISpARohzy8",
+      "document_id": "document_transcript_fisp_arohzy8",
+      "start_time": "00:01:39.040",
+      "end_time": "00:01:53.190",
+      "speaker": "HT. Thích Giác Khang",
+      "review_status": "unreviewed",
+      "notes": "Imported from YouTube VTT caption. Needs human review for Buddhist terminology."
+    },
+    {
+      "id": "evidence_fisp_arohzy8_0003",
+      "type": "Evidence",
+      "name": "VTT caption excerpt 0003 from FISpARohzy8",
+      "evidence_text": "Vì chúng ta thấy đây là cái ấn chứng thứ nhất là không gian, thứ nhì là thời gian và cái thứ ba là ai giảng, cái thứ tư là giảng cho ai nghe và cái thứ năm là giảng về kinh gì và cái thứ sáu là nội dung của bài kinh đó. Thì chúng ta thấy đây không gian thời gian là tại thành Xá Vệ cái giường của ông thái tử Kiều Đà và",
+      "evidence_type": "transcript_excerpt",
+      "language": "vi",
+      "confidence": "low",
+      "source_kind": "youtube",
+      "source_url": "https://www.youtube.com/watch?v=FISpARohzy8",
+      "document_id": "document_transcript_fisp_arohzy8",
+      "start_time": "00:01:53.200",
+      "end_time": "00:02:16.110",
+      "speaker": "HT. Thích Giác Khang",
+      "review_status": "unreviewed",
+      "notes": "Imported from YouTube VTT caption. Needs human review for Buddhist terminology."
+    },
+    {
+      "id": "evidence_fisp_arohzy8_0004",
+      "type": "Evidence",
+      "name": "VTT caption excerpt 0004 from FISpARohzy8",
+      "evidence_text": "Tịnh xá của cấp cô độc. Đó là phần không gian thời gian hai phần. Phần thứ ba là Đức Phật Thích Ca Mâu Ni tức là đức Thế Tôn của chúng ta giảng và giảng cho các vị tỳ kheo nghe. Đó là bốn phần. Và phần thứ năm là giảng về bài kinh 66 và nội dung đó là sơ thiện, trung thiện, hậu thiện có văn có nghĩa",
+      "evidence_type": "transcript_excerpt",
+      "language": "vi",
+      "confidence": "low",
+      "source_kind": "youtube",
+      "source_url": "https://www.youtube.com/watch?v=FISpARohzy8",
+      "document_id": "document_transcript_fisp_arohzy8",
+      "start_time": "00:02:16.120",
+      "end_time": "00:02:37.949",
+      "speaker": "HT. Thích Giác Khang",
+      "review_status": "unreviewed",
+      "notes": "Imported from YouTube VTT caption. Needs human review for Buddhist terminology."
+    },
+    {
+      "id": "evidence_fisp_arohzy8_0005",
+      "type": "Evidence",
+      "name": "VTT caption excerpt 0005 from FISpARohzy8",
+      "evidence_text": "phạm hạnh thanh tịnh rồi đưa đến giải thoát. Đó là hình. Còn sau đây là bốn phần là thân bài. Tức là phần thứ nhất là trình bày về bài kinh 66 tức là 36 pháp toàn thể vũ trụ.",
+      "evidence_type": "transcript_excerpt",
+      "language": "vi",
+      "confidence": "low",
+      "source_kind": "youtube",
+      "source_url": "https://www.youtube.com/watch?v=FISpARohzy8",
+      "document_id": "document_transcript_fisp_arohzy8",
+      "start_time": "00:02:37.959",
+      "end_time": "00:02:54.470",
+      "speaker": "HT. Thích Giác Khang",
+      "review_status": "unreviewed",
+      "notes": "Imported from YouTube VTT caption. Needs human review for Buddhist terminology."
+    },
+    {
+      "id": "evidence_fisp_arohzy8_0006",
+      "type": "Evidence",
+      "name": "VTT caption excerpt 0006 from FISpARohzy8",
+      "evidence_text": "Thì chúng ta thấy cuộc sống của chúng ta đó có thân tâm và hoàn cảnh. Thì ở đây có dùng thân tâm hết phải không? Thân là sáu căn không? Còn hoàn cảnh là sáu trận, còn tâm là sáu thức, sáu xúc, sáu thọ và sáu ái. Thì chúng ta thấy để trình bày rất rành. Trình bày theo chiều dọc và",
+      "evidence_type": "transcript_excerpt",
+      "language": "vi",
+      "confidence": "low",
+      "source_kind": "youtube",
+      "source_url": "https://www.youtube.com/watch?v=FISpARohzy8",
+      "document_id": "document_transcript_fisp_arohzy8",
+      "start_time": "00:02:54.480",
+      "end_time": "00:03:16.830",
+      "speaker": "HT. Thích Giác Khang",
+      "review_status": "unreviewed",
+      "notes": "Imported from YouTube VTT caption. Needs human review for Buddhist terminology."
+    },
+    {
+      "id": "evidence_fisp_arohzy8_0007",
+      "type": "Evidence",
+      "name": "VTT caption excerpt 0007 from FISpARohzy8",
+      "evidence_text": "chiều ngang. Chiều dọc thì sáu căn gồm có mắt, tay mũi, lưỡi, thân, ý và sáu trần sắc thân giữa xuất khóa và sáu thức là nhãn nhĩ tỷ thiệt thân ý thức và sáu xúc của ngãn nhị tu, thiệt thân ý xúc và sáu thọ của ngã, nhị ti thiệt, thân ý thọ và sáu ái của ngã, nhị ti thiệt thân ý ái. Đó là khi sao triều dục. Còn chiều",
+      "evidence_type": "transcript_excerpt",
+      "language": "vi",
+      "confidence": "low",
+      "source_kind": "youtube",
+      "source_url": "https://www.youtube.com/watch?v=FISpARohzy8",
+      "document_id": "document_transcript_fisp_arohzy8",
+      "start_time": "00:03:16.840",
+      "end_time": "00:03:39.990",
+      "speaker": "HT. Thích Giác Khang",
+      "review_status": "unreviewed",
+      "notes": "Imported from YouTube VTT caption. Needs human review for Buddhist terminology."
+    },
+    {
+      "id": "evidence_fisp_arohzy8_0008",
+      "type": "Evidence",
+      "name": "VTT caption excerpt 0008 from FISpARohzy8",
+      "evidence_text": "ngang thì do viên mắt, do viên sắc trần phát ngĩa nhãn thức. Điểm gặp gỡ có ba pháp này là nhãn xuất, do viên nhãn súc là nhãn thọ. Do duên nhãn tọ là nhãn ái.",
+      "evidence_type": "transcript_excerpt",
+      "language": "vi",
+      "confidence": "low",
+      "source_kind": "youtube",
+      "source_url": "https://www.youtube.com/watch?v=FISpARohzy8",
+      "document_id": "document_transcript_fisp_arohzy8",
+      "start_time": "00:03:40.000",
+      "end_time": "00:03:50.190",
+      "speaker": "HT. Thích Giác Khang",
+      "review_status": "unreviewed",
+      "notes": "Imported from YouTube VTT caption. Needs human review for Buddhist terminology."
+    },
+    {
+      "id": "evidence_fisp_arohzy8_0009",
+      "type": "Evidence",
+      "name": "VTT caption excerpt 0009 from FISpARohzy8",
+      "evidence_text": "Rồi cái lỗ tay, mũi, lưỡng, thân và ý căn cũng vậy. Thì đây là trình bày xong về phần con người của chúng ta tức là nhân sinh qua và phần bên ngoài của chúng ta là võ trụ quang. Hay nói cách khác đi là chánh báo và y báo. Chánh báo tức là nhân sinh quan, tức là phần nhận",
+      "evidence_type": "transcript_excerpt",
+      "language": "vi",
+      "confidence": "low",
+      "source_kind": "youtube",
+      "source_url": "https://www.youtube.com/watch?v=FISpARohzy8",
+      "document_id": "document_transcript_fisp_arohzy8",
+      "start_time": "00:03:50.200",
+      "end_time": "00:04:11.350",
+      "speaker": "HT. Thích Giác Khang",
+      "review_status": "unreviewed",
+      "notes": "Imported from YouTube VTT caption. Needs human review for Buddhist terminology."
+    },
+    {
+      "id": "evidence_fisp_arohzy8_0010",
+      "type": "Evidence",
+      "name": "VTT caption excerpt 0010 from FISpARohzy8",
+      "evidence_text": "thức của con người và y báo tức là phần đối tượng nhận thức tức là quả trụ. Vậy đó là xong phần thứ nhất của thân bài.",
+      "evidence_type": "transcript_excerpt",
+      "language": "vi",
+      "confidence": "low",
+      "source_kind": "youtube",
+      "source_url": "https://www.youtube.com/watch?v=FISpARohzy8",
+      "document_id": "document_transcript_fisp_arohzy8",
+      "start_time": "00:04:11.360",
+      "end_time": "00:04:22.350",
+      "speaker": "HT. Thích Giác Khang",
+      "review_status": "unreviewed",
+      "notes": "Imported from YouTube VTT caption. Needs human review for Buddhist terminology."
+    },
+    {
+      "id": "evidence_fisp_arohzy8_0011",
+      "type": "Evidence",
+      "name": "VTT caption excerpt 0011 from FISpARohzy8",
+      "evidence_text": "Và phần thứ hai là nói về 36 pháp là toàn thể con người và vũ trụ đều không có cái ta cố định, không có cái ta bất biến. thường hành. Thì ở đây nó nói rất là đớn đơn giản là thấy sự sanh và diệt của các pháp nhưng mà chúng ta còn giảng sự sanh diệt cho nó rằng sanh diệt như",
+      "evidence_type": "transcript_excerpt",
+      "language": "vi",
+      "confidence": "low",
+      "source_kind": "youtube",
+      "source_url": "https://www.youtube.com/watch?v=FISpARohzy8",
+      "document_id": "document_transcript_fisp_arohzy8",
+      "start_time": "00:04:22.360",
+      "end_time": "00:04:43.790",
+      "speaker": "HT. Thích Giác Khang",
+      "review_status": "unreviewed",
+      "notes": "Imported from YouTube VTT caption. Needs human review for Buddhist terminology."
+    },
+    {
+      "id": "evidence_fisp_arohzy8_0012",
+      "type": "Evidence",
+      "name": "VTT caption excerpt 0012 from FISpARohzy8",
+      "evidence_text": "thế nào? Có mấy thứ sanh diệt đó là bài giảng sau này của chúng ta. Thành ra nếu chúng ta kết luận rằng 36 pháp này là có tự ngã tức là bất biến, bất sanh bất diệt thì nó vi lý. Vì chúng ta hằng ngày sống chúng ta thấy rõ sự sanh diệt của các pháp.",
+      "evidence_type": "transcript_excerpt",
+      "language": "vi",
+      "confidence": "low",
+      "source_kind": "youtube",
+      "source_url": "https://www.youtube.com/watch?v=FISpARohzy8",
+      "document_id": "document_transcript_fisp_arohzy8",
+      "start_time": "00:04:43.800",
+      "end_time": "00:05:02.469",
+      "speaker": "HT. Thích Giác Khang",
+      "review_status": "unreviewed",
+      "notes": "Imported from YouTube VTT caption. Needs human review for Buddhist terminology."
+    },
+    {
+      "id": "evidence_fisp_arohzy8_0013",
+      "type": "Evidence",
+      "name": "VTT caption excerpt 0013 from FISpARohzy8",
+      "evidence_text": "Như vậy thì nói các pháp là có tự ngã, tức là chân như sanh diệt. Do đó nó phi lý. Chúng ta phải kết luận là các pháp là vô ngã. Đó là cái căn bản đầu tiên của giáo lý đạo Phật. Vô ngã tức là niết bàn vậy. Và phần thứ ba của phần thân đề",
+      "evidence_type": "transcript_excerpt",
+      "language": "vi",
+      "confidence": "low",
+      "source_kind": "youtube",
+      "source_url": "https://www.youtube.com/watch?v=FISpARohzy8",
+      "document_id": "document_transcript_fisp_arohzy8",
+      "start_time": "00:05:02.479",
+      "end_time": "00:05:22.710",
+      "speaker": "HT. Thích Giác Khang",
+      "review_status": "unreviewed",
+      "notes": "Imported from YouTube VTT caption. Needs human review for Buddhist terminology."
+    },
+    {
+      "id": "evidence_fisp_arohzy8_0014",
+      "type": "Evidence",
+      "name": "VTT caption excerpt 0014 from FISpARohzy8",
+      "evidence_text": "thân bài là nói về sự tập khởi và sự đoạn diệt thân tiến của các pháp. Đây là vấn đề đầu tiên để đi vào giải thoát.",
+      "evidence_type": "transcript_excerpt",
+      "language": "vi",
+      "confidence": "low",
+      "source_kind": "youtube",
+      "source_url": "https://www.youtube.com/watch?v=FISpARohzy8",
+      "document_id": "document_transcript_fisp_arohzy8",
+      "start_time": "00:05:22.720",
+      "end_time": "00:05:32.870",
+      "speaker": "HT. Thích Giác Khang",
+      "review_status": "unreviewed",
+      "notes": "Imported from YouTube VTT caption. Needs human review for Buddhist terminology."
+    },
+    {
+      "id": "evidence_fisp_arohzy8_0015",
+      "type": "Evidence",
+      "name": "VTT caption excerpt 0015 from FISpARohzy8",
+      "evidence_text": "Nhận thức đầu tiên cũng là nhận thức cuối cùng và giải thoát đầu tiên cũng là giải thoát cuối cùng. Tức là nói về cái quả thánh đầu tiên là quả nhập lưu. Vậy thì chúng ta phải biết quán xét các pháp là không của ta, không tự ngã của không của ta, không ta tự ngã của ta.",
+      "evidence_type": "transcript_excerpt",
+      "language": "vi",
+      "confidence": "low",
+      "source_kind": "youtube",
+      "source_url": "https://www.youtube.com/watch?v=FISpARohzy8",
+      "document_id": "document_transcript_fisp_arohzy8",
+      "start_time": "00:05:32.880",
+      "end_time": "00:05:54.150",
+      "speaker": "HT. Thích Giác Khang",
+      "review_status": "unreviewed",
+      "notes": "Imported from YouTube VTT caption. Needs human review for Buddhist terminology."
+    },
+    {
+      "id": "evidence_fisp_arohzy8_0016",
+      "type": "Evidence",
+      "name": "VTT caption excerpt 0016 from FISpARohzy8",
+      "evidence_text": "Thì ở đây cái không của ta, không ta, không tận ngã của ta, chúng ta phải bằng sâu vào để chúng ta hiểu tại sao quán các pháp như vậy và quán cách nào để chúng ta nhận được cái bất sanh bất diệt ngay trong cái sự sanh diệt. Đó là vấn đề sau này chúng ta sẽ đi sâu vào bài giảng. Và ngược lại, nếu ai chấp các pháp là của ta, là ta, tự ngã của ta thì",
+      "evidence_type": "transcript_excerpt",
+      "language": "vi",
+      "confidence": "low",
+      "source_kind": "youtube",
+      "source_url": "https://www.youtube.com/watch?v=FISpARohzy8",
+      "document_id": "document_transcript_fisp_arohzy8",
+      "start_time": "00:05:54.160",
+      "end_time": "00:06:17.670",
+      "speaker": "HT. Thích Giác Khang",
+      "review_status": "unreviewed",
+      "notes": "Imported from YouTube VTT caption. Needs human review for Buddhist terminology."
+    },
+    {
+      "id": "evidence_fisp_arohzy8_0017",
+      "type": "Evidence",
+      "name": "VTT caption excerpt 0017 from FISpARohzy8",
+      "evidence_text": "tiếp khởi tiếp tục ban cái sắc thân thân kiến này lận đận lang than trong vô lượng kiếp, tức là luân hồi sanh tử khổ. Vậy đó là phần thứ ba của phần thân đề. Còn đây là phần sau cùng, phần chó là nói về sự tập khởi và sự đoạn diệt tham",
+      "evidence_type": "transcript_excerpt",
+      "language": "vi",
+      "confidence": "low",
+      "source_kind": "youtube",
+      "source_url": "https://www.youtube.com/watch?v=FISpARohzy8",
+      "document_id": "document_transcript_fisp_arohzy8",
+      "start_time": "00:06:17.680",
+      "end_time": "00:06:37.749",
+      "speaker": "HT. Thích Giác Khang",
+      "review_status": "unreviewed",
+      "notes": "Imported from YouTube VTT caption. Needs human review for Buddhist terminology."
+    },
+    {
+      "id": "evidence_fisp_arohzy8_0018",
+      "type": "Evidence",
+      "name": "VTT caption excerpt 0018 from FISpARohzy8",
+      "evidence_text": "sanh và si tham lam, sanh giận và si mê. Thì chúng ta thấy đấy, cái tham nó đi tham dục ở đây chia làm ba thứ tham. Tham dục, tham sắc và tham vô sắc. Đó thì tham dục và tham sắc. Một phần của tham sắc là thuộc về phần nhập lưu và",
+      "evidence_type": "transcript_excerpt",
+      "language": "vi",
+      "confidence": "low",
+      "source_kind": "youtube",
+      "source_url": "https://www.youtube.com/watch?v=FISpARohzy8",
+      "document_id": "document_transcript_fisp_arohzy8",
+      "start_time": "00:06:37.759",
+      "end_time": "00:06:58.029",
+      "speaker": "HT. Thích Giác Khang",
+      "review_status": "unreviewed",
+      "notes": "Imported from YouTube VTT caption. Needs human review for Buddhist terminology."
+    },
+    {
+      "id": "evidence_fisp_arohzy8_0019",
+      "type": "Evidence",
+      "name": "VTT caption excerpt 0019 from FISpARohzy8",
+      "evidence_text": "đức giảng lai, tức là thuộc về phần cảm giác. Còn phần tham vô sắc trở lên thuộc về phần tư tưởng. Thì chúng ta thấy đạo Phật hay cuộc sống trong thân của chúng ta chỉ có một là vật lý, hai là sinh lý, ba là cảm giác và bốn là tư tưởng. Bốn cái này đã tạo nên tất cả nhân sinh quan",
+      "evidence_type": "transcript_excerpt",
+      "language": "vi",
+      "confidence": "low",
+      "source_kind": "youtube",
+      "source_url": "https://www.youtube.com/watch?v=FISpARohzy8",
+      "document_id": "document_transcript_fisp_arohzy8",
+      "start_time": "00:06:58.039",
+      "end_time": "00:07:20.110",
+      "speaker": "HT. Thích Giác Khang",
+      "review_status": "unreviewed",
+      "notes": "Imported from YouTube VTT caption. Needs human review for Buddhist terminology."
+    },
+    {
+      "id": "evidence_fisp_arohzy8_0020",
+      "type": "Evidence",
+      "name": "VTT caption excerpt 0020 from FISpARohzy8",
+      "evidence_text": "tức con người chúng ta và võ trụ. Thì ở đây chúng ta đã quán đầu tiên về các pháp không phải ta, không phải của ta, không phải tự ngã của ta. Tiếp tục đây là quán qua cái cảm giác và tư tưởng.",
+      "evidence_type": "transcript_excerpt",
+      "language": "vi",
+      "confidence": "low",
+      "source_kind": "youtube",
+      "source_url": "https://www.youtube.com/watch?v=FISpARohzy8",
+      "document_id": "document_transcript_fisp_arohzy8",
+      "start_time": "00:07:20.120",
+      "end_time": "00:07:34.390",
+      "speaker": "HT. Thích Giác Khang",
+      "review_status": "unreviewed",
+      "notes": "Imported from YouTube VTT caption. Needs human review for Buddhist terminology."
+    },
+    {
+      "id": "evidence_fisp_arohzy8_0021",
+      "type": "Evidence",
+      "name": "VTT caption excerpt 0021 from FISpARohzy8",
+      "evidence_text": "Thì nếu ai cảm xúc thì cảnh giác chúng ta thấy có ba cái là lạc thọ, khổ thọ và bất lạc bất khổ thọ. Bất lạc bất khổ thọ là không vui, không buồn. Thành ra nếu ai quán lạc thọ mà hoan hỉ tán thán trú ở trước bó thì tham sẽ trì tăng.",
+      "evidence_type": "transcript_excerpt",
+      "language": "vi",
+      "confidence": "low",
+      "source_kind": "youtube",
+      "source_url": "https://www.youtube.com/watch?v=FISpARohzy8",
+      "document_id": "document_transcript_fisp_arohzy8",
+      "start_time": "00:07:34.400",
+      "end_time": "00:07:53.869",
+      "speaker": "HT. Thích Giác Khang",
+      "review_status": "unreviewed",
+      "notes": "Imported from YouTube VTT caption. Needs human review for Buddhist terminology."
+    },
+    {
+      "id": "evidence_fisp_arohzy8_0022",
+      "type": "Evidence",
+      "name": "VTT caption excerpt 0022 from FISpARohzy8",
+      "evidence_text": "Và nếu ai quán khổ thọ mà sầu muộn than gian than khóc đập ngực rơi vào bất tịnh thì sanh tỳ niên của vị ấy trị tăng. Và ngược lại nếu ai quán lạc thọ mà không hoa mỹ không tán thán tu ái trước và quán khổ thọ mà không sầu muộn than gian thì tất nhiên chấm dứt",
+      "evidence_type": "transcript_excerpt",
+      "language": "vi",
+      "confidence": "low",
+      "source_kind": "youtube",
+      "source_url": "https://www.youtube.com/watch?v=FISpARohzy8",
+      "document_id": "document_transcript_fisp_arohzy8",
+      "start_time": "00:07:53.879",
+      "end_time": "00:08:14.270",
+      "speaker": "HT. Thích Giác Khang",
+      "review_status": "unreviewed",
+      "notes": "Imported from YouTube VTT caption. Needs human review for Buddhist terminology."
+    },
+    {
+      "id": "evidence_fisp_arohzy8_0023",
+      "type": "Evidence",
+      "name": "VTT caption excerpt 0023 from FISpARohzy8",
+      "evidence_text": "được cái tham dục và sanh. Thì ở đây đó là đắc quả nhập dẫn thánh thứ hai và thánh thứ ba. tức là ngập lưu và nhất giảng lai thì chừng đó chúng ta sẽ trình bày sâu vào đó. Còn cái bất lạc bất khổ thọ là đi sâu vào phần tư tưởng, không còn chiếm hữu bên ngoài và bên trong nữa",
+      "evidence_type": "transcript_excerpt",
+      "language": "vi",
+      "confidence": "low",
+      "source_kind": "youtube",
+      "source_url": "https://www.youtube.com/watch?v=FISpARohzy8",
+      "document_id": "document_transcript_fisp_arohzy8",
+      "start_time": "00:08:14.280",
+      "end_time": "00:08:36.509",
+      "speaker": "HT. Thích Giác Khang",
+      "review_status": "unreviewed",
+      "notes": "Imported from YouTube VTT caption. Needs human review for Buddhist terminology."
+    },
+    {
+      "id": "evidence_fisp_arohzy8_0024",
+      "type": "Evidence",
+      "name": "VTT caption excerpt 0024 from FISpARohzy8",
+      "evidence_text": "thì chúng ta thấy là có bao nhiêu bất lạc bất khổ thọ thì chừng đó chúng ta sẽ đi sâu vào bài giờ. Và nếu ai cảm xúc bất lạc bất khổ trọ mà không như thật biết sự tập khởi, sự đoạn diệt vị ngọ sự nguy hiểm và sự xuất ly các cảm thọ ấy thì vô minh trì niên sẽ tỳ tăng. Còn nếu ai cảm xúc bất lạc bất",
+      "evidence_type": "transcript_excerpt",
+      "language": "vi",
+      "confidence": "low",
+      "source_kind": "youtube",
+      "source_url": "https://www.youtube.com/watch?v=FISpARohzy8",
+      "document_id": "document_transcript_fisp_arohzy8",
+      "start_time": "00:08:36.519",
+      "end_time": "00:08:58.710",
+      "speaker": "HT. Thích Giác Khang",
+      "review_status": "unreviewed",
+      "notes": "Imported from YouTube VTT caption. Needs human review for Buddhist terminology."
+    },
+    {
+      "id": "evidence_fisp_arohzy8_0025",
+      "type": "Evidence",
+      "name": "VTT caption excerpt 0025 from FISpARohzy8",
+      "evidence_text": "khổ thọ mà như thật biết sự tập khởi, sự đoạn diệt vị ngọt, sự nguy hiểm và sự xuất ly thì vô minh tỳ miên không tìm tăng thì vị ấy sẽ đắc quả gì? Thì chúng ta sẽ đi sâu vào bà giảng. Thì đến đây là cái quả cuối cùng của con đường luân hồi sanh tử gánh nặng",
+      "evidence_type": "transcript_excerpt",
+      "language": "vi",
+      "confidence": "low",
+      "source_kind": "youtube",
+      "source_url": "https://www.youtube.com/watch?v=FISpARohzy8",
+      "document_id": "document_transcript_fisp_arohzy8",
+      "start_time": "00:08:58.720",
+      "end_time": "00:09:18.790",
+      "speaker": "HT. Thích Giác Khang",
+      "review_status": "unreviewed",
+      "notes": "Imported from YouTube VTT caption. Needs human review for Buddhist terminology."
+    },
+    {
+      "id": "evidence_fisp_arohzy8_0026",
+      "type": "Evidence",
+      "name": "VTT caption excerpt 0026 from FISpARohzy8",
+      "evidence_text": "để đặt xuống và việc làm đã làm xong. Sau khi Đức Phật Thế Tôn giảng bài này xong thì phần kết luận là tất cả các vị tỳ kheo đều yếm ly 36 pháp này tức là nhàm chán, không còn dính mắt vào đó nữa thì các ngài được giải thoát. Và do sự",
+      "evidence_type": "transcript_excerpt",
+      "language": "vi",
+      "confidence": "low",
+      "source_kind": "youtube",
+      "source_url": "https://www.youtube.com/watch?v=FISpARohzy8",
+      "document_id": "document_transcript_fisp_arohzy8",
+      "start_time": "00:09:18.800",
+      "end_time": "00:09:39.310",
+      "speaker": "HT. Thích Giác Khang",
+      "review_status": "unreviewed",
+      "notes": "Imported from YouTube VTT caption. Needs human review for Buddhist terminology."
+    },
+    {
+      "id": "evidence_fisp_arohzy8_0027",
+      "type": "Evidence",
+      "name": "VTT caption excerpt 0027 from FISpARohzy8",
+      "evidence_text": "giải thoát này các thầy hiểu biết tuệ tri rằng ta đã được giải thoát. Sanh đã tận, vận hạnh đã thành, việc làm đã làm xong, không còn trở lui lại cõi đời này nữa. Và trong pháp hội lúc bấy giờ đắc quả 60 vì lúc ấy đó là hết bài kinh. Hỏi số một",
+      "evidence_type": "transcript_excerpt",
+      "language": "vi",
+      "confidence": "low",
+      "source_kind": "youtube",
+      "source_url": "https://www.youtube.com/watch?v=FISpARohzy8",
+      "document_id": "document_transcript_fisp_arohzy8",
+      "start_time": "00:09:39.320",
+      "end_time": "00:10:00.949",
+      "speaker": "HT. Thích Giác Khang",
+      "review_status": "unreviewed",
+      "notes": "Imported from YouTube VTT caption. Needs human review for Buddhist terminology."
+    },
+    {
+      "id": "evidence_fisp_arohzy8_0028",
+      "type": "Evidence",
+      "name": "VTT caption excerpt 0028 from FISpARohzy8",
+      "evidence_text": "thì hôm trước tôi đã giảng nhiều lần rồi, hôm nay phải lọc lại vì nó là cái khuôn đầu tiên của võ trụ đấy. Gồm ở trong câu hỏi số một này thì thư Phật tử lật lại 10 câu hỏi đó thì giải thích và cho thí dụ về sự khác nhau giữa nhãn thức, nhãn xúc, nhãn thọ và nhãn ái.",
+      "evidence_type": "transcript_excerpt",
+      "language": "vi",
+      "confidence": "low",
+      "source_kind": "youtube",
+      "source_url": "https://www.youtube.com/watch?v=FISpARohzy8",
+      "document_id": "document_transcript_fisp_arohzy8",
+      "start_time": "00:10:00.959",
+      "end_time": "00:10:22.430",
+      "speaker": "HT. Thích Giác Khang",
+      "review_status": "unreviewed",
+      "notes": "Imported from YouTube VTT caption. Needs human review for Buddhist terminology."
+    },
+    {
+      "id": "evidence_fisp_arohzy8_0029",
+      "type": "Evidence",
+      "name": "VTT caption excerpt 0029 from FISpARohzy8",
+      "evidence_text": "Thì đúng ra tôi viết trên bản mà tôi làm chưa kịp. Tôi tính là phải viết trên bảng sẵn rồi tôi ngồi tôi giảng thôi chứ đứng là tôi giảng không được nó khó giải thích lắm. Tôi phải ngồi tôi yên lặng rồi tôi nhắm mắt thì tôi mới giải thích nó chạy. Còn nếu tôi đứng tôi giết là hồi là nó cái tâm nó không có định mạnh, cái định lực không có mạnh tôi giải",
+      "evidence_type": "transcript_excerpt",
+      "language": "vi",
+      "confidence": "low",
+      "source_kind": "youtube",
+      "source_url": "https://www.youtube.com/watch?v=FISpARohzy8",
+      "document_id": "document_transcript_fisp_arohzy8",
+      "start_time": "00:10:22.440",
+      "end_time": "00:10:42.590",
+      "speaker": "HT. Thích Giác Khang",
+      "review_status": "unreviewed",
+      "notes": "Imported from YouTube VTT caption. Needs human review for Buddhist terminology."
+    },
+    {
+      "id": "evidence_fisp_arohzy8_0030",
+      "type": "Evidence",
+      "name": "VTT caption excerpt 0030 from FISpARohzy8",
+      "evidence_text": "thích nó không có chặt chẽ thì tôi tính làm cái bản người viết ở trên bảng sẵn hết rồi. Tôi vừa giảng chư Phật tử vừa nhìn lên bản thì thấy rõ hơn chứ tôi khỏi đứng nữa. Nhưng mà tôi làm chưa kịp thì kỳ tới vậy thì tới chúng ta giảng lại nữa. Cái này nó phải giảng nhiều lần để chư Phật tử quân tập từ cho nó khó hiểu đấy mà cũng khó giảng nữa. Tôi thấy",
+      "evidence_type": "transcript_excerpt",
+      "language": "vi",
+      "confidence": "low",
+      "source_kind": "youtube",
+      "source_url": "https://www.youtube.com/watch?v=FISpARohzy8",
+      "document_id": "document_transcript_fisp_arohzy8",
+      "start_time": "00:10:42.600",
+      "end_time": "00:11:05.069",
+      "speaker": "HT. Thích Giác Khang",
+      "review_status": "unreviewed",
+      "notes": "Imported from YouTube VTT caption. Needs human review for Buddhist terminology."
+    },
+    {
+      "id": "evidence_fisp_arohzy8_0031",
+      "type": "Evidence",
+      "name": "VTT caption excerpt 0031 from FISpARohzy8",
+      "evidence_text": "chỉ có cách giảng đó thôi. Tức là tôi làm cái bản sẵn rồi lên đây tôi viết sẵn trên bảng đen đó. Rồi tôi ngồi đây tôi giảng. Chư Phật tử vừa ngó cái bản vừa nghe tôi giảng chứ tôi đứng giảng là tôi giảng không chạy. Nó khó vậy á. Tôi phải ngồi giảng. Và chư Phật tử vừa nghe tôi giảng vừa nhìn cái bản thì sẽ thấy rõ hơn. Chúng ta làm việc bằng sáu căn luôn",
+      "evidence_type": "transcript_excerpt",
+      "language": "vi",
+      "confidence": "low",
+      "source_kind": "youtube",
+      "source_url": "https://www.youtube.com/watch?v=FISpARohzy8",
+      "document_id": "document_transcript_fisp_arohzy8",
+      "start_time": "00:11:05.079",
+      "end_time": "00:11:27.509",
+      "speaker": "HT. Thích Giác Khang",
+      "review_status": "unreviewed",
+      "notes": "Imported from YouTube VTT caption. Needs human review for Buddhist terminology."
+    },
+    {
+      "id": "evidence_fisp_arohzy8_0032",
+      "type": "Evidence",
+      "name": "VTT caption excerpt 0032 from FISpARohzy8",
+      "evidence_text": "một lượt thì có lẽ chúng ta dễ hiểu hơn. Thì bây giờ chúng ta tạm đi cái giảng này kỳ tới có lẽ tôi rảnh tôi sẽ làm cái bảng trong giấy rồi tôi viết lên trên bảng đó. Rồi chúng ta vừa nghe vừa nhìn cái bản thì chúng ta sẽ dễ hiểu hơn. Bởi vì mới nghe lần đầu thì Phật tử chưa có nghe cái cách giảng lạ lùng như vậy là",
+      "evidence_type": "transcript_excerpt",
+      "language": "vi",
+      "confidence": "low",
+      "source_kind": "youtube",
+      "source_url": "https://www.youtube.com/watch?v=FISpARohzy8",
+      "document_id": "document_transcript_fisp_arohzy8",
+      "start_time": "00:11:27.519",
+      "end_time": "00:11:47.710",
+      "speaker": "HT. Thích Giác Khang",
+      "review_status": "unreviewed",
+      "notes": "Imported from YouTube VTT caption. Needs human review for Buddhist terminology."
+    },
+    {
+      "id": "evidence_fisp_arohzy8_0033",
+      "type": "Evidence",
+      "name": "VTT caption excerpt 0033 from FISpARohzy8",
+      "evidence_text": "phối hợp giữa tư tưởng và bát nhã giữa cái nhất niệm và vô niệm. Rồi đi tới vô niệm, vô niệm niệm thì nó hơi khó một chút nhưng mà chúng ta lại có nhiều cái thí dụ. Thành ra nhờ cái thí dụ đó chúng ta hiểu rõ hơn. Hiểu rõ hơn. Thì ở đây tôi nói lại thì trong vũ trụ nó có cái",
+      "evidence_type": "transcript_excerpt",
+      "language": "vi",
+      "confidence": "low",
+      "source_kind": "youtube",
+      "source_url": "https://www.youtube.com/watch?v=FISpARohzy8",
+      "document_id": "document_transcript_fisp_arohzy8",
+      "start_time": "00:11:47.720",
+      "end_time": "00:12:07.990",
+      "speaker": "HT. Thích Giác Khang",
+      "review_status": "unreviewed",
+      "notes": "Imported from YouTube VTT caption. Needs human review for Buddhist terminology."
+    },
+    {
+      "id": "evidence_fisp_arohzy8_0034",
+      "type": "Evidence",
+      "name": "VTT caption excerpt 0034 from FISpARohzy8",
+      "evidence_text": "chân như tịnh và chân như động. Chân như tịnh đó thì chúng ta ví dụ như là nước. Còn phần chân như động thì giống như sống có hình.",
+      "evidence_type": "transcript_excerpt",
+      "language": "vi",
+      "confidence": "low",
+      "source_kind": "youtube",
+      "source_url": "https://www.youtube.com/watch?v=FISpARohzy8",
+      "document_id": "document_transcript_fisp_arohzy8",
+      "start_time": "00:12:08.000",
+      "end_time": "00:12:22.829",
+      "speaker": "HT. Thích Giác Khang",
+      "review_status": "unreviewed",
+      "notes": "Imported from YouTube VTT caption. Needs human review for Buddhist terminology."
+    },
+    {
+      "id": "evidence_fisp_arohzy8_0035",
+      "type": "Evidence",
+      "name": "VTT caption excerpt 0035 from FISpARohzy8",
+      "evidence_text": "mà chưa có tướng, tức là có thời gian tuyệt đối mà chưa có không gian. Còn sống con chó, con trâu, con bò thì chúng ta ví dụ cũng như là có hình có tướng luôn. Tức là cái cõi quế độ của chúng ta. Còn sống mà chưa có tướng thì sống đó là cõi không phải không phải là chơn",
+      "evidence_type": "transcript_excerpt",
+      "language": "vi",
+      "confidence": "low",
+      "source_kind": "youtube",
+      "source_url": "https://www.youtube.com/watch?v=FISpARohzy8",
+      "document_id": "document_transcript_fisp_arohzy8",
+      "start_time": "00:12:22.839",
+      "end_time": "00:12:46.590",
+      "speaker": "HT. Thích Giác Khang",
+      "review_status": "unreviewed",
+      "notes": "Imported from YouTube VTT caption. Needs human review for Buddhist terminology."
+    },
+    {
+      "id": "evidence_fisp_arohzy8_0036",
+      "type": "Evidence",
+      "name": "VTT caption excerpt 0036 from FISpARohzy8",
+      "evidence_text": "mà cũng chẳng phải là giọng. Nó so với nước thì nước là chơn đấy. Nước thì bất biến, bất sanh bất diệt, đứng lặng hoàn toàn. Còn sống đó thì chuyển biến nhưng mà chuyển biến đứng lặng. Mà đã là chuyển biến thì so với cái bất biến đứng lặng thì nó là vọng. Nó là vọng. Nhưng",
+      "evidence_type": "transcript_excerpt",
+      "language": "vi",
+      "confidence": "low",
+      "source_kind": "youtube",
+      "source_url": "https://www.youtube.com/watch?v=FISpARohzy8",
+      "document_id": "document_transcript_fisp_arohzy8",
+      "start_time": "00:12:46.600",
+      "end_time": "00:13:09.150",
+      "speaker": "HT. Thích Giác Khang",
+      "review_status": "unreviewed",
+      "notes": "Imported from YouTube VTT caption. Needs human review for Buddhist terminology."
+    },
+    {
+      "id": "evidence_fisp_arohzy8_0037",
+      "type": "Evidence",
+      "name": "VTT caption excerpt 0037 from FISpARohzy8",
+      "evidence_text": "mà có hai cách chuyển biến. Một cách chuyển biến đứng lặng và một cách chuyển biến sao động. Mà đã sao động thì tất nhiên là có hình có tướng luôn. Mà có hình có tướng là có thời gian và có không gian. Mà có không gian thì có sự chướng ngại, có hình tướng rõ rệt và có sự nắm bắt rõ ràng",
+      "evidence_type": "transcript_excerpt",
+      "language": "vi",
+      "confidence": "low",
+      "source_kind": "youtube",
+      "source_url": "https://www.youtube.com/watch?v=FISpARohzy8",
+      "document_id": "document_transcript_fisp_arohzy8",
+      "start_time": "00:13:09.160",
+      "end_time": "00:13:29.350",
+      "speaker": "HT. Thích Giác Khang",
+      "review_status": "unreviewed",
+      "notes": "Imported from YouTube VTT caption. Needs human review for Buddhist terminology."
+    },
+    {
+      "id": "evidence_fisp_arohzy8_0038",
+      "type": "Evidence",
+      "name": "VTT caption excerpt 0038 from FISpARohzy8",
+      "evidence_text": "như thế giới của chúng ta. Chúng ta có thể cầm quyển kinh, có thể cầm cái đồng hồ, có thể cầm mấy cái micro, có thể gờ cái cột. Còn thế giới chuyển biến sát na thì chưa có hình tướng gì hết. sự có sự chuyển biến và chuyển biến mà thôi. Còn chúng ta mới dựa vào cái thế giới đó để chục ngủ thế giới có hình có tướng một",
+      "evidence_type": "transcript_excerpt",
+      "language": "vi",
+      "confidence": "low",
+      "source_kind": "youtube",
+      "source_url": "https://www.youtube.com/watch?v=FISpARohzy8",
+      "document_id": "document_transcript_fisp_arohzy8",
+      "start_time": "00:13:29.360",
+      "end_time": "00:13:51.670",
+      "speaker": "HT. Thích Giác Khang",
+      "review_status": "unreviewed",
+      "notes": "Imported from YouTube VTT caption. Needs human review for Buddhist terminology."
+    },
+    {
+      "id": "evidence_fisp_arohzy8_0039",
+      "type": "Evidence",
+      "name": "VTT caption excerpt 0039 from FISpARohzy8",
+      "evidence_text": "cách cô động một cách có khuôn khổ như vậy. Còn chư Phật thấy cái đau lòng như vậy mới tạo ra thế giới có hình đó dường như có tướng luôn. Nhưng mà cái tài tình, cái trí tuệ của các ngài dường như có tướng mà vẫn chuyển biến đứng lặng, chuyển biến từng sát na. Đó là cái độc",
+      "evidence_type": "transcript_excerpt",
+      "language": "vi",
+      "confidence": "low",
+      "source_kind": "youtube",
+      "source_url": "https://www.youtube.com/watch?v=FISpARohzy8",
+      "document_id": "document_transcript_fisp_arohzy8",
+      "start_time": "00:13:51.680",
+      "end_time": "00:14:12.389",
+      "speaker": "HT. Thích Giác Khang",
+      "review_status": "unreviewed",
+      "notes": "Imported from YouTube VTT caption. Needs human review for Buddhist terminology."
+    },
+    {
+      "id": "evidence_fisp_arohzy8_0040",
+      "type": "Evidence",
+      "name": "VTT caption excerpt 0040 from FISpARohzy8",
+      "evidence_text": "đáo của thế giới tịnh độ, của chư Phật, của vô lượng Phật. Còn nếu thế giới thật sự của tịnh độ, của sống thì chưa có hình t chưa có chưa có tướng gì hết, chỉ có cái hình thôi.",
+      "evidence_type": "transcript_excerpt",
+      "language": "vi",
+      "confidence": "low",
+      "source_kind": "youtube",
+      "source_url": "https://www.youtube.com/watch?v=FISpARohzy8",
+      "document_id": "document_transcript_fisp_arohzy8",
+      "start_time": "00:14:12.399",
+      "end_time": "00:14:27.790",
+      "speaker": "HT. Thích Giác Khang",
+      "review_status": "unreviewed",
+      "notes": "Imported from YouTube VTT caption. Needs human review for Buddhist terminology."
+    },
+    {
+      "id": "evidence_fisp_arohzy8_0041",
+      "type": "Evidence",
+      "name": "VTT caption excerpt 0041 from FISpARohzy8",
+      "evidence_text": "Nhưng mà thế giới cũng tịnh độ mà của chư Phật thì lại dường như dường như có tướng nhưng mà vẫn chuyển biến sát na.",
+      "evidence_type": "transcript_excerpt",
+      "language": "vi",
+      "confidence": "low",
+      "source_kind": "youtube",
+      "source_url": "https://www.youtube.com/watch?v=FISpARohzy8",
+      "document_id": "document_transcript_fisp_arohzy8",
+      "start_time": "00:14:27.800",
+      "end_time": "00:14:38.110",
+      "speaker": "HT. Thích Giác Khang",
+      "review_status": "unreviewed",
+      "notes": "Imported from YouTube VTT caption. Needs human review for Buddhist terminology."
+    },
+    {
+      "id": "evidence_fisp_arohzy8_0042",
+      "type": "Evidence",
+      "name": "VTT caption excerpt 0042 from FISpARohzy8",
+      "evidence_text": "Cái đó là cái khó hiểu nhất. của Phật giáo đó. Thành ra cái thế giới mà chuyển biến của sống, chuyển biến mà đứng lặng kêu là thế giới của pháp chấp, nơi đó chưa có ngã. Thành ra thế giới tịnh độ của chư Phật cũng chỉ có pháp chấp mà thôi.",
+      "evidence_type": "transcript_excerpt",
+      "language": "vi",
+      "confidence": "low",
+      "source_kind": "youtube",
+      "source_url": "https://www.youtube.com/watch?v=FISpARohzy8",
+      "document_id": "document_transcript_fisp_arohzy8",
+      "start_time": "00:14:38.120",
+      "end_time": "00:14:58.670",
+      "speaker": "HT. Thích Giác Khang",
+      "review_status": "unreviewed",
+      "notes": "Imported from YouTube VTT caption. Needs human review for Buddhist terminology."
+    },
+    {
+      "id": "evidence_fisp_arohzy8_0043",
+      "type": "Evidence",
+      "name": "VTT caption excerpt 0043 from FISpARohzy8",
+      "evidence_text": "Mà chúng ta thường kêu là hành khổ trong ba cái khổ. Khổ, khổ, hoại khổ và hành khổ. Còn thế giới của chúng ta là thế giới quế độ có không gian.",
+      "evidence_type": "transcript_excerpt",
+      "language": "vi",
+      "confidence": "low",
+      "source_kind": "youtube",
+      "source_url": "https://www.youtube.com/watch?v=FISpARohzy8",
+      "document_id": "document_transcript_fisp_arohzy8",
+      "start_time": "00:14:58.680",
+      "end_time": "00:15:10.470",
+      "speaker": "HT. Thích Giác Khang",
+      "review_status": "unreviewed",
+      "notes": "Imported from YouTube VTT caption. Needs human review for Buddhist terminology."
+    },
+    {
+      "id": "evidence_fisp_arohzy8_0044",
+      "type": "Evidence",
+      "name": "VTT caption excerpt 0044 from FISpARohzy8",
+      "evidence_text": "Mà có không gian thì có hình có tướng. Mà có tướng thì phải có hoại. Mà có hoại thì kêu là hoại khổ. Mà nếu biết được như vậy, biết được nó hoại khổ rồi mà nếu mà không chấp thủ nó thì chúng ta không có cổ cổ. Đằng này không biết nó là không",
+      "evidence_type": "transcript_excerpt",
+      "language": "vi",
+      "confidence": "low",
+      "source_kind": "youtube",
+      "source_url": "https://www.youtube.com/watch?v=FISpARohzy8",
+      "document_id": "document_transcript_fisp_arohzy8",
+      "start_time": "00:15:10.480",
+      "end_time": "00:15:32.069",
+      "speaker": "HT. Thích Giác Khang",
+      "review_status": "unreviewed",
+      "notes": "Imported from YouTube VTT caption. Needs human review for Buddhist terminology."
+    },
+    {
+      "id": "evidence_fisp_arohzy8_0045",
+      "type": "Evidence",
+      "name": "VTT caption excerpt 0045 from FISpARohzy8",
+      "evidence_text": "có hình, chỉ có hình mà chưa có tướng gì hết. Chúng ta không biết đã đành đi mà tới có tướng mà chúng ta cũng không biết cái tướng này là do duyên hộp giả hộp mà có.",
+      "evidence_type": "transcript_excerpt",
+      "language": "vi",
+      "confidence": "low",
+      "source_kind": "youtube",
+      "source_url": "https://www.youtube.com/watch?v=FISpARohzy8",
+      "document_id": "document_transcript_fisp_arohzy8",
+      "start_time": "00:15:32.079",
+      "end_time": "00:15:43.350",
+      "speaker": "HT. Thích Giác Khang",
+      "review_status": "unreviewed",
+      "notes": "Imported from YouTube VTT caption. Needs human review for Buddhist terminology."
+    },
+    {
+      "id": "evidence_fisp_arohzy8_0046",
+      "type": "Evidence",
+      "name": "VTT caption excerpt 0046 from FISpARohzy8",
+      "evidence_text": "Chúng ta lại tưởng nó có mà thật nữa thì chúng ta chiếm hữu nó thì sanh ra cái khổ chồng thêm khổ. Thành ra là khổ khổ đó là toàn thể võ trụ của chúng ta. Do đó mà tất cả người trời từ địa ngục cho tới cõi trời phi tưởng phi phi tưởng. cũng biết ba",
+      "evidence_type": "transcript_excerpt",
+      "language": "vi",
+      "confidence": "low",
+      "source_kind": "youtube",
+      "source_url": "https://www.youtube.com/watch?v=FISpARohzy8",
+      "document_id": "document_transcript_fisp_arohzy8",
+      "start_time": "00:15:43.360",
+      "end_time": "00:16:05.870",
+      "speaker": "HT. Thích Giác Khang",
+      "review_status": "unreviewed",
+      "notes": "Imported from YouTube VTT caption. Needs human review for Buddhist terminology."
+    },
+    {
+      "id": "evidence_fisp_arohzy8_0047",
+      "type": "Evidence",
+      "name": "VTT caption excerpt 0047 from FISpARohzy8",
+      "evidence_text": "cái đó nhưng mà theo cái cốt lõi của tư tưởng quế độ mà đè nén mà tập trung mà lấy đá dằn cỏ, do đó vẫn lẫn quẩn trong vấn đề luân hồi sanh tử khổ. Vì thế nơi cho nên Đức Phật Bổn sư Thích Ca của chúng ta mới thị hiện ra đời để chỉ",
+      "evidence_type": "transcript_excerpt",
+      "language": "vi",
+      "confidence": "low",
+      "source_kind": "youtube",
+      "source_url": "https://www.youtube.com/watch?v=FISpARohzy8",
+      "document_id": "document_transcript_fisp_arohzy8",
+      "start_time": "00:16:05.880",
+      "end_time": "00:16:26.069",
+      "speaker": "HT. Thích Giác Khang",
+      "review_status": "unreviewed",
+      "notes": "Imported from YouTube VTT caption. Needs human review for Buddhist terminology."
+    },
+    {
+      "id": "evidence_fisp_arohzy8_0048",
+      "type": "Evidence",
+      "name": "VTT caption excerpt 0048 from FISpARohzy8",
+      "evidence_text": "chúng sanh con đường để đi về cái chân tâm bất sanh bất diệt. Thì con đường đó tức là con đường đi vào thế giới chuyển biến đứng lặng. Thế giới đó là thế giới cửa chuyển biến sau động nương vào đó để mà phát hiện.",
+      "evidence_type": "transcript_excerpt",
+      "language": "vi",
+      "confidence": "low",
+      "source_kind": "youtube",
+      "source_url": "https://www.youtube.com/watch?v=FISpARohzy8",
+      "document_id": "document_transcript_fisp_arohzy8",
+      "start_time": "00:16:26.079",
+      "end_time": "00:16:46.389",
+      "speaker": "HT. Thích Giác Khang",
+      "review_status": "unreviewed",
+      "notes": "Imported from YouTube VTT caption. Needs human review for Buddhist terminology."
+    },
+    {
+      "id": "evidence_fisp_arohzy8_0049",
+      "type": "Evidence",
+      "name": "VTT caption excerpt 0049 from FISpARohzy8",
+      "evidence_text": "Thành ra thế giới đó so với thế giới sau động nó là chơn nhưng mà nó phải nương vào thế giới bất biến đứng lặng tức là mặt trăng thiệt thì so với mặt trăng thiệt nó lại là giọng thành ra thế giới này không phải giọng mà cũng không phải chơn nếu so với thế giới sao động thì",
+      "evidence_type": "transcript_excerpt",
+      "language": "vi",
+      "confidence": "low",
+      "source_kind": "youtube",
+      "source_url": "https://www.youtube.com/watch?v=FISpARohzy8",
+      "document_id": "document_transcript_fisp_arohzy8",
+      "start_time": "00:16:46.399",
+      "end_time": "00:17:06.630",
+      "speaker": "HT. Thích Giác Khang",
+      "review_status": "unreviewed",
+      "notes": "Imported from YouTube VTT caption. Needs human review for Buddhist terminology."
+    },
+    {
+      "id": "evidence_fisp_arohzy8_0050",
+      "type": "Evidence",
+      "name": "VTT caption excerpt 0050 from FISpARohzy8",
+      "evidence_text": "thế giới đứng làng chuyển biến này là chơn nhưng mà so với thế giới đứng lặng bất biến thì nó là dọng nhưng muốn qua cái thế giới bất biến, qua cái nước thì chúng ta phải qua cái sống. Đó là vấn đề tôi trình bày hôm nay đó. Thì chúng ta thấy do một niệm bất giác thì có",
+      "evidence_type": "transcript_excerpt",
+      "language": "vi",
+      "confidence": "low",
+      "source_kind": "youtube",
+      "source_url": "https://www.youtube.com/watch?v=FISpARohzy8",
+      "document_id": "document_transcript_fisp_arohzy8",
+      "start_time": "00:17:06.640",
+      "end_time": "00:17:27.990",
+      "speaker": "HT. Thích Giác Khang",
+      "review_status": "unreviewed",
+      "notes": "Imported from YouTube VTT caption. Needs human review for Buddhist terminology."
+    }
+  ],
+  "relationships": [
+    {
+      "source": "evidence_fisp_arohzy8_0001",
+      "type": "HAS_CITATION",
+      "target": "citation_youtube_fisp_arohzy8"
+    },
+    {
+      "source": "evidence_fisp_arohzy8_0001",
+      "type": "DERIVED_FROM",
+      "target": "document_transcript_fisp_arohzy8"
+    },
+    {
+      "source": "evidence_fisp_arohzy8_0002",
+      "type": "HAS_CITATION",
+      "target": "citation_youtube_fisp_arohzy8"
+    },
+    {
+      "source": "evidence_fisp_arohzy8_0002",
+      "type": "DERIVED_FROM",
+      "target": "document_transcript_fisp_arohzy8"
+    },
+    {
+      "source": "evidence_fisp_arohzy8_0003",
+      "type": "HAS_CITATION",
+      "target": "citation_youtube_fisp_arohzy8"
+    },
+    {
+      "source": "evidence_fisp_arohzy8_0003",
+      "type": "DERIVED_FROM",
+      "target": "document_transcript_fisp_arohzy8"
+    },
+    {
+      "source": "evidence_fisp_arohzy8_0004",
+      "type": "HAS_CITATION",
+      "target": "citation_youtube_fisp_arohzy8"
+    },
+    {
+      "source": "evidence_fisp_arohzy8_0004",
+      "type": "DERIVED_FROM",
+      "target": "document_transcript_fisp_arohzy8"
+    },
+    {
+      "source": "evidence_fisp_arohzy8_0005",
+      "type": "HAS_CITATION",
+      "target": "citation_youtube_fisp_arohzy8"
+    },
+    {
+      "source": "evidence_fisp_arohzy8_0005",
+      "type": "DERIVED_FROM",
+      "target": "document_transcript_fisp_arohzy8"
+    },
+    {
+      "source": "evidence_fisp_arohzy8_0006",
+      "type": "HAS_CITATION",
+      "target": "citation_youtube_fisp_arohzy8"
+    },
+    {
+      "source": "evidence_fisp_arohzy8_0006",
+      "type": "DERIVED_FROM",
+      "target": "document_transcript_fisp_arohzy8"
+    },
+    {
+      "source": "evidence_fisp_arohzy8_0007",
+      "type": "HAS_CITATION",
+      "target": "citation_youtube_fisp_arohzy8"
+    },
+    {
+      "source": "evidence_fisp_arohzy8_0007",
+      "type": "DERIVED_FROM",
+      "target": "document_transcript_fisp_arohzy8"
+    },
+    {
+      "source": "evidence_fisp_arohzy8_0008",
+      "type": "HAS_CITATION",
+      "target": "citation_youtube_fisp_arohzy8"
+    },
+    {
+      "source": "evidence_fisp_arohzy8_0008",
+      "type": "DERIVED_FROM",
+      "target": "document_transcript_fisp_arohzy8"
+    },
+    {
+      "source": "evidence_fisp_arohzy8_0009",
+      "type": "HAS_CITATION",
+      "target": "citation_youtube_fisp_arohzy8"
+    },
+    {
+      "source": "evidence_fisp_arohzy8_0009",
+      "type": "DERIVED_FROM",
+      "target": "document_transcript_fisp_arohzy8"
+    },
+    {
+      "source": "evidence_fisp_arohzy8_0010",
+      "type": "HAS_CITATION",
+      "target": "citation_youtube_fisp_arohzy8"
+    },
+    {
+      "source": "evidence_fisp_arohzy8_0010",
+      "type": "DERIVED_FROM",
+      "target": "document_transcript_fisp_arohzy8"
+    },
+    {
+      "source": "evidence_fisp_arohzy8_0011",
+      "type": "HAS_CITATION",
+      "target": "citation_youtube_fisp_arohzy8"
+    },
+    {
+      "source": "evidence_fisp_arohzy8_0011",
+      "type": "DERIVED_FROM",
+      "target": "document_transcript_fisp_arohzy8"
+    },
+    {
+      "source": "evidence_fisp_arohzy8_0012",
+      "type": "HAS_CITATION",
+      "target": "citation_youtube_fisp_arohzy8"
+    },
+    {
+      "source": "evidence_fisp_arohzy8_0012",
+      "type": "DERIVED_FROM",
+      "target": "document_transcript_fisp_arohzy8"
+    },
+    {
+      "source": "evidence_fisp_arohzy8_0013",
+      "type": "HAS_CITATION",
+      "target": "citation_youtube_fisp_arohzy8"
+    },
+    {
+      "source": "evidence_fisp_arohzy8_0013",
+      "type": "DERIVED_FROM",
+      "target": "document_transcript_fisp_arohzy8"
+    },
+    {
+      "source": "evidence_fisp_arohzy8_0014",
+      "type": "HAS_CITATION",
+      "target": "citation_youtube_fisp_arohzy8"
+    },
+    {
+      "source": "evidence_fisp_arohzy8_0014",
+      "type": "DERIVED_FROM",
+      "target": "document_transcript_fisp_arohzy8"
+    },
+    {
+      "source": "evidence_fisp_arohzy8_0015",
+      "type": "HAS_CITATION",
+      "target": "citation_youtube_fisp_arohzy8"
+    },
+    {
+      "source": "evidence_fisp_arohzy8_0015",
+      "type": "DERIVED_FROM",
+      "target": "document_transcript_fisp_arohzy8"
+    },
+    {
+      "source": "evidence_fisp_arohzy8_0016",
+      "type": "HAS_CITATION",
+      "target": "citation_youtube_fisp_arohzy8"
+    },
+    {
+      "source": "evidence_fisp_arohzy8_0016",
+      "type": "DERIVED_FROM",
+      "target": "document_transcript_fisp_arohzy8"
+    },
+    {
+      "source": "evidence_fisp_arohzy8_0017",
+      "type": "HAS_CITATION",
+      "target": "citation_youtube_fisp_arohzy8"
+    },
+    {
+      "source": "evidence_fisp_arohzy8_0017",
+      "type": "DERIVED_FROM",
+      "target": "document_transcript_fisp_arohzy8"
+    },
+    {
+      "source": "evidence_fisp_arohzy8_0018",
+      "type": "HAS_CITATION",
+      "target": "citation_youtube_fisp_arohzy8"
+    },
+    {
+      "source": "evidence_fisp_arohzy8_0018",
+      "type": "DERIVED_FROM",
+      "target": "document_transcript_fisp_arohzy8"
+    },
+    {
+      "source": "evidence_fisp_arohzy8_0019",
+      "type": "HAS_CITATION",
+      "target": "citation_youtube_fisp_arohzy8"
+    },
+    {
+      "source": "evidence_fisp_arohzy8_0019",
+      "type": "DERIVED_FROM",
+      "target": "document_transcript_fisp_arohzy8"
+    },
+    {
+      "source": "evidence_fisp_arohzy8_0020",
+      "type": "HAS_CITATION",
+      "target": "citation_youtube_fisp_arohzy8"
+    },
+    {
+      "source": "evidence_fisp_arohzy8_0020",
+      "type": "DERIVED_FROM",
+      "target": "document_transcript_fisp_arohzy8"
+    },
+    {
+      "source": "evidence_fisp_arohzy8_0021",
+      "type": "HAS_CITATION",
+      "target": "citation_youtube_fisp_arohzy8"
+    },
+    {
+      "source": "evidence_fisp_arohzy8_0021",
+      "type": "DERIVED_FROM",
+      "target": "document_transcript_fisp_arohzy8"
+    },
+    {
+      "source": "evidence_fisp_arohzy8_0022",
+      "type": "HAS_CITATION",
+      "target": "citation_youtube_fisp_arohzy8"
+    },
+    {
+      "source": "evidence_fisp_arohzy8_0022",
+      "type": "DERIVED_FROM",
+      "target": "document_transcript_fisp_arohzy8"
+    },
+    {
+      "source": "evidence_fisp_arohzy8_0023",
+      "type": "HAS_CITATION",
+      "target": "citation_youtube_fisp_arohzy8"
+    },
+    {
+      "source": "evidence_fisp_arohzy8_0023",
+      "type": "DERIVED_FROM",
+      "target": "document_transcript_fisp_arohzy8"
+    },
+    {
+      "source": "evidence_fisp_arohzy8_0024",
+      "type": "HAS_CITATION",
+      "target": "citation_youtube_fisp_arohzy8"
+    },
+    {
+      "source": "evidence_fisp_arohzy8_0024",
+      "type": "DERIVED_FROM",
+      "target": "document_transcript_fisp_arohzy8"
+    },
+    {
+      "source": "evidence_fisp_arohzy8_0025",
+      "type": "HAS_CITATION",
+      "target": "citation_youtube_fisp_arohzy8"
+    },
+    {
+      "source": "evidence_fisp_arohzy8_0025",
+      "type": "DERIVED_FROM",
+      "target": "document_transcript_fisp_arohzy8"
+    },
+    {
+      "source": "evidence_fisp_arohzy8_0026",
+      "type": "HAS_CITATION",
+      "target": "citation_youtube_fisp_arohzy8"
+    },
+    {
+      "source": "evidence_fisp_arohzy8_0026",
+      "type": "DERIVED_FROM",
+      "target": "document_transcript_fisp_arohzy8"
+    },
+    {
+      "source": "evidence_fisp_arohzy8_0027",
+      "type": "HAS_CITATION",
+      "target": "citation_youtube_fisp_arohzy8"
+    },
+    {
+      "source": "evidence_fisp_arohzy8_0027",
+      "type": "DERIVED_FROM",
+      "target": "document_transcript_fisp_arohzy8"
+    },
+    {
+      "source": "evidence_fisp_arohzy8_0028",
+      "type": "HAS_CITATION",
+      "target": "citation_youtube_fisp_arohzy8"
+    },
+    {
+      "source": "evidence_fisp_arohzy8_0028",
+      "type": "DERIVED_FROM",
+      "target": "document_transcript_fisp_arohzy8"
+    },
+    {
+      "source": "evidence_fisp_arohzy8_0029",
+      "type": "HAS_CITATION",
+      "target": "citation_youtube_fisp_arohzy8"
+    },
+    {
+      "source": "evidence_fisp_arohzy8_0029",
+      "type": "DERIVED_FROM",
+      "target": "document_transcript_fisp_arohzy8"
+    },
+    {
+      "source": "evidence_fisp_arohzy8_0030",
+      "type": "HAS_CITATION",
+      "target": "citation_youtube_fisp_arohzy8"
+    },
+    {
+      "source": "evidence_fisp_arohzy8_0030",
+      "type": "DERIVED_FROM",
+      "target": "document_transcript_fisp_arohzy8"
+    },
+    {
+      "source": "evidence_fisp_arohzy8_0031",
+      "type": "HAS_CITATION",
+      "target": "citation_youtube_fisp_arohzy8"
+    },
+    {
+      "source": "evidence_fisp_arohzy8_0031",
+      "type": "DERIVED_FROM",
+      "target": "document_transcript_fisp_arohzy8"
+    },
+    {
+      "source": "evidence_fisp_arohzy8_0032",
+      "type": "HAS_CITATION",
+      "target": "citation_youtube_fisp_arohzy8"
+    },
+    {
+      "source": "evidence_fisp_arohzy8_0032",
+      "type": "DERIVED_FROM",
+      "target": "document_transcript_fisp_arohzy8"
+    },
+    {
+      "source": "evidence_fisp_arohzy8_0033",
+      "type": "HAS_CITATION",
+      "target": "citation_youtube_fisp_arohzy8"
+    },
+    {
+      "source": "evidence_fisp_arohzy8_0033",
+      "type": "DERIVED_FROM",
+      "target": "document_transcript_fisp_arohzy8"
+    },
+    {
+      "source": "evidence_fisp_arohzy8_0034",
+      "type": "HAS_CITATION",
+      "target": "citation_youtube_fisp_arohzy8"
+    },
+    {
+      "source": "evidence_fisp_arohzy8_0034",
+      "type": "DERIVED_FROM",
+      "target": "document_transcript_fisp_arohzy8"
+    },
+    {
+      "source": "evidence_fisp_arohzy8_0035",
+      "type": "HAS_CITATION",
+      "target": "citation_youtube_fisp_arohzy8"
+    },
+    {
+      "source": "evidence_fisp_arohzy8_0035",
+      "type": "DERIVED_FROM",
+      "target": "document_transcript_fisp_arohzy8"
+    },
+    {
+      "source": "evidence_fisp_arohzy8_0036",
+      "type": "HAS_CITATION",
+      "target": "citation_youtube_fisp_arohzy8"
+    },
+    {
+      "source": "evidence_fisp_arohzy8_0036",
+      "type": "DERIVED_FROM",
+      "target": "document_transcript_fisp_arohzy8"
+    },
+    {
+      "source": "evidence_fisp_arohzy8_0037",
+      "type": "HAS_CITATION",
+      "target": "citation_youtube_fisp_arohzy8"
+    },
+    {
+      "source": "evidence_fisp_arohzy8_0037",
+      "type": "DERIVED_FROM",
+      "target": "document_transcript_fisp_arohzy8"
+    },
+    {
+      "source": "evidence_fisp_arohzy8_0038",
+      "type": "HAS_CITATION",
+      "target": "citation_youtube_fisp_arohzy8"
+    },
+    {
+      "source": "evidence_fisp_arohzy8_0038",
+      "type": "DERIVED_FROM",
+      "target": "document_transcript_fisp_arohzy8"
+    },
+    {
+      "source": "evidence_fisp_arohzy8_0039",
+      "type": "HAS_CITATION",
+      "target": "citation_youtube_fisp_arohzy8"
+    },
+    {
+      "source": "evidence_fisp_arohzy8_0039",
+      "type": "DERIVED_FROM",
+      "target": "document_transcript_fisp_arohzy8"
+    },
+    {
+      "source": "evidence_fisp_arohzy8_0040",
+      "type": "HAS_CITATION",
+      "target": "citation_youtube_fisp_arohzy8"
+    },
+    {
+      "source": "evidence_fisp_arohzy8_0040",
+      "type": "DERIVED_FROM",
+      "target": "document_transcript_fisp_arohzy8"
+    },
+    {
+      "source": "evidence_fisp_arohzy8_0041",
+      "type": "HAS_CITATION",
+      "target": "citation_youtube_fisp_arohzy8"
+    },
+    {
+      "source": "evidence_fisp_arohzy8_0041",
+      "type": "DERIVED_FROM",
+      "target": "document_transcript_fisp_arohzy8"
+    },
+    {
+      "source": "evidence_fisp_arohzy8_0042",
+      "type": "HAS_CITATION",
+      "target": "citation_youtube_fisp_arohzy8"
+    },
+    {
+      "source": "evidence_fisp_arohzy8_0042",
+      "type": "DERIVED_FROM",
+      "target": "document_transcript_fisp_arohzy8"
+    },
+    {
+      "source": "evidence_fisp_arohzy8_0043",
+      "type": "HAS_CITATION",
+      "target": "citation_youtube_fisp_arohzy8"
+    },
+    {
+      "source": "evidence_fisp_arohzy8_0043",
+      "type": "DERIVED_FROM",
+      "target": "document_transcript_fisp_arohzy8"
+    },
+    {
+      "source": "evidence_fisp_arohzy8_0044",
+      "type": "HAS_CITATION",
+      "target": "citation_youtube_fisp_arohzy8"
+    },
+    {
+      "source": "evidence_fisp_arohzy8_0044",
+      "type": "DERIVED_FROM",
+      "target": "document_transcript_fisp_arohzy8"
+    },
+    {
+      "source": "evidence_fisp_arohzy8_0045",
+      "type": "HAS_CITATION",
+      "target": "citation_youtube_fisp_arohzy8"
+    },
+    {
+      "source": "evidence_fisp_arohzy8_0045",
+      "type": "DERIVED_FROM",
+      "target": "document_transcript_fisp_arohzy8"
+    },
+    {
+      "source": "evidence_fisp_arohzy8_0046",
+      "type": "HAS_CITATION",
+      "target": "citation_youtube_fisp_arohzy8"
+    },
+    {
+      "source": "evidence_fisp_arohzy8_0046",
+      "type": "DERIVED_FROM",
+      "target": "document_transcript_fisp_arohzy8"
+    },
+    {
+      "source": "evidence_fisp_arohzy8_0047",
+      "type": "HAS_CITATION",
+      "target": "citation_youtube_fisp_arohzy8"
+    },
+    {
+      "source": "evidence_fisp_arohzy8_0047",
+      "type": "DERIVED_FROM",
+      "target": "document_transcript_fisp_arohzy8"
+    },
+    {
+      "source": "evidence_fisp_arohzy8_0048",
+      "type": "HAS_CITATION",
+      "target": "citation_youtube_fisp_arohzy8"
+    },
+    {
+      "source": "evidence_fisp_arohzy8_0048",
+      "type": "DERIVED_FROM",
+      "target": "document_transcript_fisp_arohzy8"
+    },
+    {
+      "source": "evidence_fisp_arohzy8_0049",
+      "type": "HAS_CITATION",
+      "target": "citation_youtube_fisp_arohzy8"
+    },
+    {
+      "source": "evidence_fisp_arohzy8_0049",
+      "type": "DERIVED_FROM",
+      "target": "document_transcript_fisp_arohzy8"
+    },
+    {
+      "source": "evidence_fisp_arohzy8_0050",
+      "type": "HAS_CITATION",
+      "target": "citation_youtube_fisp_arohzy8"
+    },
+    {
+      "source": "evidence_fisp_arohzy8_0050",
+      "type": "DERIVED_FROM",
+      "target": "document_transcript_fisp_arohzy8"
+    }
+  ]
+}
