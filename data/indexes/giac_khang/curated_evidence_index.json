@@ -2,7 +2,7 @@
   "metadata": {
     "index_name": "giac_khang_curated_evidence_index",
     "corpus_id": "corpus_giac_khang",
-    "generated_at": "2026-07-03T13:31:48+07:00",
+    "generated_at": "2026-07-03T14:06:14+07:00",
     "evidence_count": 6,
     "source_files": [
       "data/curated/giac_khang/FISpARohzy8/evidence_batch_001_curated.json",
@@ -36,7 +36,20 @@
       "curated_at": "2026-07-03",
       "curator": "Minh",
       "source_file": "data/curated/giac_khang/FISpARohzy8/evidence_curated.json",
-      "citation_url": "https://www.youtube.com/watch?v=FISpARohzy8&t=78s"
+      "citation_url": "https://www.youtube.com/watch?v=FISpARohzy8&t=78s",
+      "quality_score": 100,
+      "quality_flags": [
+        "has_text",
+        "has_start_time",
+        "has_end_time",
+        "has_source_url",
+        "has_citation_url",
+        "human_reviewed",
+        "curated",
+        "has_speaker",
+        "has_evidence_type",
+        "has_confidence"
+      ]
     },
     {
       "id": "evidence_fisp_arohzy8_0002",
@@ -64,7 +77,20 @@
       "curated_at": "2026-07-03",
       "curator": "Minh",
       "source_file": "data/curated/giac_khang/FISpARohzy8/evidence_curated.json",
-      "citation_url": "https://www.youtube.com/watch?v=FISpARohzy8&t=99s"
+      "citation_url": "https://www.youtube.com/watch?v=FISpARohzy8&t=99s",
+      "quality_score": 100,
+      "quality_flags": [
+        "has_text",
+        "has_start_time",
+        "has_end_time",
+        "has_source_url",
+        "has_citation_url",
+        "human_reviewed",
+        "curated",
+        "has_speaker",
+        "has_evidence_type",
+        "has_confidence"
+      ]
     },
     {
       "id": "evidence_fisp_arohzy8_0003",
@@ -92,7 +118,20 @@
       "curated_at": "2026-07-03",
       "curator": "Minh",
       "source_file": "data/curated/giac_khang/FISpARohzy8/evidence_curated.json",
-      "citation_url": "https://www.youtube.com/watch?v=FISpARohzy8&t=113s"
+      "citation_url": "https://www.youtube.com/watch?v=FISpARohzy8&t=113s",
+      "quality_score": 100,
+      "quality_flags": [
+        "has_text",
+        "has_start_time",
+        "has_end_time",
+        "has_source_url",
+        "has_citation_url",
+        "human_reviewed",
+        "curated",
+        "has_speaker",
+        "has_evidence_type",
+        "has_confidence"
+      ]
     },
     {
       "id": "evidence_fisp_arohzy8_0004",
@@ -120,7 +159,20 @@
       "curated_at": "2026-07-03",
       "curator": "Minh",
       "source_file": "data/curated/giac_khang/FISpARohzy8/evidence_curated.json",
-      "citation_url": "https://www.youtube.com/watch?v=FISpARohzy8&t=136s"
+      "citation_url": "https://www.youtube.com/watch?v=FISpARohzy8&t=136s",
+      "quality_score": 100,
+      "quality_flags": [
+        "has_text",
+        "has_start_time",
+        "has_end_time",
+        "has_source_url",
+        "has_citation_url",
+        "human_reviewed",
+        "curated",
+        "has_speaker",
+        "has_evidence_type",
+        "has_confidence"
+      ]
     },
     {
       "id": "evidence_fisp_arohzy8_0005",
@@ -148,7 +200,20 @@
       "curated_at": "2026-07-03",
       "curator": "Minh",
       "source_file": "data/curated/giac_khang/FISpARohzy8/evidence_curated.json",
-      "citation_url": "https://www.youtube.com/watch?v=FISpARohzy8&t=157s"
+      "citation_url": "https://www.youtube.com/watch?v=FISpARohzy8&t=157s",
+      "quality_score": 100,
+      "quality_flags": [
+        "has_text",
+        "has_start_time",
+        "has_end_time",
+        "has_source_url",
+        "has_citation_url",
+        "human_reviewed",
+        "curated",
+        "has_speaker",
+        "has_evidence_type",
+        "has_confidence"
+      ]
     },
     {
       "id": "evidence_fisp_arohzy8_0007",
@@ -176,7 +241,20 @@
       "curated_at": "2026-07-03T13:10:57+07:00",
       "curator": "Minh",
       "source_file": "data/curated/giac_khang/FISpARohzy8/evidence_batch_001_curated.json",
-      "citation_url": "https://www.youtube.com/watch?v=FISpARohzy8&t=196s"
+      "citation_url": "https://www.youtube.com/watch?v=FISpARohzy8&t=196s",
+      "quality_score": 100,
+      "quality_flags": [
+        "has_text",
+        "has_start_time",
+        "has_end_time",
+        "has_source_url",
+        "has_citation_url",
+        "human_reviewed",
+        "curated",
+        "has_speaker",
+        "has_evidence_type",
+        "has_confidence"
+      ]
     }
   ],
   "relationships": [

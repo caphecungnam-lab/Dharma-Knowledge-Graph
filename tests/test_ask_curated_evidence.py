@@ -33,6 +33,8 @@ def evidence_node(node_id: str, text: str, start_time: str = "00:01:18.720") -> 
         "review_status": "human_reviewed",
         "curated_status": "curated",
         "source_url": "https://www.youtube.com/watch?v=FISpARohzy8",
+        "quality_score": 90,
+        "quality_flags": ["has_text", "human_reviewed", "curated"],
     }
 
 
@@ -129,6 +131,7 @@ class AskCuratedEvidenceTest(unittest.TestCase):
 
             self.assertEqual(answer["evidence"][0]["review_status"], "human_reviewed")
             self.assertEqual(answer["evidence"][0]["curated_status"], "curated")
+            self.assertEqual(answer["evidence"][0]["quality_score"], 90)
 
     def test_returns_no_evidence_message_when_no_match(self) -> None:
         with tempfile.TemporaryDirectory() as tmpdir:
@@ -153,6 +156,7 @@ class AskCuratedEvidenceTest(unittest.TestCase):
             self.assertIn("evidence id:", output)
             self.assertIn("citation:", output)
             self.assertIn("citation_url:", output)
+            self.assertIn("quality_score:", output)
 
     def test_supports_json_output(self) -> None:
         with tempfile.TemporaryDirectory() as tmpdir:
@@ -180,6 +184,7 @@ class AskCuratedEvidenceTest(unittest.TestCase):
                 parsed["evidence"][0]["citation_url"],
                 "https://www.youtube.com/watch?v=FISpARohzy8&t=78s",
             )
+            self.assertEqual(parsed["evidence"][0]["quality_score"], 90)
 
     def test_respects_limit(self) -> None:
         with tempfile.TemporaryDirectory() as tmpdir:
@@ -190,6 +195,35 @@ class AskCuratedEvidenceTest(unittest.TestCase):
             )
 
             self.assertEqual(len(answer["evidence"]), 1)
+
+    def test_higher_quality_evidence_ranks_first_when_match_is_equal(self) -> None:
+        with tempfile.TemporaryDirectory() as tmpdir:
+            path = Path(tmpdir) / "curated_evidence_index.json"
+            payload = {
+                "nodes": [
+                    evidence_node(
+                        "evidence_low_quality",
+                        "Matching phrase about Kinh Sáu Sáu.",
+                    ),
+                    evidence_node(
+                        "evidence_high_quality",
+                        "Matching phrase about Kinh Sáu Sáu.",
+                    ),
+                ]
+            }
+            payload["nodes"][0]["quality_score"] = 35
+            payload["nodes"][1]["quality_score"] = 95
+            path.write_text(
+                json.dumps(payload, indent=2, ensure_ascii=False) + "\n",
+                encoding="utf-8",
+            )
+
+            answer = answer_question("Matching phrase", path=path, limit=2)
+
+            self.assertEqual(
+                answer["evidence"][0]["evidence_id"],
+                "evidence_high_quality",
+            )
 
 
 if __name__ == "__main__":

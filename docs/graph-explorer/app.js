@@ -512,6 +512,61 @@
     return [videoId, timeRange].filter(Boolean).join(" | ");
   }
 
+  function qualityFlagsForNode(node) {
+    if (Array.isArray(node.quality_flags)) return node.quality_flags;
+
+    const flags = [];
+    const evidenceText = String(node.evidence_text || "").trim();
+    if (evidenceText.length >= 20) flags.push("has_text");
+    if (node.start_time) flags.push("has_start_time");
+    if (node.end_time) flags.push("has_end_time");
+    if (node.source_url) flags.push("has_source_url");
+    if (buildCitationUrl(node)) flags.push("has_citation_url");
+    if (node.review_status === "human_reviewed") flags.push("human_reviewed");
+    if (node.review_status === "verified") flags.push("verified");
+    if (node.curated_status === "curated") flags.push("curated");
+    if (node.speaker) flags.push("has_speaker");
+    if (node.evidence_type) flags.push("has_evidence_type");
+    if (node.confidence) flags.push("has_confidence");
+    return flags;
+  }
+
+  function qualityScoreForNode(node) {
+    if (node.quality_score !== undefined && node.quality_score !== null) {
+      return Number(node.quality_score);
+    }
+
+    const flags = new Set(qualityFlagsForNode(node));
+    let score = 0;
+    if (flags.has("has_text")) score += 20;
+    if (flags.has("has_start_time")) score += 10;
+    if (flags.has("has_end_time")) score += 10;
+    if (flags.has("has_source_url")) score += 10;
+    if (flags.has("has_citation_url")) score += 10;
+    if (flags.has("human_reviewed")) score += 15;
+    if (flags.has("verified")) score += 20;
+    if (flags.has("curated")) score += 10;
+    if (flags.has("has_speaker")) score += 5;
+    if (flags.has("has_evidence_type")) score += 5;
+    if (flags.has("has_confidence")) score += 5;
+    return Math.min(score, 100);
+  }
+
+  function qualityStatusLabel(node) {
+    const score = qualityScoreForNode(node);
+    if (score >= 80) return "High quality Evidence";
+    if (score < 50) return "Needs review";
+    return "";
+  }
+
+  function renderQualityFlags(flags) {
+    if (!Array.isArray(flags) || !flags.length) return "";
+
+    return `<div class="quality-flags">${flags
+      .map((flag) => `<span class="quality-flag">${escapeHtml(String(flag))}</span>`)
+      .join("")}</div>`;
+  }
+
   function drawNodeBadge(point, node) {
     const badge = badgeLabel(node);
     const label = badgeDisplayLabels[badge] || badge.slice(0, 3).toUpperCase();
@@ -642,7 +697,15 @@
     detailType.innerHTML = `${escapeHtml(node.type)} <span class="badge-pill">${escapeHtml(badgeLabel(node))}</span>`;
     detailDescription.textContent = node.description || t("noDescription");
 
-    const hiddenProperties = new Set(["id", "name", "type", "description", "citation_url"]);
+    const hiddenProperties = new Set([
+      "id",
+      "name",
+      "type",
+      "description",
+      "citation_url",
+      "quality_score",
+      "quality_flags",
+    ]);
     const properties = Object.entries(node).filter(([key, value]) => {
       return !hiddenProperties.has(key) && value !== null && value !== undefined && value !== "";
     });
@@ -656,6 +719,13 @@
         ? `<div><dt>citation url</dt><dd><a href="${escapeHtml(citationUrl)}" target="_blank" rel="noopener noreferrer">Open source at timestamp</a></dd></div>`
         : "",
     ].filter(Boolean);
+    const qualityStatus = node.type === "Evidence" ? qualityStatusLabel(node) : "";
+    const qualityRows = node.type === "Evidence"
+      ? [
+          `<div><dt>quality score</dt><dd>${escapeHtml(String(qualityScoreForNode(node)))} / 100${qualityStatus ? ` <span class="quality-status">${escapeHtml(qualityStatus)}</span>` : ""}</dd></div>`,
+          `<div><dt>quality flags</dt><dd>${renderQualityFlags(qualityFlagsForNode(node))}</dd></div>`,
+        ].filter(Boolean)
+      : [];
 
     propertyList.innerHTML = [
       ["id", node.id],
@@ -665,6 +735,7 @@
         const label = key.replaceAll("_", " ");
         return `<div><dt>${escapeHtml(label)}</dt><dd>${escapeHtml(String(value))}</dd></div>`;
       })
+      .concat(qualityRows)
       .concat(citationRows)
       .join("");
 

@@ -155,7 +155,15 @@ class BuildCuratedIndexTest(unittest.TestCase):
             output_path = root / "indexes" / "curated_evidence_index.json"
             write_json(
                 input_dir / "video" / "evidence_curated.json",
-                {"nodes": [evidence_node("evidence_0001", "Một", "00:00:10.000")]},
+                {
+                    "nodes": [
+                        evidence_node(
+                            "evidence_0001",
+                            "Một đoạn Evidence đủ dài.",
+                            "00:00:10.000",
+                        )
+                    ]
+                },
             )
 
             build_curated_index(input_dir, output_path)
@@ -167,6 +175,9 @@ class BuildCuratedIndexTest(unittest.TestCase):
                 written["nodes"][0]["citation_url"],
                 "https://www.youtube.com/watch?v=FISpARohzy8&t=10s",
             )
+            self.assertIn("quality_score", written["nodes"][0])
+            self.assertIn("quality_flags", written["nodes"][0])
+            self.assertIn("has_text", written["nodes"][0]["quality_flags"])
 
 
 if __name__ == "__main__":

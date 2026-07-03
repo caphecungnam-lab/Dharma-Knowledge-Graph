@@ -13,6 +13,7 @@ from search_curated_evidence import (
     DEFAULT_INPUT_PATH,
     positive_int,
     search_curated_evidence_file,
+    sort_search_results,
 )
 
 NO_EVIDENCE_MESSAGE = "Chưa có Evidence phù hợp trong curated corpus."
@@ -74,16 +75,13 @@ def retrieve_evidence(question: str, path: Path, limit: int) -> list[dict[str, A
     matches: list[dict[str, Any]] = []
 
     for query in question_search_queries(question):
-        for result in search_curated_evidence_file(query, path=path, limit=limit):
+        for result in search_curated_evidence_file(query, path=path):
             evidence_id = str(result.get("id", ""))
             if evidence_id not in seen_ids:
                 matches.append(result)
                 seen_ids.add(evidence_id)
 
-            if len(matches) >= limit:
-                return matches
-
-    return matches
+    return sort_search_results(matches)[:limit]
 
 
 def build_answer_text(results: list[dict[str, Any]]) -> str:
@@ -113,6 +111,8 @@ def answer_result(result: dict[str, Any]) -> dict[str, Any]:
         "curated_status": result.get("curated_status", ""),
         "citation": result.get("citation", ""),
         "citation_url": result.get("citation_url", ""),
+        "quality_score": result.get("quality_score", 0),
+        "quality_flags": result.get("quality_flags", []),
         "evidence_text": result.get("evidence_text", ""),
     }
 
@@ -152,6 +152,7 @@ def format_text_answer(answer: dict[str, Any]) -> str:
                 f"curated_status: {evidence['curated_status']}",
                 f"citation: {evidence['citation']}",
                 f"citation_url: {evidence['citation_url']}",
+                f"quality_score: {evidence['quality_score']}",
             ]
         )
 

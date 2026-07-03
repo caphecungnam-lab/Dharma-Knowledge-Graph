@@ -17,7 +17,9 @@ sys.path.insert(0, str(ROOT / "src"))
 from dharma_kg.citations import (  # noqa: E402
     build_youtube_timestamp_url,
     extract_youtube_video_id,
+    parse_time_to_seconds,
 )
+from dharma_kg.quality import score_evidence  # noqa: E402
 
 DEFAULT_INPUT_PATH = (
     Path("data") / "indexes" / "giac_khang" / "curated_evidence_index.json"
@@ -115,6 +117,7 @@ def build_citation_string(node: dict[str, Any]) -> str:
 def evidence_result(node: dict[str, Any]) -> dict[str, Any]:
     source_url = str(node.get("source_url", ""))
     start_time = str(node.get("start_time", ""))
+    quality = score_evidence(node)
     return {
         "id": node.get("id", ""),
         "start_time": start_time,
@@ -131,7 +134,46 @@ def evidence_result(node: dict[str, Any]) -> dict[str, Any]:
         "citation_url": node.get("citation_url")
         or build_youtube_timestamp_url(source_url, start_time),
         "citation": build_citation_string(node),
+        "quality_score": node.get("quality_score", quality["quality_score"]),
+        "quality_flags": node.get("quality_flags", quality["quality_flags"]),
     }
+
+
+def match_score(node: dict[str, Any], query_terms: list[str]) -> int:
+    node_text = searchable_text(node)
+    searchable_versions = {
+        normalize_text(node_text),
+        normalize_text(node_text, remove_diacritics=False),
+    }
+    score = 0
+
+    for query_term in query_terms:
+        for searchable_version in searchable_versions:
+            occurrences = searchable_version.count(query_term)
+            if occurrences:
+                score += max(1, occurrences)
+                break
+
+    return score
+
+
+def start_time_sort_value(result: dict[str, Any]) -> int:
+    try:
+        return parse_time_to_seconds(str(result.get("start_time", "")))
+    except ValueError:
+        return 1_000_000_000
+
+
+def sort_search_results(results: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    return sorted(
+        results,
+        key=lambda result: (
+            -int(result.get("match_score", 0)),
+            -int(result.get("quality_score", 0)),
+            start_time_sort_value(result),
+            str(result.get("id", "")),
+        ),
+    )
 
 
 def search_curated_evidence(
@@ -146,23 +188,16 @@ def search_curated_evidence(
         if not isinstance(node, dict) or node.get("type") != "Evidence":
             continue
 
-        node_text = searchable_text(node)
-        searchable_versions = {
-            normalize_text(node_text),
-            normalize_text(node_text, remove_diacritics=False),
-        }
+        score = match_score(node, query_terms)
+        if score:
+            result = evidence_result(node)
+            result["match_score"] = score
+            matches.append(result)
 
-        if any(
-            query_term in searchable_version
-            for query_term in query_terms
-            for searchable_version in searchable_versions
-        ):
-            matches.append(evidence_result(node))
-
-        if limit is not None and len(matches) >= limit:
-            break
-
-    return matches
+    ranked_matches = sort_search_results(matches)
+    if limit is not None:
+        return ranked_matches[:limit]
+    return ranked_matches
 
 
 def search_curated_evidence_file(
@@ -205,6 +240,8 @@ def format_text_result(result: dict[str, Any]) -> str:
         f"evidence_text: {result['evidence_text']}",
         f"source_url: {result['source_url']}",
         f"citation: {result['citation']}",
+        f"Quality: {result['quality_score']} / 100",
+        "Flags: " + ", ".join(result.get("quality_flags", [])),
     ]
     if result.get("citation_url"):
         lines.append(f"Citation URL: {result['citation_url']}")

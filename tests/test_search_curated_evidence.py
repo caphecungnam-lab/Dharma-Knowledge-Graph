@@ -140,6 +140,8 @@ class SearchCuratedEvidenceTest(unittest.TestCase):
             result["citation_url"],
             "https://www.youtube.com/watch?v=FISpARohzy8&t=78s",
         )
+        self.assertEqual(result["quality_score"], 90)
+        self.assertIn("has_text", result["quality_flags"])
         self.assertIn("HT. Thích Giác Khang", result["citation"])
         self.assertIn("00:01:18.720 -> 00:01:39.030", result["citation"])
 
@@ -152,6 +154,8 @@ class SearchCuratedEvidenceTest(unittest.TestCase):
         self.assertIn("source_url:", output)
         self.assertIn("Citation URL:", output)
         self.assertIn("https://www.youtube.com/watch?v=FISpARohzy8&t=78s", output)
+        self.assertIn("Quality: 90 / 100", output)
+        self.assertIn("Flags:", output)
 
     def test_search_curated_evidence_file(self) -> None:
         with tempfile.TemporaryDirectory() as tmpdir:
@@ -216,6 +220,34 @@ class SearchCuratedEvidenceTest(unittest.TestCase):
                 parsed[0]["citation_url"],
                 "https://www.youtube.com/watch?v=FISpARohzy8&t=78s",
             )
+            self.assertEqual(parsed[0]["quality_score"], 90)
+            self.assertIn("has_text", parsed[0]["quality_flags"])
+
+    def test_higher_quality_evidence_ranks_first_when_match_is_equal(self) -> None:
+        payload = {
+            "nodes": [
+                evidence_node(
+                    "evidence_low_quality",
+                    "Matching phrase about Kinh Sáu Sáu.",
+                    review_status="unreviewed",
+                    curated_status="",
+                    quality_score=40,
+                    quality_flags=["has_text"],
+                ),
+                evidence_node(
+                    "evidence_high_quality",
+                    "Matching phrase about Kinh Sáu Sáu.",
+                    review_status="human_reviewed",
+                    curated_status="curated",
+                    quality_score=95,
+                    quality_flags=["has_text", "human_reviewed", "curated"],
+                ),
+            ]
+        }
+
+        results = search_curated_evidence(payload, "Matching phrase")
+
+        self.assertEqual(results[0]["id"], "evidence_high_quality")
 
     def test_debug_info_does_not_crash(self) -> None:
         debug_info = build_debug_info(

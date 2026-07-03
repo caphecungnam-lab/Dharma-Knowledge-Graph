@@ -15,6 +15,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
 from dharma_kg.citations import build_youtube_timestamp_url  # noqa: E402
+from dharma_kg.quality import score_evidence  # noqa: E402
 
 CORPUS_ID = "corpus_giac_khang"
 INDEX_NAME = "giac_khang_curated_evidence_index"
@@ -68,6 +69,7 @@ def enriched_node(node: dict[str, Any], path: Path) -> dict[str, Any]:
         )
         if citation_url:
             copy.setdefault("citation_url", citation_url)
+        copy.update(score_evidence(copy))
     return copy
 
 

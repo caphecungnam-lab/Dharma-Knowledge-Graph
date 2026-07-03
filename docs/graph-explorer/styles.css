@@ -332,6 +332,36 @@ canvas {
   line-height: 1.4;
 }
 
+.quality-status {
+  display: inline-flex;
+  margin-left: 6px;
+  border-radius: 999px;
+  background: rgba(31, 111, 82, 0.1);
+  color: var(--forest);
+  padding: 2px 7px;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.quality-flags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.quality-flag {
+  display: inline-flex;
+  min-height: 22px;
+  align-items: center;
+  border: 1px solid rgba(31, 111, 82, 0.22);
+  border-radius: 999px;
+  background: rgba(31, 111, 82, 0.08);
+  color: var(--forest);
+  padding: 0 8px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
 .relationship-list {
   display: grid;
   gap: 8px;
