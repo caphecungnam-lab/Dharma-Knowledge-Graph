@@ -11,6 +11,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
+sys.path.insert(0, str(ROOT / "src"))
 
 from source_registry import (  # noqa: E402
     add_youtube_source,
@@ -18,6 +19,12 @@ from source_registry import (  # noqa: E402
     main,
     show_source,
     validate_registry,
+)
+from dharma_kg.source_registry import (  # noqa: E402
+    SourceRecord,
+    find_record_by_id,
+    save_record,
+    validate_record,
 )
 
 
@@ -159,6 +166,38 @@ class SourceRegistryTest(unittest.TestCase):
 
         self.assertEqual(exit_code, 0)
         self.assertIn("Source Registry: PASS", stdout.getvalue())
+
+    def test_find_record_by_id(self) -> None:
+        record = SourceRecord(path=Path("source.json"), data={"id": "id1"})
+
+        self.assertIs(find_record_by_id([record], "id1"), record)
+        self.assertIsNone(find_record_by_id([record], "missing"))
+
+    def test_save_record_writes_json(self) -> None:
+        path = Path(self.temp_dir.name) / "source.json"
+        record = SourceRecord(path=path, data={"id": "x", "status": "registered"})
+
+        save_record(record)
+
+        saved = json.loads(path.read_text(encoding="utf-8"))
+        self.assertEqual(saved["id"], "x")
+        self.assertEqual(saved["status"], "registered")
+
+    def test_validate_source_record_still_works(self) -> None:
+        record = SourceRecord(
+            path=Path("source.json"),
+            data={
+                "id": "giac_khang_text_001",
+                "teacher": "giac_khang",
+                "title": "Test",
+                "source": "data/raw/test.txt",
+                "source_type": "text",
+                "created_at": "2026-07-03T00:00:00",
+                "status": "registered",
+            },
+        )
+
+        self.assertEqual(validate_record(record), [])
 
 
 if __name__ == "__main__":

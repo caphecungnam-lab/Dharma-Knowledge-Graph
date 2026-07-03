@@ -7,7 +7,6 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
 
-
 ROOT = Path(__file__).resolve().parents[2]
 DATA_DIR = ROOT / "data"
 SOURCES_DIR = DATA_DIR / "sources"
@@ -102,6 +101,23 @@ def load_sources() -> list[SourceRecord]:
     return records
 
 
+def save_record(record: SourceRecord) -> None:
+    record.path.parent.mkdir(parents=True, exist_ok=True)
+    with record.path.open("w", encoding="utf-8") as f:
+        json.dump(record.data, f, ensure_ascii=False, indent=2)
+        f.write("\n")
+
+
+def find_record_by_id(
+    records: list[SourceRecord],
+    source_id: str,
+) -> SourceRecord | None:
+    for record in records:
+        if record.id == source_id:
+            return record
+    return None
+
+
 def validate_record(record: SourceRecord) -> list[str]:
     errors: list[str] = []
 
@@ -131,11 +147,7 @@ def find_duplicate_sources(records: list[SourceRecord]) -> dict[str, int]:
     sources = [record.source for record in records if record.source]
     counts = Counter(sources)
 
-    return {
-        source: count
-        for source, count in counts.items()
-        if count > 1
-    }
+    return {source: count for source, count in counts.items() if count > 1}
 
 
 def print_table(records: list[SourceRecord]) -> None:
@@ -180,7 +192,9 @@ def cmd_validate(_: argparse.Namespace) -> int:
         errors = validate_record(record)
 
         if record.source in duplicate_sources:
-            errors.append(f"duplicate source: {duplicate_sources[record.source]} copies")
+            errors.append(
+                f"duplicate source: {duplicate_sources[record.source]} copies"
+            )
 
         if errors:
             has_error = True
@@ -222,6 +236,25 @@ def cmd_queue(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_mark(args: argparse.Namespace) -> int:
+    if args.status not in VALID_STATUSES:
+        print(f"Invalid status: {args.status}")
+        print(f"Valid statuses: {', '.join(sorted(VALID_STATUSES))}")
+        return 1
+
+    records = load_sources()
+    record = find_record_by_id(records, args.id)
+    if record is None:
+        print(f"Source id not found: {args.id}")
+        return 1
+
+    old_status = record.status
+    record.data["status"] = args.status
+    save_record(record)
+    print(f"Updated {record.id} status: {old_status} -> {args.status}")
+    return 0
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
         description="Source registry and queue gate for Dharma Knowledge Graph."
@@ -248,6 +281,14 @@ def build_parser() -> argparse.ArgumentParser:
         help="Filter queue by teacher/corpus namespace.",
     )
     queue_parser.set_defaults(func=cmd_queue)
+
+    mark_parser = subparsers.add_parser(
+        "mark",
+        help="Update one source manifest status.",
+    )
+    mark_parser.add_argument("--id", required=True, help="Source manifest id.")
+    mark_parser.add_argument("--status", required=True, help="New source status.")
+    mark_parser.set_defaults(func=cmd_mark)
 
     return parser
 

@@ -8,7 +8,6 @@ from dataclasses import dataclass
 from datetime import datetime
 from pathlib import Path
 
-
 ROOT = Path(__file__).resolve().parents[2]
 DATA_DIR = ROOT / "data"
 SOURCES_DIR = DATA_DIR / "sources"
@@ -82,7 +81,36 @@ def detect_source_type(source: str) -> str:
     return "local"
 
 
+def load_existing_source_manifest(
+    source: str, teacher: str | None = None
+) -> Path | None:
+    if not SOURCES_DIR.exists():
+        return None
+
+    for path in sorted(SOURCES_DIR.glob("*.json")):
+        try:
+            with path.open("r", encoding="utf-8") as f:
+                payload = json.load(f)
+        except Exception:
+            continue
+
+        if not isinstance(payload, dict):
+            continue
+
+        if payload.get("source") != source:
+            continue
+
+        if teacher is None or payload.get("teacher") == teacher:
+            return path
+
+    return None
+
+
 def write_source_manifest(source: str, teacher: str, title: str | None = None) -> Path:
+    existing_manifest = load_existing_source_manifest(source, teacher)
+    if existing_manifest is not None:
+        return existing_manifest
+
     now = datetime.now().strftime("%Y%m%d_%H%M%S")
     source_type = detect_source_type(source)
 
@@ -104,7 +132,9 @@ def write_source_manifest(source: str, teacher: str, title: str | None = None) -
     return path
 
 
-def candidate_commands(manifest_path: Path, teacher: str) -> list[tuple[str, list[str], bool]]:
+def candidate_commands(
+    manifest_path: Path, teacher: str
+) -> list[tuple[str, list[str], bool]]:
     """
     Chạy theo kiểu mềm: nếu repo đã có script nào thì dùng script đó.
     Truyền đúng CLI hiện có của từng script, không giả định script nào cũng nhận --teacher.
@@ -201,14 +231,32 @@ def run_pipeline(source: str, teacher: str, title: str | None = None) -> int:
 
     results: list[PipelineResult] = []
 
-    manifest_path = write_source_manifest(source=source, teacher=teacher, title=title)
-    results.append(
-        PipelineResult(
-            step="register-source",
-            ok=True,
-            detail=str(manifest_path.relative_to(ROOT)),
+    existing_manifest = load_existing_source_manifest(source, teacher)
+    if existing_manifest is not None:
+        manifest_path = existing_manifest
+        results.append(
+            PipelineResult(
+                step="register-source",
+                ok=True,
+                detail=(
+                    "SKIP duplicate source already registered: "
+                    f"{manifest_path.relative_to(ROOT)}"
+                ),
+            )
         )
-    )
+    else:
+        manifest_path = write_source_manifest(
+            source=source,
+            teacher=teacher,
+            title=title,
+        )
+        results.append(
+            PipelineResult(
+                step="register-source",
+                ok=True,
+                detail=str(manifest_path.relative_to(ROOT)),
+            )
+        )
 
     commands = candidate_commands(manifest_path=manifest_path, teacher=teacher)
 
