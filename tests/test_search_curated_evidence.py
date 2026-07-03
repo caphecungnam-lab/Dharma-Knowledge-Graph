@@ -11,6 +11,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
 from search_curated_evidence import (  # noqa: E402
+    DEFAULT_INPUT_PATH,
     build_debug_info,
     format_text_results,
     normalize_query_terms,
@@ -66,6 +67,12 @@ def sample_payload() -> dict:
 
 
 class SearchCuratedEvidenceTest(unittest.TestCase):
+    def test_default_path_uses_curated_index(self) -> None:
+        self.assertEqual(
+            DEFAULT_INPUT_PATH,
+            Path("data") / "indexes" / "giac_khang" / "curated_evidence_index.json",
+        )
+
     def test_case_insensitive_search_preserves_vietnamese_unicode(self) -> None:
         results = search_curated_evidence(sample_payload(), "kinh sáu sáu")
 
@@ -141,7 +148,7 @@ class SearchCuratedEvidenceTest(unittest.TestCase):
 
     def test_search_curated_evidence_file(self) -> None:
         with tempfile.TemporaryDirectory() as tmpdir:
-            path = Path(tmpdir) / "evidence_curated.json"
+            path = Path(tmpdir) / "curated_evidence_index.json"
             path.write_text(
                 json.dumps(sample_payload(), indent=2, ensure_ascii=False) + "\n",
                 encoding="utf-8",
@@ -150,6 +157,26 @@ class SearchCuratedEvidenceTest(unittest.TestCase):
             results = search_curated_evidence_file("luc can", path=path)
 
             self.assertEqual(results[0]["id"], "evidence_fisp_arohzy8_0002")
+
+    def test_search_finds_evidence_from_batch_curated_index(self) -> None:
+        payload = {
+            "metadata": {"index_name": "giac_khang_curated_evidence_index"},
+            "nodes": [
+                evidence_node(
+                    "evidence_fisp_arohzy8_0007",
+                    "Nội dung đã sửa ở đây.",
+                    source_file=(
+                        "data/curated/giac_khang/FISpARohzy8/"
+                        "evidence_batch_001_curated.json"
+                    ),
+                )
+            ],
+            "relationships": [],
+        }
+
+        results = search_curated_evidence(payload, "Nội dung đã sửa")
+
+        self.assertEqual(results[0]["id"], "evidence_fisp_arohzy8_0007")
 
     def test_cli_json_output(self) -> None:
         with tempfile.TemporaryDirectory() as tmpdir:

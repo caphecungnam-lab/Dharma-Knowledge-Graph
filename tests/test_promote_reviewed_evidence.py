@@ -4,6 +4,7 @@ import json
 import sys
 import tempfile
 import unittest
+from datetime import datetime
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -139,8 +140,21 @@ class PromoteReviewedEvidenceTest(unittest.TestCase):
         node = curated["nodes"][0]
 
         self.assertEqual(node["curated_status"], "curated")
-        self.assertEqual(node["curated_at"], "2026-07-03")
+        datetime.fromisoformat(node["curated_at"])
         self.assertEqual(node["curator"], "Minh")
+
+    def test_uses_reviewer_as_curator_when_present(self) -> None:
+        curated = promote_reviewed_evidence(sample_payload())
+
+        self.assertEqual(curated["nodes"][0]["curator"], "Minh")
+
+    def test_preserves_existing_curated_at(self) -> None:
+        payload = sample_payload()
+        payload["nodes"][0]["curated_at"] = "2026-07-03T12:00:00+07:00"
+
+        curated = promote_reviewed_evidence(payload)
+
+        self.assertEqual(curated["nodes"][0]["curated_at"], "2026-07-03T12:00:00+07:00")
 
     def test_does_not_mark_evidence_as_verified(self) -> None:
         curated = promote_reviewed_evidence(sample_payload())

@@ -104,6 +104,8 @@ def answer_result(result: dict[str, Any]) -> dict[str, Any]:
     )
     return {
         "evidence_id": result.get("id", ""),
+        "video_id": result.get("video_id", ""),
+        "source_id": result.get("source_id", ""),
         "timestamp": timestamp,
         "source_url": result.get("source_url", ""),
         "speaker": result.get("speaker", ""),
@@ -140,6 +142,8 @@ def format_text_answer(answer: dict[str, Any]) -> str:
             [
                 "",
                 f"evidence id: {evidence['evidence_id']}",
+                f"video_id: {evidence['video_id']}",
+                f"source_id: {evidence['source_id']}",
                 f"timestamp: {evidence['timestamp']}",
                 f"source_url: {evidence['source_url']}",
                 f"speaker: {evidence['speaker']}",

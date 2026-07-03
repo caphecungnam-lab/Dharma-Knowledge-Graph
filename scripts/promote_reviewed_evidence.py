@@ -6,12 +6,12 @@ from __future__ import annotations
 import argparse
 import json
 from copy import deepcopy
+from datetime import datetime
 from pathlib import Path
 from typing import Any
 
 VIDEO_ID = "FISpARohzy8"
 CITATION_ID = "citation_youtube_fisp_arohzy8"
-CURATED_AT = "2026-07-03"
 CURATOR = "Minh"
 DEFAULT_INPUT_PATH = (
     Path("data") / "reviewed" / "giac_khang" / VIDEO_ID / "evidence_review_queue.json"
@@ -39,14 +39,23 @@ def is_promotable_evidence(node: dict[str, Any]) -> bool:
     )
 
 
+def current_local_iso_datetime() -> str:
+    return datetime.now().astimezone().isoformat(timespec="seconds")
+
+
+def curator_for_node(node: dict[str, Any]) -> str:
+    reviewer = str(node.get("reviewer") or "").strip()
+    return reviewer or CURATOR
+
+
 def build_curated_evidence_node(node: dict[str, Any]) -> dict[str, Any]:
     curated_node = deepcopy(node)
     reviewed_text = str(node.get("reviewed_evidence_text", ""))
 
     curated_node["evidence_text"] = reviewed_text
     curated_node["curated_status"] = "curated"
-    curated_node["curated_at"] = CURATED_AT
-    curated_node["curator"] = CURATOR
+    curated_node["curated_at"] = node.get("curated_at") or current_local_iso_datetime()
+    curated_node["curator"] = node.get("curator") or curator_for_node(node)
 
     return curated_node
 

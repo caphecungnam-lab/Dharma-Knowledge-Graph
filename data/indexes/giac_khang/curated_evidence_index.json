@@ -1,0 +1,238 @@
+{
+  "metadata": {
+    "index_name": "giac_khang_curated_evidence_index",
+    "corpus_id": "corpus_giac_khang",
+    "generated_at": "2026-07-03T13:06:27+07:00",
+    "evidence_count": 6,
+    "source_files": [
+      "data/curated/giac_khang/FISpARohzy8/evidence_batch_001_curated.json",
+      "data/curated/giac_khang/FISpARohzy8/evidence_curated.json"
+    ]
+  },
+  "nodes": [
+    {
+      "id": "evidence_fisp_arohzy8_0001",
+      "type": "Evidence",
+      "name": "VTT caption excerpt 0001 from FISpARohzy8",
+      "evidence_text": "Tiếp tục bài kinh 66 thì trước tiên tôi xin tóm trước rồi hai vị Phật tử sẽ nhắc lại rồi chúng ta sẽ đi vào trả lời bài câu hỏi số 1 thì ở đây bài kinh 66 gồm tất cả là sáu phần. Phần nhập đề tức",
+      "evidence_type": "transcript_excerpt",
+      "language": "vi",
+      "confidence": "low",
+      "source_kind": "youtube",
+      "source_url": "https://www.youtube.com/watch?v=FISpARohzy8",
+      "document_id": "document_transcript_fisp_arohzy8",
+      "start_time": "00:01:18.720",
+      "end_time": "00:01:39.030",
+      "speaker": "HT. Thích Giác Khang",
+      "notes": "Imported from YouTube VTT caption. Needs human review for Buddhist terminology.",
+      "original_review_status": "unreviewed",
+      "original_evidence_text": "Tiếp tục bài kinh 66 thì trước tiên tôi xin tóm trước rồi hai vị Phật tử sẽ nhắc lại rồi chúng ta sẽ đi vào trả lời bài câu hỏi số 1 thì ở đây bài kinh 66 gồm tất cả là sáu phần. Phần nhập đề tức",
+      "reviewed_evidence_text": "Tiếp tục bài kinh 66 thì trước tiên tôi xin tóm trước rồi hai vị Phật tử sẽ nhắc lại rồi chúng ta sẽ đi vào trả lời bài câu hỏi số 1 thì ở đây bài kinh 66 gồm tất cả là sáu phần. Phần nhập đề tức",
+      "reviewer": "",
+      "reviewed_at": "",
+      "review_notes": "",
+      "review_status": "human_reviewed",
+      "curated_status": "curated",
+      "curated_at": "2026-07-03",
+      "curator": "Minh",
+      "source_file": "data/curated/giac_khang/FISpARohzy8/evidence_curated.json"
+    },
+    {
+      "id": "evidence_fisp_arohzy8_0002",
+      "type": "Evidence",
+      "name": "VTT caption excerpt 0002 from FISpARohzy8",
+      "evidence_text": "là phần dẫn nhập, phần kết luận là hai còn phần thân bài là bốn. Thì ở đây chúng ta thường thấy kinh Phật nói chung đó là có sáu cái ấn chứng, sáu cái chứng để đi vào bài giảng.",
+      "evidence_type": "transcript_excerpt",
+      "language": "vi",
+      "confidence": "low",
+      "source_kind": "youtube",
+      "source_url": "https://www.youtube.com/watch?v=FISpARohzy8",
+      "document_id": "document_transcript_fisp_arohzy8",
+      "start_time": "00:01:39.040",
+      "end_time": "00:01:53.190",
+      "speaker": "HT. Thích Giác Khang",
+      "notes": "Imported from YouTube VTT caption. Needs human review for Buddhist terminology.",
+      "original_review_status": "unreviewed",
+      "original_evidence_text": "là phần dẫn nhập, phần kết luận là hai còn phần thân bài là bốn. Thì ở đây chúng ta thường thấy kinh Phật nói chung đó là có sáu cái ấn chứng, sáu cái chứng để đi vào bài giảng.",
+      "reviewed_evidence_text": "là phần dẫn nhập, phần kết luận là hai còn phần thân bài là bốn. Thì ở đây chúng ta thường thấy kinh Phật nói chung đó là có sáu cái ấn chứng, sáu cái chứng để đi vào bài giảng.",
+      "reviewer": "",
+      "reviewed_at": "",
+      "review_notes": "",
+      "review_status": "human_reviewed",
+      "curated_status": "curated",
+      "curated_at": "2026-07-03",
+      "curator": "Minh",
+      "source_file": "data/curated/giac_khang/FISpARohzy8/evidence_curated.json"
+    },
+    {
+      "id": "evidence_fisp_arohzy8_0003",
+      "type": "Evidence",
+      "name": "VTT caption excerpt 0003 from FISpARohzy8",
+      "evidence_text": "Vì chúng ta thấy đây là cái ấn chứng thứ nhất là không gian, thứ nhì là thời gian và cái thứ ba là ai giảng, cái thứ tư là giảng cho ai nghe và cái thứ năm là giảng về kinh gì và cái thứ sáu là nội dung của bài kinh đó. Thì chúng ta thấy đây không gian thời gian là tại thành Xá Vệ cái giường của ông thái tử Kiều Đà và",
+      "evidence_type": "transcript_excerpt",
+      "language": "vi",
+      "confidence": "low",
+      "source_kind": "youtube",
+      "source_url": "https://www.youtube.com/watch?v=FISpARohzy8",
+      "document_id": "document_transcript_fisp_arohzy8",
+      "start_time": "00:01:53.200",
+      "end_time": "00:02:16.110",
+      "speaker": "HT. Thích Giác Khang",
+      "notes": "Imported from YouTube VTT caption. Needs human review for Buddhist terminology.",
+      "original_review_status": "unreviewed",
+      "original_evidence_text": "Vì chúng ta thấy đây là cái ấn chứng thứ nhất là không gian, thứ nhì là thời gian và cái thứ ba là ai giảng, cái thứ tư là giảng cho ai nghe và cái thứ năm là giảng về kinh gì và cái thứ sáu là nội dung của bài kinh đó. Thì chúng ta thấy đây không gian thời gian là tại thành Xá Vệ cái giường của ông thái tử Kiều Đà và",
+      "reviewed_evidence_text": "Vì chúng ta thấy đây là cái ấn chứng thứ nhất là không gian, thứ nhì là thời gian và cái thứ ba là ai giảng, cái thứ tư là giảng cho ai nghe và cái thứ năm là giảng về kinh gì và cái thứ sáu là nội dung của bài kinh đó. Thì chúng ta thấy đây không gian thời gian là tại thành Xá Vệ cái giường của ông thái tử Kiều Đà và",
+      "reviewer": "",
+      "reviewed_at": "",
+      "review_notes": "",
+      "review_status": "human_reviewed",
+      "curated_status": "curated",
+      "curated_at": "2026-07-03",
+      "curator": "Minh",
+      "source_file": "data/curated/giac_khang/FISpARohzy8/evidence_curated.json"
+    },
+    {
+      "id": "evidence_fisp_arohzy8_0004",
+      "type": "Evidence",
+      "name": "VTT caption excerpt 0004 from FISpARohzy8",
+      "evidence_text": "Tịnh xá của cấp cô độc. Đó là phần không gian thời gian hai phần. Phần thứ ba là Đức Phật Thích Ca Mâu Ni tức là đức Thế Tôn của chúng ta giảng và giảng cho các vị tỳ kheo nghe. Đó là bốn phần. Và phần thứ năm là giảng về bài kinh 66 và nội dung đó là sơ thiện, trung thiện, hậu thiện có văn có nghĩa",
+      "evidence_type": "transcript_excerpt",
+      "language": "vi",
+      "confidence": "low",
+      "source_kind": "youtube",
+      "source_url": "https://www.youtube.com/watch?v=FISpARohzy8",
+      "document_id": "document_transcript_fisp_arohzy8",
+      "start_time": "00:02:16.120",
+      "end_time": "00:02:37.949",
+      "speaker": "HT. Thích Giác Khang",
+      "notes": "Imported from YouTube VTT caption. Needs human review for Buddhist terminology.",
+      "original_review_status": "unreviewed",
+      "original_evidence_text": "Tịnh xá của cấp cô độc. Đó là phần không gian thời gian hai phần. Phần thứ ba là Đức Phật Thích Ca Mâu Ni tức là đức Thế Tôn của chúng ta giảng và giảng cho các vị tỳ kheo nghe. Đó là bốn phần. Và phần thứ năm là giảng về bài kinh 66 và nội dung đó là sơ thiện, trung thiện, hậu thiện có văn có nghĩa",
+      "reviewed_evidence_text": "Tịnh xá của cấp cô độc. Đó là phần không gian thời gian hai phần. Phần thứ ba là Đức Phật Thích Ca Mâu Ni tức là đức Thế Tôn của chúng ta giảng và giảng cho các vị tỳ kheo nghe. Đó là bốn phần. Và phần thứ năm là giảng về bài kinh 66 và nội dung đó là sơ thiện, trung thiện, hậu thiện có văn có nghĩa",
+      "reviewer": "",
+      "reviewed_at": "",
+      "review_notes": "",
+      "review_status": "human_reviewed",
+      "curated_status": "curated",
+      "curated_at": "2026-07-03",
+      "curator": "Minh",
+      "source_file": "data/curated/giac_khang/FISpARohzy8/evidence_curated.json"
+    },
+    {
+      "id": "evidence_fisp_arohzy8_0005",
+      "type": "Evidence",
+      "name": "VTT caption excerpt 0005 from FISpARohzy8",
+      "evidence_text": "phạm hạnh thanh tịnh rồi đưa đến giải thoát. Đó là hình. Còn sau đây là bốn phần là thân bài. Tức là phần thứ nhất là trình bày về bài kinh 66 tức là 36 pháp toàn thể vũ trụ.",
+      "evidence_type": "transcript_excerpt",
+      "language": "vi",
+      "confidence": "low",
+      "source_kind": "youtube",
+      "source_url": "https://www.youtube.com/watch?v=FISpARohzy8",
+      "document_id": "document_transcript_fisp_arohzy8",
+      "start_time": "00:02:37.959",
+      "end_time": "00:02:54.470",
+      "speaker": "HT. Thích Giác Khang",
+      "notes": "Imported from YouTube VTT caption. Needs human review for Buddhist terminology.",
+      "original_review_status": "unreviewed",
+      "original_evidence_text": "phạm hạnh thanh tịnh rồi đưa đến giải thoát. Đó là hình. Còn sau đây là bốn phần là thân bài. Tức là phần thứ nhất là trình bày về bài kinh 66 tức là 36 pháp toàn thể vũ trụ.",
+      "reviewed_evidence_text": "phạm hạnh thanh tịnh rồi đưa đến giải thoát. Đó là hình. Còn sau đây là bốn phần là thân bài. Tức là phần thứ nhất là trình bày về bài kinh 66 tức là 36 pháp toàn thể vũ trụ.",
+      "reviewer": "",
+      "reviewed_at": "",
+      "review_notes": "",
+      "review_status": "human_reviewed",
+      "curated_status": "curated",
+      "curated_at": "2026-07-03",
+      "curator": "Minh",
+      "source_file": "data/curated/giac_khang/FISpARohzy8/evidence_curated.json"
+    },
+    {
+      "id": "evidence_fisp_arohzy8_0007",
+      "type": "Evidence",
+      "name": "VTT caption excerpt 0007 from FISpARohzy8",
+      "evidence_text": "Nội dung đã sửa ở đây.",
+      "evidence_type": "transcript_excerpt",
+      "language": "vi",
+      "confidence": "low",
+      "source_kind": "youtube",
+      "source_url": "https://www.youtube.com/watch?v=FISpARohzy8",
+      "document_id": "document_transcript_fisp_arohzy8",
+      "start_time": "00:03:16.840",
+      "end_time": "00:03:39.990",
+      "speaker": "HT. Thích Giác Khang",
+      "notes": "Imported from YouTube VTT caption. Needs human review for Buddhist terminology.",
+      "original_review_status": "unreviewed",
+      "original_evidence_text": "chiều ngang. Chiều dọc thì sáu căn gồm có mắt, tay mũi, lưỡi, thân, ý và sáu trần sắc thân giữa xuất khóa và sáu thức là nhãn nhĩ tỷ thiệt thân ý thức và sáu xúc của ngãn nhị tu, thiệt thân ý xúc và sáu thọ của ngã, nhị ti thiệt, thân ý thọ và sáu ái của ngã, nhị ti thiệt thân ý ái. Đó là khi sao triều dục. Còn chiều",
+      "reviewed_evidence_text": "Nội dung đã sửa ở đây.",
+      "reviewer": "Minh",
+      "reviewed_at": "2026-07-03T12:41:31+07:00",
+      "review_notes": "Sửa dấu câu và thuật ngữ.",
+      "review_status": "human_reviewed",
+      "curated_status": "curated",
+      "curated_at": "2026-07-03T13:06:20+07:00",
+      "curator": "Minh",
+      "source_file": "data/curated/giac_khang/FISpARohzy8/evidence_batch_001_curated.json"
+    }
+  ],
+  "relationships": [
+    {
+      "source": "evidence_fisp_arohzy8_0001",
+      "type": "DERIVED_FROM",
+      "target": "document_transcript_fisp_arohzy8"
+    },
+    {
+      "source": "evidence_fisp_arohzy8_0002",
+      "type": "DERIVED_FROM",
+      "target": "document_transcript_fisp_arohzy8"
+    },
+    {
+      "source": "evidence_fisp_arohzy8_0003",
+      "type": "DERIVED_FROM",
+      "target": "document_transcript_fisp_arohzy8"
+    },
+    {
+      "source": "evidence_fisp_arohzy8_0004",
+      "type": "DERIVED_FROM",
+      "target": "document_transcript_fisp_arohzy8"
+    },
+    {
+      "source": "evidence_fisp_arohzy8_0005",
+      "type": "DERIVED_FROM",
+      "target": "document_transcript_fisp_arohzy8"
+    },
+    {
+      "source": "evidence_fisp_arohzy8_0007",
+      "type": "DERIVED_FROM",
+      "target": "document_transcript_fisp_arohzy8"
+    },
+    {
+      "source": "evidence_fisp_arohzy8_0001",
+      "type": "HAS_CITATION",
+      "target": "citation_youtube_fisp_arohzy8"
+    },
+    {
+      "source": "evidence_fisp_arohzy8_0002",
+      "type": "HAS_CITATION",
+      "target": "citation_youtube_fisp_arohzy8"
+    },
+    {
+      "source": "evidence_fisp_arohzy8_0003",
+      "type": "HAS_CITATION",
+      "target": "citation_youtube_fisp_arohzy8"
+    },
+    {
+      "source": "evidence_fisp_arohzy8_0004",
+      "type": "HAS_CITATION",
+      "target": "citation_youtube_fisp_arohzy8"
+    },
+    {
+      "source": "evidence_fisp_arohzy8_0005",
+      "type": "HAS_CITATION",
+      "target": "citation_youtube_fisp_arohzy8"
+    },
+    {
+      "source": "evidence_fisp_arohzy8_0007",
+      "type": "HAS_CITATION",
+      "target": "citation_youtube_fisp_arohzy8"
+    }
+  ]
+}

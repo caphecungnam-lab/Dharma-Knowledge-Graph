@@ -11,6 +11,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
 from ask_curated_evidence import (  # noqa: E402
+    DEFAULT_INPUT_PATH,
     NO_EVIDENCE_MESSAGE,
     answer_question,
     format_text_answer,
@@ -52,8 +53,14 @@ def sample_payload() -> dict:
 
 
 class AskCuratedEvidenceTest(unittest.TestCase):
+    def test_default_path_uses_curated_index(self) -> None:
+        self.assertEqual(
+            DEFAULT_INPUT_PATH,
+            Path("data") / "indexes" / "giac_khang" / "curated_evidence_index.json",
+        )
+
     def write_sample_file(self, tmpdir: str) -> Path:
-        path = Path(tmpdir) / "evidence_curated.json"
+        path = Path(tmpdir) / "curated_evidence_index.json"
         path.write_text(
             json.dumps(sample_payload(), indent=2, ensure_ascii=False) + "\n",
             encoding="utf-8",
@@ -76,6 +83,14 @@ class AskCuratedEvidenceTest(unittest.TestCase):
             self.assertEqual(
                 answer["evidence"][0]["evidence_id"], "evidence_fisp_arohzy8_0001"
             )
+
+    def test_answers_from_merged_index(self) -> None:
+        with tempfile.TemporaryDirectory() as tmpdir:
+            path = self.write_sample_file(tmpdir)
+            answer = answer_question("Kinh Sáu Sáu", path=path)
+
+            self.assertIn("bài kinh 66", answer["answer"].casefold())
+            self.assertEqual(answer["evidence"][0]["video_id"], "FISpARohzy8")
 
     def test_includes_citation(self) -> None:
         with tempfile.TemporaryDirectory() as tmpdir:

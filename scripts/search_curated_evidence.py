@@ -11,7 +11,7 @@ from pathlib import Path
 from typing import Any
 
 DEFAULT_INPUT_PATH = (
-    Path("data") / "curated" / "giac_khang" / "FISpARohzy8" / "evidence_curated.json"
+    Path("data") / "indexes" / "giac_khang" / "curated_evidence_index.json"
 )
 SEARCH_FIELDS = (
     "evidence_text",
@@ -45,6 +45,7 @@ QUERY_ALIASES = {
     ),
 }
 WHITESPACE = re.compile(r"\s+")
+YOUTUBE_VIDEO_ID = re.compile(r"(?:v=|youtu\.be/)([A-Za-z0-9_-]+)")
 
 
 def load_json(path: Path) -> dict[str, Any]:
@@ -89,13 +90,26 @@ def build_citation_string(node: dict[str, Any]) -> str:
     start_time = str(node.get("start_time", ""))
     end_time = str(node.get("end_time", ""))
     speaker = str(node.get("speaker", ""))
+    source_identity = str(
+        node.get("video_id") or node.get("source_id") or extract_video_id(source_url)
+    )
 
     time_range = " -> ".join(value for value in [start_time, end_time] if value)
-    parts = [part for part in [speaker, time_range, source_url] if part]
+    parts = [
+        part for part in [source_identity, speaker, time_range, source_url] if part
+    ]
     return " | ".join(parts)
 
 
+def extract_video_id(source_url: str) -> str:
+    match = YOUTUBE_VIDEO_ID.search(source_url)
+    if not match:
+        return ""
+    return match.group(1)
+
+
 def evidence_result(node: dict[str, Any]) -> dict[str, Any]:
+    source_url = str(node.get("source_url", ""))
     return {
         "id": node.get("id", ""),
         "start_time": node.get("start_time", ""),
@@ -104,7 +118,9 @@ def evidence_result(node: dict[str, Any]) -> dict[str, Any]:
         "review_status": node.get("review_status", ""),
         "curated_status": node.get("curated_status", ""),
         "evidence_text": node.get("evidence_text", ""),
-        "source_url": node.get("source_url", ""),
+        "source_url": source_url,
+        "source_id": node.get("source_id", ""),
+        "video_id": node.get("video_id", "") or extract_video_id(source_url),
         "citation": build_citation_string(node),
     }
 
@@ -159,9 +175,12 @@ def build_debug_info(
         if isinstance(node, dict) and node.get("type") == "Evidence"
     ]
     return {
+        "path": str(path),
         "curated_file_path": str(path),
         "evidence_node_count": len(evidence_nodes),
+        "query_terms": normalize_query_terms(query),
         "normalized_query_terms": normalize_query_terms(query),
+        "searched_fields": list(SEARCH_FIELDS),
         "fields_searched": list(SEARCH_FIELDS),
     }
 
@@ -238,6 +257,7 @@ def main() -> int:
         print(json.dumps(output, indent=2, ensure_ascii=False))
     else:
         if args.debug:
+            print(f"path: {debug_info['path']}")
             print(f"curated_file_path: {debug_info['curated_file_path']}")
             print(f"evidence_node_count: {debug_info['evidence_node_count']}")
             print(
