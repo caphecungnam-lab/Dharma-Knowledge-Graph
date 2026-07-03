@@ -177,15 +177,22 @@ def promote_reviewed_evidence_file(
     return curated_payload
 
 
-def parse_args() -> argparse.Namespace:
+def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     parser = argparse.ArgumentParser(
         description="Promote human-reviewed Evidence into curated corpus data."
     )
     parser.add_argument(
-        "input",
+        "input_path",
         nargs="?",
         type=Path,
-        default=DEFAULT_INPUT_PATH,
+        default=None,
+        help="Input reviewed Evidence queue JSON file.",
+    )
+    parser.add_argument(
+        "--input",
+        dest="input_option",
+        type=Path,
+        default=None,
         help="Input reviewed Evidence queue JSON file.",
     )
     parser.add_argument(
@@ -194,12 +201,13 @@ def parse_args() -> argparse.Namespace:
         default=DEFAULT_OUTPUT_PATH,
         help="Output curated Evidence JSON file.",
     )
-    return parser.parse_args()
+    return parser.parse_args(argv)
 
 
-def main() -> int:
-    args = parse_args()
-    curated_payload = promote_reviewed_evidence_file(args.input, args.output)
+def main(argv: list[str] | None = None) -> int:
+    args = parse_args(argv)
+    input_path = args.input_option or args.input_path or DEFAULT_INPUT_PATH
+    curated_payload = promote_reviewed_evidence_file(input_path, args.output)
     print(f"Wrote {args.output} with {len(curated_payload['nodes'])} Evidence node(s).")
     return 0
 
