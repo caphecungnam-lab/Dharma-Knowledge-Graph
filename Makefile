@@ -1,4 +1,4 @@
-.PHONY: all validate build report quality export-neo4j export-rdf build-index dashboard test docs-links check clean
+.PHONY: all validate build report quality export-neo4j export-rdf build-index dashboard health health-strict test docs-links check clean
 
 all: check
 
@@ -25,6 +25,12 @@ build-index:
 
 dashboard:
 	PYTHONPATH=src python3 scripts/build_corpus_dashboard.py
+
+health:
+	PYTHONPATH=src python3 scripts/check_corpus_health.py
+
+health-strict:
+	PYTHONPATH=src python3 scripts/check_corpus_health.py --strict
 
 test:
 	python3 -m unittest discover -s tests
