@@ -11,7 +11,9 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
 from search_curated_evidence import (  # noqa: E402
+    build_debug_info,
     format_text_results,
+    normalize_query_terms,
     search_curated_evidence,
     search_curated_evidence_file,
 )
@@ -42,12 +44,17 @@ def sample_payload() -> dict:
         "nodes": [
             evidence_node(
                 "evidence_fisp_arohzy8_0001",
-                "Bài giảng về Kinh Sáu Sáu và các pháp.",
+                "Bài giảng về kinh 66 và các pháp.",
+                name="VTT caption excerpt about Kinh Sáu Sáu",
             ),
             evidence_node(
                 "evidence_fisp_arohzy8_0002",
-                "Nội dung nói về sáu căn.",
+                "Nội dung nói về lục căn.",
                 review_notes="Cần kiểm tra thuật ngữ Kinh Sáu Sáu.",
+            ),
+            evidence_node(
+                "evidence_fisp_arohzy8_0003",
+                "Nội dung nói về sáu trần và lục thức.",
             ),
             {
                 "id": "concept_kinh_sau_sau",
@@ -63,7 +70,29 @@ class SearchCuratedEvidenceTest(unittest.TestCase):
         results = search_curated_evidence(sample_payload(), "kinh sáu sáu")
 
         self.assertEqual(results[0]["id"], "evidence_fisp_arohzy8_0001")
-        self.assertIn("Kinh Sáu Sáu", results[0]["evidence_text"])
+        self.assertIn("kinh 66", results[0]["evidence_text"])
+
+    def test_kinh_sau_sau_alias_finds_kinh_66(self) -> None:
+        results = search_curated_evidence(sample_payload(), "Kinh Sáu Sáu")
+
+        self.assertEqual(results[0]["id"], "evidence_fisp_arohzy8_0001")
+
+    def test_sau_sau_alias_finds_66(self) -> None:
+        results = search_curated_evidence(sample_payload(), "sáu sáu")
+
+        self.assertEqual(results[0]["id"], "evidence_fisp_arohzy8_0001")
+
+    def test_unaccented_query_matches_accented_text(self) -> None:
+        results = search_curated_evidence(sample_payload(), "luc can")
+
+        self.assertEqual(results[0]["id"], "evidence_fisp_arohzy8_0002")
+
+    def test_luc_tran_and_luc_thuc_aliases_match_vietnamese_text(self) -> None:
+        tran_results = search_curated_evidence(sample_payload(), "luc tran")
+        thuc_results = search_curated_evidence(sample_payload(), "luc thuc")
+
+        self.assertEqual(tran_results[0]["id"], "evidence_fisp_arohzy8_0003")
+        self.assertEqual(thuc_results[0]["id"], "evidence_fisp_arohzy8_0003")
 
     def test_searches_review_notes(self) -> None:
         results = search_curated_evidence(sample_payload(), "thuật ngữ")
@@ -76,6 +105,11 @@ class SearchCuratedEvidenceTest(unittest.TestCase):
         results = search_curated_evidence(sample_payload(), "concept")
 
         self.assertEqual(results, [])
+
+    def test_searches_name_field(self) -> None:
+        results = search_curated_evidence(sample_payload(), "caption excerpt")
+
+        self.assertEqual(results[0]["id"], "evidence_fisp_arohzy8_0001")
 
     def test_limit_results(self) -> None:
         results = search_curated_evidence(sample_payload(), "Kinh Sáu Sáu", limit=1)
@@ -113,7 +147,7 @@ class SearchCuratedEvidenceTest(unittest.TestCase):
                 encoding="utf-8",
             )
 
-            results = search_curated_evidence_file("sáu căn", path=path)
+            results = search_curated_evidence_file("luc can", path=path)
 
             self.assertEqual(results[0]["id"], "evidence_fisp_arohzy8_0002")
 
@@ -144,6 +178,54 @@ class SearchCuratedEvidenceTest(unittest.TestCase):
 
             self.assertEqual(len(parsed), 1)
             self.assertEqual(parsed[0]["id"], "evidence_fisp_arohzy8_0001")
+
+    def test_debug_info_does_not_crash(self) -> None:
+        debug_info = build_debug_info(
+            Path("data/curated/giac_khang/FISpARohzy8/evidence_curated.json"),
+            sample_payload(),
+            "Kinh Sáu Sáu",
+        )
+
+        self.assertEqual(debug_info["evidence_node_count"], 3)
+        self.assertIn("kinh 66", debug_info["normalized_query_terms"])
+        self.assertIn("name", debug_info["fields_searched"])
+
+    def test_cli_debug_output(self) -> None:
+        with tempfile.TemporaryDirectory() as tmpdir:
+            path = Path(tmpdir) / "evidence_curated.json"
+            path.write_text(
+                json.dumps(sample_payload(), indent=2, ensure_ascii=False) + "\n",
+                encoding="utf-8",
+            )
+
+            completed = subprocess.run(
+                [
+                    sys.executable,
+                    str(ROOT / "scripts" / "search_curated_evidence.py"),
+                    "Kinh Sáu Sáu",
+                    "--debug",
+                    "--limit",
+                    "1",
+                    "--path",
+                    str(path),
+                ],
+                check=True,
+                capture_output=True,
+                encoding="utf-8",
+            )
+
+            self.assertIn("curated_file_path:", completed.stdout)
+            self.assertIn("evidence_node_count: 3", completed.stdout)
+            self.assertIn("normalized_query_terms:", completed.stdout)
+            self.assertIn("fields_searched:", completed.stdout)
+            self.assertIn("id: evidence_fisp_arohzy8_0001", completed.stdout)
+
+    def test_normalize_query_terms(self) -> None:
+        terms = normalize_query_terms("  Kinh   Sáu Sáu ")
+
+        self.assertIn("kinh sau sau", terms)
+        self.assertIn("bài kinh 66", terms)
+        self.assertIn("bai kinh 66", terms)
 
 
 if __name__ == "__main__":

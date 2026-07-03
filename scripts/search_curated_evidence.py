@@ -5,6 +5,8 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
+import unicodedata
 from pathlib import Path
 from typing import Any
 
@@ -17,11 +19,65 @@ SEARCH_FIELDS = (
     "original_evidence_text",
     "notes",
     "review_notes",
+    "name",
 )
+QUERY_ALIASES = {
+    "kinh sau sau": (
+        "kinh 66",
+        "kinh sáu sáu",
+        "bài kinh 66",
+    ),
+    "sau sau": (
+        "66",
+        "sáu sáu",
+    ),
+    "luc can": (
+        "lục căn",
+        "sáu căn",
+    ),
+    "luc tran": (
+        "lục trần",
+        "sáu trần",
+    ),
+    "luc thuc": (
+        "lục thức",
+        "sáu thức",
+    ),
+}
+WHITESPACE = re.compile(r"\s+")
 
 
 def load_json(path: Path) -> dict[str, Any]:
     return json.loads(path.read_text(encoding="utf-8"))
+
+
+def strip_vietnamese_diacritics(value: str) -> str:
+    normalized = unicodedata.normalize("NFD", value)
+    without_marks = "".join(
+        character for character in normalized if unicodedata.category(character) != "Mn"
+    )
+    return without_marks.replace("đ", "d").replace("Đ", "D")
+
+
+def normalize_text(value: str, remove_diacritics: bool = True) -> str:
+    normalized = WHITESPACE.sub(" ", value.casefold().strip())
+    if remove_diacritics:
+        normalized = strip_vietnamese_diacritics(normalized)
+    return normalized
+
+
+def normalize_query_terms(query: str) -> list[str]:
+    terms: list[str] = []
+    candidate_terms = [query]
+    normalized_query = normalize_text(query)
+    candidate_terms.extend(QUERY_ALIASES.get(normalized_query, ()))
+
+    for term in candidate_terms:
+        for normalized_term in {normalize_text(term), normalize_text(term, False)}:
+            if normalized_term and normalized_term not in terms:
+                terms.append(normalized_term)
+
+    return terms
 
 
 def searchable_text(node: dict[str, Any]) -> str:
@@ -58,14 +114,24 @@ def search_curated_evidence(
     query: str,
     limit: int | None = None,
 ) -> list[dict[str, Any]]:
-    normalized_query = query.casefold()
+    query_terms = normalize_query_terms(query)
     matches: list[dict[str, Any]] = []
 
     for node in payload.get("nodes", []):
         if not isinstance(node, dict) or node.get("type") != "Evidence":
             continue
 
-        if normalized_query in searchable_text(node).casefold():
+        node_text = searchable_text(node)
+        searchable_versions = {
+            normalize_text(node_text),
+            normalize_text(node_text, remove_diacritics=False),
+        }
+
+        if any(
+            query_term in searchable_version
+            for query_term in query_terms
+            for searchable_version in searchable_versions
+        ):
             matches.append(evidence_result(node))
 
         if limit is not None and len(matches) >= limit:
@@ -80,6 +146,24 @@ def search_curated_evidence_file(
     limit: int | None = None,
 ) -> list[dict[str, Any]]:
     return search_curated_evidence(load_json(path), query, limit=limit)
+
+
+def build_debug_info(
+    path: Path,
+    payload: dict[str, Any],
+    query: str,
+) -> dict[str, Any]:
+    evidence_nodes = [
+        node
+        for node in payload.get("nodes", [])
+        if isinstance(node, dict) and node.get("type") == "Evidence"
+    ]
+    return {
+        "curated_file_path": str(path),
+        "evidence_node_count": len(evidence_nodes),
+        "normalized_query_terms": normalize_query_terms(query),
+        "fields_searched": list(SEARCH_FIELDS),
+    }
 
 
 def format_text_result(result: dict[str, Any]) -> str:
@@ -133,16 +217,35 @@ def parse_args() -> argparse.Namespace:
         default=DEFAULT_INPUT_PATH,
         help="Path to curated Evidence JSON.",
     )
+    parser.add_argument(
+        "--debug",
+        action="store_true",
+        help="Print search normalization details before results.",
+    )
     return parser.parse_args()
 
 
 def main() -> int:
     args = parse_args()
-    results = search_curated_evidence_file(args.query, path=args.path, limit=args.limit)
+    payload = load_json(args.path)
+    results = search_curated_evidence(payload, args.query, limit=args.limit)
+    debug_info = build_debug_info(args.path, payload, args.query)
 
     if args.json:
-        print(json.dumps(results, indent=2, ensure_ascii=False))
+        output: Any = (
+            {"debug": debug_info, "results": results} if args.debug else results
+        )
+        print(json.dumps(output, indent=2, ensure_ascii=False))
     else:
+        if args.debug:
+            print(f"curated_file_path: {debug_info['curated_file_path']}")
+            print(f"evidence_node_count: {debug_info['evidence_node_count']}")
+            print(
+                "normalized_query_terms: "
+                + ", ".join(debug_info["normalized_query_terms"])
+            )
+            print("fields_searched: " + ", ".join(debug_info["fields_searched"]))
+            print()
         print(format_text_results(results))
 
     return 0
