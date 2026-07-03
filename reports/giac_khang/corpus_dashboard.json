@@ -1,0 +1,219 @@
+{
+  "metadata": {
+    "dashboard_name": "giac_khang_corpus_dashboard",
+    "generated_at": "2026-07-03T14:23:57+07:00",
+    "input": "data/indexes/giac_khang/curated_evidence_index.json"
+  },
+  "metrics": {
+    "total_evidence": 6,
+    "curated_count": 6,
+    "human_reviewed_count": 6,
+    "verified_count": 0,
+    "rejected_count": 0,
+    "unreviewed_count": 0,
+    "has_source_url_count": 6,
+    "has_citation_url_count": 6,
+    "missing_source_url_count": 0,
+    "missing_timestamp_count": 0,
+    "missing_citation_url_count": 0,
+    "average_quality_score": 100.0,
+    "min_quality_score": 100,
+    "max_quality_score": 100,
+    "high_quality_count": 6,
+    "medium_quality_count": 0,
+    "needs_review_count": 0,
+    "missing_evidence_text_count": 0,
+    "missing_start_time_count": 0,
+    "missing_end_time_count": 0,
+    "missing_speaker_count": 0,
+    "missing_evidence_type_count": 0,
+    "missing_confidence_count": 0
+  },
+  "quality_distribution": {
+    "high_quality_gte_80": 6,
+    "medium_quality_50_to_79": 0,
+    "needs_review_lt_50": 0
+  },
+  "citation_readiness": {
+    "has_source_url_count": 6,
+    "has_citation_url_count": 6,
+    "missing_source_url_count": 0,
+    "missing_timestamp_count": 0,
+    "missing_citation_url_count": 0
+  },
+  "metadata_gaps": {
+    "missing_evidence_text_count": 0,
+    "missing_start_time_count": 0,
+    "missing_end_time_count": 0,
+    "missing_speaker_count": 0,
+    "missing_evidence_type_count": 0,
+    "missing_confidence_count": 0
+  },
+  "source_coverage": {
+    "evidence_by_source_url": {
+      "https://www.youtube.com/watch?v=FISpARohzy8": 6
+    },
+    "evidence_by_document_id": {
+      "document_transcript_fisp_arohzy8": 6
+    },
+    "evidence_by_speaker": {
+      "HT. Thích Giác Khang": 6
+    },
+    "earliest_start_time": "00:01:18.720",
+    "latest_end_time": "00:03:39.990"
+  },
+  "top_low_quality_evidence": [
+    {
+      "id": "evidence_fisp_arohzy8_0001",
+      "quality_score": 100,
+      "start_time": "00:01:18.720",
+      "end_time": "00:01:39.030",
+      "evidence_text": "Tiếp tục bài kinh 66 thì trước tiên tôi xin tóm trước rồi hai vị Phật tử sẽ nhắc lại rồi chúng ...",
+      "missing_flags": []
+    },
+    {
+      "id": "evidence_fisp_arohzy8_0002",
+      "quality_score": 100,
+      "start_time": "00:01:39.040",
+      "end_time": "00:01:53.190",
+      "evidence_text": "là phần dẫn nhập, phần kết luận là hai còn phần thân bài là bốn. Thì ở đây chúng ta thường thấy...",
+      "missing_flags": []
+    },
+    {
+      "id": "evidence_fisp_arohzy8_0003",
+      "quality_score": 100,
+      "start_time": "00:01:53.200",
+      "end_time": "00:02:16.110",
+      "evidence_text": "Vì chúng ta thấy đây là cái ấn chứng thứ nhất là không gian, thứ nhì là thời gian và cái thứ ba...",
+      "missing_flags": []
+    },
+    {
+      "id": "evidence_fisp_arohzy8_0004",
+      "quality_score": 100,
+      "start_time": "00:02:16.120",
+      "end_time": "00:02:37.949",
+      "evidence_text": "Tịnh xá của cấp cô độc. Đó là phần không gian thời gian hai phần. Phần thứ ba là Đức Phật Thích...",
+      "missing_flags": []
+    },
+    {
+      "id": "evidence_fisp_arohzy8_0005",
+      "quality_score": 100,
+      "start_time": "00:02:37.959",
+      "end_time": "00:02:54.470",
+      "evidence_text": "phạm hạnh thanh tịnh rồi đưa đến giải thoát. Đó là hình. Còn sau đây là bốn phần là thân bài. T...",
+      "missing_flags": []
+    },
+    {
+      "id": "evidence_fisp_arohzy8_0007",
+      "quality_score": 100,
+      "start_time": "00:03:16.840",
+      "end_time": "00:03:39.990",
+      "evidence_text": "Nội dung đã sửa ở đây.",
+      "missing_flags": []
+    }
+  ],
+  "top_10_missing_citation_url": [],
+  "top_10_longest_evidence_text": [
+    {
+      "id": "evidence_fisp_arohzy8_0003",
+      "quality_score": 100,
+      "start_time": "00:01:53.200",
+      "end_time": "00:02:16.110",
+      "evidence_text": "Vì chúng ta thấy đây là cái ấn chứng thứ nhất là không gian, thứ nhì là thời gian và cái thứ ba...",
+      "missing_flags": []
+    },
+    {
+      "id": "evidence_fisp_arohzy8_0004",
+      "quality_score": 100,
+      "start_time": "00:02:16.120",
+      "end_time": "00:02:37.949",
+      "evidence_text": "Tịnh xá của cấp cô độc. Đó là phần không gian thời gian hai phần. Phần thứ ba là Đức Phật Thích...",
+      "missing_flags": []
+    },
+    {
+      "id": "evidence_fisp_arohzy8_0001",
+      "quality_score": 100,
+      "start_time": "00:01:18.720",
+      "end_time": "00:01:39.030",
+      "evidence_text": "Tiếp tục bài kinh 66 thì trước tiên tôi xin tóm trước rồi hai vị Phật tử sẽ nhắc lại rồi chúng ...",
+      "missing_flags": []
+    },
+    {
+      "id": "evidence_fisp_arohzy8_0002",
+      "quality_score": 100,
+      "start_time": "00:01:39.040",
+      "end_time": "00:01:53.190",
+      "evidence_text": "là phần dẫn nhập, phần kết luận là hai còn phần thân bài là bốn. Thì ở đây chúng ta thường thấy...",
+      "missing_flags": []
+    },
+    {
+      "id": "evidence_fisp_arohzy8_0005",
+      "quality_score": 100,
+      "start_time": "00:02:37.959",
+      "end_time": "00:02:54.470",
+      "evidence_text": "phạm hạnh thanh tịnh rồi đưa đến giải thoát. Đó là hình. Còn sau đây là bốn phần là thân bài. T...",
+      "missing_flags": []
+    },
+    {
+      "id": "evidence_fisp_arohzy8_0007",
+      "quality_score": 100,
+      "start_time": "00:03:16.840",
+      "end_time": "00:03:39.990",
+      "evidence_text": "Nội dung đã sửa ở đây.",
+      "missing_flags": []
+    }
+  ],
+  "top_10_shortest_evidence_text": [
+    {
+      "id": "evidence_fisp_arohzy8_0007",
+      "quality_score": 100,
+      "start_time": "00:03:16.840",
+      "end_time": "00:03:39.990",
+      "evidence_text": "Nội dung đã sửa ở đây.",
+      "missing_flags": []
+    },
+    {
+      "id": "evidence_fisp_arohzy8_0005",
+      "quality_score": 100,
+      "start_time": "00:02:37.959",
+      "end_time": "00:02:54.470",
+      "evidence_text": "phạm hạnh thanh tịnh rồi đưa đến giải thoát. Đó là hình. Còn sau đây là bốn phần là thân bài. T...",
+      "missing_flags": []
+    },
+    {
+      "id": "evidence_fisp_arohzy8_0002",
+      "quality_score": 100,
+      "start_time": "00:01:39.040",
+      "end_time": "00:01:53.190",
+      "evidence_text": "là phần dẫn nhập, phần kết luận là hai còn phần thân bài là bốn. Thì ở đây chúng ta thường thấy...",
+      "missing_flags": []
+    },
+    {
+      "id": "evidence_fisp_arohzy8_0001",
+      "quality_score": 100,
+      "start_time": "00:01:18.720",
+      "end_time": "00:01:39.030",
+      "evidence_text": "Tiếp tục bài kinh 66 thì trước tiên tôi xin tóm trước rồi hai vị Phật tử sẽ nhắc lại rồi chúng ...",
+      "missing_flags": []
+    },
+    {
+      "id": "evidence_fisp_arohzy8_0004",
+      "quality_score": 100,
+      "start_time": "00:02:16.120",
+      "end_time": "00:02:37.949",
+      "evidence_text": "Tịnh xá của cấp cô độc. Đó là phần không gian thời gian hai phần. Phần thứ ba là Đức Phật Thích...",
+      "missing_flags": []
+    },
+    {
+      "id": "evidence_fisp_arohzy8_0003",
+      "quality_score": 100,
+      "start_time": "00:01:53.200",
+      "end_time": "00:02:16.110",
+      "evidence_text": "Vì chúng ta thấy đây là cái ấn chứng thứ nhất là không gian, thứ nhì là thời gian và cái thứ ba...",
+      "missing_flags": []
+    }
+  ],
+  "recommendations": [
+    "Continue batch ingestion to expand corpus coverage."
+  ]
+}
