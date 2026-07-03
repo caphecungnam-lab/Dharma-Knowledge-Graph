@@ -1,0 +1,11 @@
+[build-system]
+requires = []
+build-backend = "dharma_build"
+backend-path = ["build_backend"]
+
+[project]
+name = "dharma-kg"
+version = "0.1.0"
+description = "Dharma Knowledge Graph utilities and local corpus tooling."
+readme = "README.md"
+requires-python = ">=3.10"
