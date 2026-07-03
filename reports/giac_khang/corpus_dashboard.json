@@ -1,7 +1,7 @@
 {
   "metadata": {
     "dashboard_name": "giac_khang_corpus_dashboard",
-    "generated_at": "2026-07-03T14:23:57+07:00",
+    "generated_at": "2026-07-03T14:25:58+07:00",
     "input": "data/indexes/giac_khang/curated_evidence_index.json"
   },
   "metrics": {
