@@ -135,6 +135,11 @@ class SearchCuratedEvidenceTest(unittest.TestCase):
             result["source_url"],
             "https://www.youtube.com/watch?v=FISpARohzy8",
         )
+        self.assertEqual(result["video_id"], "FISpARohzy8")
+        self.assertEqual(
+            result["citation_url"],
+            "https://www.youtube.com/watch?v=FISpARohzy8&t=78s",
+        )
         self.assertIn("HT. Thích Giác Khang", result["citation"])
         self.assertIn("00:01:18.720 -> 00:01:39.030", result["citation"])
 
@@ -145,6 +150,8 @@ class SearchCuratedEvidenceTest(unittest.TestCase):
         self.assertIn("id: evidence_fisp_arohzy8_0001", output)
         self.assertIn("citation:", output)
         self.assertIn("source_url:", output)
+        self.assertIn("Citation URL:", output)
+        self.assertIn("https://www.youtube.com/watch?v=FISpARohzy8&t=78s", output)
 
     def test_search_curated_evidence_file(self) -> None:
         with tempfile.TemporaryDirectory() as tmpdir:
@@ -205,6 +212,10 @@ class SearchCuratedEvidenceTest(unittest.TestCase):
 
             self.assertEqual(len(parsed), 1)
             self.assertEqual(parsed[0]["id"], "evidence_fisp_arohzy8_0001")
+            self.assertEqual(
+                parsed[0]["citation_url"],
+                "https://www.youtube.com/watch?v=FISpARohzy8&t=78s",
+            )
 
     def test_debug_info_does_not_crash(self) -> None:
         debug_info = build_debug_info(

@@ -112,6 +112,7 @@ def answer_result(result: dict[str, Any]) -> dict[str, Any]:
         "review_status": result.get("review_status", ""),
         "curated_status": result.get("curated_status", ""),
         "citation": result.get("citation", ""),
+        "citation_url": result.get("citation_url", ""),
         "evidence_text": result.get("evidence_text", ""),
     }
 
@@ -150,6 +151,7 @@ def format_text_answer(answer: dict[str, Any]) -> str:
                 f"review_status: {evidence['review_status']}",
                 f"curated_status: {evidence['curated_status']}",
                 f"citation: {evidence['citation']}",
+                f"citation_url: {evidence['citation_url']}",
             ]
         )
 

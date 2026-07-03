@@ -163,6 +163,10 @@ class BuildCuratedIndexTest(unittest.TestCase):
 
             self.assertEqual(written["metadata"]["evidence_count"], 1)
             self.assertEqual(written["nodes"][0]["id"], "evidence_0001")
+            self.assertEqual(
+                written["nodes"][0]["citation_url"],
+                "https://www.youtube.com/watch?v=FISpARohzy8&t=10s",
+            )
 
 
 if __name__ == "__main__":

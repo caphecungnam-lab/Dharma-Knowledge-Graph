@@ -447,6 +447,71 @@
     return truncateLabel(nodeFullLabel(node), 32);
   }
 
+  function parseTimeToSeconds(value) {
+    const text = String(value || "").trim();
+    if (!text) return null;
+    if (/^\d+$/.test(text)) return Number(text);
+
+    const parts = text.split(":");
+    if (parts.length === 2) {
+      const minutes = Number(parts[0]);
+      const seconds = Number(parts[1]);
+      if (Number.isNaN(minutes) || Number.isNaN(seconds)) return null;
+      return Math.floor(minutes * 60 + seconds);
+    }
+
+    if (parts.length === 3) {
+      const hours = Number(parts[0]);
+      const minutes = Number(parts[1]);
+      const seconds = Number(parts[2]);
+      if (Number.isNaN(hours) || Number.isNaN(minutes) || Number.isNaN(seconds)) return null;
+      return Math.floor(hours * 3600 + minutes * 60 + seconds);
+    }
+
+    return null;
+  }
+
+  function extractYoutubeVideoId(url) {
+    try {
+      const parsed = new URL(String(url || ""));
+      const host = parsed.hostname.toLowerCase();
+
+      if (host === "youtu.be") {
+        return parsed.pathname.replace("/", "").split("/")[0] || null;
+      }
+
+      if (["youtube.com", "www.youtube.com", "m.youtube.com"].includes(host)) {
+        const watchId = parsed.searchParams.get("v");
+        if (watchId) return watchId;
+
+        const pathParts = parsed.pathname.split("/").filter(Boolean);
+        if (pathParts[0] === "embed" && pathParts[1]) {
+          return pathParts[1];
+        }
+      }
+    } catch (_error) {
+      return null;
+    }
+
+    return null;
+  }
+
+  function buildCitationUrl(node) {
+    if (node.citation_url) return node.citation_url;
+
+    const videoId = extractYoutubeVideoId(node.source_url);
+    const seconds = parseTimeToSeconds(node.start_time);
+    if (!videoId || seconds === null) return null;
+
+    return `https://www.youtube.com/watch?v=${encodeURIComponent(videoId)}&t=${seconds}s`;
+  }
+
+  function buildCitationLabel(node) {
+    const videoId = node.video_id || node.source_id || extractYoutubeVideoId(node.source_url);
+    const timeRange = [node.start_time, node.end_time].filter(Boolean).join(" -> ");
+    return [videoId, timeRange].filter(Boolean).join(" | ");
+  }
+
   function drawNodeBadge(point, node) {
     const badge = badgeLabel(node);
     const label = badgeDisplayLabels[badge] || badge.slice(0, 3).toUpperCase();
@@ -577,10 +642,20 @@
     detailType.innerHTML = `${escapeHtml(node.type)} <span class="badge-pill">${escapeHtml(badgeLabel(node))}</span>`;
     detailDescription.textContent = node.description || t("noDescription");
 
-    const hiddenProperties = new Set(["id", "name", "type", "description"]);
+    const hiddenProperties = new Set(["id", "name", "type", "description", "citation_url"]);
     const properties = Object.entries(node).filter(([key, value]) => {
       return !hiddenProperties.has(key) && value !== null && value !== undefined && value !== "";
     });
+    const citationLabel = node.type === "Evidence" ? buildCitationLabel(node) : "";
+    const citationUrl = node.type === "Evidence" ? buildCitationUrl(node) : null;
+    const citationRows = [
+      citationLabel
+        ? `<div><dt>citation label</dt><dd>${escapeHtml(citationLabel)}</dd></div>`
+        : "",
+      citationUrl
+        ? `<div><dt>citation url</dt><dd><a href="${escapeHtml(citationUrl)}" target="_blank" rel="noopener noreferrer">Open source at timestamp</a></dd></div>`
+        : "",
+    ].filter(Boolean);
 
     propertyList.innerHTML = [
       ["id", node.id],
@@ -590,6 +665,7 @@
         const label = key.replaceAll("_", " ");
         return `<div><dt>${escapeHtml(label)}</dt><dd>${escapeHtml(String(value))}</dd></div>`;
       })
+      .concat(citationRows)
       .join("");
 
     const relationships = adjacency.get(node.id) || [];

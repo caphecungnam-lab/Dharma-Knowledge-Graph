@@ -5,10 +5,16 @@ from __future__ import annotations
 
 import argparse
 import json
+import sys
 from copy import deepcopy
 from datetime import datetime
 from pathlib import Path
 from typing import Any
+
+ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "src"))
+
+from dharma_kg.citations import build_youtube_timestamp_url  # noqa: E402
 
 CORPUS_ID = "corpus_giac_khang"
 INDEX_NAME = "giac_khang_curated_evidence_index"
@@ -55,6 +61,13 @@ def source_file_label(path: Path) -> str:
 def enriched_node(node: dict[str, Any], path: Path) -> dict[str, Any]:
     copy = deepcopy(node)
     copy.setdefault("source_file", source_file_label(path))
+    if is_evidence_node(copy):
+        citation_url = build_youtube_timestamp_url(
+            str(copy.get("source_url", "")),
+            str(copy.get("start_time", "")),
+        )
+        if citation_url:
+            copy.setdefault("citation_url", citation_url)
     return copy
 
 

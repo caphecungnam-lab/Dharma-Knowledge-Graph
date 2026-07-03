@@ -6,9 +6,18 @@ from __future__ import annotations
 import argparse
 import json
 import re
+import sys
 import unicodedata
 from pathlib import Path
 from typing import Any
+
+ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "src"))
+
+from dharma_kg.citations import (  # noqa: E402
+    build_youtube_timestamp_url,
+    extract_youtube_video_id,
+)
 
 DEFAULT_INPUT_PATH = (
     Path("data") / "indexes" / "giac_khang" / "curated_evidence_index.json"
@@ -45,7 +54,6 @@ QUERY_ALIASES = {
     ),
 }
 WHITESPACE = re.compile(r"\s+")
-YOUTUBE_VIDEO_ID = re.compile(r"(?:v=|youtu\.be/)([A-Za-z0-9_-]+)")
 
 
 def load_json(path: Path) -> dict[str, Any]:
@@ -91,7 +99,10 @@ def build_citation_string(node: dict[str, Any]) -> str:
     end_time = str(node.get("end_time", ""))
     speaker = str(node.get("speaker", ""))
     source_identity = str(
-        node.get("video_id") or node.get("source_id") or extract_video_id(source_url)
+        node.get("video_id")
+        or node.get("source_id")
+        or extract_youtube_video_id(source_url)
+        or ""
     )
 
     time_range = " -> ".join(value for value in [start_time, end_time] if value)
@@ -101,18 +112,12 @@ def build_citation_string(node: dict[str, Any]) -> str:
     return " | ".join(parts)
 
 
-def extract_video_id(source_url: str) -> str:
-    match = YOUTUBE_VIDEO_ID.search(source_url)
-    if not match:
-        return ""
-    return match.group(1)
-
-
 def evidence_result(node: dict[str, Any]) -> dict[str, Any]:
     source_url = str(node.get("source_url", ""))
+    start_time = str(node.get("start_time", ""))
     return {
         "id": node.get("id", ""),
-        "start_time": node.get("start_time", ""),
+        "start_time": start_time,
         "end_time": node.get("end_time", ""),
         "speaker": node.get("speaker", ""),
         "review_status": node.get("review_status", ""),
@@ -120,7 +125,11 @@ def evidence_result(node: dict[str, Any]) -> dict[str, Any]:
         "evidence_text": node.get("evidence_text", ""),
         "source_url": source_url,
         "source_id": node.get("source_id", ""),
-        "video_id": node.get("video_id", "") or extract_video_id(source_url),
+        "video_id": node.get("video_id", "")
+        or extract_youtube_video_id(source_url)
+        or "",
+        "citation_url": node.get("citation_url")
+        or build_youtube_timestamp_url(source_url, start_time),
         "citation": build_citation_string(node),
     }
 
@@ -197,6 +206,8 @@ def format_text_result(result: dict[str, Any]) -> str:
         f"source_url: {result['source_url']}",
         f"citation: {result['citation']}",
     ]
+    if result.get("citation_url"):
+        lines.append(f"Citation URL: {result['citation_url']}")
     return "\n".join(lines)
 
 

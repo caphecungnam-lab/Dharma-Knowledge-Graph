@@ -30,7 +30,7 @@ docs-links:
 	python3 scripts/validate_docs_links.py
 
 check: validate report quality export-neo4j export-rdf docs-links test
-	python3 -m py_compile scripts/build_graph.py scripts/validate_seed_data.py scripts/import_manual_transcript.py scripts/vtt_to_evidence.py scripts/review_evidence.py scripts/batch_review_helper.py scripts/promote_reviewed_evidence.py scripts/build_curated_index.py scripts/search_curated_evidence.py scripts/ask_curated_evidence.py scripts/write_graph_report.py scripts/write_quality_report.py scripts/export_neo4j_csv.py scripts/export_rdf_turtle.py scripts/validate_docs_links.py
+	python3 -m py_compile src/dharma_kg/citations.py scripts/build_graph.py scripts/validate_seed_data.py scripts/import_manual_transcript.py scripts/vtt_to_evidence.py scripts/review_evidence.py scripts/batch_review_helper.py scripts/promote_reviewed_evidence.py scripts/build_curated_index.py scripts/search_curated_evidence.py scripts/ask_curated_evidence.py scripts/write_graph_report.py scripts/write_quality_report.py scripts/export_neo4j_csv.py scripts/export_rdf_turtle.py scripts/validate_docs_links.py
 
 clean:
 	rm -rf scripts/__pycache__ tests/__pycache__

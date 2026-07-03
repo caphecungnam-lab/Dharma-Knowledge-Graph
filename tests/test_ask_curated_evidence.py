@@ -103,6 +103,10 @@ class AskCuratedEvidenceTest(unittest.TestCase):
             self.assertIn(
                 "00:01:18.720 -> 00:01:39.030", answer["evidence"][0]["citation"]
             )
+            self.assertEqual(
+                answer["evidence"][0]["citation_url"],
+                "https://www.youtube.com/watch?v=FISpARohzy8&t=78s",
+            )
 
     def test_includes_source_url(self) -> None:
         with tempfile.TemporaryDirectory() as tmpdir:
@@ -148,6 +152,7 @@ class AskCuratedEvidenceTest(unittest.TestCase):
             self.assertIn("answer:", output)
             self.assertIn("evidence id:", output)
             self.assertIn("citation:", output)
+            self.assertIn("citation_url:", output)
 
     def test_supports_json_output(self) -> None:
         with tempfile.TemporaryDirectory() as tmpdir:
@@ -170,6 +175,10 @@ class AskCuratedEvidenceTest(unittest.TestCase):
             self.assertIn("36 pháp toàn thể vũ trụ", parsed["answer"])
             self.assertEqual(
                 parsed["evidence"][0]["evidence_id"], "evidence_fisp_arohzy8_0001"
+            )
+            self.assertEqual(
+                parsed["evidence"][0]["citation_url"],
+                "https://www.youtube.com/watch?v=FISpARohzy8&t=78s",
             )
 
     def test_respects_limit(self) -> None:
