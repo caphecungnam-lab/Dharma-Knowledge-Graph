@@ -186,6 +186,8 @@ class GraphService:
                 .definition,
                 .tradition,
                 .epistemic_type,
+                source_id: coalesce(center.source_id, center.last_source_id),
+                .source_type,
                 confidence: coalesce(center.last_confidence, 0.5)
             } AS node
             UNION
@@ -197,6 +199,8 @@ class GraphService:
                 .definition,
                 .tradition,
                 .epistemic_type,
+                source_id: coalesce(neighbor.source_id, neighbor.last_source_id),
+                .source_type,
                 confidence: coalesce(neighbor.last_confidence, 0.5)
             } AS node
             LIMIT 50

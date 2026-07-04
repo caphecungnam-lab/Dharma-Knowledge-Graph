@@ -6,6 +6,7 @@ from dkg_api.app.api.ai import router as ai_router
 from dkg_api.app.api.graph import router as graph_router
 from dkg_api.app.api.ingest import router as ingest_router
 from dkg_api.app.api.map import router as map_router
+from dkg_api.app.api.user import router as user_router
 from dkg_api.app.db.neo4j_client import Neo4jClient
 from dkg_api.app.db.qdrant_client import QdrantClient
 
@@ -15,6 +16,7 @@ app.include_router(ai_router)
 app.include_router(graph_router)
 app.include_router(ingest_router)
 app.include_router(map_router)
+app.include_router(user_router)
 
 
 @app.on_event("startup")
