@@ -32,6 +32,8 @@ class AIReasoner:
             "answer": answer,
             "confidence": confidence,
             "used_nodes": used_nodes,
+            "used_sources": self._used_sources(validated_context),
+            "epistemic_types": self._epistemic_types(validated_context),
             "tradition_distribution": self._tradition_distribution(validated_context),
         }
 
@@ -89,3 +91,21 @@ class AIReasoner:
             tradition: round((counts.get(tradition, 0) / total) * 100, 1)
             for tradition in base_traditions
         }
+
+    def _used_sources(self, contexts: list[dict[str, Any]]) -> list[str]:
+        sources = []
+        for context in contexts:
+            traceability = context.get("traceability") or {}
+            for source in traceability.get("sources") or []:
+                text = str(source)
+                if text and text not in sources:
+                    sources.append(text)
+        return sources
+
+    def _epistemic_types(self, contexts: list[dict[str, Any]]) -> list[str]:
+        epistemic_types = []
+        for context in contexts:
+            epistemic_type = str(context.get("epistemic_type") or "")
+            if epistemic_type and epistemic_type not in epistemic_types:
+                epistemic_types.append(epistemic_type)
+        return epistemic_types

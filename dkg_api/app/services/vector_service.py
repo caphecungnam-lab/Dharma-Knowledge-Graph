@@ -20,6 +20,10 @@ class VectorService:
             "node_id": concept["id"],
             "text": text,
             "tradition": concept["tradition"],
+            "source_id": concept.get("source_id"),
+            "source_url": concept.get("source_url"),
+            "source_type": concept.get("source_type"),
+            "citation_id": concept.get("citation_id"),
         }
         self.client.upsert_point(
             point_id=self.point_id_for_node(concept["id"]),
@@ -38,6 +42,10 @@ class VectorService:
                     "node_id": payload.get("node_id"),
                     "text": payload.get("text"),
                     "tradition": payload.get("tradition"),
+                    "source_id": payload.get("source_id"),
+                    "source_url": payload.get("source_url"),
+                    "source_type": payload.get("source_type"),
+                    "citation_id": payload.get("citation_id"),
                 }
             )
         return matches
