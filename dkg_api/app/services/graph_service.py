@@ -175,3 +175,82 @@ class GraphService:
         return {
             "node_counts": rows,
         }
+
+    def visualization_neighborhood(self, concept_id: str) -> dict[str, Any]:
+        nodes = self.client.execute_read(
+            """
+            MATCH (center {id: $concept_id})
+            RETURN center {
+                .id,
+                .label,
+                .definition,
+                .tradition,
+                .epistemic_type,
+                confidence: coalesce(center.last_confidence, 0.5)
+            } AS node
+            UNION
+            MATCH ({id: $concept_id})-[r]-(neighbor)
+            WHERE neighbor:Concept OR neighbor:Practice
+            RETURN neighbor {
+                .id,
+                .label,
+                .definition,
+                .tradition,
+                .epistemic_type,
+                confidence: coalesce(neighbor.last_confidence, 0.5)
+            } AS node
+            LIMIT 50
+            """,
+            concept_id=concept_id,
+        )
+        edges = self.client.execute_read(
+            """
+            MATCH (source {id: $concept_id})-[r]-(target)
+            WHERE target:Concept OR target:Practice
+            RETURN {
+                from: source.id,
+                to: target.id,
+                type: type(r),
+                strength: coalesce(r.confidence, target.last_confidence, 0.7)
+            } AS edge
+            LIMIT 80
+            """,
+            concept_id=concept_id,
+        )
+        contradictions = self.client.execute_read(
+            """
+            MATCH (c:Contradiction {concept: $concept_id})
+            RETURN {
+                from: c.tradition_a,
+                to: c.tradition_b,
+                type: toUpper(c.conflict_type) + "_CONFLICT",
+                strength: c.severity
+            } AS edge
+            """,
+            concept_id=concept_id,
+        )
+        return {
+            "nodes": [row["node"] for row in nodes],
+            "edges": [row["edge"] for row in edges]
+            + [row["edge"] for row in contradictions],
+        }
+
+    def path_between(self, source_id: str, target_id: str) -> list[dict[str, Any]]:
+        rows = self.client.execute_read(
+            """
+            MATCH path = shortestPath((source {id: $source_id})-[*..6]-(target {id: $target_id}))
+            WITH relationships(path) AS rels
+            UNWIND rels AS rel
+            WITH startNode(rel) AS source, endNode(rel) AS target, rel
+            RETURN {
+                from: source.id,
+                to: target.id,
+                type: type(rel),
+                confidence: coalesce(rel.confidence, target.last_confidence, 0.5),
+                tradition: coalesce(target.tradition, source.tradition, "shared_core")
+            } AS step
+            """,
+            source_id=source_id,
+            target_id=target_id,
+        )
+        return [row["step"] for row in rows]
