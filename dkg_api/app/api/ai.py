@@ -3,6 +3,8 @@ from __future__ import annotations
 from fastapi import APIRouter, Request
 from pydantic import BaseModel, Field
 
+from dkg_api.app.services.ai_reasoner import AIReasoner
+from dkg_api.app.services.epistemic_truth_system import EpistemicTruthSystem
 from dkg_api.app.services.graph_service import GraphService
 from dkg_api.app.services.vector_service import VectorService
 
@@ -17,20 +19,21 @@ class AskIn(BaseModel):
 def ask(payload: AskIn, request: Request) -> dict[str, object]:
     graph = GraphService(request.app.state.neo4j)
     vector = VectorService(request.app.state.qdrant)
+    truth_system = EpistemicTruthSystem()
+    reasoner = AIReasoner()
 
     matches = vector.search(payload.query)
-    merged_results = []
+    graph_vector_context = []
     for match in matches:
         node_id = str(match.get("node_id", ""))
         related = graph.related_concepts(node_id) if node_id else []
-        merged_results.append(
+        graph_vector_context.append(
             {
                 "match": match,
                 "related": related,
             }
         )
 
-    return {
-        "query": payload.query,
-        "results": merged_results,
-    }
+    evaluations = truth_system.evaluate(graph_vector_context)
+    validated_context = truth_system.filter_ai_usable(evaluations)
+    return reasoner.generate(payload.query, validated_context)

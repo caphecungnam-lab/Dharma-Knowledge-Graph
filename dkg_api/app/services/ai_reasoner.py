@@ -1,0 +1,91 @@
+from __future__ import annotations
+
+from collections import Counter
+from typing import Any
+
+from dkg_api.app.services.prompt_builder import PromptBuilder
+
+INSUFFICIENT_ANSWER = "Insufficient verified data in Dharma Knowledge Graph."
+
+
+class AIReasoner:
+    def __init__(self) -> None:
+        self.prompt_builder = PromptBuilder()
+
+    def generate(
+        self,
+        query: str,
+        validated_context: list[dict[str, Any]],
+    ) -> dict[str, object]:
+        if not validated_context:
+            return {
+                "answer": INSUFFICIENT_ANSWER,
+                "confidence": 0.0,
+            }
+
+        confidence = self._overall_confidence(validated_context)
+        prompt = self.prompt_builder.build(query, validated_context, confidence)
+        used_nodes = [context["node_id"] for context in validated_context]
+        answer = self._build_answer(prompt, validated_context, confidence)
+
+        return {
+            "answer": answer,
+            "confidence": confidence,
+            "used_nodes": used_nodes,
+            "tradition_distribution": self._tradition_distribution(validated_context),
+        }
+
+    def _overall_confidence(self, contexts: list[dict[str, Any]]) -> float:
+        if not contexts:
+            return 0.0
+        return round(
+            sum(float(context["confidence"]) for context in contexts) / len(contexts),
+            3,
+        )
+
+    def _build_answer(
+        self,
+        prompt: dict[str, object],
+        contexts: list[dict[str, Any]],
+        confidence: float,
+    ) -> str:
+        tone = str(prompt["tone"])
+        statements = []
+        for context in contexts:
+            match = context.get("match", {})
+            text = str(match.get("text") or "").strip()
+            tradition = str(match.get("tradition") or "").strip()
+            epistemic_type = str(context.get("epistemic_type") or "unknown")
+            if not text:
+                continue
+            if tone == "assertive":
+                statements.append(text)
+            elif tone == "academic":
+                prefix = f"In {tradition}, " if tradition else ""
+                statements.append(f"{prefix}{text}")
+            else:
+                statements.append(f"The validated context suggests: {text}")
+            if epistemic_type == "esoteric_view":
+                statements[-1] = f"Within the traceable esoteric context, {text}"
+
+        if not statements or confidence < 0.5:
+            return INSUFFICIENT_ANSWER
+
+        return " ".join(statements)
+
+    def _tradition_distribution(
+        self,
+        contexts: list[dict[str, Any]],
+    ) -> dict[str, float]:
+        base_traditions = ["theravada", "mahayana", "vajrayana"]
+        traditions = [
+            str(context.get("tradition") or "unknown") for context in contexts
+        ]
+        counts = Counter(traditions)
+        total = sum(counts.values())
+        if total == 0:
+            return {tradition: 0.0 for tradition in base_traditions}
+        return {
+            tradition: round((counts.get(tradition, 0) / total) * 100, 1)
+            for tradition in base_traditions
+        }
