@@ -1,14 +1,20 @@
 from __future__ import annotations
 
+import os
+
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 from starlette.responses import PlainTextResponse
 
 from dkg_api.app.api.ai import router as ai_router
+from dkg_api.app.api.auth import router as auth_router
 from dkg_api.app.api.graph import router as graph_router
 from dkg_api.app.api.ingest import router as ingest_router
 from dkg_api.app.api.map import router as map_router
+from dkg_api.app.api.node import router as node_router
 from dkg_api.app.api.observability import router as observability_router
 from dkg_api.app.api.user import router as user_router
+from dkg_api.app.auth.middleware import JWTAuthMiddleware
 from dkg_api.app.db.neo4j_client import Neo4jClient
 from dkg_api.app.db.qdrant_client import QdrantClient
 from dkg_api.app.db.redis_client import RedisClient
@@ -21,13 +27,30 @@ from dkg_api.app.security.middleware import ApiKeyAndRateLimitMiddleware
 from dkg_api.app.services.epistemic_truth_system import EpistemicTruthSystem
 
 app = FastAPI(title="Dharma Knowledge Graph API", version="0.1.0")
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[
+        origin.strip()
+        for origin in os.getenv(
+            "DKG_CORS_ORIGINS",
+            "http://localhost:3000,http://localhost:3001",
+        ).split(",")
+        if origin.strip()
+    ],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 app.add_middleware(InjectionGuardMiddleware)
+app.add_middleware(JWTAuthMiddleware)
 app.add_middleware(ApiKeyAndRateLimitMiddleware)
 
+app.include_router(auth_router)
 app.include_router(ai_router)
 app.include_router(graph_router)
 app.include_router(ingest_router)
 app.include_router(map_router)
+app.include_router(node_router)
 app.include_router(observability_router)
 app.include_router(user_router)
 

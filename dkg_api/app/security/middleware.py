@@ -11,6 +11,7 @@ from starlette.responses import JSONResponse, Response
 from dkg_api.app.db.redis_client import RedisClient
 
 PUBLIC_PATHS = {
+    "/auth/login",
     "/health",
     "/metrics",
     "/metrics/prometheus",

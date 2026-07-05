@@ -16,4 +16,4 @@ USER dkg
 
 EXPOSE 8000
 
-CMD ["uvicorn", "dkg_api.app.main:app", "--host", "0.0.0.0", "--port", "8000", "--proxy-headers"]
+CMD ["gunicorn", "dkg_api.app.main:app", "-k", "uvicorn.workers.UvicornWorker", "--bind", "0.0.0.0:8000", "--workers", "2", "--timeout", "120", "--access-logfile", "-", "--error-logfile", "-"]

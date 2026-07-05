@@ -1,22 +1,22 @@
 {
-  "serviceName": "dkg-backend-service",
+  "serviceName": "dkg-frontend-service",
   "cluster": "dkg-prod",
-  "taskDefinition": "dkg-api",
+  "taskDefinition": "dkg-frontend",
   "desiredCount": 2,
   "launchType": "FARGATE",
   "platformVersion": "LATEST",
   "networkConfiguration": {
     "awsvpcConfiguration": {
       "subnets": ["subnet-private-a", "subnet-private-b"],
-      "securityGroups": ["sg-dkg-backend"],
+      "securityGroups": ["sg-dkg-frontend"],
       "assignPublicIp": "DISABLED"
     }
   },
   "loadBalancers": [
     {
-      "targetGroupArn": "arn:aws:elasticloadbalancing:<region>:<account-id>:targetgroup/dkg-backend/target-id",
-      "containerName": "api",
-      "containerPort": 8000
+      "targetGroupArn": "arn:aws:elasticloadbalancing:<region>:<account-id>:targetgroup/dkg-frontend/target-id",
+      "containerName": "frontend",
+      "containerPort": 3000
     }
   ],
   "deploymentConfiguration": {

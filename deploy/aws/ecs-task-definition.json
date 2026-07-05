@@ -19,8 +19,16 @@
       ],
       "environment": [
         {
+          "name": "ENV",
+          "value": "production"
+        },
+        {
           "name": "ENVIRONMENT",
           "value": "production"
+        },
+        {
+          "name": "DEBUG",
+          "value": "false"
         },
         {
           "name": "QDRANT_PORT",
@@ -35,6 +43,22 @@
         {
           "name": "DKG_API_KEY",
           "valueFrom": "/dkg/prod/api-key"
+        },
+        {
+          "name": "DKG_JWT_SECRET",
+          "valueFrom": "/dkg/prod/jwt-secret"
+        },
+        {
+          "name": "DKG_ADMIN_USER",
+          "valueFrom": "/dkg/prod/admin-user"
+        },
+        {
+          "name": "DKG_ADMIN_PASSWORD",
+          "valueFrom": "/dkg/prod/admin-password"
+        },
+        {
+          "name": "DKG_CORS_ORIGINS",
+          "valueFrom": "/dkg/prod/cors-origins"
         },
         {
           "name": "NEO4J_URI",

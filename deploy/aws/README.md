@@ -2,7 +2,8 @@
 
 Production target:
 
-- FastAPI runs as stateless ECS Fargate tasks.
+- FastAPI runs as stateless ECS Fargate tasks behind the backend target group.
+- Next.js runs as stateless ECS Fargate tasks behind the frontend target group.
 - Neo4j, Qdrant, and Redis endpoints are supplied by AWS SSM Parameter Store or
   Secrets Manager.
 - HTTPS terminates at an Application Load Balancer.
@@ -11,13 +12,25 @@ Production target:
 Required SSM parameters:
 
 - `/dkg/prod/api-key`
+- `/dkg/prod/jwt-secret`
+- `/dkg/prod/admin-user`
+- `/dkg/prod/admin-password`
+- `/dkg/prod/cors-origins`
 - `/dkg/prod/neo4j-uri`
 - `/dkg/prod/neo4j-user`
 - `/dkg/prod/neo4j-password`
 - `/dkg/prod/qdrant-host`
 - `/dkg/prod/redis-url`
+- `/dkg/prod/frontend-api-url`
 
-Build and push image:
+ALB routing:
+
+- `https://dkg.yourdomain.com/*` -> `dkg-frontend-service`
+- `https://api.dkg.yourdomain.com/*` -> `dkg-backend-service`
+- ACM certificate is attached to the HTTPS listener.
+- HTTP listener redirects to HTTPS.
+
+Build and push images:
 
 ```bash
 AWS_REGION=us-east-1 AWS_ACCOUNT_ID=123456789012 ./deploy/aws/ecr-build-push.sh
@@ -27,11 +40,13 @@ Deploy:
 
 ```bash
 aws ecs register-task-definition --cli-input-json file://deploy/aws/ecs-task-definition.json
-aws ecs update-service --cluster dkg-prod --service dkg-api --force-new-deployment
+aws ecs register-task-definition --cli-input-json file://deploy/aws/frontend-task-definition.json
+aws ecs update-service --cluster dkg-prod --service dkg-backend-service --force-new-deployment
+aws ecs update-service --cluster dkg-prod --service dkg-frontend-service --force-new-deployment
 ```
 
 Scaling:
 
 - Set ECS service desired count to at least `2`.
 - Use target tracking on ALB request count or CPU utilization.
-- Keep API containers stateless; Redis stores shared cache/rate-limit state.
+- Keep API and frontend containers stateless; Redis stores shared cache/rate-limit state.

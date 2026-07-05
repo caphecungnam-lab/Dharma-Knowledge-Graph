@@ -298,3 +298,39 @@ class GraphService:
             target_id=target_id,
         )
         return [row["step"] for row in rows]
+
+    def node_details(self, node_id: str) -> dict[str, Any] | None:
+        rows = self.client.execute_read(
+            """
+            MATCH (n {id: $node_id})
+            WHERE n:Concept OR n:Practice
+            RETURN n {
+                .id,
+                .label,
+                .definition,
+                epistemic_type: coalesce(n.epistemic_type, "unknown"),
+                confidence: coalesce(n.last_confidence, 0.5),
+                tradition: coalesce(n.tradition, "unknown"),
+                source_id: coalesce(n.source_id, n.last_source_id)
+            } AS node
+            LIMIT 1
+            """,
+            node_id=node_id,
+        )
+        if not rows:
+            return None
+        node = rows[0]["node"]
+        tradition = str(node.get("tradition") or "unknown").lower()
+        return {
+            "id": node.get("id") or node_id,
+            "label": node.get("label") or node_id,
+            "definition": node.get("definition") or "",
+            "epistemic_type": node.get("epistemic_type") or "unknown",
+            "confidence": float(node.get("confidence") or 0.0),
+            "traditions": {
+                "theravada": "aligned" if tradition == "theravada" else "none",
+                "mahayana": "aligned" if tradition == "mahayana" else "none",
+                "vajrayana": "aligned" if tradition == "vajrayana" else "none",
+            },
+            "sources": [node["source_id"]] if node.get("source_id") else [],
+        }
