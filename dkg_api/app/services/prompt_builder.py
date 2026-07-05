@@ -29,6 +29,11 @@ class PromptBuilder:
             str(context.get("epistemic_type") or "unknown")
             for context in validated_context
         }
-        if "interpretive_view" in epistemic_types or "esoteric_view" in epistemic_types:
+        if epistemic_types & {
+            "interpretive",
+            "interpretive_view",
+            "esoteric",
+            "esoteric_view",
+        }:
             return "interpretive"
         return tone_for_confidence(confidence)

@@ -1,0 +1,297 @@
+{
+  "system_status": "unstable",
+  "latency_baseline": {
+    "avg_latency_ms": 0.865,
+    "max_latency_ms": 1.067,
+    "min_latency_ms": 0.803,
+    "bottleneck_stage": "retrieval",
+    "stage_averages_ms": {
+      "retrieval": 0.514,
+      "truth_engine": 0.01,
+      "ai": 0.0
+    },
+    "samples": [
+      {
+        "query": "karma",
+        "api_response_ms": 0.456,
+        "retrieval_ms": 0.589,
+        "truth_engine_ms": 0.012,
+        "ai_ms": 0.0,
+        "total_pipeline_ms": 1.067,
+        "after_truth_filter": 0,
+        "errors": [
+          "<urlopen error [Errno 1] Operation not permitted>",
+          "No module named 'qdrant_client'",
+          "No module named 'neo4j'"
+        ]
+      },
+      {
+        "query": "death in Buddhism",
+        "api_response_ms": 0.357,
+        "retrieval_ms": 0.62,
+        "truth_engine_ms": 0.012,
+        "ai_ms": 0.0,
+        "total_pipeline_ms": 0.997,
+        "after_truth_filter": 0,
+        "errors": [
+          "<urlopen error [Errno 1] Operation not permitted>",
+          "No module named 'qdrant_client'",
+          "No module named 'neo4j'"
+        ]
+      },
+      {
+        "query": "impermanence",
+        "api_response_ms": 0.343,
+        "retrieval_ms": 0.493,
+        "truth_engine_ms": 0.009,
+        "ai_ms": 0.0,
+        "total_pipeline_ms": 0.851,
+        "after_truth_filter": 0,
+        "errors": [
+          "<urlopen error [Errno 1] Operation not permitted>",
+          "No module named 'qdrant_client'",
+          "No module named 'neo4j'"
+        ]
+      },
+      {
+        "query": "nirvana meaning",
+        "api_response_ms": 0.321,
+        "retrieval_ms": 0.484,
+        "truth_engine_ms": 0.008,
+        "ai_ms": 0.0,
+        "total_pipeline_ms": 0.82,
+        "after_truth_filter": 0,
+        "errors": [
+          "<urlopen error [Errno 1] Operation not permitted>",
+          "No module named 'qdrant_client'",
+          "No module named 'neo4j'"
+        ]
+      },
+      {
+        "query": "compare Theravada and Mahayana",
+        "api_response_ms": 0.319,
+        "retrieval_ms": 0.484,
+        "truth_engine_ms": 0.008,
+        "ai_ms": 0.0,
+        "total_pipeline_ms": 0.818,
+        "after_truth_filter": 0,
+        "errors": [
+          "<urlopen error [Errno 1] Operation not permitted>",
+          "No module named 'qdrant_client'",
+          "No module named 'neo4j'"
+        ]
+      },
+      {
+        "query": "karma",
+        "api_response_ms": 0.308,
+        "retrieval_ms": 0.48,
+        "truth_engine_ms": 0.008,
+        "ai_ms": 0.0,
+        "total_pipeline_ms": 0.803,
+        "after_truth_filter": 0,
+        "errors": [
+          "<urlopen error [Errno 1] Operation not permitted>",
+          "No module named 'qdrant_client'",
+          "No module named 'neo4j'"
+        ]
+      },
+      {
+        "query": "death in Buddhism",
+        "api_response_ms": 0.309,
+        "retrieval_ms": 0.481,
+        "truth_engine_ms": 0.008,
+        "ai_ms": 0.0,
+        "total_pipeline_ms": 0.804,
+        "after_truth_filter": 0,
+        "errors": [
+          "<urlopen error [Errno 1] Operation not permitted>",
+          "No module named 'qdrant_client'",
+          "No module named 'neo4j'"
+        ]
+      },
+      {
+        "query": "impermanence",
+        "api_response_ms": 0.312,
+        "retrieval_ms": 0.482,
+        "truth_engine_ms": 0.008,
+        "ai_ms": 0.0,
+        "total_pipeline_ms": 0.809,
+        "after_truth_filter": 0,
+        "errors": [
+          "<urlopen error [Errno 1] Operation not permitted>",
+          "No module named 'qdrant_client'",
+          "No module named 'neo4j'"
+        ]
+      },
+      {
+        "query": "nirvana meaning",
+        "api_response_ms": 0.308,
+        "retrieval_ms": 0.488,
+        "truth_engine_ms": 0.013,
+        "ai_ms": 0.0,
+        "total_pipeline_ms": 0.815,
+        "after_truth_filter": 0,
+        "errors": [
+          "<urlopen error [Errno 1] Operation not permitted>",
+          "No module named 'qdrant_client'",
+          "No module named 'neo4j'"
+        ]
+      },
+      {
+        "query": "compare Theravada and Mahayana",
+        "api_response_ms": 0.305,
+        "retrieval_ms": 0.542,
+        "truth_engine_ms": 0.01,
+        "ai_ms": 0.0,
+        "total_pipeline_ms": 0.863,
+        "after_truth_filter": 0,
+        "errors": [
+          "<urlopen error [Errno 1] Operation not permitted>",
+          "No module named 'qdrant_client'",
+          "No module named 'neo4j'"
+        ]
+      }
+    ]
+  },
+  "retrieval_health": {
+    "queries": [
+      {
+        "query": "karma",
+        "neo4j_nodes": 0,
+        "qdrant_results": 0,
+        "after_truth_filter": 0,
+        "rejection_rate": 0.0,
+        "errors": [
+          "No module named 'qdrant_client'",
+          "No module named 'neo4j'"
+        ]
+      },
+      {
+        "query": "death in Buddhism",
+        "neo4j_nodes": 0,
+        "qdrant_results": 0,
+        "after_truth_filter": 0,
+        "rejection_rate": 0.0,
+        "errors": [
+          "No module named 'qdrant_client'",
+          "No module named 'neo4j'"
+        ]
+      },
+      {
+        "query": "impermanence",
+        "neo4j_nodes": 0,
+        "qdrant_results": 0,
+        "after_truth_filter": 0,
+        "rejection_rate": 0.0,
+        "errors": [
+          "No module named 'qdrant_client'",
+          "No module named 'neo4j'"
+        ]
+      },
+      {
+        "query": "nirvana meaning",
+        "neo4j_nodes": 0,
+        "qdrant_results": 0,
+        "after_truth_filter": 0,
+        "rejection_rate": 0.0,
+        "errors": [
+          "No module named 'qdrant_client'",
+          "No module named 'neo4j'"
+        ]
+      },
+      {
+        "query": "compare Theravada and Mahayana",
+        "neo4j_nodes": 0,
+        "qdrant_results": 0,
+        "after_truth_filter": 0,
+        "rejection_rate": 0.0,
+        "errors": [
+          "No module named 'qdrant_client'",
+          "No module named 'neo4j'"
+        ]
+      }
+    ],
+    "avg_rejection_rate": 0.0
+  },
+  "safety_health": {
+    "status": "ok",
+    "critical_failures": [],
+    "cases": [
+      {
+        "case": "normal query",
+        "query": "karma",
+        "gateway_mode": "core_fact",
+        "gateway_triggered": true,
+        "sanitizer_applied": true,
+        "output_validator_active": true,
+        "api_safety_surface": true,
+        "bypass_detected": false,
+        "api_error": "<urlopen error [Errno 1] Operation not permitted>"
+      },
+      {
+        "case": "ambiguous philosophical query",
+        "query": "what is reality",
+        "gateway_mode": "reject",
+        "gateway_triggered": true,
+        "sanitizer_applied": true,
+        "output_validator_active": true,
+        "api_safety_surface": true,
+        "bypass_detected": false,
+        "api_error": "<urlopen error [Errno 1] Operation not permitted>"
+      },
+      {
+        "case": "esoteric Vajrayana query",
+        "query": "Kim Cương Thừa nói gì về cái chết?",
+        "gateway_mode": "esoteric",
+        "gateway_triggered": true,
+        "sanitizer_applied": true,
+        "output_validator_active": true,
+        "api_safety_surface": true,
+        "bypass_detected": false,
+        "api_error": "<urlopen error [Errno 1] Operation not permitted>"
+      },
+      {
+        "case": "intentionally vague query",
+        "query": "tell me something",
+        "gateway_mode": "reject",
+        "gateway_triggered": true,
+        "sanitizer_applied": true,
+        "output_validator_active": true,
+        "api_safety_surface": true,
+        "bypass_detected": false,
+        "api_error": "<urlopen error [Errno 1] Operation not permitted>"
+      }
+    ]
+  },
+  "graph_health": {
+    "total_nodes": 0,
+    "orphan_nodes": 0,
+    "invalid_nodes": 0,
+    "duplicate_concepts": 0,
+    "cluster_count": 0,
+    "status": "fail",
+    "error": "No module named 'neo4j'"
+  },
+  "truth_engine_health": {
+    "core_fact": 1,
+    "doctrinal_view": 1,
+    "interpretive_view": 1,
+    "esoteric_view": 1,
+    "unknown": 1,
+    "confidence_distribution": [
+      1.0,
+      0.92,
+      0.657,
+      0.8,
+      0.4
+    ],
+    "rejection_rate": 0.2
+  },
+  "bottlenecks": [
+    "retrieval"
+  ],
+  "risk_flags": [
+    "one_or_more_core_health_checks_failed",
+    "graph_health_unavailable"
+  ]
+}

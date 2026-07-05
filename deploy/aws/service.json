@@ -1,0 +1,26 @@
+{
+  "serviceName": "dkg-api",
+  "cluster": "dkg-prod",
+  "taskDefinition": "dkg-api",
+  "desiredCount": 2,
+  "launchType": "FARGATE",
+  "platformVersion": "LATEST",
+  "networkConfiguration": {
+    "awsvpcConfiguration": {
+      "subnets": ["subnet-private-a", "subnet-private-b"],
+      "securityGroups": ["sg-dkg-api"],
+      "assignPublicIp": "DISABLED"
+    }
+  },
+  "loadBalancers": [
+    {
+      "targetGroupArn": "arn:aws:elasticloadbalancing:<region>:<account-id>:targetgroup/dkg-api/target-id",
+      "containerName": "api",
+      "containerPort": 8000
+    }
+  ],
+  "deploymentConfiguration": {
+    "maximumPercent": 200,
+    "minimumHealthyPercent": 100
+  }
+}

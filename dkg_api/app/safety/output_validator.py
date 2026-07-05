@@ -3,7 +3,11 @@ from __future__ import annotations
 import re
 from typing import Any
 
-from dkg_api.app.safety.safety_policy import EPISTEMIC_LAYERS, SafetyPolicy
+from dkg_api.app.safety.safety_policy import (
+    EPISTEMIC_LAYERS,
+    SafetyPolicy,
+    normalize_epistemic_type,
+)
 
 
 class OutputValidator:
@@ -35,20 +39,27 @@ class OutputValidator:
         context_node_ids = {str(node.get("node_id") or "") for node in context}
         context_sources = self._context_sources(context)
         used_nodes = {str(node_id) for node_id in answer.get("used_nodes", [])}
+        used_sources = {str(source_id) for source_id in answer.get("used_sources", [])}
         confidence = float(answer.get("confidence") or 0.0)
 
         if not context:
             errors.append("missing_context")
         if not used_nodes or not used_nodes.issubset(context_node_ids):
             errors.append("missing_node_id_references")
-        if not context_sources:
+        if not context_sources or not used_sources.issubset(context_sources):
             errors.append("missing_source_id_references")
-        if any(node.get("epistemic_type") not in EPISTEMIC_LAYERS for node in context):
+        if any(
+            node.get("epistemic_type") not in EPISTEMIC_LAYERS
+            or normalize_epistemic_type(node.get("epistemic_type")) == "unknown"
+            for node in context
+        ):
             errors.append("missing_epistemic_type_tags")
         if self._merges_traditions(answer.get("answer", ""), context):
             errors.append("incorrect_tradition_merge")
         if self.policy.apply_tone_rules(confidence) == "refuse":
             errors.append("confidence_requires_refusal")
+        if self._missing_sentence_mappings(answer, context_node_ids):
+            errors.append("missing_sentence_node_mapping")
         if self._contains_untraceable_claim(answer.get("answer", ""), context):
             errors.append("untraceable_claim")
         return errors
@@ -56,6 +67,8 @@ class OutputValidator:
     def _context_sources(self, context: list[dict[str, Any]]) -> set[str]:
         sources = set()
         for node in context:
+            for source in node.get("source_ids") or []:
+                sources.add(str(source))
             traceability = node.get("traceability") or {}
             for source in traceability.get("sources") or []:
                 sources.add(str(source))
@@ -81,7 +94,7 @@ class OutputValidator:
     ) -> bool:
         sentences = [
             sentence.strip()
-            for sentence in re.split(r"(?<=[.!?])\\s+", answer)
+            for sentence in re.split(r"(?<=[.!?])\s+", answer)
             if sentence.strip()
         ]
         if not sentences:
@@ -95,6 +108,28 @@ class OutputValidator:
             if normalized and normalized not in context_text:
                 return True
         return False
+
+    def _missing_sentence_mappings(
+        self,
+        answer: dict[str, Any],
+        context_node_ids: set[str],
+    ) -> bool:
+        answer_text = str(answer.get("answer") or "")
+        sentences = [
+            sentence.strip()
+            for sentence in re.split(r"(?<=[.!?])\s+", answer_text)
+            if sentence.strip()
+        ]
+        mappings = answer.get("sentence_node_map")
+        if not sentences or not isinstance(mappings, dict):
+            return True
+
+        mapped_node_ids = {str(value) for value in mappings.values()}
+        if not mapped_node_ids.issubset(context_node_ids):
+            return True
+
+        normalized_keys = {str(key).strip().rstrip(".!?") for key in mappings}
+        return any(sentence.rstrip(".!?") not in normalized_keys for sentence in sentences)
 
     def _remove_approved_prefix(self, sentence: str) -> str:
         if sentence.startswith("the validated context suggests:"):

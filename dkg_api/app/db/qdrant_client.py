@@ -54,6 +54,22 @@ class QdrantClient:
             ],
         )
 
+    def upsert_points(self, points: list[dict[str, Any]]) -> None:
+        if not points:
+            return
+        self.ensure_collection()
+        self.client.upsert(
+            collection_name=COLLECTION_NAME,
+            points=[
+                models.PointStruct(
+                    id=point["point_id"],
+                    vector=point["vector"],
+                    payload=point["payload"],
+                )
+                for point in points
+            ],
+        )
+
     def search(self, vector: list[float], limit: int = 5) -> list[Any]:
         self.ensure_collection()
         return self.client.search(

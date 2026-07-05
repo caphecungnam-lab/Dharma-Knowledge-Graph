@@ -6,8 +6,9 @@ from dkg_api.app.safety.context_sanitizer import ContextSanitizer
 from dkg_api.app.safety.epistemic_gateway import EpistemicGateway
 from dkg_api.app.safety.output_validator import OutputValidator
 from dkg_api.app.safety.retrieval_control_layer import RetrievalControlLayer
-from dkg_api.app.safety.safety_policy import SafetyPolicy
+from dkg_api.app.safety.safety_policy import SafetyPolicy, rejected_response
 from dkg_api.app.services.ai_reasoner import AIReasoner
+from dkg_api.app.services.epistemic_truth_system import EpistemicTruthSystem
 
 
 class FakeVector:
@@ -55,6 +56,10 @@ class SafetyArchitectureTest(unittest.TestCase):
             "multi_tradition",
         )
         self.assertEqual(gateway.classify_query("What is bardo?")["mode"], "esoteric")
+        self.assertEqual(
+            gateway.classify_query("Kim Cương Thừa nói gì về cái chết?")["mode"],
+            "esoteric",
+        )
         self.assertEqual(gateway.classify_query("Invent a doctrine")["mode"], "reject")
 
     def test_retrieval_control_rejects_untraceable_and_low_confidence_nodes(self):
@@ -104,6 +109,8 @@ class SafetyArchitectureTest(unittest.TestCase):
         result = ContextSanitizer().sanitize(context, allowed_layers=["core_fact"])
 
         self.assertEqual([node["node_id"] for node in result], ["concept_dukkha"])
+        self.assertEqual(result[0]["source_ids"], ["source_sutta_001"])
+        self.assertEqual(result[0]["epistemic_type"], "core_fact")
 
     def test_output_validator_approves_traceable_reasoner_output(self):
         context = self.valid_context()
@@ -149,6 +156,71 @@ class SafetyArchitectureTest(unittest.TestCase):
         self.assertEqual(policy.apply_tone_rules(0.75), "academic")
         self.assertEqual(policy.apply_tone_rules(0.55), "interpretive")
         self.assertEqual(policy.apply_tone_rules(0.2), "refuse")
+
+    def test_dkg024_end_to_end_esoteric_query_passes_all_hooks(self):
+        query = "Kim Cương Thừa nói gì về cái chết?"
+        gateway = EpistemicGateway()
+        vector = FakeVector(
+            [
+                {
+                    "node_id": "concept_bardo_death",
+                    "score": 0.93,
+                    "text": "Bardo frames death as a transition within Vajrayana context.",
+                    "tradition": "vajrayana",
+                    "source_id": "source_tantra_001",
+                    "source_type": "commentary",
+                }
+            ]
+        )
+        graph = FakeGraph()
+
+        classification = gateway.classify_query(query)
+        retrieved = RetrievalControlLayer().fetch(query, vector, graph)
+        evaluated = EpistemicTruthSystem().evaluate(retrieved)
+        sanitized = ContextSanitizer().sanitize(
+            evaluated,
+            allowed_layers=classification["allowed_layers"],
+        )
+        answer = AIReasoner().generate(query, sanitized)
+        validation = OutputValidator().validate(answer, sanitized)
+
+        self.assertEqual(classification["mode"], "esoteric")
+        self.assertEqual(sanitized[0]["epistemic_type"], "esoteric")
+        self.assertEqual(sanitized[0]["source_ids"], ["source_tantra_001"])
+        self.assertEqual(validation["status"], "APPROVED")
+        self.assertIn("concept_bardo_death", answer["used_nodes"])
+        self.assertIn("source_tantra_001", answer["used_sources"])
+
+    def test_dkg024_failure_mode_returns_controlled_rejection(self):
+        query = "Kim Cương Thừa nói gì về cái chết?"
+        classification = EpistemicGateway().classify_query(query)
+        retrieved = RetrievalControlLayer().fetch(
+            query,
+            FakeVector(
+                [
+                    {
+                        "node_id": "unsafe_bardo",
+                        "score": 0.95,
+                        "text": "No traceable source.",
+                        "tradition": "vajrayana",
+                    }
+                ]
+            ),
+            FakeGraph(),
+        )
+
+        response = rejected_response(
+            ["sanitized_epistemic_context"],
+            safety={
+                "gateway": classification,
+                "stopped_at": "context_sanitizer",
+            },
+        )
+
+        self.assertEqual(retrieved, [])
+        self.assertEqual(response["status"], "rejected")
+        self.assertEqual(response["reason"], "epistemic_safety_violation")
+        self.assertEqual(response["missing"], ["sanitized_epistemic_context"])
 
 
 if __name__ == "__main__":

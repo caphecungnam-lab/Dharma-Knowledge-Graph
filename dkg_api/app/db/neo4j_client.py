@@ -23,6 +23,23 @@ class Neo4jClient:
         except Exception as error:
             return {"ok": False, "error": str(error)}
 
+    def ensure_indexes(self) -> None:
+        statements = [
+            "CREATE INDEX concept_id IF NOT EXISTS FOR (c:Concept) ON (c.id)",
+            (
+                "CREATE INDEX concept_epistemic_type IF NOT EXISTS "
+                "FOR (c:Concept) ON (c.epistemic_type)"
+            ),
+            "CREATE INDEX concept_tradition IF NOT EXISTS FOR (c:Concept) ON (c.tradition)",
+            "CREATE INDEX practice_id IF NOT EXISTS FOR (p:Practice) ON (p.id)",
+            (
+                "CREATE INDEX contradiction_concept IF NOT EXISTS "
+                "FOR (c:Contradiction) ON (c.concept)"
+            ),
+        ]
+        for statement in statements:
+            self.execute_write(statement)
+
     def execute_write(self, query: str, **parameters: Any) -> list[dict[str, Any]]:
         with self.driver.session() as session:
             result = session.execute_write(

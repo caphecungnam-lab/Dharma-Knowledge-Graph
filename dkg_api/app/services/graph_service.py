@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from typing import Any
 
+from dkg_api.app.cache.graph_cache import graph_cache
 from dkg_api.app.db.neo4j_client import Neo4jClient
 
 
@@ -15,13 +16,27 @@ class GraphService:
             MERGE (c:Concept {id: $id})
             SET c.label = $label,
                 c.definition = $definition,
-                c.tradition = $tradition
+                c.tradition = $tradition,
+                c.source_id = $source_id,
+                c.source_type = $source_type,
+                c.epistemic_type = coalesce(c.epistemic_type, "core_fact"),
+                c.last_confidence = coalesce(c.last_confidence, 0.9)
             RETURN c
             """,
-            **concept,
+            id=concept["id"],
+            label=concept["label"],
+            definition=concept["definition"],
+            tradition=concept["tradition"],
+            source_id=concept.get("source_id") or "seed_data",
+            source_type=concept.get("source_type") or "seed_data",
         )
 
     def related_concepts(self, node_id: str) -> list[dict[str, Any]]:
+        cache_key = f"related:{node_id}"
+        cached = graph_cache.get(cache_key)
+        if cached is not None:
+            return cached
+
         rows = self.client.execute_read(
             """
             MATCH (:Concept {id: $id})-[:RELATED_TO]-(related:Concept)
@@ -29,11 +44,36 @@ class GraphService:
                 .id,
                 .label,
                 .definition,
-                .tradition
+                .tradition,
+                source_id: coalesce(related.source_id, related.last_source_id),
+                .source_type
             } AS concept
             LIMIT 10
             """,
             id=node_id,
+        )
+        concepts = [row["concept"] for row in rows]
+        graph_cache.set(cache_key, concepts, ttl_seconds=300)
+        return concepts
+
+    def search_concepts(self, query: str, limit: int = 10) -> list[dict[str, Any]]:
+        rows = self.client.execute_read(
+            """
+            MATCH (c:Concept)
+            WHERE toLower(c.label) CONTAINS toLower($query)
+               OR toLower(c.definition) CONTAINS toLower($query)
+            RETURN c {
+                node_id: c.id,
+                text: c.definition,
+                .tradition,
+                source_id: coalesce(c.source_id, c.last_source_id),
+                .source_type,
+                score: coalesce(c.last_confidence, 0.6)
+            } AS concept
+            LIMIT $limit
+            """,
+            query=query,
+            limit=limit,
         )
         return [row["concept"] for row in rows]
 
