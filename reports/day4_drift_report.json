@@ -1,0 +1,12 @@
+{
+  "drift_detected": true,
+  "affected_concepts": [
+    "concept_chết",
+    "concept_nirvana",
+    "concept_non_self",
+    "concept_suffering",
+    "concept_sáu_căn"
+  ],
+  "severity": "high",
+  "confidence_spikes": []
+}

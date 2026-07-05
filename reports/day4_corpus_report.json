@@ -1,0 +1,856 @@
+{
+  "status": "ok",
+  "total_documents_processed": 1,
+  "total_chunks_created": 13,
+  "nodes_accepted": 21,
+  "nodes_rejected": 3,
+  "rejection_reasons": {
+    "no_explicit_concept": 3
+  },
+  "conflict_clusters_detected": [],
+  "drift_signals_detected": {
+    "drift_detected": false,
+    "affected_concepts": [],
+    "severity": "low"
+  },
+  "documents": [
+    {
+      "status": "ok",
+      "source_id": "source_youtube_fisp_arohzy8",
+      "title": "1A. KINH 6 6 L2CÂU 1 P1",
+      "tradition": "theravada",
+      "language": "vi",
+      "chunks_created": 13,
+      "accepted_nodes": [
+        {
+          "node_id": "concept_kinh_66",
+          "epistemic_type": "doctrinal_view",
+          "confidence": 0.86,
+          "tradition_alignment": {
+            "theravada": "aligned",
+            "mahayana": "none",
+            "vajrayana": "none"
+          },
+          "conflict": {
+            "type": "none",
+            "severity": 0.0
+          },
+          "traceability": {
+            "node_id": "concept_kinh_66",
+            "sources": [
+              "source_youtube_fisp_arohzy8"
+            ],
+            "graph_links": []
+          },
+          "ai_usage_allowed": true,
+          "match": {
+            "node_id": "concept_kinh_66",
+            "node_type": "Concept",
+            "label": "kinh 66",
+            "definition": "Tiếp tục bài kinh 66 thì trước tiên tôi xin tóm trước rồi hai vị Phật tử sẽ nhắc lại rồi chúng ta sẽ đi vào trả lời bài câu hỏi số 1 thì ở đây bài kinh 66 gồm tất cả là sáu phần.",
+            "text": "Tiếp tục bài kinh 66 thì trước tiên tôi xin tóm trước rồi hai vị Phật tử sẽ nhắc lại rồi chúng ta sẽ đi vào trả lời bài câu hỏi số 1 thì ở đây bài kinh 66 gồm tất cả là sáu phần.",
+            "tradition": "theravada",
+            "source_id": "source_youtube_fisp_arohzy8",
+            "source_type": "dharma_talk",
+            "chunk_id": "source_youtube_fisp_arohzy8_chunk_0001",
+            "score": 0.86,
+            "epistemic_type": "doctrinal"
+          },
+          "related": [],
+          "tradition": "theravada"
+        },
+        {
+          "node_id": "concept_sáu_căn",
+          "epistemic_type": "doctrinal_view",
+          "confidence": 0.86,
+          "tradition_alignment": {
+            "theravada": "aligned",
+            "mahayana": "none",
+            "vajrayana": "none"
+          },
+          "conflict": {
+            "type": "none",
+            "severity": 0.0
+          },
+          "traceability": {
+            "node_id": "concept_sáu_căn",
+            "sources": [
+              "source_youtube_fisp_arohzy8"
+            ],
+            "graph_links": []
+          },
+          "ai_usage_allowed": true,
+          "match": {
+            "node_id": "concept_sáu_căn",
+            "node_type": "Concept",
+            "label": "sáu căn",
+            "definition": "Thân là sáu căn không?",
+            "text": "Thân là sáu căn không?",
+            "tradition": "theravada",
+            "source_id": "source_youtube_fisp_arohzy8",
+            "source_type": "dharma_talk",
+            "chunk_id": "source_youtube_fisp_arohzy8_chunk_0001",
+            "score": 0.86,
+            "epistemic_type": "doctrinal"
+          },
+          "related": [],
+          "tradition": "theravada"
+        },
+        {
+          "node_id": "concept_sáu_trần",
+          "epistemic_type": "doctrinal_view",
+          "confidence": 0.86,
+          "tradition_alignment": {
+            "theravada": "aligned",
+            "mahayana": "none",
+            "vajrayana": "none"
+          },
+          "conflict": {
+            "type": "none",
+            "severity": 0.0
+          },
+          "traceability": {
+            "node_id": "concept_sáu_trần",
+            "sources": [
+              "source_youtube_fisp_arohzy8"
+            ],
+            "graph_links": []
+          },
+          "ai_usage_allowed": true,
+          "match": {
+            "node_id": "concept_sáu_trần",
+            "node_type": "Concept",
+            "label": "sáu trần",
+            "definition": "Chiều dọc thì sáu căn gồm có mắt, tay mũi, lưỡi, thân, ý và sáu trần sắc thân giữa xuất khóa và sáu thức là nhãn nhĩ tỷ thiệt thân ý thức và sáu xúc của ngãn nhị tu, thiệt thân ý xúc và sáu thọ của ngã, nhị ti thiệt, thân ý thọ và sáu ái của ngã, nhị ti thiệt thân ý ái.",
+            "text": "Chiều dọc thì sáu căn gồm có mắt, tay mũi, lưỡi, thân, ý và sáu trần sắc thân giữa xuất khóa và sáu thức là nhãn nhĩ tỷ thiệt thân ý thức và sáu xúc của ngãn nhị tu, thiệt thân ý xúc và sáu thọ của ngã, nhị ti thiệt, thân ý thọ và sáu ái của ngã, nhị ti thiệt thân ý ái.",
+            "tradition": "theravada",
+            "source_id": "source_youtube_fisp_arohzy8",
+            "source_type": "dharma_talk",
+            "chunk_id": "source_youtube_fisp_arohzy8_chunk_0001",
+            "score": 0.86,
+            "epistemic_type": "doctrinal"
+          },
+          "related": [],
+          "tradition": "theravada"
+        },
+        {
+          "node_id": "concept_sáu_thức",
+          "epistemic_type": "doctrinal_view",
+          "confidence": 0.86,
+          "tradition_alignment": {
+            "theravada": "aligned",
+            "mahayana": "none",
+            "vajrayana": "none"
+          },
+          "conflict": {
+            "type": "none",
+            "severity": 0.0
+          },
+          "traceability": {
+            "node_id": "concept_sáu_thức",
+            "sources": [
+              "source_youtube_fisp_arohzy8"
+            ],
+            "graph_links": []
+          },
+          "ai_usage_allowed": true,
+          "match": {
+            "node_id": "concept_sáu_thức",
+            "node_type": "Concept",
+            "label": "sáu thức",
+            "definition": "Còn hoàn cảnh là sáu trận, còn tâm là sáu thức, sáu xúc, sáu thọ và sáu ái.",
+            "text": "Còn hoàn cảnh là sáu trận, còn tâm là sáu thức, sáu xúc, sáu thọ và sáu ái.",
+            "tradition": "theravada",
+            "source_id": "source_youtube_fisp_arohzy8",
+            "source_type": "dharma_talk",
+            "chunk_id": "source_youtube_fisp_arohzy8_chunk_0001",
+            "score": 0.86,
+            "epistemic_type": "doctrinal"
+          },
+          "related": [],
+          "tradition": "theravada"
+        },
+        {
+          "node_id": "concept_suffering",
+          "epistemic_type": "doctrinal_view",
+          "confidence": 0.86,
+          "tradition_alignment": {
+            "theravada": "aligned",
+            "mahayana": "none",
+            "vajrayana": "none"
+          },
+          "conflict": {
+            "type": "none",
+            "severity": 0.0
+          },
+          "traceability": {
+            "node_id": "concept_suffering",
+            "sources": [
+              "source_youtube_fisp_arohzy8"
+            ],
+            "graph_links": []
+          },
+          "ai_usage_allowed": true,
+          "match": {
+            "node_id": "concept_suffering",
+            "node_type": "Concept",
+            "label": "suffering",
+            "definition": "Và ngược lại, nếu ai chấp các pháp là của ta, là ta, tự ngã của ta thì tiếp khởi tiếp tục ban cái sắc thân thân kiến này lận đận lang than trong vô lượng kiếp, tức là luân hồi sanh tử khổ.",
+            "text": "Và ngược lại, nếu ai chấp các pháp là của ta, là ta, tự ngã của ta thì tiếp khởi tiếp tục ban cái sắc thân thân kiến này lận đận lang than trong vô lượng kiếp, tức là luân hồi sanh tử khổ.",
+            "tradition": "theravada",
+            "source_id": "source_youtube_fisp_arohzy8",
+            "source_type": "dharma_talk",
+            "chunk_id": "source_youtube_fisp_arohzy8_chunk_0002",
+            "score": 0.86,
+            "epistemic_type": "doctrinal"
+          },
+          "related": [],
+          "tradition": "theravada"
+        },
+        {
+          "node_id": "concept_non_self",
+          "epistemic_type": "doctrinal_view",
+          "confidence": 0.86,
+          "tradition_alignment": {
+            "theravada": "aligned",
+            "mahayana": "none",
+            "vajrayana": "none"
+          },
+          "conflict": {
+            "type": "none",
+            "severity": 0.0
+          },
+          "traceability": {
+            "node_id": "concept_non_self",
+            "sources": [
+              "source_youtube_fisp_arohzy8"
+            ],
+            "graph_links": []
+          },
+          "ai_usage_allowed": true,
+          "match": {
+            "node_id": "concept_non_self",
+            "node_type": "Concept",
+            "label": "non-self",
+            "definition": "Chúng ta phải kết luận là các pháp là vô ngã.",
+            "text": "Chúng ta phải kết luận là các pháp là vô ngã.",
+            "tradition": "theravada",
+            "source_id": "source_youtube_fisp_arohzy8",
+            "source_type": "dharma_talk",
+            "chunk_id": "source_youtube_fisp_arohzy8_chunk_0002",
+            "score": 0.86,
+            "epistemic_type": "doctrinal"
+          },
+          "related": [],
+          "tradition": "theravada"
+        },
+        {
+          "node_id": "concept_nirvana",
+          "epistemic_type": "doctrinal_view",
+          "confidence": 0.86,
+          "tradition_alignment": {
+            "theravada": "aligned",
+            "mahayana": "none",
+            "vajrayana": "none"
+          },
+          "conflict": {
+            "type": "none",
+            "severity": 0.0
+          },
+          "traceability": {
+            "node_id": "concept_nirvana",
+            "sources": [
+              "source_youtube_fisp_arohzy8"
+            ],
+            "graph_links": []
+          },
+          "ai_usage_allowed": true,
+          "match": {
+            "node_id": "concept_nirvana",
+            "node_type": "Concept",
+            "label": "nirvana",
+            "definition": "Vô ngã tức là niết bàn vậy.",
+            "text": "Vô ngã tức là niết bàn vậy.",
+            "tradition": "theravada",
+            "source_id": "source_youtube_fisp_arohzy8",
+            "source_type": "dharma_talk",
+            "chunk_id": "source_youtube_fisp_arohzy8_chunk_0002",
+            "score": 0.86,
+            "epistemic_type": "doctrinal"
+          },
+          "related": [],
+          "tradition": "theravada"
+        },
+        {
+          "node_id": "concept_suffering",
+          "epistemic_type": "doctrinal_view",
+          "confidence": 0.86,
+          "tradition_alignment": {
+            "theravada": "aligned",
+            "mahayana": "none",
+            "vajrayana": "none"
+          },
+          "conflict": {
+            "type": "none",
+            "severity": 0.0
+          },
+          "traceability": {
+            "node_id": "concept_suffering",
+            "sources": [
+              "source_youtube_fisp_arohzy8"
+            ],
+            "graph_links": []
+          },
+          "ai_usage_allowed": true,
+          "match": {
+            "node_id": "concept_suffering",
+            "node_type": "Concept",
+            "label": "suffering",
+            "definition": "Còn nếu ai cảm xúc bất lạc bất khổ thọ mà như thật biết sự tập khởi, sự đoạn diệt vị ngọt, sự nguy hiểm và sự xuất ly thì vô minh tỳ miên không tìm tăng thì vị ấy sẽ đắc quả gì?",
+            "text": "Còn nếu ai cảm xúc bất lạc bất khổ thọ mà như thật biết sự tập khởi, sự đoạn diệt vị ngọt, sự nguy hiểm và sự xuất ly thì vô minh tỳ miên không tìm tăng thì vị ấy sẽ đắc quả gì?",
+            "tradition": "theravada",
+            "source_id": "source_youtube_fisp_arohzy8",
+            "source_type": "dharma_talk",
+            "chunk_id": "source_youtube_fisp_arohzy8_chunk_0003",
+            "score": 0.86,
+            "epistemic_type": "doctrinal"
+          },
+          "related": [],
+          "tradition": "theravada"
+        },
+        {
+          "node_id": "concept_sáu_căn",
+          "epistemic_type": "doctrinal_view",
+          "confidence": 0.86,
+          "tradition_alignment": {
+            "theravada": "aligned",
+            "mahayana": "none",
+            "vajrayana": "none"
+          },
+          "conflict": {
+            "type": "none",
+            "severity": 0.0
+          },
+          "traceability": {
+            "node_id": "concept_sáu_căn",
+            "sources": [
+              "source_youtube_fisp_arohzy8"
+            ],
+            "graph_links": []
+          },
+          "ai_usage_allowed": true,
+          "match": {
+            "node_id": "concept_sáu_căn",
+            "node_type": "Concept",
+            "label": "sáu căn",
+            "definition": "Chúng ta làm việc bằng sáu căn luôn một lượt thì có lẽ chúng ta dễ hiểu hơn.",
+            "text": "Chúng ta làm việc bằng sáu căn luôn một lượt thì có lẽ chúng ta dễ hiểu hơn.",
+            "tradition": "theravada",
+            "source_id": "source_youtube_fisp_arohzy8",
+            "source_type": "dharma_talk",
+            "chunk_id": "source_youtube_fisp_arohzy8_chunk_0003",
+            "score": 0.86,
+            "epistemic_type": "doctrinal"
+          },
+          "related": [],
+          "tradition": "theravada"
+        },
+        {
+          "node_id": "concept_suffering",
+          "epistemic_type": "doctrinal_view",
+          "confidence": 0.86,
+          "tradition_alignment": {
+            "theravada": "aligned",
+            "mahayana": "none",
+            "vajrayana": "none"
+          },
+          "conflict": {
+            "type": "none",
+            "severity": 0.0
+          },
+          "traceability": {
+            "node_id": "concept_suffering",
+            "sources": [
+              "source_youtube_fisp_arohzy8"
+            ],
+            "graph_links": []
+          },
+          "ai_usage_allowed": true,
+          "match": {
+            "node_id": "concept_suffering",
+            "node_type": "Concept",
+            "label": "suffering",
+            "definition": "Còn chúng ta mới dựa vào cái thế giới đó để chục ngủ thế giới có hình có tướng một cách cô động một cách có khuôn khổ như vậy.",
+            "text": "Còn chúng ta mới dựa vào cái thế giới đó để chục ngủ thế giới có hình có tướng một cách cô động một cách có khuôn khổ như vậy.",
+            "tradition": "theravada",
+            "source_id": "source_youtube_fisp_arohzy8",
+            "source_type": "dharma_talk",
+            "chunk_id": "source_youtube_fisp_arohzy8_chunk_0004",
+            "score": 0.86,
+            "epistemic_type": "doctrinal"
+          },
+          "related": [],
+          "tradition": "theravada"
+        },
+        {
+          "node_id": "concept_suffering",
+          "epistemic_type": "doctrinal_view",
+          "confidence": 0.86,
+          "tradition_alignment": {
+            "theravada": "aligned",
+            "mahayana": "none",
+            "vajrayana": "none"
+          },
+          "conflict": {
+            "type": "none",
+            "severity": 0.0
+          },
+          "traceability": {
+            "node_id": "concept_suffering",
+            "sources": [
+              "source_youtube_fisp_arohzy8"
+            ],
+            "graph_links": []
+          },
+          "ai_usage_allowed": true,
+          "match": {
+            "node_id": "concept_suffering",
+            "node_type": "Concept",
+            "label": "suffering",
+            "definition": "Mà do chướng ngại chúng ta mới đau khổ.",
+            "text": "Mà do chướng ngại chúng ta mới đau khổ.",
+            "tradition": "theravada",
+            "source_id": "source_youtube_fisp_arohzy8",
+            "source_type": "dharma_talk",
+            "chunk_id": "source_youtube_fisp_arohzy8_chunk_0007",
+            "score": 0.86,
+            "epistemic_type": "doctrinal"
+          },
+          "related": [],
+          "tradition": "theravada"
+        },
+        {
+          "node_id": "concept_suffering",
+          "epistemic_type": "doctrinal_view",
+          "confidence": 0.86,
+          "tradition_alignment": {
+            "theravada": "aligned",
+            "mahayana": "none",
+            "vajrayana": "none"
+          },
+          "conflict": {
+            "type": "none",
+            "severity": 0.0
+          },
+          "traceability": {
+            "node_id": "concept_suffering",
+            "sources": [
+              "source_youtube_fisp_arohzy8"
+            ],
+            "graph_links": []
+          },
+          "ai_usage_allowed": true,
+          "match": {
+            "node_id": "concept_suffering",
+            "node_type": "Concept",
+            "label": "suffering",
+            "definition": "Và dây thần kinh thị giác cũng vậy làm cho cái cảm giác lớn hơn, cái sự vật lớn hơn để cảm giác nó nó cảm được cái lạc thọ khổ thọ chứ còn dây thần kinh thị giá không phải là cảm giác.",
+            "text": "Và dây thần kinh thị giác cũng vậy làm cho cái cảm giác lớn hơn, cái sự vật lớn hơn để cảm giác nó nó cảm được cái lạc thọ khổ thọ chứ còn dây thần kinh thị giá không phải là cảm giác.",
+            "tradition": "theravada",
+            "source_id": "source_youtube_fisp_arohzy8",
+            "source_type": "dharma_talk",
+            "chunk_id": "source_youtube_fisp_arohzy8_chunk_0008",
+            "score": 0.86,
+            "epistemic_type": "doctrinal"
+          },
+          "related": [],
+          "tradition": "theravada"
+        },
+        {
+          "node_id": "concept_chết",
+          "epistemic_type": "doctrinal_view",
+          "confidence": 0.86,
+          "tradition_alignment": {
+            "theravada": "aligned",
+            "mahayana": "none",
+            "vajrayana": "none"
+          },
+          "conflict": {
+            "type": "none",
+            "severity": 0.0
+          },
+          "traceability": {
+            "node_id": "concept_chết",
+            "sources": [
+              "source_youtube_fisp_arohzy8"
+            ],
+            "graph_links": []
+          },
+          "ai_usage_allowed": true,
+          "match": {
+            "node_id": "concept_chết",
+            "node_type": "Concept",
+            "label": "chết",
+            "definition": "Thành ra chúng ta chết là chết chỗ đó.",
+            "text": "Thành ra chúng ta chết là chết chỗ đó.",
+            "tradition": "theravada",
+            "source_id": "source_youtube_fisp_arohzy8",
+            "source_type": "dharma_talk",
+            "chunk_id": "source_youtube_fisp_arohzy8_chunk_0008",
+            "score": 0.86,
+            "epistemic_type": "doctrinal"
+          },
+          "related": [],
+          "tradition": "theravada"
+        },
+        {
+          "node_id": "concept_chết",
+          "epistemic_type": "doctrinal_view",
+          "confidence": 0.86,
+          "tradition_alignment": {
+            "theravada": "aligned",
+            "mahayana": "none",
+            "vajrayana": "none"
+          },
+          "conflict": {
+            "type": "none",
+            "severity": 0.0
+          },
+          "traceability": {
+            "node_id": "concept_chết",
+            "sources": [
+              "source_youtube_fisp_arohzy8"
+            ],
+            "graph_links": []
+          },
+          "ai_usage_allowed": true,
+          "match": {
+            "node_id": "concept_chết",
+            "node_type": "Concept",
+            "label": "chết",
+            "definition": "Thành ra chúng ta mới chết cái chỗ đó.",
+            "text": "Thành ra chúng ta mới chết cái chỗ đó.",
+            "tradition": "theravada",
+            "source_id": "source_youtube_fisp_arohzy8",
+            "source_type": "dharma_talk",
+            "chunk_id": "source_youtube_fisp_arohzy8_chunk_0009",
+            "score": 0.86,
+            "epistemic_type": "doctrinal"
+          },
+          "related": [],
+          "tradition": "theravada"
+        },
+        {
+          "node_id": "concept_impermanence",
+          "epistemic_type": "doctrinal_view",
+          "confidence": 0.86,
+          "tradition_alignment": {
+            "theravada": "aligned",
+            "mahayana": "none",
+            "vajrayana": "none"
+          },
+          "conflict": {
+            "type": "none",
+            "severity": 0.0
+          },
+          "traceability": {
+            "node_id": "concept_impermanence",
+            "sources": [
+              "source_youtube_fisp_arohzy8"
+            ],
+            "graph_links": []
+          },
+          "ai_usage_allowed": true,
+          "match": {
+            "node_id": "concept_impermanence",
+            "node_type": "Concept",
+            "label": "impermanence",
+            "definition": "Rồi khi mà người con này có học giáo lý mới thấy là người mẹ nói là vô thường thôi, thôi hết khổ thì cái gương này cũng hết khổ.",
+            "text": "Rồi khi mà người con này có học giáo lý mới thấy là người mẹ nói là vô thường thôi, thôi hết khổ thì cái gương này cũng hết khổ.",
+            "tradition": "theravada",
+            "source_id": "source_youtube_fisp_arohzy8",
+            "source_type": "dharma_talk",
+            "chunk_id": "source_youtube_fisp_arohzy8_chunk_0010",
+            "score": 0.86,
+            "epistemic_type": "doctrinal"
+          },
+          "related": [],
+          "tradition": "theravada"
+        },
+        {
+          "node_id": "concept_suffering",
+          "epistemic_type": "doctrinal_view",
+          "confidence": 0.86,
+          "tradition_alignment": {
+            "theravada": "aligned",
+            "mahayana": "none",
+            "vajrayana": "none"
+          },
+          "conflict": {
+            "type": "none",
+            "severity": 0.0
+          },
+          "traceability": {
+            "node_id": "concept_suffering",
+            "sources": [
+              "source_youtube_fisp_arohzy8"
+            ],
+            "graph_links": []
+          },
+          "ai_usage_allowed": true,
+          "match": {
+            "node_id": "concept_suffering",
+            "node_type": "Concept",
+            "label": "suffering",
+            "definition": "Thì từ cái cảm giác gặp người mẹ vui vừa cầm tay người mẹ rồi xong người mẹ ngã xuống chết thì cảm giác buồn khổ sẽ đến liền.",
+            "text": "Thì từ cái cảm giác gặp người mẹ vui vừa cầm tay người mẹ rồi xong người mẹ ngã xuống chết thì cảm giác buồn khổ sẽ đến liền.",
+            "tradition": "theravada",
+            "source_id": "source_youtube_fisp_arohzy8",
+            "source_type": "dharma_talk",
+            "chunk_id": "source_youtube_fisp_arohzy8_chunk_0010",
+            "score": 0.86,
+            "epistemic_type": "doctrinal"
+          },
+          "related": [],
+          "tradition": "theravada"
+        },
+        {
+          "node_id": "concept_chết",
+          "epistemic_type": "doctrinal_view",
+          "confidence": 0.86,
+          "tradition_alignment": {
+            "theravada": "aligned",
+            "mahayana": "none",
+            "vajrayana": "none"
+          },
+          "conflict": {
+            "type": "none",
+            "severity": 0.0
+          },
+          "traceability": {
+            "node_id": "concept_chết",
+            "sources": [
+              "source_youtube_fisp_arohzy8"
+            ],
+            "graph_links": []
+          },
+          "ai_usage_allowed": true,
+          "match": {
+            "node_id": "concept_chết",
+            "node_type": "Concept",
+            "label": "chết",
+            "definition": "Rồi khi cái cảm giác này mất đi, khi người mẹ tôi xuống máy bay, tôi nói thí dụ bà ngã xuống đó bà chết liền lập tức.",
+            "text": "Rồi khi cái cảm giác này mất đi, khi người mẹ tôi xuống máy bay, tôi nói thí dụ bà ngã xuống đó bà chết liền lập tức.",
+            "tradition": "theravada",
+            "source_id": "source_youtube_fisp_arohzy8",
+            "source_type": "dharma_talk",
+            "chunk_id": "source_youtube_fisp_arohzy8_chunk_0010",
+            "score": 0.86,
+            "epistemic_type": "doctrinal"
+          },
+          "related": [],
+          "tradition": "theravada"
+        },
+        {
+          "node_id": "concept_nirvana",
+          "epistemic_type": "doctrinal_view",
+          "confidence": 0.86,
+          "tradition_alignment": {
+            "theravada": "aligned",
+            "mahayana": "none",
+            "vajrayana": "none"
+          },
+          "conflict": {
+            "type": "none",
+            "severity": 0.0
+          },
+          "traceability": {
+            "node_id": "concept_nirvana",
+            "sources": [
+              "source_youtube_fisp_arohzy8"
+            ],
+            "graph_links": []
+          },
+          "ai_usage_allowed": true,
+          "match": {
+            "node_id": "concept_nirvana",
+            "node_type": "Concept",
+            "label": "nirvana",
+            "definition": "Thành ra cái này chúng ta kêu là niết bàn.",
+            "text": "Thành ra cái này chúng ta kêu là niết bàn.",
+            "tradition": "theravada",
+            "source_id": "source_youtube_fisp_arohzy8",
+            "source_type": "dharma_talk",
+            "chunk_id": "source_youtube_fisp_arohzy8_chunk_0011",
+            "score": 0.86,
+            "epistemic_type": "doctrinal"
+          },
+          "related": [],
+          "tradition": "theravada"
+        },
+        {
+          "node_id": "concept_chết",
+          "epistemic_type": "doctrinal_view",
+          "confidence": 0.86,
+          "tradition_alignment": {
+            "theravada": "aligned",
+            "mahayana": "none",
+            "vajrayana": "none"
+          },
+          "conflict": {
+            "type": "none",
+            "severity": 0.0
+          },
+          "traceability": {
+            "node_id": "concept_chết",
+            "sources": [
+              "source_youtube_fisp_arohzy8"
+            ],
+            "graph_links": []
+          },
+          "ai_usage_allowed": true,
+          "match": {
+            "node_id": "concept_chết",
+            "node_type": "Concept",
+            "label": "chết",
+            "definition": "Đứa bé sanh ra rồi thành rồi trụ tức là ở đời năm 7 8 90 năm rồi gà lần lần tóc bạc da mồi rồi cuối cùng phải chết là hoài hoài rồi cái thần thức này mới đi tìm một cái chúng sanh mới để rồi sanh thành trụ bại không nữa.",
+            "text": "Đứa bé sanh ra rồi thành rồi trụ tức là ở đời năm 7 8 90 năm rồi gà lần lần tóc bạc da mồi rồi cuối cùng phải chết là hoài hoài rồi cái thần thức này mới đi tìm một cái chúng sanh mới để rồi sanh thành trụ bại không nữa.",
+            "tradition": "theravada",
+            "source_id": "source_youtube_fisp_arohzy8",
+            "source_type": "dharma_talk",
+            "chunk_id": "source_youtube_fisp_arohzy8_chunk_0011",
+            "score": 0.86,
+            "epistemic_type": "doctrinal"
+          },
+          "related": [],
+          "tradition": "theravada"
+        },
+        {
+          "node_id": "concept_suffering",
+          "epistemic_type": "doctrinal_view",
+          "confidence": 0.86,
+          "tradition_alignment": {
+            "theravada": "aligned",
+            "mahayana": "none",
+            "vajrayana": "none"
+          },
+          "conflict": {
+            "type": "none",
+            "severity": 0.0
+          },
+          "traceability": {
+            "node_id": "concept_suffering",
+            "sources": [
+              "source_youtube_fisp_arohzy8"
+            ],
+            "graph_links": []
+          },
+          "ai_usage_allowed": true,
+          "match": {
+            "node_id": "concept_suffering",
+            "node_type": "Concept",
+            "label": "suffering",
+            "definition": "Chúng ta từ địa ngục chúng ta thấy khổ quá bây giờ muốn giải quyết khỏi địa ngục phải làm sao?",
+            "text": "Chúng ta từ địa ngục chúng ta thấy khổ quá bây giờ muốn giải quyết khỏi địa ngục phải làm sao?",
+            "tradition": "theravada",
+            "source_id": "source_youtube_fisp_arohzy8",
+            "source_type": "dharma_talk",
+            "chunk_id": "source_youtube_fisp_arohzy8_chunk_0012",
+            "score": 0.86,
+            "epistemic_type": "doctrinal"
+          },
+          "related": [],
+          "tradition": "theravada"
+        },
+        {
+          "node_id": "concept_non_self",
+          "epistemic_type": "doctrinal_view",
+          "confidence": 0.86,
+          "tradition_alignment": {
+            "theravada": "aligned",
+            "mahayana": "none",
+            "vajrayana": "none"
+          },
+          "conflict": {
+            "type": "none",
+            "severity": 0.0
+          },
+          "traceability": {
+            "node_id": "concept_non_self",
+            "sources": [
+              "source_youtube_fisp_arohzy8"
+            ],
+            "graph_links": []
+          },
+          "ai_usage_allowed": true,
+          "match": {
+            "node_id": "concept_non_self",
+            "node_type": "Concept",
+            "label": "non-self",
+            "definition": "Thành ra các ngài mới cho đó là cái tiểu ngã của cái vô ngã, cái đại ngã thấy không?",
+            "text": "Thành ra các ngài mới cho đó là cái tiểu ngã của cái vô ngã, cái đại ngã thấy không?",
+            "tradition": "theravada",
+            "source_id": "source_youtube_fisp_arohzy8",
+            "source_type": "dharma_talk",
+            "chunk_id": "source_youtube_fisp_arohzy8_chunk_0012",
+            "score": 0.86,
+            "epistemic_type": "doctrinal"
+          },
+          "related": [],
+          "tradition": "theravada"
+        }
+      ],
+      "accepted_node_ids": [
+        "concept_kinh_66",
+        "concept_sáu_căn",
+        "concept_sáu_trần",
+        "concept_sáu_thức",
+        "concept_suffering",
+        "concept_non_self",
+        "concept_nirvana",
+        "concept_suffering",
+        "concept_sáu_căn",
+        "concept_suffering",
+        "concept_suffering",
+        "concept_suffering",
+        "concept_chết",
+        "concept_chết",
+        "concept_impermanence",
+        "concept_suffering",
+        "concept_chết",
+        "concept_nirvana",
+        "concept_chết",
+        "concept_suffering",
+        "concept_non_self"
+      ],
+      "rejections": [
+        {
+          "status": "rejected",
+          "stage": "extraction",
+          "reason": "no_explicit_concept",
+          "source_id": "source_youtube_fisp_arohzy8",
+          "chunk_id": "source_youtube_fisp_arohzy8_chunk_0005"
+        },
+        {
+          "status": "rejected",
+          "stage": "extraction",
+          "reason": "no_explicit_concept",
+          "source_id": "source_youtube_fisp_arohzy8",
+          "chunk_id": "source_youtube_fisp_arohzy8_chunk_0006"
+        },
+        {
+          "status": "rejected",
+          "stage": "extraction",
+          "reason": "no_explicit_concept",
+          "source_id": "source_youtube_fisp_arohzy8",
+          "chunk_id": "source_youtube_fisp_arohzy8_chunk_0013"
+        }
+      ],
+      "relations_detected": [],
+      "conflicts": []
+    }
+  ],
+  "vector_points": 13,
+  "graph_nodes_written": 21,
+  "graph_relationships_written": 0
+}

@@ -1,0 +1,85 @@
+{
+  "status": "ok",
+  "drift": {
+    "drift_detected": true,
+    "severity": "high",
+    "affected_concepts": [
+      "concept_death",
+      "concept_karma"
+    ],
+    "drift_type": "epistemic"
+  },
+  "monitor": {
+    "core_fact_ratio": 0.25,
+    "doctrinal_ratio": 0.25,
+    "interpretive_ratio": 0.25,
+    "esoteric_ratio": 0.25,
+    "acceptance_rate": 0.8,
+    "rejection_rate": 0.2,
+    "conflict_rate": 0.25,
+    "truth_engine_rejection_rate": 0.2,
+    "epistemic_type_distribution": {
+      "doctrinal": 1,
+      "esoteric": 1,
+      "core_fact": 1,
+      "interpretive": 1
+    },
+    "confidence_distribution": {
+      "medium_high": 2,
+      "high": 1,
+      "medium": 1
+    }
+  },
+  "conflict_map": {
+    "nodes": [
+      {
+        "id": "concept_death:theravada:chunk_theravada_concept_death",
+        "concept": "concept_death",
+        "tradition": "theravada",
+        "epistemic_type": "doctrinal_view",
+        "confidence": 0.82
+      },
+      {
+        "id": "concept_death:vajrayana:chunk_vajrayana_concept_death",
+        "concept": "concept_death",
+        "tradition": "vajrayana",
+        "epistemic_type": "esoteric_view",
+        "confidence": 0.78
+      },
+      {
+        "id": "concept_karma:theravada:chunk_theravada_concept_karma",
+        "concept": "concept_karma",
+        "tradition": "theravada",
+        "epistemic_type": "core_fact",
+        "confidence": 0.96
+      },
+      {
+        "id": "concept_karma:mahayana:chunk_mahayana_concept_karma",
+        "concept": "concept_karma",
+        "tradition": "mahayana",
+        "epistemic_type": "interpretive_view",
+        "confidence": 0.58
+      }
+    ],
+    "edges": [
+      {
+        "from": "concept_death:theravada:chunk_theravada_concept_death",
+        "to": "concept_death:vajrayana:chunk_vajrayana_concept_death",
+        "label": "DOCTRINAL_VARIATION"
+      },
+      {
+        "from": "concept_karma:theravada:chunk_theravada_concept_karma",
+        "to": "concept_karma:mahayana:chunk_mahayana_concept_karma",
+        "label": "DOCTRINAL_VARIATION"
+      }
+    ],
+    "conflict_count": 2
+  },
+  "alerts": [
+    {
+      "level": "CRITICAL",
+      "reason": "epistemic_drift_high"
+    }
+  ],
+  "merge_policy": "conflicts_visible_not_merged"
+}
