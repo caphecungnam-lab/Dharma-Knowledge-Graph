@@ -25,6 +25,10 @@ case "$1" in
     docker compose ps
     ;;
 
+  check-api)
+    bash scripts/dkg027_connection_check.sh
+    ;;
+
   health)
     echo "⚙️ DKG container health:"
     docker compose ps
@@ -36,6 +40,6 @@ case "$1" in
     ;;
 
   *)
-    echo "Usage: ./dkg start | stop | restart | logs | status | health"
+    echo "Usage: ./dkg start | stop | restart | logs | status | health | check-api"
     ;;
 esac
