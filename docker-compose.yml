@@ -33,6 +33,17 @@ services:
       - neo4j
       - qdrant
 
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    environment:
+      NEXT_PUBLIC_DKG_API: http://localhost:8000
+    ports:
+      - "3000:3000"
+    depends_on:
+      - api
+
 volumes:
   neo4j_data:
   qdrant_data:
